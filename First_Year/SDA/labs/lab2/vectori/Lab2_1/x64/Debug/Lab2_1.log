@@ -1,0 +1,5 @@
+﻿  main.c
+D:\First_Year\utcn\First_Year\SDA\labs\lab2\vectori\Lab2_1\main.c(14,9): warning C4033: 'create_seq_list' must return a value
+D:\First_Year\utcn\First_Year\SDA\labs\lab2\vectori\Lab2_1\main.c(19,9): warning C4033: 'create_seq_list' must return a value
+D:\First_Year\utcn\First_Year\SDA\labs\lab2\vectori\Lab2_1\main.c(24): warning C4715: 'create_seq_list': not all control paths return a value
+  Lab2_1.vcxproj -> D:\First_Year\utcn\First_Year\SDA\labs\lab2\vectori\x64\Debug\Lab2_1.exe

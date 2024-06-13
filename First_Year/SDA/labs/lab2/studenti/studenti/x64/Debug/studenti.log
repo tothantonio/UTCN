@@ -1,0 +1,5 @@
+﻿  main.c
+D:\First_Year\utcn\First_Year\SDA\labs\lab2\studenti\studenti\main.c(39,5): error C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+D:\First_Year\utcn\First_Year\SDA\labs\lab2\studenti\studenti\main.c(52,5): error C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+D:\First_Year\utcn\First_Year\SDA\labs\lab2\studenti\studenti\main.c(56,5): error C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+D:\First_Year\utcn\First_Year\SDA\labs\lab2\studenti\studenti\main.c(60,5): error C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.

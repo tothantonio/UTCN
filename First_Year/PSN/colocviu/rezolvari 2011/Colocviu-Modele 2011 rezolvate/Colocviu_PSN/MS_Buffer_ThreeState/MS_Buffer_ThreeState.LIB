@@ -1,0 +1,33 @@
+timestamp=1305448400532
+
+[buffer_3state]
+A/arh_buff=A/ARH_Buff 21|./src/MS_Buffer.vhd|8|1*5508
+B/arh_buff=3*0
+I=0*1490
+I/arh_buff=I/ARH_Buff 0*2477
+M=11|0|v147|1305448293950|./src/MS_Buffer.vhd|0*1179*0xa4e15611b893925748ca767e6cca6564341b3f6f|0*1410*0x7bd7e13dc0415552f89596087806a8cf
+M/arh_buff=M/ARH_Buff 21|0|v147|1305448400330|./src/MS_Buffer.vhd|0*2184*0x964480c81520fc6e0fa65fb2495a9fcee38ba89c|0*2385*0x7bd7e13dc0415552f89596087806a8cf
+R=./src/MS_Buffer.vhd|3
+
+[ms_buffer]
+A/arh_ms_buffer=A/ARH_MS_Buffer 21|./src/MS_Buffer.vhd|26|1*6933
+B/arh_ms_buffer=3*691
+I=0*284
+I/arh_ms_buffer=0*2006
+M=11|0|v147|1305448281558|./src/MS_Buffer.vhd|0*68*0x96bb150aa67d5db96643b6e082d9dda113324f9f|0*208*0x7bd7e13dc0415552f89596087806a8cf
+M/arh_ms_buffer=M/ARH_MS_Buffer 21|0|v147|1305448400340|./src/MS_Buffer.vhd|0*387*0xc9150581840fd8da7ebe444081178c6efd529ac8|0*812*0x7bd7e13dc0415552f89596087806a8cf
+R=./src/MS_Buffer.vhd|23
+
+[~A]
+ModifyID=28
+Version=73
+
+[~MFT]
+0=21|0MS_Buffer_ThreeState.mgf|2477|481
+1=7|1MS_Buffer_ThreeState.mgf|6933|5508
+3=1|3MS_Buffer_ThreeState.mgf|691|0
+
+[~U]
+buffer_3state=Buffer_3state 11|0*977|
+ms_buffer=MS_Buffer 11|0*0|
+

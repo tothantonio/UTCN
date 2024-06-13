@@ -1,0 +1,16 @@
+[Version]
+Version=6.3
+[Designs]
+Registru_universal=Registru_universal.adf
+secventa_pseudoaleatoare=.\..\Secventa_pseudoaleatoare\Secventa_pseudoaleatoare.adf
+[Settings]
+Active=Registru_universal
+[Expand]
+registru_universal=1
+secventa_pseudoaleatoare=1
+[Browser]
+sort=order
+mode=none
+[Order]
+order=1
+macro=

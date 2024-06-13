@@ -1,0 +1,14 @@
+[Version]
+Version=6.3
+[Designs]
+MS_Buffer_ThreeState=MS_Buffer_ThreeState.adf
+[Settings]
+Active=MS_Buffer_ThreeState
+[Expand]
+ms_buffer_threestate=1
+[Browser]
+sort=order
+mode=none
+[Order]
+order=1
+macro=

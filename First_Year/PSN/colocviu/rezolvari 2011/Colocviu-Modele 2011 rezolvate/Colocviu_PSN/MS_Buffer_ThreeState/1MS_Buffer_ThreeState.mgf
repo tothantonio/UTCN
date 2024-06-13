@@ -1,0 +1,223 @@
+I 000054 55 2010          1305448281562 ARH_MS_Buffer
+(_unit VHDL (ms_buffer 0 23 (arh_ms_buffer 0 26 ))
+	(_version v147)
+	(_time 1305448281563 2011.05.15 11:31:21)
+	(_source (\./src/MS_Buffer.vhd\))
+	(_use (std(standard))(ieee(std_logic_1164)))
+	(_parameters dbg)
+	(_code f6f8a3a7f3a2f4e0f5f4e3aca1)
+	(_entity
+		(_time 1305448281559)
+	)
+	(_component
+		(Buffer_3state
+			(_object
+				(_port (_internal A ~STD_LOGIC_VECTOR{7~downto~0}~13 0 29 (_entity (_in ))))
+				(_port (_internal S ~extSTD.STANDARD.BIT 0 30 (_entity (_in ))))
+				(_port (_internal Q ~STD_LOGIC_VECTOR{7~downto~0}~132 0 31 (_entity (_out ))))
+			)
+		)
+	)
+	(_instantiation P1 0 39 (_component Buffer_3state )
+		(_port
+			((A)(Sa))
+			((S)(Ss))
+			((Q)(Sq))
+		)
+		(_use (_implicit)
+			(_port
+				((A)(A))
+				((S)(S))
+				((Q)(Q))
+			)
+		)
+	)
+	(_object
+		(_type (_internal ~STD_LOGIC_VECTOR{7~downto~0}~13 0 29 (_array ~extieee.std_logic_1164.STD_LOGIC ((_downto (i 7)(i 0))))))
+		(_type (_internal ~STD_LOGIC_VECTOR{7~downto~0}~132 0 31 (_array ~extieee.std_logic_1164.STD_LOGIC ((_downto (i 7)(i 0))))))
+		(_type (_internal ~STD_LOGIC_VECTOR{7~downto~0}~134 0 34 (_array ~extieee.std_logic_1164.STD_LOGIC ((_downto (i 7)(i 0))))))
+		(_signal (_internal Sa ~STD_LOGIC_VECTOR{7~downto~0}~134 0 34 (_architecture (_uni (_string \"01010101"\)))))
+		(_signal (_internal Sq ~STD_LOGIC_VECTOR{7~downto~0}~134 0 35 (_architecture (_uni ))))
+		(_signal (_internal Ss ~extSTD.STANDARD.BIT 0 36 (_architecture (_uni ))))
+		(_process
+			(P2(_architecture 0 0 40 (_assignment (_simple)(_target(2)))))
+		)
+		(_subprogram
+			(_external resolved (ieee std_logic_1164 15))
+		)
+		(_type (_external ~extieee.std_logic_1164.STD_ULOGIC (ieee std_logic_1164 STD_ULOGIC)))
+		(_type (_external ~extieee.std_logic_1164.STD_LOGIC (ieee std_logic_1164 STD_LOGIC)))
+		(_type (_external ~extieee.std_logic_1164.STD_LOGIC_VECTOR (ieee std_logic_1164 STD_LOGIC_VECTOR)))
+		(_type (_external ~extSTD.STANDARD.BIT (std STANDARD BIT)))
+	)
+	(_model . ARH_MS_Buffer 1 -1
+	)
+)
+I 000049 55 1376          1305448293953 ARH_Buff
+(_unit VHDL (buffer_3state 0 3 (arh_buff 0 8 ))
+	(_version v147)
+	(_time 1305448293954 2011.05.15 11:31:33)
+	(_source (\./src/MS_Buffer.vhd\))
+	(_use (std(standard))(ieee(std_logic_1164)))
+	(_parameters dbg)
+	(_code 683c6869653f3a7e6f6c7d333b)
+	(_entity
+		(_time 1305448293951)
+	)
+	(_object
+		(_type (_internal ~STD_LOGIC_VECTOR{7~downto~0}~12 0 4 (_array ~extieee.std_logic_1164.STD_LOGIC ((_downto (i 7)(i 0))))))
+		(_port (_internal A ~STD_LOGIC_VECTOR{7~downto~0}~12 0 4 (_entity (_in ))))
+		(_port (_internal S ~extSTD.STANDARD.BIT 0 5 (_entity (_in ))))
+		(_type (_internal ~STD_LOGIC_VECTOR{7~downto~0}~122 0 6 (_array ~extieee.std_logic_1164.STD_LOGIC ((_downto (i 7)(i 0))))))
+		(_port (_internal Q ~STD_LOGIC_VECTOR{7~downto~0}~122 0 6 (_entity (_out ))))
+		(_process
+			(line__10(_architecture 0 0 10 (_process (_simple)(_target(2))(_sensitivity(1))(_read(0)))))
+		)
+		(_subprogram
+			(_external resolved (ieee std_logic_1164 15))
+		)
+		(_type (_external ~extieee.std_logic_1164.STD_ULOGIC (ieee std_logic_1164 STD_ULOGIC)))
+		(_type (_external ~extieee.std_logic_1164.STD_LOGIC (ieee std_logic_1164 STD_LOGIC)))
+		(_type (_external ~extieee.std_logic_1164.STD_LOGIC_VECTOR (ieee std_logic_1164 STD_LOGIC_VECTOR)))
+		(_type (_external ~extSTD.STANDARD.BIT (std STANDARD BIT)))
+	)
+	(_static
+		(0 0 )
+	)
+	(_model . ARH_Buff 1 -1
+	)
+)
+I 000054 55 1965          1305448293960 ARH_MS_Buffer
+(_unit VHDL (ms_buffer 0 23 (arh_ms_buffer 0 26 ))
+	(_version v147)
+	(_time 1305448293961 2011.05.15 11:31:33)
+	(_source (\./src/MS_Buffer.vhd\))
+	(_use (std(standard))(ieee(std_logic_1164)))
+	(_parameters dbg)
+	(_code 683c3e69633c6a7e6b6a7d323f)
+	(_entity
+		(_time 1305448281558)
+	)
+	(_component
+		(buffer_3state
+			(_object
+				(_port (_internal A ~STD_LOGIC_VECTOR{7~downto~0}~13 0 29 (_entity (_in ))))
+				(_port (_internal S ~extSTD.STANDARD.BIT 0 30 (_entity (_in ))))
+				(_port (_internal Q ~STD_LOGIC_VECTOR{7~downto~0}~132 0 31 (_entity (_out ))))
+			)
+		)
+	)
+	(_instantiation P1 0 39 (_component buffer_3state )
+		(_port
+			((A)(Sa))
+			((S)(Ss))
+			((Q)(Sq))
+		)
+		(_use (_entity . buffer_3state)
+		)
+	)
+	(_object
+		(_type (_internal ~STD_LOGIC_VECTOR{7~downto~0}~13 0 29 (_array ~extieee.std_logic_1164.STD_LOGIC ((_downto (i 7)(i 0))))))
+		(_type (_internal ~STD_LOGIC_VECTOR{7~downto~0}~132 0 31 (_array ~extieee.std_logic_1164.STD_LOGIC ((_downto (i 7)(i 0))))))
+		(_type (_internal ~STD_LOGIC_VECTOR{7~downto~0}~134 0 34 (_array ~extieee.std_logic_1164.STD_LOGIC ((_downto (i 7)(i 0))))))
+		(_signal (_internal Sa ~STD_LOGIC_VECTOR{7~downto~0}~134 0 34 (_architecture (_uni (_string \"01010101"\)))))
+		(_signal (_internal Sq ~STD_LOGIC_VECTOR{7~downto~0}~134 0 35 (_architecture (_uni ))))
+		(_signal (_internal Ss ~extSTD.STANDARD.BIT 0 36 (_architecture (_uni ))))
+		(_process
+			(P2(_architecture 0 0 40 (_assignment (_simple)(_target(2)))))
+		)
+		(_subprogram
+			(_external resolved (ieee std_logic_1164 15))
+		)
+		(_type (_external ~extieee.std_logic_1164.STD_ULOGIC (ieee std_logic_1164 STD_ULOGIC)))
+		(_type (_external ~extieee.std_logic_1164.STD_LOGIC (ieee std_logic_1164 STD_LOGIC)))
+		(_type (_external ~extieee.std_logic_1164.STD_LOGIC_VECTOR (ieee std_logic_1164 STD_LOGIC_VECTOR)))
+		(_type (_external ~extSTD.STANDARD.BIT (std STANDARD BIT)))
+	)
+	(_model . ARH_MS_Buffer 1 -1
+	)
+)
+V 000049 55 1376          1305448400331 ARH_Buff
+(_unit VHDL (buffer_3state 0 3 (arh_buff 0 8 ))
+	(_version v147)
+	(_time 1305448400332 2011.05.15 11:33:20)
+	(_source (\./src/MS_Buffer.vhd\))
+	(_use (std(standard))(ieee(std_logic_1164)))
+	(_parameters dbg)
+	(_code f1f2f2a0f5a6a3e7f6f5e4aaa2)
+	(_entity
+		(_time 1305448293950)
+	)
+	(_object
+		(_type (_internal ~STD_LOGIC_VECTOR{7~downto~0}~12 0 4 (_array ~extieee.std_logic_1164.STD_LOGIC ((_downto (i 7)(i 0))))))
+		(_port (_internal A ~STD_LOGIC_VECTOR{7~downto~0}~12 0 4 (_entity (_in ))))
+		(_port (_internal S ~extSTD.STANDARD.BIT 0 5 (_entity (_in ))))
+		(_type (_internal ~STD_LOGIC_VECTOR{7~downto~0}~122 0 6 (_array ~extieee.std_logic_1164.STD_LOGIC ((_downto (i 7)(i 0))))))
+		(_port (_internal Q ~STD_LOGIC_VECTOR{7~downto~0}~122 0 6 (_entity (_out ))))
+		(_process
+			(line__10(_architecture 0 0 10 (_process (_simple)(_target(2))(_sensitivity(1))(_read(0)))))
+		)
+		(_subprogram
+			(_external resolved (ieee std_logic_1164 15))
+		)
+		(_type (_external ~extieee.std_logic_1164.STD_ULOGIC (ieee std_logic_1164 STD_ULOGIC)))
+		(_type (_external ~extieee.std_logic_1164.STD_LOGIC (ieee std_logic_1164 STD_LOGIC)))
+		(_type (_external ~extieee.std_logic_1164.STD_LOGIC_VECTOR (ieee std_logic_1164 STD_LOGIC_VECTOR)))
+		(_type (_external ~extSTD.STANDARD.BIT (std STANDARD BIT)))
+	)
+	(_static
+		(0 0 )
+	)
+	(_model . ARH_Buff 1 -1
+	)
+)
+V 000054 55 1965          1305448400338 ARH_MS_Buffer
+(_unit VHDL (ms_buffer 0 23 (arh_ms_buffer 0 26 ))
+	(_version v147)
+	(_time 1305448400339 2011.05.15 11:33:20)
+	(_source (\./src/MS_Buffer.vhd\))
+	(_use (std(standard))(ieee(std_logic_1164)))
+	(_parameters dbg)
+	(_code f1f2a4a0f3a5f3e7f2f3e4aba6)
+	(_entity
+		(_time 1305448281558)
+	)
+	(_component
+		(buffer_3state
+			(_object
+				(_port (_internal A ~STD_LOGIC_VECTOR{7~downto~0}~13 0 29 (_entity (_in ))))
+				(_port (_internal S ~extSTD.STANDARD.BIT 0 30 (_entity (_in ))))
+				(_port (_internal Q ~STD_LOGIC_VECTOR{7~downto~0}~132 0 31 (_entity (_out ))))
+			)
+		)
+	)
+	(_instantiation P1 0 39 (_component buffer_3state )
+		(_port
+			((A)(Sa))
+			((S)(Ss))
+			((Q)(Sq))
+		)
+		(_use (_entity . buffer_3state)
+		)
+	)
+	(_object
+		(_type (_internal ~STD_LOGIC_VECTOR{7~downto~0}~13 0 29 (_array ~extieee.std_logic_1164.STD_LOGIC ((_downto (i 7)(i 0))))))
+		(_type (_internal ~STD_LOGIC_VECTOR{7~downto~0}~132 0 31 (_array ~extieee.std_logic_1164.STD_LOGIC ((_downto (i 7)(i 0))))))
+		(_type (_internal ~STD_LOGIC_VECTOR{7~downto~0}~134 0 34 (_array ~extieee.std_logic_1164.STD_LOGIC ((_downto (i 7)(i 0))))))
+		(_signal (_internal Sa ~STD_LOGIC_VECTOR{7~downto~0}~134 0 34 (_architecture (_uni (_string \"01010101"\)))))
+		(_signal (_internal Sq ~STD_LOGIC_VECTOR{7~downto~0}~134 0 35 (_architecture (_uni ))))
+		(_signal (_internal Ss ~extSTD.STANDARD.BIT 0 36 (_architecture (_uni ))))
+		(_process
+			(P2(_architecture 0 0 40 (_assignment (_simple)(_target(2)))))
+		)
+		(_subprogram
+			(_external resolved (ieee std_logic_1164 15))
+		)
+		(_type (_external ~extieee.std_logic_1164.STD_ULOGIC (ieee std_logic_1164 STD_ULOGIC)))
+		(_type (_external ~extieee.std_logic_1164.STD_LOGIC (ieee std_logic_1164 STD_LOGIC)))
+		(_type (_external ~extieee.std_logic_1164.STD_LOGIC_VECTOR (ieee std_logic_1164 STD_LOGIC_VECTOR)))
+		(_type (_external ~extSTD.STANDARD.BIT (std STANDARD BIT)))
+	)
+	(_model . ARH_MS_Buffer 1 -1
+	)
+)

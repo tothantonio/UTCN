@@ -1,0 +1,57 @@
+[Project]
+Current Flow=Generic
+VCS=0
+version=1
+Current Config=compile
+
+[Configurations]
+compile=Numarator_binar_8bit_2biti
+
+[Library]
+Numarator_binar_8bit_2biti=.\Numarator_binar_8bit_2biti.LIB
+
+[$LibMap$]
+Numarator_binar_8bit_2biti=.
+Active_lib=
+
+[Settings]
+FLOW_TYPE=HDL
+LANGUAGE=VHDL
+FLOWTOOLS=NONE
+REFRESH_FLOW=1
+FAMILY=
+IMPL_TOOL=
+SYNTH_TOOL=
+
+[Folders]
+Name3=Makefiles
+Directory3=c:\My_Designs\Colocviu_PSN\Numarator_binar_8bit_2biti\
+Extension3=mak
+Name4=Memory
+Directory4=c:\My_Designs\Colocviu_PSN\Numarator_binar_8bit_2biti\src
+Extension4=mem;mif;hex
+Name5=Dll Libraries
+Directory5=c:\My_Designs\Colocviu_PSN\Numarator_binar_8bit_2biti\
+Extension5=dll
+Name6=PDF
+Directory6=c:\My_Designs\Colocviu_PSN\Numarator_binar_8bit_2biti\
+Extension6=pdf
+Name7=HTML
+Directory7=c:\My_Designs\Colocviu_PSN\Numarator_binar_8bit_2biti\
+Extension7=
+
+[Files]
+/Count_2bit.vhd=-1
+/Numarator_8biti.vhd=-1
+/Clock.vhd=-1
+
+[Files.Data]
+.\src\Count_2bit.vhd=VHDL Source Code
+.\src\Numarator_8biti.vhd=VHDL Source Code
+.\src\Clock.vhd=VHDL Source Code
+
+[HierarchyViewer]
+SortInfo=u
+HierarchyInformation=counter|count_str|0   
+ShowHide=ShowTopLevel
+Selected=

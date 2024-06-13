@@ -1,0 +1,10 @@
+﻿  main.c
+D:\First_Year\utcn\First_Year\SDA\labs\lab6\prb1\prb1\main.c(44,23): warning C4473: 'fscanf_s' : not enough arguments passed for format string
+  D:\First_Year\utcn\First_Year\SDA\labs\lab6\prb1\prb1\main.c(44,23):
+  placeholders and their parameters expect 2 variadic arguments, but 1 were provided
+  D:\First_Year\utcn\First_Year\SDA\labs\lab6\prb1\prb1\main.c(44,23):
+  the missing variadic argument 2 is required by format string '%s'
+  D:\First_Year\utcn\First_Year\SDA\labs\lab6\prb1\prb1\main.c(44,23):
+  this argument is used as a buffer size
+  
+  prb1.vcxproj -> D:\First_Year\utcn\First_Year\SDA\labs\lab6\prb1\x64\Debug\prb1.exe

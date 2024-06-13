@@ -1,0 +1,6 @@
+﻿  main.c
+D:\First_Year\utcn\First_Year\SDA\labs\lab3\Prb6\Prb6\main.c(34,3): warning C4033: 'dequeue' must return a value
+D:\First_Year\utcn\First_Year\SDA\labs\lab3\Prb6\Prb6\main.c(80,18): warning C4020: 'dequeue': too many actual parameters
+D:\First_Year\utcn\First_Year\SDA\labs\lab3\Prb6\Prb6\main.c(81,18): warning C4020: 'dequeue': too many actual parameters
+D:\First_Year\utcn\First_Year\SDA\labs\lab3\Prb6\Prb6\main.c(42): warning C4715: 'dequeue': not all control paths return a value
+  Prb6.vcxproj -> D:\First_Year\utcn\First_Year\SDA\labs\lab3\Prb6\x64\Debug\Prb6.exe

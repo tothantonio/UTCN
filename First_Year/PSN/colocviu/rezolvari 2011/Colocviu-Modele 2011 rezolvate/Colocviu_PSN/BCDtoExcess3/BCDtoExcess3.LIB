@@ -1,0 +1,32 @@
+timestamp=1305215990706
+
+[add3]
+A/arh_add3=A/ARH_ADD3 21|./src/ADD3.vhd|10|1*6580
+B/arh_add3=3*0
+I=0*5330
+I/arh_add3=I/ARH_ADD3 0*5781
+M=11|0|v147|1305215779237|./src/ADD3.vhd|0*4992*0x5feaa652b7baffa63cbd7eb478195f89d52cffd1|0*5264*0x7bd7e13dc0415552f89596087806a8cf
+M/arh_add3=M/ARH_ADD3 21|0|v147|1305215779239|./src/ADD3.vhd|0*5562*0xf4a85d43fb29df7fbff2c24e78c2654ec585da53|0*5703*0x7bd7e13dc0415552f89596087806a8cf
+R=./src/ADD3.vhd|5
+
+[convertor]
+A/arh_struc=A/ARH_Struc 21|./src/Decodificator.vhd|8|1*7927
+I=0*3677
+I/arh_struc=I/ARH_Struc 0*6506
+M=11|0|v147|1305044686036|./src/Decodificator.vhd|0*3384*0x5d6826bf0267569d3ac6b27f445ed1fca35bd51a|0*3597*0x7bd7e13dc0415552f89596087806a8cf
+M/arh_struc=M/ARH_Struc 21|0|v147|1305215990702|./src/Decodificator.vhd|0*6022*0xc5c730dd109dee2683eb21651f7892f0c3e2e3aa|0*6413*0x7bd7e13dc0415552f89596087806a8cf
+R=./src/Decodificator.vhd|3
+
+[~A]
+ModifyID=39
+Version=73
+
+[~MFT]
+0=65|0BCDtoExcess3.mgf|6506|3704
+1=9|1BCDtoExcess3.mgf|7927|6580
+3=0|3BCDtoExcess3.mgf|0|0
+
+[~U]
+add3=11|0*4837|
+convertor=Convertor 11|0*3221|
+

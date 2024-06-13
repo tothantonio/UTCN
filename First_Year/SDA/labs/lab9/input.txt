@@ -1,0 +1,10 @@
+3
+Romania
+Bulgaria
+Serbia
+Romania Bulgaria
+Bulgaria Serbia
+3
+red
+green
+blue

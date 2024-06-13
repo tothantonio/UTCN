@@ -1,0 +1,6 @@
+MESSAGE "File: C:\Users\EMMANUEL\Desktop\CTI sem2\PSN\Colocviu\Colocviu-Modele 2011 rezolvate\Colocviu_PSN\Numarator_binar_sincron\src\Count_SINC.vhd" 
+MESSAGE "Compile Entity "Counter"" 
+MESSAGE "Compile Architecture "ARH_Count" of Entity "Counter"" 
+MESSAGE "Top-Level unit detected" 
+MESSAGE "Entity  =>   Counter" 
+SUCCESS "Compile success 0 Errors 0 Warnings  Analysis time :  0.0 [s]" 

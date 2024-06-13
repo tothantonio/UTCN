@@ -1,0 +1,10 @@
+﻿  main.c
+D:\First_Year\utcn\First_Year\SDA\labs\lab5\siruri_de_k\siruri_de_k\main.c(43,12): warning C4013: 'checkSequenceFromNode' undefined; assuming extern returning int
+D:\First_Year\utcn\First_Year\SDA\labs\lab5\siruri_de_k\siruri_de_k\main.c(55,12): warning C4013: 'checkSum' undefined; assuming extern returning int
+D:\First_Year\utcn\First_Year\SDA\labs\lab5\siruri_de_k\siruri_de_k\main.c(87,12): warning C4566: character represented by universal-character-name '\u021B' cannot be represented in the current code page (1250)
+D:\First_Year\utcn\First_Year\SDA\labs\lab5\siruri_de_k\siruri_de_k\main.c(89,12): warning C4566: character represented by universal-character-name '\u021B' cannot be represented in the current code page (1250)
+D:\First_Year\utcn\First_Year\SDA\labs\lab5\siruri_de_k\siruri_de_k\main.c(95,12): warning C4566: character represented by universal-character-name '\u021B' cannot be represented in the current code page (1250)
+D:\First_Year\utcn\First_Year\SDA\labs\lab5\siruri_de_k\siruri_de_k\main.c(106,12): warning C4566: character represented by universal-character-name '\u0219' cannot be represented in the current code page (1250)
+D:\First_Year\utcn\First_Year\SDA\labs\lab5\siruri_de_k\siruri_de_k\main.c(107,12): warning C4566: character represented by universal-character-name '\u0219' cannot be represented in the current code page (1250)
+D:\First_Year\utcn\First_Year\SDA\labs\lab5\siruri_de_k\siruri_de_k\main.c(108,12): warning C4566: character represented by universal-character-name '\u0219' cannot be represented in the current code page (1250)
+  siruri_de_k.vcxproj -> D:\First_Year\utcn\First_Year\SDA\labs\lab5\siruri_de_k\x64\Debug\siruri_de_k.exe

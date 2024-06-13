@@ -1,0 +1,14 @@
+# ELBREAD: Elaboration process.
+# ELBREAD: Warning: Component Ceas : Clock not bound.
+# ELBREAD: Warning: Component P1 : Count_2bit not bound.
+# ELBREAD: Warning: Component P2 : Count_2bit not bound.
+# ELBREAD: Warning: Component P3 : Count_2bit not bound.
+# ELBREAD: Warning: Component P4 : Count_2bit not bound.
+# ELBREAD: Elaboration time 0.0 [s].
+acom $DSN/src/Count_2bit.vhd
+# Compile...
+# File: C:\Users\EMMANUEL\Desktop\CTI sem2\PSN\Colocviu\Colocviu-Modele 2011 rezolvate\Colocviu_PSN\Numarator_binar_8bit_2biti\src\Count_2bit.vhd
+# Compile Entity "Count_2bit"
+# Entity `Count_2bit' has been skipped - no difference detected.
+# Compile Architecture "ARH_Count" of Entity "Count_2bit"
+# Compile success 0 Errors 0 Warnings  Analysis time :  0.0 [s]

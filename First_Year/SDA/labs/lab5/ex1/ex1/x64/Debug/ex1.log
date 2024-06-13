@@ -1,0 +1,4 @@
+﻿  BoilerPlateCode_ArboriBinariDeCautare.c
+D:\First_Year\utcn\First_Year\SDA\labs\lab5\ex1\BoilerPlateCode_ArboriBinariDeCautare.c(112): warning C4715: 'succesor': not all control paths return a value
+D:\First_Year\utcn\First_Year\SDA\labs\lab5\ex1\BoilerPlateCode_ArboriBinariDeCautare.c(131): warning C4715: 'predecesor': not all control paths return a value
+  ex1.vcxproj -> D:\First_Year\utcn\First_Year\SDA\labs\lab5\ex1\x64\Debug\ex1.exe

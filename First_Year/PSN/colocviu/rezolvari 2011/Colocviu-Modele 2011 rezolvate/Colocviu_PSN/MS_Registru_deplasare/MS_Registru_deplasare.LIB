@@ -1,0 +1,33 @@
+timestamp=1305470364409
+
+[ms_shifter]
+A/arh_ms_shifter=A/ARH_MS_Shifter 21|./src/MS_Registru_deplasare.vhd|24|1*10976
+B/arh_ms_shifter=3*1847
+I=0*1305
+I/arh_ms_shifter=I/ARH_MS_Shifter 0*3793
+M=11|0|v147|1305470237347|./src/MS_Registru_deplasare.vhd|0*1101*0x043485f39ff5649dd88cd0639f399ba2a14b5200|0*1216*0x7bd7e13dc0415552f89596087806a8cf
+M/arh_ms_shifter=M/ARH_MS_Shifter 21|0|v147|1305470364153|./src/MS_Registru_deplasare.vhd|0*3045*0x9968d617dd086ad9392eddfdcf2d40302d7211dc|0*3686*0x7bd7e13dc0415552f89596087806a8cf
+R=./src/MS_Registru_deplasare.vhd|21
+
+[shifter]
+A/arh_shifter=A/ARH_Shifter 21|./src/MS_Registru_deplasare.vhd|7|1*9563
+B/arh_shifter=3*0
+I=0*523
+I/arh_shifter=I/ARH_Shifter 0*982
+M=11|0|v147|1305469138433|./src/MS_Registru_deplasare.vhd|0*219*0x4f3f282eedf1a75a28862cc90cfdeb2575a735d6|0*437*0x7bd7e13dc0415552f89596087806a8cf
+M/arh_shifter=M/ARH_Shifter 21|0|v147|1305470364150|./src/MS_Registru_deplasare.vhd|0*559*0x940d68ade1402834489b672be7ebd629a9aef26c|0*881*0x7bd7e13dc0415552f89596087806a8cf
+R=./src/MS_Registru_deplasare.vhd|1
+
+[~A]
+ModifyID=40
+Version=73
+
+[~MFT]
+0=25|0MS_Registru_deplasare.mgf|3793|1701
+1=11|1MS_Registru_deplasare.mgf|10976|9563
+3=1|3MS_Registru_deplasare.mgf|1847|0
+
+[~U]
+ms_shifter=MS_Shifter 11|0*1030|
+shifter=Shifter 11|0*0|
+

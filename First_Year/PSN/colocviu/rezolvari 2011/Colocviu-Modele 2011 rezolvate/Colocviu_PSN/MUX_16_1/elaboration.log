@@ -1,0 +1,17 @@
+elbread.dll ver. 1.0.5.365 Tue Jun 27 17:59:54 2017
+
+
+---------------------------------
+Entity  | Architecture | Library
+---------------------------------
+mux     | arh          | MUX_16_1
+---------------------------------
+
+-----------------------------
+Package             | Library
+-----------------------------
+standard            | std
+std_logic_1164      | ieee
+std_logic_arith     | ieee
+std_logic_unsigned  | ieee
+-----------------------------

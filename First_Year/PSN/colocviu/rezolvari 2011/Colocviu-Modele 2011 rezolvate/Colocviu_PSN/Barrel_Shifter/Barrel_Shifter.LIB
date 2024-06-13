@@ -1,0 +1,23 @@
+timestamp=1305474170933
+
+[barrel]
+A/stil_butoi=A/Stil_butoi 21|./src/Butoiu.vhd|11|1*0
+B/stil_butoi=3*0
+I=0*1204
+I/stil_butoi=I/Stil_butoi 0*1899
+M=11|0|v147|1305474170623|./src/Butoiu.vhd|0*847*0x4bcc8392cedbbe1e40166734b7b41a0f4e026085|0*1134*0x7bd7e13dc0415552f89596087806a8cf
+M/stil_butoi=M/Stil_butoi 21|0|v147|1305474170625|./src/Butoiu.vhd|0*1373*0x92662bf9fd826cea13e429389099d17fe2811476|0*1815*0x7bd7e13dc0415552f89596087806a8cf
+R=./src/Butoiu.vhd|4
+
+[~A]
+ModifyID=8
+Version=73
+
+[~MFT]
+0=12|0Barrel_Shifter.mgf|1899|244
+1=0|1Barrel_Shifter.mgf|0|0
+3=0|3Barrel_Shifter.mgf|0|0
+
+[~U]
+barrel=11|0*601|
+

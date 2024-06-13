@@ -1,0 +1,4 @@
+﻿  queue.c
+D:\First_Year\utcn\First_Year\SDA\labs\lab3\resurse lab3\queue.c(62): warning C4715: 'dequeue': not all control paths return a value
+D:\First_Year\utcn\First_Year\SDA\labs\lab3\resurse lab3\queue.c(53,9): warning C4033: 'dequeue' must return a value
+  ex2.vcxproj -> D:\First_Year\utcn\First_Year\SDA\labs\lab3\ex2\x64\Debug\ex2.exe

@@ -1,0 +1,6 @@
+MESSAGE "File: c:\My_Designs\Colocviu_PSN\MS_Registru_deplasare\src\MS_Registru_deplasare.vhd" 
+MESSAGE "Compile Entity "Shifter"" 
+MESSAGE "Compile Architecture "ARH_Shifter" of Entity "Shifter"" 
+MESSAGE "Compile Entity "MS_Shifter"" 
+MESSAGE "Compile Architecture "ARH_MS_Shifter" of Entity "MS_Shifter"" 
+SUCCESS "Compile success 0 Errors 0 Warnings  Analysis time :  0.2 [s]" 

@@ -1,0 +1,4 @@
+﻿  main.c
+D:\First_Year\utcn\First_Year\SDA\lectures\Prb_liste\prb2_curs\prb2_curs\main.c(83,5): error C4996: 'scanf': This function or variable may be unsafe. Consider using scanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+D:\First_Year\utcn\First_Year\SDA\lectures\Prb_liste\prb2_curs\prb2_curs\main.c(88,9): error C4996: 'scanf': This function or variable may be unsafe. Consider using scanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+D:\First_Year\utcn\First_Year\SDA\lectures\Prb_liste\prb2_curs\prb2_curs\main.c(96,5): error C4996: 'scanf': This function or variable may be unsafe. Consider using scanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.

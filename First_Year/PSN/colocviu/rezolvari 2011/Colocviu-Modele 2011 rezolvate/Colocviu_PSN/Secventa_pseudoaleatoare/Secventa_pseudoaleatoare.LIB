@@ -1,0 +1,46 @@
+timestamp=1495658973676
+
+[clock]
+A/clk_clk=A/CLK_CLK 21|./src/Clock.vhd|5|1*0
+B/clk_clk=3*0
+I=0*271
+I/clk_clk=I/CLK_CLK 0*537
+M=11|0|v147|1305266520612|./src/Clock.vhd|0*96*0xebf0f748e847a3b4dc4bc8adf8033c284da2c379|0*203*0x7bd7e13dc0415552f89596087806a8cf
+M/clk_clk=M/CLK_CLK 21|0|v147|1305266520614|./src/Clock.vhd|0*305*0xcd9df47db94d8d039682aebfd8c253df90ef1e53|0*458*0x7bd7e13dc0415552f89596087806a8cf
+R=./src/Clock.vhd|1
+
+[pseudo]
+A/arh_str=A/ARH_STR 21|./src/Pseudo.vhd|11|1*20427
+I=0*6911
+I/arh_str=I/ARH_STR 0*9482
+M=11|0|v147|1305286001813|./src/Pseudo.vhd|0*6607*0x1dc6db9bd828bbcf79fc23672300e5f4fb7958fd|0*6841*0x7bd7e13dc0415552f89596087806a8cf
+M/arh_str=M/ARH_STR 21|0|v147|1305286266674|./src/Pseudo.vhd|0*9110*0x19dcb39bd63a945b49325176b3f07c197fb5babc|0*9401*0x7bd7e13dc0415552f89596087806a8cf
+R=./src/Pseudo.vhd|6
+
+[shifter]
+A/arh_shift=A/ARH_Shift 21|./src/Shifter.vhd|6|1*21918
+B/arh_shift=3*3354
+H/arh_shift=0*10460
+I=0*6073
+I/arh_shift=I/ARH_Shift 0*10203
+M=11|0|v147|1305285883003|./src/Shifter.vhd|0*5861*0x0bbb6e191f1e471c5d1284aaed2383d87ffb31bc|0*6001*0x7bd7e13dc0415552f89596087806a8cf
+M/arh_shift=M/ARH_Shift 21|0|v147|1305286259075|./src/Shifter.vhd|0*9830*0xabe6a06af227544b5e3271f02b91cc79b9d34d79|0*10118*0x7bd7e13dc0415552f89596087806a8cf
+R=./src/Shifter.vhd|1
+V=0*11390
+
+[~A]
+./src/Shifter.vhd~ARH_ShiftShifter=0*10612*10926
+./src/Shifter.vhd~Shifter=0*10249*10395
+ModifyID=95
+Version=73
+
+[~MFT]
+0=121|0Secventa_pseudoaleatoare.mgf|11390|7627
+1=30|1Secventa_pseudoaleatoare.mgf|21918|19838
+3=17|3Secventa_pseudoaleatoare.mgf|3354|2820
+
+[~U]
+clock=Clock 11|0*0|
+pseudo=11|0*6489|
+shifter=Shifter 11|0*11000|0*11126
+

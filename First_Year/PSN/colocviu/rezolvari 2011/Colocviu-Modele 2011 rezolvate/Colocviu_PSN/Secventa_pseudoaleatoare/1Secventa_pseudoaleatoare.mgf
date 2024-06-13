@@ -1,0 +1,677 @@
+V 000048 55 541           1305266520615 CLK_CLK
+(_unit VHDL (clock 0 1 (clk_clk 0 5 ))
+	(_version v147)
+	(_time 1305266520616 2011.05.13 09:02:00)
+	(_source (\./src/Clock.vhd\))
+	(_use (std(standard)))
+	(_parameters dbg)
+	(_code 6a65386a683d687c693e283038)
+	(_entity
+		(_time 1305266520613)
+	)
+	(_object
+		(_port (_internal CLK ~extSTD.STANDARD.BIT 0 2 (_entity (_inout ))))
+		(_process
+			(line__7(_architecture 0 0 7 (_process (_simple)(_target(0))(_sensitivity(0)))))
+		)
+		(_type (_external ~extSTD.STANDARD.BIT (std STANDARD BIT)))
+	)
+	(_model . CLK_CLK 1 -1
+	)
+)
+I 000050 55 891           1305266875450 ARH_Shift
+(_unit VHDL (shifter 0 1 (arh_shift 0 6 ))
+	(_version v147)
+	(_time 1305266875451 2011.05.13 09:07:55)
+	(_source (\./src/Shifter.vhd\))
+	(_use (std(standard)))
+	(_parameters dbg)
+	(_code 8285858c88d5df9484d096d8d6)
+	(_entity
+		(_time 1305266875435)
+	)
+	(_object
+		(_type (_internal ~BIT_VECTOR{3~downto~0}~12 0 2 (_array ~extSTD.STANDARD.BIT ((_downto (i 3)(i 0))))))
+		(_port (_internal A ~BIT_VECTOR{3~downto~0}~12 0 2 (_entity (_inout ))))
+		(_port (_internal CLK ~extSTD.STANDARD.BIT 0 3 (_entity (_in ))))
+		(_signal (_internal A_xor ~extSTD.STANDARD.BIT 0 7 (_architecture (_uni ))))
+		(_process
+			(line__9(_architecture 0 0 9 (_process (_simple)(_target(2)(0(0))(0))(_read(2)(0)))))
+		)
+		(_type (_external ~extSTD.STANDARD.BIT (std STANDARD BIT)))
+		(_type (_external ~extSTD.STANDARD.BIT_VECTOR (std STANDARD BIT_VECTOR)))
+	)
+	(_model . ARH_Shift 1 -1
+	)
+)
+I 000050 55 908           1305266898525 ARH_Shift
+(_unit VHDL (shifter 0 1 (arh_shift 0 6 ))
+	(_version v147)
+	(_time 1305266898526 2011.05.13 09:08:18)
+	(_source (\./src/Shifter.vhd\))
+	(_use (std(standard)))
+	(_parameters dbg)
+	(_code a3a1f5f4a8f4feb5a5f1b7f9f7)
+	(_entity
+		(_time 1305266875434)
+	)
+	(_object
+		(_type (_internal ~BIT_VECTOR{3~downto~0}~12 0 2 (_array ~extSTD.STANDARD.BIT ((_downto (i 3)(i 0))))))
+		(_port (_internal A ~BIT_VECTOR{3~downto~0}~12 0 2 (_entity (_inout ))))
+		(_port (_internal CLK ~extSTD.STANDARD.BIT 0 3 (_entity (_in ))))
+		(_signal (_internal A_xor ~extSTD.STANDARD.BIT 0 7 (_architecture (_uni ))))
+		(_process
+			(line__9(_architecture 0 0 9 (_process (_simple)(_target(2)(0(0))(0))(_sensitivity(1))(_read(2)(0)))))
+		)
+		(_type (_external ~extSTD.STANDARD.BIT (std STANDARD BIT)))
+		(_type (_external ~extSTD.STANDARD.BIT_VECTOR (std STANDARD BIT_VECTOR)))
+	)
+	(_model . ARH_Shift 1 -1
+	)
+)
+I 000050 55 916           1305267115116 ARH_Shift
+(_unit VHDL (shifter 0 1 (arh_shift 0 6 ))
+	(_version v147)
+	(_time 1305267115117 2011.05.13 09:11:55)
+	(_source (\./src/Shifter.vhd\))
+	(_use (std(standard)))
+	(_parameters dbg)
+	(_code b3e5e3e7b8e4eea5b4b4a7e9e7)
+	(_entity
+		(_time 1305266875434)
+	)
+	(_object
+		(_type (_internal ~BIT_VECTOR{3~downto~0}~12 0 2 (_array ~extSTD.STANDARD.BIT ((_downto (i 3)(i 0))))))
+		(_port (_internal A ~BIT_VECTOR{3~downto~0}~12 0 2 (_entity (_inout ))))
+		(_port (_internal CLK ~extSTD.STANDARD.BIT 0 3 (_entity (_in )(_event))))
+		(_signal (_internal A_xor ~extSTD.STANDARD.BIT 0 7 (_architecture (_uni ))))
+		(_process
+			(line__9(_architecture 0 0 9 (_process (_simple)(_target(2)(0(0))(0))(_sensitivity(1))(_read(2)(0)))))
+		)
+		(_type (_external ~extSTD.STANDARD.BIT (std STANDARD BIT)))
+		(_type (_external ~extSTD.STANDARD.BIT_VECTOR (std STANDARD BIT_VECTOR)))
+	)
+	(_model . ARH_Shift 1 -1
+	)
+)
+I 000048 55 1425          1305267429361 ARH_STR
+(_unit VHDL (pseudo 0 6 (arh_str 0 11 ))
+	(_version v147)
+	(_time 1305267429362 2011.05.13 09:17:09)
+	(_source (\./src/Pseudo.vhd\))
+	(_use (std(standard))(ieee(std_logic_1164))(ieee(std_logic_arith))(ieee(std_logic_unsigned)))
+	(_parameters dbg)
+	(_code 3b3b333f6a6c6a2c3f352f613c)
+	(_entity
+		(_time 1305267429346)
+	)
+	(_component
+		(clock
+			(_object
+				(_port (_internal CLK ~extSTD.STANDARD.BIT 0 14 (_entity (_inout ))))
+			)
+		)
+		(shifter
+			(_object
+				(_port (_internal A ~BIT_VECTOR{3~downto~0}~13 0 18 (_entity (_inout ))))
+				(_port (_internal CLK ~extSTD.STANDARD.BIT 0 19 (_entity (_in ))))
+			)
+		)
+	)
+	(_instantiation Ceas 0 23 (_component clock )
+		(_port
+			((CLK)(CLK))
+		)
+		(_use (_entity . clock)
+		)
+	)
+	(_instantiation Generare 0 24 (_component shifter )
+		(_port
+			((A)(A))
+			((CLK)(CLK))
+		)
+		(_use (_entity . shifter)
+		)
+	)
+	(_object
+		(_type (_internal ~BIT_VECTOR{3~downto~0}~12 0 7 (_array ~extSTD.STANDARD.BIT ((_downto (i 3)(i 0))))))
+		(_port (_internal A ~BIT_VECTOR{3~downto~0}~12 0 7 (_entity (_inout ))))
+		(_type (_internal ~BIT_VECTOR{3~downto~0}~13 0 18 (_array ~extSTD.STANDARD.BIT ((_downto (i 3)(i 0))))))
+		(_signal (_internal CLK ~extSTD.STANDARD.BIT 0 21 (_architecture (_uni ))))
+		(_type (_external ~extSTD.STANDARD.BIT (std STANDARD BIT)))
+		(_type (_external ~extSTD.STANDARD.BIT_VECTOR (std STANDARD BIT_VECTOR)))
+	)
+)
+I 000050 55 1104          1305267544959 ARH_Shift
+(_unit VHDL (shifter 0 1 (arh_shift 0 7 ))
+	(_version v147)
+	(_time 1305267544960 2011.05.13 09:19:04)
+	(_source (\./src/Shifter.vhd\))
+	(_use (std(standard)))
+	(_parameters dbg)
+	(_code c8cc999dc89f95decfcddc929c)
+	(_entity
+		(_time 1305267538654)
+	)
+	(_object
+		(_type (_internal ~BIT_VECTOR{3~downto~0}~12 0 2 (_array ~extSTD.STANDARD.BIT ((_downto (i 3)(i 0))))))
+		(_port (_internal A ~BIT_VECTOR{3~downto~0}~12 0 2 (_entity (_inout ))))
+		(_port (_internal CLK ~extSTD.STANDARD.BIT 0 3 (_entity (_in )(_event))))
+		(_type (_internal ~BIT_VECTOR{3~downto~0}~122 0 4 (_array ~extSTD.STANDARD.BIT ((_downto (i 3)(i 0))))))
+		(_port (_internal Q ~BIT_VECTOR{3~downto~0}~122 0 4 (_entity (_out ))))
+		(_signal (_internal A_xor ~extSTD.STANDARD.BIT 0 8 (_architecture (_uni ))))
+		(_process
+			(line__10(_architecture 0 0 10 (_process (_simple)(_target(3)(0(0))(0)(2))(_sensitivity(1))(_read(3)(0)))))
+		)
+		(_type (_external ~extSTD.STANDARD.BIT (std STANDARD BIT)))
+		(_type (_external ~extSTD.STANDARD.BIT_VECTOR (std STANDARD BIT_VECTOR)))
+	)
+	(_model . ARH_Shift 1 -1
+	)
+)
+I 000048 55 1625          1305267653520 ARH_STR
+(_unit VHDL (pseudo 0 6 (arh_str 0 11 ))
+	(_version v147)
+	(_time 1305267653521 2011.05.13 09:20:53)
+	(_source (\./src/Pseudo.vhd\))
+	(_use (std(standard))(ieee(std_logic_1164))(ieee(std_logic_arith))(ieee(std_logic_unsigned)))
+	(_parameters dbg)
+	(_code d98bda8ad38e88ceddd6cd83de)
+	(_entity
+		(_time 1305267429345)
+	)
+	(_component
+		(clock
+			(_object
+				(_port (_internal CLK ~extSTD.STANDARD.BIT 0 14 (_entity (_inout ))))
+			)
+		)
+		(shifter
+			(_object
+				(_port (_internal A ~BIT_VECTOR{3~downto~0}~13 0 18 (_entity (_inout ))))
+				(_port (_internal CLK ~extSTD.STANDARD.BIT 0 19 (_entity (_in ))))
+				(_port (_internal Q ~BIT_VECTOR{3~downto~0}~132 0 20 (_entity (_out ))))
+			)
+		)
+	)
+	(_instantiation Ceas 0 24 (_component clock )
+		(_port
+			((CLK)(CLK))
+		)
+		(_use (_entity . clock)
+		)
+	)
+	(_instantiation Generare 0 25 (_component shifter )
+		(_port
+			((A)(A))
+			((CLK)(CLK))
+			((Q)(A))
+		)
+		(_use (_entity . shifter)
+		)
+	)
+	(_object
+		(_type (_internal ~BIT_VECTOR{3~downto~0}~12 0 7 (_array ~extSTD.STANDARD.BIT ((_downto (i 3)(i 0))))))
+		(_port (_internal A ~BIT_VECTOR{3~downto~0}~12 0 7 (_entity (_inout ))))
+		(_type (_internal ~BIT_VECTOR{3~downto~0}~13 0 18 (_array ~extSTD.STANDARD.BIT ((_downto (i 3)(i 0))))))
+		(_type (_internal ~BIT_VECTOR{3~downto~0}~132 0 20 (_array ~extSTD.STANDARD.BIT ((_downto (i 3)(i 0))))))
+		(_signal (_internal CLK ~extSTD.STANDARD.BIT 0 22 (_architecture (_uni ))))
+		(_type (_external ~extSTD.STANDARD.BIT (std STANDARD BIT)))
+		(_type (_external ~extSTD.STANDARD.BIT_VECTOR (std STANDARD BIT_VECTOR)))
+	)
+)
+I 000048 55 1971          1305267707137 ARH_STR
+(_unit VHDL (pseudo 0 6 (arh_str 0 11 ))
+	(_version v147)
+	(_time 1305267707138 2011.05.13 09:21:47)
+	(_source (\./src/Pseudo.vhd\))
+	(_use (std(standard))(ieee(std_logic_1164))(ieee(std_logic_arith))(ieee(std_logic_unsigned)))
+	(_parameters dbg)
+	(_code 4a1f4f49181d1b5d4e1e5e104d)
+	(_entity
+		(_time 1305267429345)
+	)
+	(_component
+		(clock
+			(_object
+				(_port (_internal CLK ~extSTD.STANDARD.BIT 0 14 (_entity (_inout ))))
+			)
+		)
+		(shifter
+			(_object
+				(_port (_internal A ~BIT_VECTOR{3~downto~0}~13 0 18 (_entity (_inout ))))
+				(_port (_internal CLK ~extSTD.STANDARD.BIT 0 19 (_entity (_in ))))
+				(_port (_internal Q ~BIT_VECTOR{3~downto~0}~132 0 20 (_entity (_out ))))
+			)
+		)
+	)
+	(_instantiation Ceas 0 25 (_component clock )
+		(_port
+			((CLK)(CLK))
+		)
+		(_use (_entity . clock)
+		)
+	)
+	(_instantiation Generare 0 26 (_component shifter )
+		(_port
+			((A)(A))
+			((CLK)(CLK))
+			((Q)(Q))
+		)
+		(_use (_entity . shifter)
+		)
+	)
+	(_object
+		(_type (_internal ~BIT_VECTOR{3~downto~0}~12 0 7 (_array ~extSTD.STANDARD.BIT ((_downto (i 3)(i 0))))))
+		(_port (_internal A ~BIT_VECTOR{3~downto~0}~12 0 7 (_entity (_inout ))))
+		(_type (_internal ~BIT_VECTOR{3~downto~0}~13 0 18 (_array ~extSTD.STANDARD.BIT ((_downto (i 3)(i 0))))))
+		(_type (_internal ~BIT_VECTOR{3~downto~0}~132 0 20 (_array ~extSTD.STANDARD.BIT ((_downto (i 3)(i 0))))))
+		(_signal (_internal CLK ~extSTD.STANDARD.BIT 0 22 (_architecture (_uni ))))
+		(_type (_internal ~BIT_VECTOR{3~downto~0}~134 0 23 (_array ~extSTD.STANDARD.BIT ((_downto (i 3)(i 0))))))
+		(_signal (_internal Q ~BIT_VECTOR{3~downto~0}~134 0 23 (_architecture (_uni ))))
+		(_process
+			(line__27(_architecture 0 0 27 (_assignment (_simple)(_alias((A)(Q)))(_target(0))(_sensitivity(2)))))
+		)
+		(_type (_external ~extSTD.STANDARD.BIT (std STANDARD BIT)))
+		(_type (_external ~extSTD.STANDARD.BIT_VECTOR (std STANDARD BIT_VECTOR)))
+	)
+	(_model . ARH_STR 1 -1
+	)
+)
+I 000050 55 916           1305285883019 ARH_Shift
+(_unit VHDL (shifter 0 1 (arh_shift 0 6 ))
+	(_version v147)
+	(_time 1305285883020 2011.05.13 14:24:43)
+	(_source (\./src/Shifter.vhd\))
+	(_use (std(standard)))
+	(_parameters dbg)
+	(_code ada3acfaf1faf0bbaaaab9f7f9)
+	(_entity
+		(_time 1305285883004)
+	)
+	(_object
+		(_type (_internal ~BIT_VECTOR{3~downto~0}~12 0 2 (_array ~extSTD.STANDARD.BIT ((_downto (i 3)(i 0))))))
+		(_port (_internal A ~BIT_VECTOR{3~downto~0}~12 0 2 (_entity (_inout ))))
+		(_port (_internal CLK ~extSTD.STANDARD.BIT 0 3 (_entity (_in )(_event))))
+		(_signal (_internal A_xor ~extSTD.STANDARD.BIT 0 7 (_architecture (_uni ))))
+		(_process
+			(line__9(_architecture 0 0 9 (_process (_simple)(_target(2)(0(0))(0))(_sensitivity(1))(_read(2)(0)))))
+		)
+		(_type (_external ~extSTD.STANDARD.BIT (std STANDARD BIT)))
+		(_type (_external ~extSTD.STANDARD.BIT_VECTOR (std STANDARD BIT_VECTOR)))
+	)
+	(_model . ARH_Shift 1 -1
+	)
+)
+I 000048 55 2026          1305285975405 ARH_STR
+(_unit VHDL (pseudo 0 6 (arh_str 0 11 ))
+	(_version v147)
+	(_time 1305285975406 2011.05.13 14:26:15)
+	(_source (\./src/Pseudo.vhd\))
+	(_use (std(standard))(ieee(std_logic_1164))(ieee(std_logic_arith))(ieee(std_logic_unsigned)))
+	(_parameters dbg)
+	(_code 9ccdce92cccbcd8b98c888c69b)
+	(_entity
+		(_time 1305267429345)
+	)
+	(_component
+		(clock
+			(_object
+				(_port (_internal CLK ~extSTD.STANDARD.BIT 0 14 (_entity (_inout ))))
+			)
+		)
+		(shifter
+			(_object
+				(_port (_internal A ~BIT_VECTOR{3~downto~0}~13 0 18 (_entity (_inout ))))
+				(_port (_internal CLK ~extSTD.STANDARD.BIT 0 19 (_entity (_in ))))
+				(_port (_internal Q ~BIT_VECTOR{3~downto~0}~132 0 20 (_entity (_out ))))
+			)
+		)
+	)
+	(_instantiation Ceas 0 25 (_component clock )
+		(_port
+			((CLK)(CLK))
+		)
+		(_use (_entity . clock)
+		)
+	)
+	(_instantiation Generare 0 26 (_component shifter )
+		(_port
+			((A)(A))
+			((CLK)(CLK))
+			((Q)(Q))
+		)
+		(_use (_implicit)
+			(_port
+				((A)(A))
+				((CLK)(CLK))
+				((Q)(Q))
+			)
+		)
+	)
+	(_object
+		(_type (_internal ~BIT_VECTOR{3~downto~0}~12 0 7 (_array ~extSTD.STANDARD.BIT ((_downto (i 3)(i 0))))))
+		(_port (_internal A ~BIT_VECTOR{3~downto~0}~12 0 7 (_entity (_inout ))))
+		(_type (_internal ~BIT_VECTOR{3~downto~0}~13 0 18 (_array ~extSTD.STANDARD.BIT ((_downto (i 3)(i 0))))))
+		(_type (_internal ~BIT_VECTOR{3~downto~0}~132 0 20 (_array ~extSTD.STANDARD.BIT ((_downto (i 3)(i 0))))))
+		(_signal (_internal CLK ~extSTD.STANDARD.BIT 0 22 (_architecture (_uni ))))
+		(_type (_internal ~BIT_VECTOR{3~downto~0}~134 0 23 (_array ~extSTD.STANDARD.BIT ((_downto (i 3)(i 0))))))
+		(_signal (_internal Q ~BIT_VECTOR{3~downto~0}~134 0 23 (_architecture (_uni ))))
+		(_process
+			(line__27(_architecture 0 0 27 (_assignment (_simple)(_alias((A)(Q)))(_target(0))(_sensitivity(2)))))
+		)
+		(_type (_external ~extSTD.STANDARD.BIT (std STANDARD BIT)))
+		(_type (_external ~extSTD.STANDARD.BIT_VECTOR (std STANDARD BIT_VECTOR)))
+	)
+	(_model . ARH_STR 1 -1
+	)
+)
+I 000048 55 1878          1305286001830 ARH_STR
+(_unit VHDL (pseudo 0 6 (arh_str 0 11 ))
+	(_version v147)
+	(_time 1305286001831 2011.05.13 14:26:41)
+	(_source (\./src/Pseudo.vhd\))
+	(_use (std(standard))(ieee(std_logic_1164))(ieee(std_logic_arith))(ieee(std_logic_unsigned)))
+	(_parameters dbg)
+	(_code c7c6c593c39096d0c390d39dc0)
+	(_entity
+		(_time 1305286001814)
+	)
+	(_component
+		(clock
+			(_object
+				(_port (_internal CLK ~extSTD.STANDARD.BIT 0 14 (_entity (_inout ))))
+			)
+		)
+		(shifter
+			(_object
+				(_port (_internal A ~BIT_VECTOR{3~downto~0}~13 0 18 (_entity (_inout ))))
+				(_port (_internal CLK ~extSTD.STANDARD.BIT 0 19 (_entity (_in ))))
+				(_port (_internal Q ~BIT_VECTOR{3~downto~0}~132 0 20 (_entity (_out ))))
+			)
+		)
+	)
+	(_instantiation Ceas 0 25 (_component clock )
+		(_port
+			((CLK)(CLK))
+		)
+		(_use (_entity . clock)
+		)
+	)
+	(_instantiation Generare 0 26 (_component shifter )
+		(_port
+			((A)(A))
+			((CLK)(CLK))
+		)
+		(_use (_implicit)
+			(_port
+				((A)(A))
+				((CLK)(CLK))
+				((Q)(Q))
+			)
+		)
+	)
+	(_object
+		(_type (_internal ~BIT_VECTOR{3~downto~0}~12 0 7 (_array ~extSTD.STANDARD.BIT ((_downto (i 3)(i 0))))))
+		(_port (_internal A ~BIT_VECTOR{3~downto~0}~12 0 7 (_entity (_inout (_string \"0001"\)))))
+		(_type (_internal ~BIT_VECTOR{3~downto~0}~13 0 18 (_array ~extSTD.STANDARD.BIT ((_downto (i 3)(i 0))))))
+		(_type (_internal ~BIT_VECTOR{3~downto~0}~132 0 20 (_array ~extSTD.STANDARD.BIT ((_downto (i 3)(i 0))))))
+		(_signal (_internal CLK ~extSTD.STANDARD.BIT 0 22 (_architecture (_uni ))))
+		(_type (_internal ~BIT_VECTOR{3~downto~0}~134 0 23 (_array ~extSTD.STANDARD.BIT ((_downto (i 3)(i 0))))))
+		(_signal (_internal Q ~BIT_VECTOR{3~downto~0}~134 0 23 (_architecture (_uni ))))
+		(_type (_external ~extSTD.STANDARD.BIT (std STANDARD BIT)))
+		(_type (_external ~extSTD.STANDARD.BIT_VECTOR (std STANDARD BIT_VECTOR)))
+	)
+)
+I 000048 55 1636          1305286018352 ARH_STR
+(_unit VHDL (pseudo 0 6 (arh_str 0 11 ))
+	(_version v147)
+	(_time 1305286018353 2011.05.13 14:26:58)
+	(_source (\./src/Pseudo.vhd\))
+	(_use (std(standard))(ieee(std_logic_1164))(ieee(std_logic_arith))(ieee(std_logic_unsigned)))
+	(_parameters dbg)
+	(_code 5006535253070147545f440a57)
+	(_entity
+		(_time 1305286001813)
+	)
+	(_component
+		(clock
+			(_object
+				(_port (_internal CLK ~extSTD.STANDARD.BIT 0 14 (_entity (_inout ))))
+			)
+		)
+		(shifter
+			(_object
+				(_port (_internal A ~BIT_VECTOR{3~downto~0}~13 0 18 (_entity (_inout ))))
+				(_port (_internal CLK ~extSTD.STANDARD.BIT 0 19 (_entity (_in ))))
+			)
+		)
+	)
+	(_instantiation Ceas 0 24 (_component clock )
+		(_port
+			((CLK)(CLK))
+		)
+		(_use (_entity . clock)
+		)
+	)
+	(_instantiation Generare 0 25 (_component shifter )
+		(_port
+			((A)(A))
+			((CLK)(CLK))
+		)
+		(_use (_entity . shifter)
+		)
+	)
+	(_object
+		(_type (_internal ~BIT_VECTOR{3~downto~0}~12 0 7 (_array ~extSTD.STANDARD.BIT ((_downto (i 3)(i 0))))))
+		(_port (_internal A ~BIT_VECTOR{3~downto~0}~12 0 7 (_entity (_inout (_string \"0001"\)))))
+		(_type (_internal ~BIT_VECTOR{3~downto~0}~13 0 18 (_array ~extSTD.STANDARD.BIT ((_downto (i 3)(i 0))))))
+		(_signal (_internal CLK ~extSTD.STANDARD.BIT 0 21 (_architecture (_uni ))))
+		(_type (_internal ~BIT_VECTOR{3~downto~0}~132 0 22 (_array ~extSTD.STANDARD.BIT ((_downto (i 3)(i 0))))))
+		(_signal (_internal Q ~BIT_VECTOR{3~downto~0}~132 0 22 (_architecture (_uni ))))
+		(_type (_external ~extSTD.STANDARD.BIT (std STANDARD BIT)))
+		(_type (_external ~extSTD.STANDARD.BIT_VECTOR (std STANDARD BIT_VECTOR)))
+	)
+)
+I 000048 55 1461          1305286109784 ARH_STR
+(_unit VHDL (pseudo 0 6 (arh_str 0 11 ))
+	(_version v147)
+	(_time 1305286109785 2011.05.13 14:28:29)
+	(_source (\./src/Pseudo.vhd\))
+	(_use (std(standard))(ieee(std_logic_1164))(ieee(std_logic_arith))(ieee(std_logic_unsigned)))
+	(_parameters dbg)
+	(_code 787f7078732f296f7c776c227f)
+	(_entity
+		(_time 1305286001813)
+	)
+	(_component
+		(clock
+			(_object
+				(_port (_internal CLK ~extSTD.STANDARD.BIT 0 14 (_entity (_inout ))))
+			)
+		)
+		(shifter
+			(_object
+				(_port (_internal A ~BIT_VECTOR{3~downto~0}~13 0 18 (_entity (_inout (_string \"0001"\)))))
+				(_port (_internal CLK ~extSTD.STANDARD.BIT 0 19 (_entity (_in ))))
+			)
+		)
+	)
+	(_instantiation Ceas 0 24 (_component clock )
+		(_port
+			((CLK)(CLK))
+		)
+		(_use (_entity . clock)
+		)
+	)
+	(_instantiation Generare 0 25 (_component shifter )
+		(_port
+			((A)(A))
+			((CLK)(CLK))
+		)
+		(_use (_entity . shifter)
+		)
+	)
+	(_object
+		(_type (_internal ~BIT_VECTOR{3~downto~0}~12 0 7 (_array ~extSTD.STANDARD.BIT ((_downto (i 3)(i 0))))))
+		(_port (_internal A ~BIT_VECTOR{3~downto~0}~12 0 7 (_entity (_inout (_string \"0001"\)))))
+		(_type (_internal ~BIT_VECTOR{3~downto~0}~13 0 18 (_array ~extSTD.STANDARD.BIT ((_downto (i 3)(i 0))))))
+		(_signal (_internal CLK ~extSTD.STANDARD.BIT 0 21 (_architecture (_uni ))))
+		(_type (_external ~extSTD.STANDARD.BIT (std STANDARD BIT)))
+		(_type (_external ~extSTD.STANDARD.BIT_VECTOR (std STANDARD BIT_VECTOR)))
+	)
+)
+I 000048 55 1443          1305286186037 ARH_STR
+(_unit VHDL (pseudo 0 6 (arh_str 0 11 ))
+	(_version v147)
+	(_time 1305286186038 2011.05.13 14:29:46)
+	(_source (\./src/Pseudo.vhd\))
+	(_use (std(standard))(ieee(std_logic_1164))(ieee(std_logic_arith))(ieee(std_logic_unsigned)))
+	(_parameters dbg)
+	(_code 5551575753020442515a410f52)
+	(_entity
+		(_time 1305286001813)
+	)
+	(_component
+		(clock
+			(_object
+				(_port (_internal CLK ~extSTD.STANDARD.BIT 0 14 (_entity (_inout ))))
+			)
+		)
+		(shifter
+			(_object
+				(_port (_internal A ~BIT_VECTOR{3~downto~0}~13 0 18 (_entity (_inout ))))
+				(_port (_internal CLK ~extSTD.STANDARD.BIT 0 19 (_entity (_in ))))
+			)
+		)
+	)
+	(_instantiation Ceas 0 24 (_component clock )
+		(_port
+			((CLK)(CLK))
+		)
+		(_use (_entity . clock)
+		)
+	)
+	(_instantiation Generare 0 25 (_component shifter )
+		(_port
+			((A)(A))
+			((CLK)(CLK))
+		)
+		(_use (_entity . shifter)
+		)
+	)
+	(_object
+		(_type (_internal ~BIT_VECTOR{3~downto~0}~12 0 7 (_array ~extSTD.STANDARD.BIT ((_downto (i 3)(i 0))))))
+		(_port (_internal A ~BIT_VECTOR{3~downto~0}~12 0 7 (_entity (_inout (_string \"0001"\)))))
+		(_type (_internal ~BIT_VECTOR{3~downto~0}~13 0 18 (_array ~extSTD.STANDARD.BIT ((_downto (i 3)(i 0))))))
+		(_signal (_internal CLK ~extSTD.STANDARD.BIT 0 21 (_architecture (_uni ))))
+		(_type (_external ~extSTD.STANDARD.BIT (std STANDARD BIT)))
+		(_type (_external ~extSTD.STANDARD.BIT_VECTOR (std STANDARD BIT_VECTOR)))
+	)
+)
+I 000050 55 954           1305286259076 ARH_Shift
+(_unit VHDL (shifter 0 1 (arh_shift 0 6 ))
+	(_version v147)
+	(_time 1305286259077 2011.05.13 14:30:59)
+	(_source (\./src/Shifter.vhd\))
+	(_use (std(standard)))
+	(_parameters dbg)
+	(_code a5a6f0f2a8f2f8b3a2a1b1fff1)
+	(_entity
+		(_time 1305285883003)
+	)
+	(_object
+		(_type (_internal ~BIT_VECTOR{3~downto~0}~12 0 2 (_array ~extSTD.STANDARD.BIT ((_downto (i 3)(i 0))))))
+		(_port (_internal A ~BIT_VECTOR{3~downto~0}~12 0 2 (_entity (_inout ))))
+		(_port (_internal CLK ~extSTD.STANDARD.BIT 0 3 (_entity (_in )(_event))))
+		(_signal (_internal A_xor ~extSTD.STANDARD.BIT 0 7 (_architecture (_uni ))))
+		(_process
+			(line__9(_architecture 0 0 9 (_process (_simple)(_target(2)(0(0))(0))(_sensitivity(1))(_read(2)(0)))))
+		)
+		(_type (_external ~extSTD.STANDARD.BIT (std STANDARD BIT)))
+		(_type (_external ~extSTD.STANDARD.BIT_VECTOR (std STANDARD BIT_VECTOR)))
+	)
+	(_static
+		(0 )
+		(16777216 )
+	)
+	(_model . ARH_Shift 1 -1
+	)
+)
+V 000048 55 1443          1305286266672 ARH_STR
+(_unit VHDL (pseudo 0 6 (arh_str 0 11 ))
+	(_version v147)
+	(_time 1305286266673 2011.05.13 14:31:06)
+	(_source (\./src/Pseudo.vhd\))
+	(_use (std(standard))(ieee(std_logic_1164))(ieee(std_logic_arith))(ieee(std_logic_unsigned)))
+	(_parameters dbg)
+	(_code 5253065053050345565d460855)
+	(_entity
+		(_time 1305286001813)
+	)
+	(_component
+		(clock
+			(_object
+				(_port (_internal CLK ~extSTD.STANDARD.BIT 0 14 (_entity (_inout ))))
+			)
+		)
+		(shifter
+			(_object
+				(_port (_internal A ~BIT_VECTOR{3~downto~0}~13 0 18 (_entity (_inout ))))
+				(_port (_internal CLK ~extSTD.STANDARD.BIT 0 19 (_entity (_in ))))
+			)
+		)
+	)
+	(_instantiation Ceas 0 24 (_component clock )
+		(_port
+			((CLK)(CLK))
+		)
+		(_use (_entity . clock)
+		)
+	)
+	(_instantiation Generare 0 25 (_component shifter )
+		(_port
+			((A)(A))
+			((CLK)(CLK))
+		)
+		(_use (_entity . shifter)
+		)
+	)
+	(_object
+		(_type (_internal ~BIT_VECTOR{3~downto~0}~12 0 7 (_array ~extSTD.STANDARD.BIT ((_downto (i 3)(i 0))))))
+		(_port (_internal A ~BIT_VECTOR{3~downto~0}~12 0 7 (_entity (_inout (_string \"0001"\)))))
+		(_type (_internal ~BIT_VECTOR{3~downto~0}~13 0 18 (_array ~extSTD.STANDARD.BIT ((_downto (i 3)(i 0))))))
+		(_signal (_internal CLK ~extSTD.STANDARD.BIT 0 21 (_architecture (_uni ))))
+		(_type (_external ~extSTD.STANDARD.BIT (std STANDARD BIT)))
+		(_type (_external ~extSTD.STANDARD.BIT_VECTOR (std STANDARD BIT_VECTOR)))
+	)
+)
+V 000050 55 973           1495658973617 ARH_Shift
+(_unit VHDL (shifter 0 1 (arh_shift 0 6 ))
+  (_version v33)
+  (_time 1495658973616 2017.05.24 23:49:33)
+  (_source (\./src/Shifter.vhd\))
+  (_use (std(standard)))
+  (_parameters dbg )
+  (_entity
+    (_time 1495658973608)
+    (_use )
+  )
+  (_object
+    (_type (_internal ~BIT_VECTOR{3~downto~0}~12 0 2 (_array ~extSTD.STANDARD.BIT ((_downto (i 3)(i 0))))))
+    (_port (_internal A ~BIT_VECTOR{3~downto~0}~12 0 2 (_entity (_inout ))))
+    (_port (_internal CLK ~extSTD.STANDARD.BIT 0 3 (_entity (_in )(_event))))
+    (_signal (_internal A_xor ~extSTD.STANDARD.BIT 0 7 (_architecture (_uni ))))
+    (_process
+      (line__9(_architecture 0 0 9 (_process (_simple)(_target(0(0))(0)(2))(_sensitivity(1))(_read(0)(2)))))
+    )
+    (_type (_external ~extSTD.STANDARD.BIT (std STANDARD BIT)))
+    (_type (_external ~extSTD.STANDARD.BIT_VECTOR (std STANDARD BIT_VECTOR)))
+  )
+  (_static
+    (0 0 0 0 )
+    (0 0 0 1 )
+  )
+  (_model . ARH_Shift 1 -1
+  )
+)

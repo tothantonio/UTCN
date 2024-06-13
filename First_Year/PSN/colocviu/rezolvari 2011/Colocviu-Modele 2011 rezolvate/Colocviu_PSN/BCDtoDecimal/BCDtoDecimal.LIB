@@ -1,0 +1,23 @@
+timestamp=1305057645534
+
+[convertor]
+A/arh_flux=A/Arh_Flux 21|./src/Convertor.vhd|11|1*8136
+B/arh_flux=3*0
+I=0*2964
+I/arh_flux=I/Arh_Flux 0*8232
+M=11|0|v147|1305056927678|./src/Convertor.vhd|0*2621*0x1865ab6587526dbb074305f5456bc88740806caa|0*2888*0x7bd7e13dc0415552f89596087806a8cf
+M/arh_flux=M/Arh_Flux 21|0|v147|1305057645451|./src/Convertor.vhd|0*7421*0xa9f110eba4ffa9437552e533659419ac18fd4997|0*8144*0x7bd7e13dc0415552f89596087806a8cf
+R=./src/Convertor.vhd|6
+
+[~A]
+ModifyID=44
+Version=73
+
+[~MFT]
+0=60|0BCDtoDecimal.mgf|8232|4979
+1=8|1BCDtoDecimal.mgf|8136|8136
+3=0|3BCDtoDecimal.mgf|0|0
+
+[~U]
+convertor=11|0*2456|
+

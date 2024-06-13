@@ -1,0 +1,1 @@
+-w -s "c:\My_Designs\Colocviu_PSN\library.cfg"  -j "c:\My_Designs\Colocviu_PSN\Barrel_Shifter\projlib.cfg"  -d "c:\My_Designs\Colocviu_PSN\Barrel_Shifter\compile"   -work Barrel_Shifter  -dbg -e 100 -2002 "c:\\My_Designs\\Colocviu_PSN\\Barrel_Shifter\\src\\Butoiu.vhd" 

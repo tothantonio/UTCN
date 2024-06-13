@@ -1,0 +1,14 @@
+[Version]
+Version=9.1
+[Designs]
+RAM_16X16=RAM_16X16.adf
+[Settings]
+Active=RAM_16X16
+[Expand]
+ram_16x16=1
+[Browser]
+sort=order
+mode=none
+[Order]
+order=1
+macro=

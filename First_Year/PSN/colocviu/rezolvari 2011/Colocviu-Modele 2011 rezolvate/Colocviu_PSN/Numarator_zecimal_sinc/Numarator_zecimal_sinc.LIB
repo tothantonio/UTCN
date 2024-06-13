@@ -1,0 +1,27 @@
+timestamp=1495654422659
+
+[counter]
+A/arh_count=A/ARH_Count 21|./src/Count_zecimal.vhd|12|1*5616
+B/arh_count=3*0
+H/arh_count=0*4649
+I=0*1704
+I/arh_count=I/ARH_Count 0*4021
+M=11|0|v147|1305193319238|./src/Count_zecimal.vhd|0*1336*0x4979f8e21e0c432c6f6c064500f07ebfff0c1d2b|0*1626*0x7bd7e13dc0415552f89596087806a8cf
+M/arh_count=M/ARH_Count 21|0|v147|1305193492859|./src/Count_zecimal.vhd|0*3482*0x33ce14a2fc6bcea9b6de0ace02d60961c4435602|0*3930*0x7bd7e13dc0415552f89596087806a8cf
+R=./src/Count_zecimal.vhd|6
+V=0*6108
+
+[~A]
+./src/Count_zecimal.vhd~ARH_CountCounter=0*4854*5345
+./src/Count_zecimal.vhd~Counter=0*4266*4578
+ModifyID=34
+Version=73
+
+[~MFT]
+0=39|0Numarator_zecimal_sinc.mgf|6108|2143
+1=6|1Numarator_zecimal_sinc.mgf|5616|5616
+3=0|3Numarator_zecimal_sinc.mgf|0|0
+
+[~U]
+counter=Counter 11|0*5425|0*5629
+

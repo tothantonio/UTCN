@@ -1,0 +1,5 @@
+WARNING DAGGEN_0523: "The source is compiled without the -dbg switch. Line breakpoints and assertion debug will not be available."
+MESSAGE "File: D:\An 1\CTI SEM2\PSN\Colocviu\Colocviu-Modele 2011 rezolvate\Colocviu_PSN\Detector_secventa\src\Detector_secventa.vhd" 
+MESSAGE "Compile Entity "Detect"" 
+MESSAGE "Compile Architecture "ARH_Detector" of Entity "Detect"" 
+SUCCESS "Compile success 0 Errors 0 Warnings  Analysis time :  62.0 [ms]" 

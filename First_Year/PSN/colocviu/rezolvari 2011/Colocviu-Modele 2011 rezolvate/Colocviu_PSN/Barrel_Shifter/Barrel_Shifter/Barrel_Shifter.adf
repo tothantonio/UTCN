@@ -1,0 +1,37 @@
+[Project]
+Current Flow=Generic
+VCS=0
+version=1
+Current Config=compile
+
+[Configurations]
+compile=Barrel_Shifter
+
+[Library]
+Barrel_Shifter=.\Barrel_Shifter.LIB
+
+[$LibMap$]
+Barrel_Shifter=.
+Active_lib=
+
+[Settings]
+FLOW_TYPE=HDL
+LANGUAGE=VHDL
+FLOWTOOLS=NONE
+REFRESH_FLOW=1
+FAMILY=
+IMPL_TOOL=
+SYNTH_TOOL=
+
+[HierarchyViewer]
+SortInfo=u
+HierarchyInformation=barrel|stil_butoi|0 
+ShowHide=ShowTopLevel
+Selected=
+
+[Files]
+/Butoiu.vhd=-1
+
+[Files.Data]
+.\src\Butoiu.vhd=VHDL Source Code
+

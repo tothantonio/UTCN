@@ -1,0 +1,14 @@
+[Version]
+Version=6.3
+[Designs]
+Numarator_zecimal_sinc=Numarator_zecimal_sinc.adf
+[Settings]
+Active=Numarator_zecimal_sinc
+[Expand]
+numarator_zecimal_sinc=1
+[Browser]
+sort=order
+mode=none
+[Order]
+order=1
+macro=

@@ -1,0 +1,5 @@
+MESSAGE "File: C:\Users\EMMANUEL\Desktop\CTI sem2\PSN\Colocviu\Colocviu-Modele 2011 rezolvate\Colocviu_PSN\Registru_universal\src\Registru_universal.vhd" 
+MESSAGE "Compile Entity "Registru"" 
+MESSAGE "Entity `Registru' has been skipped - no difference detected." 
+MESSAGE "Compile Architecture "Registru_Comp" of Entity "Registru"" 
+SUCCESS "Compile success 0 Errors 0 Warnings  Analysis time :  0.0 [s]" 

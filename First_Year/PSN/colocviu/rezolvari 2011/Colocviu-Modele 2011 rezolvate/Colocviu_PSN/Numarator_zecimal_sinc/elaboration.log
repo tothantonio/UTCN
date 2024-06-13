@@ -1,0 +1,17 @@
+elbread.dll ver. 1.0.5.365 Wed Jun 28 00:24:28 2017
+
+
+------------------------------------------------
+Entity   | Architecture | Library             
+------------------------------------------------
+counter  | arh_count    | Numarator_zecimal_sinc
+------------------------------------------------
+
+-----------------------------
+Package             | Library
+-----------------------------
+standard            | std
+std_logic_1164      | ieee
+std_logic_arith     | ieee
+std_logic_unsigned  | ieee
+-----------------------------

@@ -1,0 +1,1 @@
+-w -s "c:\My_Designs\Colocviu_PSN\library.cfg"  -j "c:\My_Designs\Colocviu_PSN\MS_Registru_deplasare\projlib.cfg"  -d "c:\My_Designs\Colocviu_PSN\MS_Registru_deplasare\compile"   -work MS_Registru_deplasare  -dbg -e 100 -2002 "c:\\My_Designs\\Colocviu_PSN\\MS_Registru_deplasare\\src\\MS_Registru_deplasare.vhd" 

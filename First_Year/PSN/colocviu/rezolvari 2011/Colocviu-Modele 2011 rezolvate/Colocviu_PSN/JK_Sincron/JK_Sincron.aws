@@ -1,0 +1,14 @@
+[Version]
+Version=6.3
+[Designs]
+JK_Sincron=JK_Sincron.adf
+[Settings]
+Active=JK_Sincron
+[Expand]
+jk_sincron=1
+[Browser]
+sort=order
+mode=none
+[Order]
+order=1
+macro=

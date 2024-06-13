@@ -1,0 +1,77 @@
+V 000060 55 712           1305097553924 ARH_Comportamentala
+(_unit VHDL (comp_1 0 5 (arh_comportamentala 0 11 ))
+	(_version v147)
+	(_time 1305097553925 2011.05.11 10:05:53)
+	(_source (\./src/Comparator_1bit.vhd\))
+	(_use (std(standard)))
+	(_parameters dbg)
+	(_code 4a181a484d1d4a5d4b4f0c151a)
+	(_entity
+		(_time 1305097488978)
+	)
+	(_object
+		(_port (_internal A ~extSTD.STANDARD.BIT 0 6 (_entity (_in ))))
+		(_port (_internal B ~extSTD.STANDARD.BIT 0 7 (_entity (_in ))))
+		(_port (_internal q ~extSTD.STANDARD.BIT 0 8 (_entity (_out ))))
+		(_process
+			(line__13(_architecture 0 0 13 (_process (_simple)(_target(2))(_sensitivity(0)(1)))))
+		)
+		(_type (_external ~extSTD.STANDARD.BIT (std STANDARD BIT)))
+	)
+	(_model . ARH_Comportamentala 1 -1
+	)
+)
+V 000048 55 1597          1305098122865 ARH_STR
+(_unit VHDL (comparator_2bit 0 1 (arh_str 0 6 ))
+	(_version v147)
+	(_time 1305098122866 2011.05.11 10:15:22)
+	(_source (\./src/Comparator_2bit.vhd\))
+	(_use (std(standard)))
+	(_parameters dbg)
+	(_code c1cf93949696c1d6c0c6d09a92)
+	(_entity
+		(_time 1305098122863)
+	)
+	(_component
+		(comp_1
+			(_object
+				(_port (_internal A ~extSTD.STANDARD.BIT 0 8 (_entity (_in ))))
+				(_port (_internal B ~extSTD.STANDARD.BIT 0 9 (_entity (_in ))))
+				(_port (_internal q ~extSTD.STANDARD.BIT 0 10 (_entity (_out ))))
+			)
+		)
+	)
+	(_instantiation P1 0 15 (_component comp_1 )
+		(_port
+			((A)(A(0)))
+			((B)(B(0)))
+			((q)(A1))
+		)
+		(_use (_entity . comp_1)
+		)
+	)
+	(_instantiation P2 0 16 (_component comp_1 )
+		(_port
+			((A)(A(1)))
+			((B)(B(1)))
+			((q)(B1))
+		)
+		(_use (_entity . comp_1)
+		)
+	)
+	(_object
+		(_type (_internal ~BIT_VECTOR{1~downto~0}~12 0 2 (_array ~extSTD.STANDARD.BIT ((_downto (i 1)(i 0))))))
+		(_port (_internal A ~BIT_VECTOR{1~downto~0}~12 0 2 (_entity (_in ))))
+		(_port (_internal B ~BIT_VECTOR{1~downto~0}~12 0 2 (_entity (_in ))))
+		(_port (_internal Q ~extSTD.STANDARD.BIT 0 3 (_entity (_out ))))
+		(_signal (_internal A1 ~extSTD.STANDARD.BIT 0 13 (_architecture (_uni ))))
+		(_signal (_internal B1 ~extSTD.STANDARD.BIT 0 13 (_architecture (_uni ))))
+		(_process
+			(P3(_architecture 0 0 17 (_assignment (_simple)(_target(2))(_sensitivity(3)(4)))))
+		)
+		(_type (_external ~extSTD.STANDARD.BIT (std STANDARD BIT)))
+		(_type (_external ~extSTD.STANDARD.BIT_VECTOR (std STANDARD BIT_VECTOR)))
+	)
+	(_model . ARH_STR 1 -1
+	)
+)

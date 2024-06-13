@@ -1,0 +1,6 @@
+MESSAGE "File: c:\My_Designs\Colocviu_PSN\MS_Bist_JK\src\MS_JK.vhd" 
+MESSAGE "Compile Entity "Bist_JK"" 
+MESSAGE "Compile Architecture "ARH_JK" of Entity "Bist_JK"" 
+MESSAGE "Compile Entity "MS_JK"" 
+MESSAGE "Compile Architecture "ARH_MS_JK" of Entity "MS_JK"" 
+SUCCESS "Compile success 0 Errors 0 Warnings  Analysis time :  0.3 [s]" 

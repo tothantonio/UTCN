@@ -1,0 +1,3 @@
+﻿  main.c
+D:\First_Year\utcn\First_Year\SDA\labs\lab5\arbori_in_oglinda\arbori_in_oglinda\main.c(21,14): warning C4098: 'insert': 'void' function returning a value
+  arbori_in_oglinda.vcxproj -> D:\First_Year\utcn\First_Year\SDA\labs\lab5\arbori_in_oglinda\x64\Debug\arbori_in_oglinda.exe

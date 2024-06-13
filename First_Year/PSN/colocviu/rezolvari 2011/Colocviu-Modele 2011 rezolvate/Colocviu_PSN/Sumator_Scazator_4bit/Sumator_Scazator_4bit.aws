@@ -1,0 +1,14 @@
+[Version]
+Version=6.3
+[Designs]
+Sumator_Scazator_4bit=Sumator_Scazator_4bit.adf
+[Settings]
+Active=Sumator_Scazator_4bit
+[Expand]
+sumator_scazator_4bit=1
+[Browser]
+sort=order
+mode=none
+[Order]
+order=1
+macro=

@@ -1,0 +1,13 @@
+﻿  main.c
+D:\First_Year\utcn\First_Year\SDA\labs\partial\partial\partial\main.c(28,13): warning C4047: 'initializing': 'int' differs in levels of indirection from 'int *'
+D:\First_Year\utcn\First_Year\SDA\labs\partial\partial\partial\main.c(56,9): warning C4129: 'C': unrecognized character escape sequence
+D:\First_Year\utcn\First_Year\SDA\labs\partial\partial\partial\main.c(71,12): warning C4244: 'initializing': conversion from 'int' to 'float', possible loss of data
+D:\First_Year\utcn\First_Year\SDA\labs\partial\partial\partial\main.c(86,19): warning C4047: 'function': 'int *' differs in levels of indirection from 'int **'
+D:\First_Year\utcn\First_Year\SDA\labs\partial\partial\partial\main.c(86,19): warning C4024: 'factor': different types for formal and actual parameter 3
+D:\First_Year\utcn\First_Year\SDA\labs\partial\partial\partial\main.c(90,13): warning C4098: 'function': 'void' function returning a value
+D:\First_Year\utcn\First_Year\SDA\labs\partial\partial\partial\main.c(109,25): warning C4047: 'function': 'int *(__cdecl *)(int,int,int)' differs in levels of indirection from 'int (__cdecl *)(int,int,int)'
+D:\First_Year\utcn\First_Year\SDA\labs\partial\partial\partial\main.c(109,25): warning C4024: 'insert': different types for formal and actual parameter 4
+D:\First_Year\utcn\First_Year\SDA\labs\partial\partial\partial\main.c(133,26): warning C4047: 'function': 'int *(__cdecl *)(int,int,int)' differs in levels of indirection from 'int (__cdecl *)(int,int,int)'
+D:\First_Year\utcn\First_Year\SDA\labs\partial\partial\partial\main.c(133,26): warning C4024: 'insert': different types for formal and actual parameter 4
+D:\First_Year\utcn\First_Year\SDA\labs\partial\partial\partial\main.c(82): warning C4715: 'factor': not all control paths return a value
+  partial.vcxproj -> D:\First_Year\utcn\First_Year\SDA\labs\partial\partial\x64\Debug\partial.exe

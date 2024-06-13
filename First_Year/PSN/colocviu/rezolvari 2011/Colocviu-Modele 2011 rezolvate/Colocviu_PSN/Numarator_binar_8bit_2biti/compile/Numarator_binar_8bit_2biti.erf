@@ -1,0 +1,5 @@
+MESSAGE "File: C:\Users\EMMANUEL\Desktop\CTI sem2\PSN\Colocviu\Colocviu-Modele 2011 rezolvate\Colocviu_PSN\Numarator_binar_8bit_2biti\src\Count_2bit.vhd" 
+MESSAGE "Compile Entity "Count_2bit"" 
+MESSAGE "Entity `Count_2bit' has been skipped - no difference detected." 
+MESSAGE "Compile Architecture "ARH_Count" of Entity "Count_2bit"" 
+SUCCESS "Compile success 0 Errors 0 Warnings  Analysis time :  0.0 [s]" 

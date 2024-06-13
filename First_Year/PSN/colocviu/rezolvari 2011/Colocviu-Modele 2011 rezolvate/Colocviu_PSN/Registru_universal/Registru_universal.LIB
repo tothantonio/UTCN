@@ -1,0 +1,27 @@
+timestamp=1495657346602
+
+[registru]
+A/registru_comp=A/Registru_Comp 21|./src/Registru_universal.vhd|12|1*6634
+B/registru_comp=3*0
+H/registru_comp=0*6647
+I=0*1224
+I/registru_comp=I/Registru_Comp 0*1974
+M=11|0|v147|1305221553317|./src/Registru_universal.vhd|0*827*0xaa0d15f0f684b215ec84ea9befd966873761e1c5|0*1140*0x7bd7e13dc0415552f89596087806a8cf
+M/registru_comp=M/Registru_Comp 21|0|v147|1305221672705|./src/Registru_universal.vhd|0*1460*0x0cff657d2ee1f931ddd7c47bd6fbddb4242492f6|0*1873*0x7bd7e13dc0415552f89596087806a8cf
+R=./src/Registru_universal.vhd|6
+V=0*5313
+
+[~A]
+./src/Registru_universal.vhd~Registru=0*3394*3735
+./src/Registru_universal.vhd~Registru_CompRegistru=0*6860*7309
+ModifyID=33
+Version=73
+
+[~MFT]
+0=36|0Registru_universal.mgf|7309|2139
+1=7|1Registru_universal.mgf|6634|4959
+3=0|3Registru_universal.mgf|0|0
+
+[~U]
+registru=Registru 11|0*4564|0*4780
+

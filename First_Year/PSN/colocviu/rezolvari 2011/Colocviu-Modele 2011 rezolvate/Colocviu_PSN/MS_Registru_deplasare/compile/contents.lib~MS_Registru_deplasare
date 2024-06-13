@@ -1,0 +1,5 @@
+40
+~E 1 "./src/MS_Registru_deplasare.vhd" 21 ms_shifter
+~A 1 "./src/MS_Registru_deplasare.vhd" 24 arh_ms_shifter
+~E 1 "./src/MS_Registru_deplasare.vhd" 1 shifter
+~A 1 "./src/MS_Registru_deplasare.vhd" 7 arh_shifter

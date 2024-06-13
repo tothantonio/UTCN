@@ -1,0 +1,50 @@
+timestamp=1498598969060
+
+[clock]
+A/clk_clk=A/CLK_CLK 21|./src/Clock.vhd|5|1*5496
+B/clk_clk=3*1473
+I=0*4806
+I/clk_clk=I/CLK_CLK 0*5072
+M=11|0|v147|1305218724106|./src/Clock.vhd|0*4631*0xebf0f748e847a3b4dc4bc8adf8033c284da2c379|0*4738*0x7bd7e13dc0415552f89596087806a8cf
+M/clk_clk=M/CLK_CLK 21|0|v147|1305218724108|./src/Clock.vhd|0*4840*0xcd9df47db94d8d039682aebfd8c253df90ef1e53|0*4993*0x7bd7e13dc0415552f89596087806a8cf
+R=./src/Clock.vhd|1
+
+[count_2bit]
+A/arh_count=A/ARH_Count 21|./src/Count_2bit.vhd|12|1*13475
+B/arh_count=3*2007
+H/arh_count=0*13057
+I=0*3164
+I/arh_count=I/ARH_Count 0*4018
+M=11|0|v147|1305218087818|./src/Count_2bit.vhd|0*2802*0xa26e98a145eb2e6cb74d6a13999e1d3d4a6fa989|0*3086*0x7bd7e13dc0415552f89596087806a8cf
+M/arh_count=M/ARH_Count 21|0|v147|1305218159180|./src/Count_2bit.vhd|0*3650*0x51adfdc135a262b40aa50758c45a67d87903e0ad|0*3927*0x7bd7e13dc0415552f89596087806a8cf
+R=./src/Count_2bit.vhd|6
+V=0*12336
+
+[counter]
+A/count_str=A/Count_STR 21|./src/Numarator_8biti.vhd|10|1*8834
+H/count_str=0*7537
+I=0*6008
+I/count_str=I/Count_STR 0*6857
+M=11|0|v147|1305219256308|./src/Numarator_8biti.vhd|0*5686*0xff102f90f4db9410db34f12759813fc28ac65631|0*5928*0x7bd7e13dc0415552f89596087806a8cf
+M/count_str=M/Count_STR 21|0|v147|1305219273743|./src/Numarator_8biti.vhd|0*6243*0xce05bd2711a86c61bc7edeb538ffa0cab225684e|0*6764*0x7bd7e13dc0415552f89596087806a8cf
+R=./src/Numarator_8biti.vhd|6
+V=0*10350
+
+[~A]
+./src/Count_2bit.vhd~ARH_CountCount_2bit=0*13150*13441
+./src/Count_2bit.vhd~Count_2bit=0*10926*11228
+./src/Numarator_8biti.vhd~Count_STRCounter=0*9226*9812
+./src/Numarator_8biti.vhd~Counter=0*7211*7464
+ModifyID=75
+Version=73
+
+[~MFT]
+0=90|0Numarator_binar_8bit_2biti.mgf|13441|2868
+1=14|1Numarator_binar_8bit_2biti.mgf|13475|9669
+3=5|3Numarator_binar_8bit_2biti.mgf|2007|1473
+
+[~U]
+clock=11|0*4535|
+count_2bit=Count_2bit 11|0*11763|0*11959
+counter=Counter 11|0*9894|0*10020
+

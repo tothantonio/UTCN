@@ -1,0 +1,25 @@
+timestamp=1558968021975
+
+[~A]
+ModifyID=42
+Version=74
+
+[detect]
+A/arh_detector=A/ARH_Detector 21|./src/Detector_secventa.vhd|10|1*9661
+B/arh_detector=3*0
+BinI32/arh_detector=3*1780
+I=0*4254
+I/arh_detector=I/ARH_Detector 0*4954
+M=11|0|vde|1558968021921|./src/Detector_secventa.vhd|0*3951*0x0e94ba92ee317c07e09a5ea3d667b63ccaf2b3e1|0*4167*0x23b75c12e3e89f2ef000564498faa8c2
+M/arh_detector=M/ARH_Detector 21|0|vde|1558968021923|./src/Detector_secventa.vhd|0*4487*0x32adb816699da09c0c80a6252623281ed6c493d5|0*4851*0x20116f55b147878295aeff36dce7fc50
+R=./src/Detector_secventa.vhd|4
+Version=10.5.217.6767 (Windows)|00000003789cd3f5370600015b00b0|b3cc1eba2a9eee40925ef6bcd0f7756ce3907fe7542890824eb1a36efb319b40
+Version/arh_detector=10.5.217.6767 (Windows)|00000003789cd3f5370600015b00b0|498ae07e12b0587949c4e57986c599fb374c561f1475e8080087993c488441b384c77e46c55ee85f2333c8c4aa73ab34
+
+[~MFT]
+0=16|0Detector_secventa.mgf|4954|3766
+1=2|1Detector_secventa.mgf|9661|9661
+3=1|3Detector_secventa.mgf|1780|0
+
+[~U]
+detect=Detect 11|0*3766|

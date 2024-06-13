@@ -1,0 +1,4 @@
+﻿  main.c
+D:\First_Year\utcn\First_Year\SDA\labs\lab2\circular_linked_list\circular_linked_list\main.c(67,5): warning C4013: 'print' undefined; assuming extern returning int
+main.obj : error LNK2019: unresolved external symbol print referenced in function main
+D:\First_Year\utcn\First_Year\SDA\labs\lab2\circular_linked_list\x64\Debug\circular_linked_list.exe : fatal error LNK1120: 1 unresolved externals

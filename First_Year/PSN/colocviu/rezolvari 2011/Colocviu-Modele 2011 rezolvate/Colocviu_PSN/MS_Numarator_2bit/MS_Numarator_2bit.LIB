@@ -1,0 +1,41 @@
+timestamp=1495698593023
+
+[ms_counter]
+A/arh_ms_counter=A/ARH_MS_COUNTER 21|./src/MS_Counter.vhd|32|1*19459
+B/arh_ms_counter=3*1319
+H/arh_ms_counter=0*12394
+I=0*3737
+I/arh_ms_counter=I/ARH_MS_COUNTER 0*5329
+M=11|0|v147|1305457605399|./src/MS_Counter.vhd|0*3484*0xc4c72e4f410e1b8ce1402c469646ecefad8ed54f|0*3659*0x7bd7e13dc0415552f89596087806a8cf
+M/arh_ms_counter=M/ARH_MS_COUNTER 21|0|v147|1305457649393|./src/MS_Counter.vhd|0*4735*0xf77fc293ce64da0a956b24344735adff511e0831|0*5233*0x7bd7e13dc0415552f89596087806a8cf
+R=./src/MS_Counter.vhd|29
+V=0*15697
+
+[numarator_2bit]
+A/arh_counter=A/ARH_Counter 21|./src/MS_Counter.vhd|11|1*17787
+B/arh_counter=3*0
+H/arh_counter=0*11680
+I=0*2798
+I/arh_counter=0*2973
+M=11|0|v147|1305450545329|./src/MS_Counter.vhd|0*2434*0xdeeaa1ab700b9d9d2f85705b77ad4a1f3a3dc175|0*2716*0x7bd7e13dc0415552f89596087806a8cf
+M/arh_counter=M/ARH_Counter 21|0|v147|1305457649389|./src/MS_Counter.vhd|0*1825*0xc970814cc38d8f1de067ffa146bfa632d03c149e|0*2097*0x7bd7e13dc0415552f89596087806a8cf
+R=./src/MS_Counter.vhd|5
+V=0*7152
+
+[~A]
+./src/MS_Counter.vhd~ARH_CounterNumarator_2bit=0*11777*12061
+./src/MS_Counter.vhd~ARH_MS_COUNTERMS_Counter=0*14775*15339
+./src/MS_Counter.vhd~MS_Counter=0*12147*12323
+./src/MS_Counter.vhd~Numarator_2bit=0*5576*5882
+ModifyID=83
+Version=73
+
+[~MFT]
+0=80|0MS_Numarator_2bit.mgf|15697|3766
+1=18|1MS_Numarator_2bit.mgf|19459|15050
+3=1|3MS_Numarator_2bit.mgf|1319|0
+
+[~U]
+ms_counter=MS_Counter 11|0*15424|0*15495
+numarator_2bit=Numarator_2bit 11|0*6424|0*6664
+

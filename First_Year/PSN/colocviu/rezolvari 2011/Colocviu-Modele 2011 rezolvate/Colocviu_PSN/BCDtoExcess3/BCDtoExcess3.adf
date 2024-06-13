@@ -1,0 +1,56 @@
+[Project]
+Current Flow=Generic
+VCS=0
+version=1
+Current Config=compile
+
+[Configurations]
+compile=BCDtoExcess3
+
+[Library]
+BCDtoExcess3=.\BCDtoExcess3.LIB
+
+[$LibMap$]
+BCDtoExcess3=.
+Active_lib=
+
+[Settings]
+FLOW_TYPE=HDL
+LANGUAGE=VHDL
+REFRESH_FLOW=1
+FLOWTOOLS=NONE
+FAMILY=
+IMPL_TOOL=
+SYNTH_TOOL=
+
+[HierarchyViewer]
+SortInfo=u
+HierarchyInformation=
+ShowHide=ShowTopLevel
+Selected=
+
+[Folders]
+Name3=Makefiles
+Directory3=c:\My_Designs\Colocviu_PSN\BCDtoExcess3\
+Extension3=mak
+Name4=Memory
+Directory4=c:\My_Designs\Colocviu_PSN\BCDtoExcess3\src
+Extension4=mem;mif;hex
+Name5=Dll Libraries
+Directory5=c:\My_Designs\Colocviu_PSN\BCDtoExcess3\
+Extension5=dll
+Name6=PDF
+Directory6=c:\My_Designs\Colocviu_PSN\BCDtoExcess3\
+Extension6=pdf
+Name7=HTML
+Directory7=c:\My_Designs\Colocviu_PSN\BCDtoExcess3\
+Extension7=
+
+[Files]
+/Decodificator.vhd=-1
+/ADD3.vhd=-1
+
+[Files.Data]
+.\src\Decodificator.vhd=VHDL Source Code
+.\src\ADD3.vhd=VHDL Source Code
+

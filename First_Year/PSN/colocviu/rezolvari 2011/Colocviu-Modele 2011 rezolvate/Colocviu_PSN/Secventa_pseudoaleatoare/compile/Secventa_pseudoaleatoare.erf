@@ -1,0 +1,6 @@
+MESSAGE "File: C:\Users\EMMANUEL\Desktop\CTI sem2\PSN\Colocviu\Colocviu-Modele 2011 rezolvate\Colocviu_PSN\Secventa_pseudoaleatoare\src\Shifter.vhd" 
+MESSAGE "Compile Entity "Shifter"" 
+MESSAGE "Compile Architecture "ARH_Shift" of Entity "Shifter"" 
+MESSAGE "Top-Level unit detected" 
+MESSAGE "Entity  =>   Shifter" 
+SUCCESS "Compile success 0 Errors 0 Warnings  Analysis time :  0.0 [s]" 

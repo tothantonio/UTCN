@@ -1,0 +1,4 @@
+MESSAGE "File: c:\My_Designs\Colocviu_PSN\BCDtoDecimal\src\Convertor.vhd" 
+MESSAGE "Compile Entity "Convertor"" 
+MESSAGE "Compile Architecture "Arh_Flux" of Entity "Convertor"" 
+SUCCESS "Compile success 0 Errors 0 Warnings  Analysis time :  93.0 [ms]" 

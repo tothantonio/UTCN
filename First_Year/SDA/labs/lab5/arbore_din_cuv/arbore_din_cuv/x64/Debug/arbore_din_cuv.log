@@ -1,0 +1,10 @@
+﻿  main.c
+D:\First_Year\utcn\First_Year\SDA\labs\lab5\arbore_din_cuv\arbore_din_cuv\main.c(90,21): warning C4477: 'fscanf_s' : format string '%s' requires an argument of type 'unsigned int', but variadic argument 2 has type 'size_t'
+  D:\First_Year\utcn\First_Year\SDA\labs\lab5\arbore_din_cuv\arbore_din_cuv\main.c(90,21):
+  this argument is used as a buffer size
+  
+D:\First_Year\utcn\First_Year\SDA\labs\lab5\arbore_din_cuv\arbore_din_cuv\main.c(99,14): warning C4477: 'scanf_s' : format string '%s' requires an argument of type 'unsigned int', but variadic argument 2 has type 'size_t'
+  D:\First_Year\utcn\First_Year\SDA\labs\lab5\arbore_din_cuv\arbore_din_cuv\main.c(99,14):
+  this argument is used as a buffer size
+  
+  arbore_din_cuv.vcxproj -> D:\First_Year\utcn\First_Year\SDA\labs\lab5\arbore_din_cuv\x64\Debug\arbore_din_cuv.exe

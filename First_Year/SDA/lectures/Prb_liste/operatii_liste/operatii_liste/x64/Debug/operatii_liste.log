@@ -1,0 +1,3 @@
+﻿  main.c
+D:\First_Year\utcn\First_Year\SDA\lectures\Prb_liste\operatii_liste\operatii_liste\main.c(47,20): warning C4098: 'sll_print_list': 'void' function returning a value
+  operatii_liste.vcxproj -> D:\First_Year\utcn\First_Year\SDA\lectures\Prb_liste\operatii_liste\x64\Debug\operatii_liste.exe

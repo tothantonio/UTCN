@@ -1,0 +1,14 @@
+[Version]
+Version=6.3
+[Designs]
+MS_Registru_deplasare=MS_Registru_deplasare.adf
+[Settings]
+Active=MS_Registru_deplasare
+[Expand]
+ms_registru_deplasare=1
+[Browser]
+sort=order
+mode=none
+[Order]
+order=1
+macro=

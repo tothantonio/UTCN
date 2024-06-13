@@ -1,0 +1,33 @@
+timestamp=1305098122962
+
+[comp_1]
+A/arh_comportamentala=A/ARH_Comportamentala 21|./src/Comparator_1bit.vhd|11|1*0
+B/arh_comportamentala=3*0
+I=0*348
+I/arh_comportamentala=I/ARH_Comportamentala 0*715
+M=11|0|v147|1305097488978|./src/Comparator_1bit.vhd|0*119*0xa9ca725db7a5817c641ec1c81268d2eda16de556|0*269*0x7bd7e13dc0415552f89596087806a8cf
+M/arh_comportamentala=M/ARH_Comportamentala 21|0|v147|1305097553923|./src/Comparator_1bit.vhd|0*383*0xa067f2ce5b8c67067cc6f95842439356921e2185|0*613*0x7bd7e13dc0415552f89596087806a8cf
+R=./src/Comparator_1bit.vhd|5
+
+[comparator_2bit]
+A/arh_str=A/ARH_STR 21|./src/Comparator_2bit.vhd|6|1*772
+B/arh_str=3*678
+I=0*1195
+I/arh_str=I/ARH_STR 0*1669
+M=11|0|v147|1305098122862|./src/Comparator_2bit.vhd|0*941*0x80f31497515212d84fc714002f3670728b1d791e|0*1107*0x7bd7e13dc0415552f89596087806a8cf
+M/arh_str=M/ARH_STR 21|0|v147|1305098122864|./src/Comparator_2bit.vhd|0*1239*0x251dee9dd04a6a59dd11046c5875487ecdde2c10|0*1570*0x7bd7e13dc0415552f89596087806a8cf
+R=./src/Comparator_2bit.vhd|1
+
+[~A]
+ModifyID=10
+Version=73
+
+[~MFT]
+0=13|0Comparator_2bit.mgf|1669|0
+1=1|1Comparator_2bit.mgf|772|0
+3=1|3Comparator_2bit.mgf|678|0
+
+[~U]
+comp_1=COMP_1 11|0*0|
+comparator_2bit=Comparator_2bit 11|0*770|
+

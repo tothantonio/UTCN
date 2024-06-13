@@ -1,0 +1,7 @@
+# Design Explorer: Shortcut to "D:\An 1\CTI SEM2\PSN\Colocviu\Colocviu-Modele 2011 rezolvate\Colocviu_PSN\Detector_secventa\Detector_secventa.aws" design added.
+acom -O3 -e 100 -work Detector_secventa -2002  $dsn/src/Detector_secventa.vhd
+# Warning: DAGGEN_0523: The source is compiled without the -dbg switch. Line breakpoints and assertion debug will not be available.
+# File: D:\An 1\CTI SEM2\PSN\Colocviu\Colocviu-Modele 2011 rezolvate\Colocviu_PSN\Detector_secventa\src\Detector_secventa.vhd
+# Compile Entity "Detect"
+# Compile Architecture "ARH_Detector" of Entity "Detect"
+# Compile success 0 Errors 0 Warnings  Analysis time :  62.0 [ms]

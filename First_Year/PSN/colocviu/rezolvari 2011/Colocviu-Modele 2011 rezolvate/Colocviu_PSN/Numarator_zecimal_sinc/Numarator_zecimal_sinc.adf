@@ -1,0 +1,53 @@
+[Project]
+Current Flow=Generic
+VCS=0
+version=1
+Current Config=compile
+
+[Configurations]
+compile=Numarator_zecimal_sinc
+
+[Library]
+Numarator_zecimal_sinc=.\Numarator_zecimal_sinc.LIB
+
+[$LibMap$]
+Numarator_zecimal_sinc=.
+Active_lib=
+
+[Settings]
+FLOW_TYPE=HDL
+LANGUAGE=VHDL
+FLOWTOOLS=NONE
+REFRESH_FLOW=1
+FAMILY=
+IMPL_TOOL=
+SYNTH_TOOL=
+
+[Folders]
+Name3=Makefiles
+Directory3=c:\My_Designs\Colocviu_PSN\Numarator_zecimal_sinc\
+Extension3=mak
+Name4=Memory
+Directory4=c:\My_Designs\Colocviu_PSN\Numarator_zecimal_sinc\src
+Extension4=mem;mif;hex
+Name5=Dll Libraries
+Directory5=c:\My_Designs\Colocviu_PSN\Numarator_zecimal_sinc\
+Extension5=dll
+Name6=PDF
+Directory6=c:\My_Designs\Colocviu_PSN\Numarator_zecimal_sinc\
+Extension6=pdf
+Name7=HTML
+Directory7=c:\My_Designs\Colocviu_PSN\Numarator_zecimal_sinc\
+Extension7=
+
+[Files]
+/Count_zecimal.vhd=-1
+
+[Files.Data]
+.\src\Count_zecimal.vhd=VHDL Source Code
+
+[HierarchyViewer]
+SortInfo=u
+HierarchyInformation=counter|arh_count|0   
+ShowHide=ShowTopLevel
+Selected=

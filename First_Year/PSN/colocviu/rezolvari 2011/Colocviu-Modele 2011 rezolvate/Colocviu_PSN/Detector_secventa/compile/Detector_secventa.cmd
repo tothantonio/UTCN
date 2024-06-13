@@ -1,0 +1,1 @@
+-w -s "c:\My_Designs\Colocviu_PSN\library.cfg"  -j "c:\My_Designs\Colocviu_PSN\Detector_secventa\projlib.cfg"  -d "c:\My_Designs\Colocviu_PSN\Detector_secventa\compile"   -work Detector_secventa  -dbg -e 100 -2002 "c:\\My_Designs\\Colocviu_PSN\\Detector_secventa\\src\\Detector_secventa.vhd" 

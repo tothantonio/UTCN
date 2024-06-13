@@ -1,0 +1,6 @@
+functiile(msvcrt) s ar putea sa modifice registrii care au la final x (ecx, edx..)
+dam push la registrii
+si ii scoatem
+la siruri daca nu zice dim, consider eu 
+la inceput initializez toate sirurile cu 0 
+;sir 100 dup(0)

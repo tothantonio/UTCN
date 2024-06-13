@@ -1,0 +1,12 @@
+#-----------------------------------------------------------
+# Vivado v2016.4 (64-bit)
+# SW Build 1756540 on Mon Jan 23 19:11:23 MST 2017
+# IP Build 1755317 on Mon Jan 23 20:30:07 MST 2017
+# Start of session at: Wed May 29 18:52:31 2024
+# Process ID: 12780
+# Current directory: D:/First_Year/utcn/First_Year/PSN/colocviu/COLOCVIU/colocviu/colocviu.runs/impl_1
+# Command line: vivado.exe -log num_zec_4bit.vdi -applog -product Vivado -messageDb vivado.pb -mode batch -source num_zec_4bit.tcl -notrace
+# Log file: D:/First_Year/utcn/First_Year/PSN/colocviu/COLOCVIU/colocviu/colocviu.runs/impl_1/num_zec_4bit.vdi
+# Journal file: D:/First_Year/utcn/First_Year/PSN/colocviu/COLOCVIU/colocviu/colocviu.runs/impl_1\vivado.jou
+#-----------------------------------------------------------
+source num_zec_4bit.tcl -notrace
