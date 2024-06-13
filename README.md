@@ -19,4 +19,7 @@
      * [Labs](First_Year/PSN/labs)
      * [Lectures](First_Year/PSN/lectures)
      * [Colocviu](First_Year/PSN/colocviu)
-     * [Project]([First_Year/PSN/Project](https://github.com/tunaic/UTCN/tree/43d37d23ff9d5c06aa5de67c6aacf95953dbbbc3/First_Year/PSN/VHDL%20project))
+  * [Structuri de Date si Algoritmi](First_Year/SDA)
+     * [Labs](First_Year/SDA/labs)
+     * [Lectures](First_Year/SDA/lectures)
+     
