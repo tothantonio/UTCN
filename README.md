@@ -1,2 +1,1 @@
-# UTCN
- stuff from university
+## Technical University of Cluj-Napoca - Computer Science
