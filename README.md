@@ -7,7 +7,7 @@
   * 💡[Electrotehnica](First_Year/ET)
      * [Labs](First_Year/ET/labs)
      * [Lectures](First_Year/ET/lectures)
-  * 🔋[Fizica](First_Year/FIZ)
+  *  🔋[Fizica](First_Year/FIZ)
   * 🧠[Matematici Speciale](First_Year/MS)
   * 🖥️[Programarea Calculatoarelor](First_Year/PC)
   * 📖[Proiectare Logica](First_Year/PL)
