@@ -1,0 +1,9 @@
+# compile vhdl design source files
+vhdl xil_defaultlib  "../../../project.srcs/sources_1/new/Test_Mode.vhd"
+vhdl xil_defaultlib  "../../../project.srcs/sources_1/new/Seven_Segment_Display.vhd"
+vhdl xil_defaultlib  "../../../project.srcs/sources_1/new/Manual_Mode.vhd"
+vhdl xil_defaultlib  "../../../project.srcs/sources_1/new/Auto_Mode.vhd"
+vhdl xil_defaultlib  "../../../project.srcs/sources_1/new/led_dimmer.vhd"
+
+# Do not sort compile order
+nosort

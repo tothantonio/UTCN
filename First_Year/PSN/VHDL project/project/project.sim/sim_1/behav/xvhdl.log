@@ -1,0 +1,10 @@
+INFO: [VRFC 10-163] Analyzing VHDL file "D:/VHDL project/project/project.srcs/sources_1/new/Test_Mode.vhd" into library xil_defaultlib
+INFO: [VRFC 10-307] analyzing entity Test_Mode
+INFO: [VRFC 10-163] Analyzing VHDL file "D:/VHDL project/project/project.srcs/sources_1/new/Seven_Segment_Display.vhd" into library xil_defaultlib
+INFO: [VRFC 10-307] analyzing entity Seven_Segment_Display
+INFO: [VRFC 10-163] Analyzing VHDL file "D:/VHDL project/project/project.srcs/sources_1/new/Manual_Mode.vhd" into library xil_defaultlib
+INFO: [VRFC 10-307] analyzing entity Manual_Mode
+INFO: [VRFC 10-163] Analyzing VHDL file "D:/VHDL project/project/project.srcs/sources_1/new/Auto_Mode.vhd" into library xil_defaultlib
+INFO: [VRFC 10-307] analyzing entity Auto_Mode
+INFO: [VRFC 10-163] Analyzing VHDL file "D:/VHDL project/project/project.srcs/sources_1/new/led_dimmer.vhd" into library xil_defaultlib
+INFO: [VRFC 10-307] analyzing entity Main_Controller

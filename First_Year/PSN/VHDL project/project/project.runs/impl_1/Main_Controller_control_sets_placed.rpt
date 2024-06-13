@@ -1,0 +1,77 @@
+Copyright 1986-2016 Xilinx, Inc. All Rights Reserved.
+--------------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2016.4 (win64) Build 1756540 Mon Jan 23 19:11:23 MST 2017
+| Date         : Mon May 27 15:26:12 2024
+| Host         : DESKTOP-845QQM1 running 64-bit major release  (build 9200)
+| Command      : report_control_sets -verbose -file Main_Controller_control_sets_placed.rpt
+| Design       : Main_Controller
+| Device       : xc7a35t
+--------------------------------------------------------------------------------------------
+
+Control Set Information
+
+Table of Contents
+-----------------
+1. Summary
+2. Flip-Flop Distribution
+3. Detailed Control Set Information
+
+1. Summary
+----------
+
++----------------------------------------------------------+-------+
+|                          Status                          | Count |
++----------------------------------------------------------+-------+
+| Number of unique control sets                            |    17 |
+| Unused register locations in slices containing registers |    29 |
++----------------------------------------------------------+-------+
+
+
+2. Flip-Flop Distribution
+-------------------------
+
++--------------+-----------------------+------------------------+-----------------+--------------+
+| Clock Enable | Synchronous Set/Reset | Asynchronous Set/Reset | Total Registers | Total Slices |
++--------------+-----------------------+------------------------+-----------------+--------------+
+| No           | No                    | No                     |              43 |           32 |
+| No           | No                    | Yes                    |               0 |            0 |
+| No           | Yes                   | No                     |             488 |          128 |
+| Yes          | No                    | No                     |               0 |            0 |
+| Yes          | No                    | Yes                    |               0 |            0 |
+| Yes          | Yes                   | No                     |               0 |            0 |
++--------------+-----------------------+------------------------+-----------------+--------------+
+
+
+3. Detailed Control Set Information
+-----------------------------------
+
++----------------+---------------+---------------------------------------------+------------------+----------------+
+|  Clock Signal  | Enable Signal |               Set/Reset Signal              | Slice Load Count | Bel Load Count |
++----------------+---------------+---------------------------------------------+------------------+----------------+
+|  clk_IBUF_BUFG |               | test_inst/pwm_counters[2][0]_i_1_n_0        |                8 |             30 |
+|  clk_IBUF_BUFG |               | test_inst/pwm_counters[3][0]_i_1_n_0        |                8 |             30 |
+|  clk_IBUF_BUFG |               | test_inst/pwm_counters[0][0]_i_1_n_0        |                8 |             30 |
+|  clk_IBUF_BUFG |               | test_inst/pwm_counters[6][0]_i_1_n_0        |                8 |             30 |
+|  clk_IBUF_BUFG |               | test_inst/pwm_counters[4][0]_i_1_n_0        |                8 |             30 |
+|  clk_IBUF_BUFG |               | test_inst/pwm_counters[5][0]_i_1_n_0        |                8 |             30 |
+|  clk_IBUF_BUFG |               | test_inst/clear                             |                8 |             30 |
+|  clk_IBUF_BUFG |               | test_inst/pwm_counters[1][0]_i_1_n_0        |                8 |             30 |
+|  clk_IBUF_BUFG |               | auto_inst/pwm_counters_reg[3]0_carry__2_n_0 |                8 |             31 |
+|  clk_IBUF_BUFG |               | auto_inst/pwm_counters_reg[4]0_carry__2_n_0 |                8 |             31 |
+|  clk_IBUF_BUFG |               | auto_inst/pwm_counters_reg[5]0_carry__2_n_0 |                8 |             31 |
+|  clk_IBUF_BUFG |               | auto_inst/pwm_counters_reg[6]0_carry__2_n_0 |                8 |             31 |
+|  clk_IBUF_BUFG |               | auto_inst/pwm_counters_reg[0]0_carry__2_n_0 |                8 |             31 |
+|  clk_IBUF_BUFG |               | auto_inst/pwm_counters_reg[2]0_carry__2_n_0 |                8 |             31 |
+|  clk_IBUF_BUFG |               | auto_inst/pwm_counters_reg[1]0_carry__2_n_0 |                8 |             31 |
+|  clk_IBUF_BUFG |               | auto_inst/clear                             |                8 |             31 |
+|  clk_IBUF_BUFG |               |                                             |               32 |             43 |
++----------------+---------------+---------------------------------------------+------------------+----------------+
+
+
++--------+-----------------------+
+| Fanout | Number of ControlSets |
++--------+-----------------------+
+| 16+    |                    17 |
++--------+-----------------------+
+
+

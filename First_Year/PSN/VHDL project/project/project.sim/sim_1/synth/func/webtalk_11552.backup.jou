@@ -1,0 +1,12 @@
+#-----------------------------------------------------------
+# Webtalk v2016.4 (64-bit)
+# SW Build 1756540 on Mon Jan 23 19:11:23 MST 2017
+# IP Build 1755317 on Mon Jan 23 20:30:07 MST 2017
+# Start of session at: Thu Apr 25 09:23:10 2024
+# Process ID: 11552
+# Current directory: D:/VHDL project/project/project.sim/sim_1/synth/func
+# Command line: wbtcv.exe -mode batch -source D:/VHDL project/project/project.sim/sim_1/synth/func/xsim.dir/Test_Mode_func_synth/webtalk/xsim_webtalk.tcl -notrace
+# Log file: D:/VHDL project/project/project.sim/sim_1/synth/func/webtalk.log
+# Journal file: D:/VHDL project/project/project.sim/sim_1/synth/func\webtalk.jou
+#-----------------------------------------------------------
+source D:/VHDL -notrace
