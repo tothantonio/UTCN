@@ -2,18 +2,18 @@
 
   ### 1️⃣Semester 
 
-  * 📝[Algebra Liniara si Geometrie Analitica](First_Year/ALGA)
-  * 📈[Analiza Matematica](First_Year/AM-I)
-  * 🔋[Fizica](First_Year/FIZ)
-  * 🧠[Matematici Speciale](First_Year/MS)
-  * 🖥️[Programarea Calculatoarelor](First_Year/PC)
-  * 📖[Proiectare Logica](First_Year/PL)
+  * 📝[Linear Algebra and Analytical Geometry](First_Year/ALGA)
+  * 📈[Mathematical Analysis](First_Year/AM-I)
+  * 🔋[Physics](First_Year/FIZ)
+  * 🧠[Special Mathematics](First_Year/MS)
+  * 🖥️[Computer Programming](First_Year/PC)
+  * 📖[Logic Design](First_Year/PL)
 
   ### 2️⃣Semester
   
-  * 💡[Electrotehnica](First_Year/ET)
-  * 💾[Programare in Limbaj de Asamblare](First_Year/PLA)
-  * ⚙️[Proiectare Sistemelor Numerice](First_Year/PSN)
-  * 💻[Structuri de Date si Algoritmi](First_Year/SDA)
+  * 💡[Electrotechnics](First_Year/ET)
+  * 💾[Assembly Language Programming](First_Year/PLA)
+  * ⚙️[ Digital System Design](First_Year/PSN)
+  * 💻[Data Structures and Algorithms](First_Year/SDA)
 
      
