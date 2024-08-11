@@ -1,6 +1,6 @@
 ## Technical University of Cluj-Napoca - Computer Science
 
-  * ### 1️⃣Semester 
+  ### 1️⃣Semester 
 
   * 📝[Algebra Liniara si Geometrie Analitica](First_Year/ALGA)
   * 📈[Analiza Matematica](First_Year/AM-I)
