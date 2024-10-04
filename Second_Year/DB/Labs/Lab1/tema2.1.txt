@@ -1,0 +1,58 @@
+Database Programming with SQL
+2-1: Working with Columns, Characters, and Rows
+
+
+VOCABULARY:
+
+DISTINCT
+Concatenation operator
+Literal values
+DESCRIBE
+
+TRY IT/SOLVE IT:
+
+1. SELECT last_name as "Last Name", adress ||','||city||','||state|| as "Mailing Adress"
+   FROM f_customers;
+
+2. a) SELECT first_name AS "First Name"
+      FROM f_staffs;
+    
+   b) SELECT first_name ||" "|| last_name AS "DJs on Demand Clients"
+      FROM d_clients;
+    
+   c) SELECT DISTINCT quantity
+      FROM f_order_lines;
+
+   d) SELECT order_number
+      FROM f_orders;
+
+3. SELECT '***'||first_name||'***'||first_name||'***' AS "Super Star"
+   FROM f_staffs;
+
+4. d.
+5. SELECT last_name as "EMPLOYEE LAST NAME", salary as "CURRENT SALARY",
+   ROUND(salary * 1.05, 2) as "SALARY WITH 5% RAISE"
+   FROM F_STAFFS;
+
+6. DESCRIBE employees;
+   FIRST_NAME, PHONE_NUMBER, SALARY, COMMISION_PCT, MANAGER_ID, DEPARTMENT_ID, BONUS
+   It means that the row is still valid even if the fields do not contain any data.
+
+7. SELECT cd_number as "Inventory Item", title as "CD Title", producer as "Music Producer",
+   year as "Year Purchased"
+   FROM d_cds;
+
+8. TRUE
+9. TRUE
+10. SELECT employee_id, last_name, salary * 12 "ANNUAL SALARY"
+    FROM employees;
+
+11. * 
+12. b. *
+13. b. Projection
+14. c. Employee
+15. b. SELECT salary * (6 + 100)
+16. c.
+17. c. TRUE
+18. b, c
+19. a.
