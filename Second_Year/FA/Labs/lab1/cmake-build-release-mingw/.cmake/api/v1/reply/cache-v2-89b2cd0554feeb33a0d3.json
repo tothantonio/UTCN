@@ -55,7 +55,7 @@
 				}
 			],
 			"type" : "INTERNAL",
-			"value" : "d:/UTCN/Second_Year/FA/Labs/cmake-build-release-mingw"
+			"value" : "d:/UTCN/Second_Year/FA/Labs/lab1/cmake-build-release-mingw"
 		},
 		{
 			"name" : "CMAKE_CACHE_MAJOR_VERSION",
@@ -575,7 +575,7 @@
 				}
 			],
 			"type" : "STATIC",
-			"value" : "D:/UTCN/Second_Year/FA/Labs/cmake-build-release-mingw/CMakeFiles/pkgRedirects"
+			"value" : "D:/UTCN/Second_Year/FA/Labs/lab1/cmake-build-release-mingw/CMakeFiles/pkgRedirects"
 		},
 		{
 			"name" : "CMAKE_GENERATOR",
@@ -647,7 +647,7 @@
 				}
 			],
 			"type" : "INTERNAL",
-			"value" : "D:/UTCN/Second_Year/FA/Labs"
+			"value" : "D:/UTCN/Second_Year/FA/Labs/lab1"
 		},
 		{
 			"name" : "CMAKE_INSTALL_PREFIX",
@@ -1279,7 +1279,7 @@
 				}
 			],
 			"type" : "STATIC",
-			"value" : "D:/UTCN/Second_Year/FA/Labs/cmake-build-release-mingw"
+			"value" : "D:/UTCN/Second_Year/FA/Labs/lab1/cmake-build-release-mingw"
 		},
 		{
 			"name" : "Labs_IS_TOP_LEVEL",
@@ -1303,7 +1303,7 @@
 				}
 			],
 			"type" : "STATIC",
-			"value" : "D:/UTCN/Second_Year/FA/Labs"
+			"value" : "D:/UTCN/Second_Year/FA/Labs/lab1"
 		},
 		{
 			"name" : "_CMAKE_LINKER_PUSHPOP_STATE_SUPPORTED",

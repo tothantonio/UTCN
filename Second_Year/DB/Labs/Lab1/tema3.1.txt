@@ -1,0 +1,40 @@
+Database Programming with SQL
+3-1: Logical Comparisons and Precedence Rules
+
+VOCABULARY:
+
+NOT
+AND
+Rules of Precedence
+OR
+
+TRY IT/SOLVE IT:
+
+1. Prima foloseste AND, astfel ca, ambele conditii trebuie sa fie adevarate, iar in al doilea caz se foloseste OR,
+   unde doar o conditie este suficienta pentru a fi adevarata.
+
+2. SELECT last_name
+   FROM f_staffs
+   WHERE last_name LIKE '%e%' AND last_name LIKE '%i%';
+
+3. SELECT first_name ||' '|| last_name as "FULL NAME"
+   FROM f_staffs
+   WHERE salary > 6.5 AND staff_type = 'Order Taker';
+
+4. SELECT first_name ||' '|| last_name as "FULL NAME"
+   FROM employees
+   WHERE last_name LIKE 'D%' AND last_name LIKE '%a%' AND last_name LIKE '%e%';
+
+5. SELECT DISTINCT d_venues.loc_type
+   FROM d_events JOIN d_venues ON d_events.venue_id = d_venue.id
+   WHERE d_venues.loc_type != 'Private Home';
+
+6. c
+7. SELECT first_name ||' '|| last_name as "FULL NAME"
+   FROM employees
+   WHERE hire_date > '31-May-1998' AND hire_date < '01-June-1999' AND salary < 8000 AND last_name LIKE '%en%';
+
+8. SELECT LOWER(email) ||'@institutedomain.com' as "Email Adress"
+   FROM employees
+   WHERE salary > 9000 AND (commission_pct = 0 OR commission_pct IS NULL)
+   AND hire_date > '01-Jan-1996' AND hire_date <= '31-Mar-1996';

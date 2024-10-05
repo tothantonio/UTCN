@@ -49,8 +49,8 @@
 	"kind" : "codemodel",
 	"paths" : 
 	{
-		"build" : "D:/UTCN/Second_Year/FA/Labs/cmake-build-release-mingw",
-		"source" : "D:/UTCN/Second_Year/FA/Labs"
+		"build" : "D:/UTCN/Second_Year/FA/Labs/lab1/cmake-build-release-mingw",
+		"source" : "D:/UTCN/Second_Year/FA/Labs/lab1"
 	},
 	"version" : 
 	{

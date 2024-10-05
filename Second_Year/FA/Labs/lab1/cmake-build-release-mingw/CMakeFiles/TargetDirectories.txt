@@ -1,3 +1,3 @@
-D:/UTCN/Second_Year/FA/Labs/cmake-build-release-mingw/CMakeFiles/Labs.dir
-D:/UTCN/Second_Year/FA/Labs/cmake-build-release-mingw/CMakeFiles/edit_cache.dir
-D:/UTCN/Second_Year/FA/Labs/cmake-build-release-mingw/CMakeFiles/rebuild_cache.dir
+D:/UTCN/Second_Year/FA/Labs/lab1/cmake-build-release-mingw/CMakeFiles/Labs.dir
+D:/UTCN/Second_Year/FA/Labs/lab1/cmake-build-release-mingw/CMakeFiles/edit_cache.dir
+D:/UTCN/Second_Year/FA/Labs/lab1/cmake-build-release-mingw/CMakeFiles/rebuild_cache.dir
