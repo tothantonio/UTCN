@@ -1,6 +1,6 @@
 
 
-1."Care sunt materiile al căror titular este profesorul 'Pop'?"
+1."Care sunt materiile al caror titular este profesorul 'Pop'?"
 SELECT TITLU_MAT AS MATERIE
 FROM EXAMEN
 WHERE NUME_P like 'Ignat';
@@ -19,6 +19,6 @@ Nistor
 3. "Afișează studenții născuți înainte de 01-04-1985."
 SELECT NUME as "Nume", prenume as "Prenume" 
 FROM student
-WHERE DATA_N < '01-May-1995';
+WHERE DATA_N < '01-May-1985';
 
 no data found
