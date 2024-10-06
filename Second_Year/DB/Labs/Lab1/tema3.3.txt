@@ -18,15 +18,20 @@ TRY IT/SOLVE IT:
 
 3. SELECT AVG(salary)
    FROM employees
+   8775
 
    SELECT COUNT(salary)
    FROM employees
+   20
 
    SELECT MAX(salary)
    FROM employees
+   24000
 
    SELECT MIN(salary)
    FROM employees
+   2500
 
    SELECT SUM(salary)
    FROM employees
+   175500
