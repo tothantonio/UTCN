@@ -1,0 +1,25 @@
+[aimspice]
+[description]
+113
+Filtru Trece-Sus
+c1 in out 470n
+r1 out 0 10k
+!vin in 0 dc 5 sin(0 5 1k 0 0)
+vin in 0 dc 5 sin(0 5 10 0 0)
+
+
+[tran]
+1e-9
+6e-3
+X
+X
+0
+[ana]
+4 1
+0
+1 1
+1 1 -4 6
+2
+v(in)
+v(out)
+[end]

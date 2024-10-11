@@ -1,0 +1,63 @@
+
+                 *********************************************
+                 *                                           *
+                 *             A I M - S p i c e             *
+                 *                                           *
+                 *         Professional Version 2020.100           *
+                 *                                           *
+                 *********************************************
+
+	Date: Fri Oct 11 12:56:07 2024
+	Circuit File: Untitled
+	Analysis: Transient
+
+**************************  Circuit Description  **************************
+
+     1:  Filtru Trece-jos
+     2:  r1 out 0 10k
+     3:  c1 in out 470n
+     4:  vin in 0 dc 5 sin(0 5 1k 0 0)
+     5:  
+     6:  
+     7:  .tran 1e-9 6e-3
+
+***************************  Model Parameters  ****************************
+
+
+***************  Device Parameters (Only for .op analysis)  ***************
+
+
+
+**************************  Analysis Parameters  **************************
+
+	Stepsize ............ : 1e-9
+	Final time .......... : 6e-3
+	Use Initial Conditions: Off
+
+
+
+**************  Options (Only those different from default)  **************
+
+
+
+*************************  Simulation Statistics  *************************
+
+	Total number of iterations.....................: 157
+	Number of iterations for transient analysis....: 154
+	Total number of timepoints.....................: 78
+	Number of timepoints accepted..................: 76
+	Number of timepoints rejected..................: 2
+	Total analysis time (sec)......................: 0.012
+	Transient analysis time (sec)..................: 0.01
+	Time spent in device loading (sec).............: 0
+	Time spent in L-U decomposition (sec)..........: 0
+	Time spent in matrix reordering (sec)..........: 0
+	Time spent in matrix solving (sec).............: 0
+	Time spent in transient L-U decomposition (sec): 0
+	Time spent in transient matrix solving (sec)...: 0
+
+***************************  Kernel Messages  *****************************
+
+Circuit: Filtru Trece-jos
+
+

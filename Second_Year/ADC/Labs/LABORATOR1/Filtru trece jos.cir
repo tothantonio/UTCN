@@ -1,0 +1,25 @@
+[aimspice]
+[description]
+113
+Filtru Trece-jos
+r1 in out 10k
+c1 out 0 470n
+!vin in 0 dc 5 sin(0 5 1k 0 0)
+vin in 0 dc 5 sin(0 5 10 0 0)
+
+
+[tran]
+1e-9
+60e-3
+X
+X
+0
+[ana]
+4 1
+0
+1 1
+1 1 -4 6
+2
+v(in)
+v(out)
+[end]
