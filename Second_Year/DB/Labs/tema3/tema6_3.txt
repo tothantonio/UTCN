@@ -1,0 +1,32 @@
+Database Programming with SQL
+6-3: Inner versus Outer Joins
+
+VOCABULARY:
+
+FULL OUTER JOIN
+outer join
+LEFT OUTER JOIN
+RIGHT OUTER JOIN
+INNER JOIN
+
+TRY IT/ SOLVE IT:
+
+1.
+SELECT  e.first_name, e.last_name, d.department_name
+FROM employees e LEFT OUTER JOIN departments d ON e.department_id = d.department_id;
+
+2.
+SELECT  e.first_name, e.last_name, d.department_name
+FROM employees e RIGHT OUTER JOIN departments d ON e.department_id = d.department_id;
+
+3.
+SELECT  e.first_name, e.last_name, d.department_name
+FROM employees e FULL OUTER JOIN departments d ON e.department_id = d.department_id;
+
+4.
+SELECT ct.first_name, ct.last_name, ev.event_date, ev.description
+FROM  d_clients ct LEFT OUTER JOIN d_events ev ON ct.client_number = ev.client_number
+
+5.
+SELECT f_shifts.description, f_shift_assignments.shift_assign_date AS
+FROM  f_shifts LEFT OUTER JOIN f_shift_assignments ON f_shifts.code = f_shift_assignments.code;

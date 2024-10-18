@@ -7,19 +7,20 @@
                  *                                           *
                  *********************************************
 
-	Date: Fri Oct 11 12:56:07 2024
-	Circuit File: Untitled
+	Date: Fri Oct 18 10:39:05 2024
+	Circuit File: D:\UTCN\Second_Year\ADC\Labs\LABORATOR1\redresor_mono.cir
 	Analysis: Transient
 
 **************************  Circuit Description  **************************
 
-     1:  Filtru Trece-jos
-     2:  r1 out 0 10k
-     3:  c1 in out 470n
-     4:  vin in 0 dc 5 sin(0 5 1k 0 0)
-     5:  
+     1:  Redresor Monoalternanta
+     2:  D1 1 2 diodaS
+     3:  .Model diodaS D tt=1e-9
+     4:  rl 2 0 100
+     5:  vin 1 0 dc 5 sin(0 5 1k 0 0)
      6:  
-     7:  .tran 1e-9 6e-3
+     7:  
+     8:  .tran 1e-9 6e-3 0 0.0001
 
 ***************************  Model Parameters  ****************************
 
@@ -32,6 +33,8 @@
 
 	Stepsize ............ : 1e-9
 	Final time .......... : 6e-3
+	Display start time .. : 0
+	Maximum step size ... : 0.0001
 	Use Initial Conditions: Off
 
 
@@ -42,14 +45,14 @@
 
 *************************  Simulation Statistics  *************************
 
-	Total number of iterations.....................: 157
-	Number of iterations for transient analysis....: 154
-	Total number of timepoints.....................: 78
-	Number of timepoints accepted..................: 76
-	Number of timepoints rejected..................: 2
-	Total analysis time (sec)......................: 0.012
-	Transient analysis time (sec)..................: 0.01
-	Time spent in device loading (sec).............: 0
+	Total number of iterations.....................: 377
+	Number of iterations for transient analysis....: 370
+	Total number of timepoints.....................: 130
+	Number of timepoints accepted..................: 105
+	Number of timepoints rejected..................: 25
+	Total analysis time (sec)......................: 0.07
+	Transient analysis time (sec)..................: 0.064
+	Time spent in device loading (sec).............: 0.003
 	Time spent in L-U decomposition (sec)..........: 0
 	Time spent in matrix reordering (sec)..........: 0
 	Time spent in matrix solving (sec).............: 0
@@ -58,6 +61,6 @@
 
 ***************************  Kernel Messages  *****************************
 
-Circuit: Filtru Trece-jos
+Circuit: Redresor Monoalternanta
 
 

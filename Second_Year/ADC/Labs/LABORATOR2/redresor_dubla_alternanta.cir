@@ -1,0 +1,27 @@
+[aimspice]
+[description]
+156
+Redresor dubla alternanta in punte
+D1 1 2 diodaS
+D2 0 1 diodaS
+D3 0 3 diodaS
+D4 3 2 diodaS
+.Model diodaS D tt=1e-9
+Rl 2 0 100
+vin 1 3 sin(0 5 1k 0 0)
+[tran]
+1e-9
+6e-3
+X
+X
+0
+[ana]
+4 1
+0
+1 1
+1 1 -1 5
+3
+v(1)
+v(2)
+v(3)
+[end]

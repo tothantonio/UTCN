@@ -1,0 +1,12 @@
+Database Programming with SQL
+7-1: Oracle Equijoin and Cartesian Product
+
+VOCABULARY:
+
+produs cartezian
+equijoin
+propietary join
+alias
+join conditions
+
+1.

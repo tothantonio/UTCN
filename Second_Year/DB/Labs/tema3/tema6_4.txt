@@ -1,0 +1,48 @@
+Database Programming with SQL
+6-4: Self Joins and Hierarchical Queries
+
+VOCABULARY:
+
+self join
+hierarchical query
+level
+start with
+connect by
+
+TRY IT/ SOLVE IT:
+
+1.
+SELECT emp.last_name "Employee", emp.employee_id "Emp#", mgr.last_name "Manager", mgr.employee_Id  "Mgr#"
+FROM  employees emp INNER JOIN  employees  mgr  ON emp.manager_id  = mgr.employee_Id
+
+2.
+SELECT emp.last_name "Employee", emp.employee_id "Emp#", mgr.last_name "Manager", mgr.employee_Id  "Mgr#"
+FROM  employees emp LEFT OUTER JOIN  employees  mgr  ON emp.manager_id  = mgr.employee_Id
+ORDER BY  "Employee"
+
+3.
+SELECT emp.last_name "Employee", emp.hire_date "Emp Hired", mgr.last_name "Manager", mgr.hire_date "Mgr Hired"
+FROM  employees emp LEFT OUTER JOIN  employees  mgr  ON emp.manager_id  = mgr.employee_Id
+WHERE emp.hire_date < mgr.hire_date
+
+4.
+SELECT last_name, salary, department_id
+FROM employees
+START WITH first_name = 'Lex'  AND last_name = 'De Haan'
+CONNECT BY PRIOR employee_id = manager_id
+
+5.
+REZ E DOAR UN RAND
+
+6.
+SELECT LPAD(last_name, LENGTH(last_name) + (LEVEL-1)*2, '-') "organization chart "
+FROM employees
+START WITH last_name = ( SELECT last_name from employees WHERE manager_id IS NULL)
+CONNECT BY PRIOR employee_id = manager_id
+
+7.
+SELECT LPAD(last_name, LENGTH(last_name) + (LEVEL-1)*2, '-') "organization chart "
+FROM employees
+START WITH last_name = ( SELECT last_name from employees WHERE manager_id IS NULL)
+CONNECT BY PRIOR employee_id = manager_id AND last_name != 'De Haan'
+

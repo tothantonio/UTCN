@@ -1,0 +1,23 @@
+Database Programming with SQL
+6-1: Cross Joins and Natural Joins
+
+VOCABULARY:
+
+CROSS JOIN
+NATURAL JOIN
+
+TRY IT/ SOLVE IT:
+
+1.
+select last_name, department_name
+from employees CROSS JOIN departments
+
+2.
+select department_id, department_name, location_id, city
+from departments natural join locations
+
+3.
+select department_id, department_name, location_id, city
+from departments natural join locations
+where department_id in (20, 50)
+

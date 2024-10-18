@@ -1,0 +1,64 @@
+Database Programming with SQL
+6-2: Join Clauses
+
+VOCABULARY:
+
+ON clause
+USING clause
+
+TRY IT/ SOLVE IT:
+
+1.
+select department_id, department_name, location_id, city
+from departments join locations using(location_id)
+where location_id = 1400
+
+2.
+SELECT song_id, cd_number, title, comments
+FROM d_cds JOIN d_track_listings USING (cd_number)  JOIN d_play_list_items USING (song_id);
+
+3.
+select city, department_name, location_id, department_id
+from departments join locations using (location_id)
+where department_id in (10, 20, 30) and city = 'Seattle' 
+
+4.
+SELECT country_name, region_id, region_name
+FROM countries  JOIN regions USING(region_id)
+WHERE region_name = 'Americas'
+
+5.
+SELECT  first_name, last_name, hire_date, job_id, job_title, max_salary
+FROM employees  JOIN jobs USING (job_id)
+WHERE max_salary > 12000
+
+6.
+SELECT  job_title,  first_name,  last_name, lower(email) || '@gmail.com' as email
+FROM employees JOIN jobs USING(job_id)
+WHERE  job_title = 'Stock Clerk' ;
+
+7.
+SELECT e.employee_id, e.first_name, e.last_name, e.manager_id, m.first_name, m.last_name
+FROM employees e
+LEFT JOIN employees m
+ON e.manager_id = m.employee_id
+
+8.
+SELECT l.location_id, l.city, d.department_name
+FROM locations l
+JOIN departments d ON l.location_id = d.location_id
+JOIN countries c ON l.country_id = c.country_id
+WHERE c.country_name = 'Canada';
+
+9.
+SELECT e.manager_id, e.department_id, d.department_name, e.first_name, e.last_name
+FROM employees e
+JOIN departments d ON e.department_id = d.department_id
+WHERE e.department_id IN (80, 90, 110, 190)
+
+10.
+SELECT e.employee_id, e.last_name, e.department_id, d.department_name, e.hire_date
+FROM employees e
+JOIN departments d ON e.department_id = d.department_id
+WHERE e.hire_date = TO_DATE('07-JUN-1994', 'DD-MON-YYYY');
+
