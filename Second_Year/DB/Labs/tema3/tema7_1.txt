@@ -10,3 +10,42 @@ alias
 join conditions
 
 1.
+SELECT d_play_list_items.event_id , d_play_list_items.song_id, d_play_list_items.comments, d_track_listings.song_id , d_track_listings.cd_number,  d_track_listings.track
+FROM  d_play_list_items, d_track_listings
+
+2.
+SELECT d_play_list_items.event_id "event id in playlist", d_play_list_items.song_id "song id in playlist", d_play_list_items.comments "comments in playlist", d_track_listings.song_id "song id in tracklist", d_track_listings.cd_number "cd number in tracklist",  d_track_listings.track "track in tracklist"
+FROM  d_play_list_items, d_track_listings
+WHERE d_play_list_items.song_id = d_track_listings.song_id
+
+3.
+SELECT  d_songs.title,  d_songs.type_code type, d_types.description
+FROM d_songs, d_types
+WHERE d_songs.type_code = d_types.code
+
+4.
+SELECT  d_songs.title,  d_songs.type_code type, d_types.description
+FROM d_songs, d_types
+WHERE d_songs.type_code = d_types.code AND d_songs.id in (47, 48)
+
+5.
+SELECT d_clients.email AS "d_clients - email" , d_clients.phone AS "d_clients - phone" , d_clients.last_name AS "d_clients - last_name" , d_clients.first_name AS "d_clients - first_name"  , d_clients.client_number AS "d_clients - client_number"  , d_events.id AS "d_events - id", d_events.name AS "d_events - name", d_events.event_date AS "d_events - event_date", d_events.description AS "d_events - description", d_events.cost AS "d_events - cost", d_events.venue_id AS "d_events - venue_id", d_events.package_code AS "d_events - package_code", d_events.theme_code AS "d_events - theme_code", d_events.client_number AS "d_events - client_number", d_job_assignments.partner_id AS "d_job_assignments - partner_id", d_job_assignments.event_id AS "d_job_assignments - event_id", d_job_assignments.job_date AS "d_job_assignments - job_date", d_job_assignments.status AS "d_job_assignments - status"
+FROM d_clients, d_events, d_job_assignments
+WHERE d_clients.client_number = d_events.client_number AND d_events.id =  d_job_assignments.event_id;
+
+6.
+SELECT d_track_listings.song_id "song id in tracklist", d_cds.title "title in cds"
+FROM d_track_listings, d_cds
+WHERE d_track_listings.cd_number = d_cds.cd_number
+
+7.
+a) false
+b) true
+c) true
+d) false
+e) true
+f) false
+g) true
+
+8.
+By combining data from multiple tables, businesses can obtain a more comprehensive view of their operations
