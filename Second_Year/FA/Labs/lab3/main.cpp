@@ -43,8 +43,26 @@ void heapSort(int A[], int n) {
         n--;
         sink(A, n, 1);
     }
-    cout << A[1];
+    cout << A[1] << " ";
 }
 int main() {
+
+    int array[] = {4, 9, 3, 5, 2};
+    int n = sizeof(array) / sizeof(array[0]);
+
+    cout << "Array before makeHeapSwim: ";
+    for(int i = 0; i < n; i++) {
+        cout << array[i] << " ";
+    }
+    cout << endl;
+
+    cout << "Array after makeHeapSwim: ";
+    makeHeapSwim(array, n);
+    for(int i = 0; i < n; i++) {
+        cout << array[i] << " ";
+    }
+    cout << endl;
+
+    heapSort(array, n);
     return 0;
 }
