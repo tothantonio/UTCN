@@ -1,0 +1,69 @@
+
+                 *********************************************
+                 *                                           *
+                 *             A I M - S p i c e             *
+                 *                                           *
+                 *         Professional Version 2020.100           *
+                 *                                           *
+                 *********************************************
+
+	Date: Fri Oct 25 11:40:01 2024
+	Circuit File: D:\UTCN\Second_Year\ADC\Labs\LABORATOR3\Redresor cu filtru.cir
+	Analysis: Transient
+
+**************************  Circuit Description  **************************
+
+     1:  Redresor Cu Filtru
+     2:  D1 1 OUT dioda
+     3:  D2 0 1 dioda
+     4:  D3 0 2 dioda
+     5:  D4 2 OUT dioda
+     6:  C1 0 OUT 5m
+     7:  R1 0 OUT 100
+     8:  vin 1 2 sin(0 10 50 0 0)
+     9:  .model dioda D TT = 1e-9
+    10:  
+    11:  .tran 1e-9 60e-3
+
+***************************  Model Parameters  ****************************
+
+
+***************  Device Parameters (Only for .op analysis)  ***************
+
+
+
+**************************  Analysis Parameters  **************************
+
+	Stepsize ............ : 1e-9
+	Final time .......... : 60e-3
+	Use Initial Conditions: Off
+
+
+
+**************  Options (Only those different from default)  **************
+
+
+
+*************************  Simulation Statistics  *************************
+
+	Total number of iterations.....................: 565
+	Number of iterations for transient analysis....: 558
+	Total number of timepoints.....................: 162
+	Number of timepoints accepted..................: 131
+	Number of timepoints rejected..................: 31
+	Total analysis time (sec)......................: 0.038
+	Transient analysis time (sec)..................: 0.03
+	Time spent in device loading (sec).............: 0.003
+	Time spent in L-U decomposition (sec)..........: 0
+	Time spent in matrix reordering (sec)..........: 0
+	Time spent in matrix solving (sec).............: 0
+	Time spent in transient L-U decomposition (sec): 0
+	Time spent in transient matrix solving (sec)...: 0
+
+***************************  Kernel Messages  *****************************
+
+Circuit: Redresor Cu Filtru
+
+Warning: vin: no DC value, transient time 0 value used
+Warning: vin: no DC value, transient time 0 value used
+

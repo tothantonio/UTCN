@@ -1,0 +1,73 @@
+
+                 *********************************************
+                 *                                           *
+                 *             A I M - S p i c e             *
+                 *                                           *
+                 *         Professional Version 2020.100           *
+                 *                                           *
+                 *********************************************
+
+	Date: Fri Oct 25 11:34:18 2024
+	Circuit File: D:\UTCN\Second_Year\ADC\Labs\LABORATOR3\STABILIZATOR CU REACTIE FARA AMPLIFICATOR DE EROARE.cir
+	Analysis: Transient
+
+**************************  Circuit Description  **************************
+
+     1:  Stabilizator cu reac?ie f?r? amplificator de eroare
+     2:  D1 1 OUTR DIODA
+     3:  D2 0 1 DIODA
+     4:  D3 0 2 DIODA 
+     5:  D4 2 OUTR DIODA
+     6:  D5 0 Vz zener
+     7:  C1 0 OUTR 1m
+     8:  R1 OUTR VZ 220
+     9:  RL OUT 0 100
+    10:  Q1 OUTR Vz out tranzistor
+    11:  Vin 1 2 sin(0 10 50 0 0)
+    12:  .model DIODA D TT=1e-9
+    13:  .model zener D BV=6.8
+    14:  .model tranzistor NPN tr=1e-9 tf=1e-9
+    15:  .tran 1e-9 60e-3
+
+***************************  Model Parameters  ****************************
+
+
+***************  Device Parameters (Only for .op analysis)  ***************
+
+
+
+**************************  Analysis Parameters  **************************
+
+	Stepsize ............ : 1e-9
+	Final time .......... : 60e-3
+	Use Initial Conditions: Off
+
+
+
+**************  Options (Only those different from default)  **************
+
+
+
+*************************  Simulation Statistics  *************************
+
+	Total number of iterations.....................: 489
+	Number of iterations for transient analysis....: 457
+	Total number of timepoints.....................: 129
+	Number of timepoints accepted..................: 108
+	Number of timepoints rejected..................: 21
+	Total analysis time (sec)......................: 0.028
+	Transient analysis time (sec)..................: 0.022
+	Time spent in device loading (sec).............: 0.001
+	Time spent in L-U decomposition (sec)..........: 0
+	Time spent in matrix reordering (sec)..........: 0
+	Time spent in matrix solving (sec).............: 0
+	Time spent in transient L-U decomposition (sec): 0
+	Time spent in transient matrix solving (sec)...: 0
+
+***************************  Kernel Messages  *****************************
+
+Circuit: Stabilizator cu reac?ie f?r? amplificator de eroare
+
+Warning: vin: no DC value, transient time 0 value used
+Warning: vin: no DC value, transient time 0 value used
+

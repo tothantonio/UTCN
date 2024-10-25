@@ -1,0 +1,27 @@
+[aimspice]
+[description]
+159
+Redresor Cu Filtru
+D1 1 OUT dioda
+D2 0 1 dioda
+D3 0 2 dioda
+D4 2 OUT dioda
+C1 0 OUT 5m
+R1 0 OUT 100
+vin 1 2 sin(0 10 50 0 0)
+.model dioda D TT = 1e-9
+
+[tran]
+1e-9
+60e-3
+X
+X
+0
+[ana]
+4 1
+0
+1 1
+1 1 -5.49694E-29 10
+1
+v(out)
+[end]

@@ -321,9 +321,9 @@ void profilerHeap() {
 
 int main()
 {
-    //demo();
-    profilerHeap();
-    profilerBubbleSort();
-    profiler.showReport();
+    demo();
+    //profilerHeap();
+    //profilerBubbleSort();
+    //profiler.showReport();
     return 0;
 }

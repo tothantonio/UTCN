@@ -1,0 +1,31 @@
+[aimspice]
+[description]
+312
+Stabilizator cu reacþie fãrã amplificator de eroare
+D1 1 OUTR DIODA
+D2 0 1 DIODA
+D3 0 2 DIODA 
+D4 2 OUTR DIODA
+D5 0 Vz zener
+C1 0 OUTR 1m
+R1 OUTR VZ 220
+RL OUT 0 100
+Q1 OUTR Vz out tranzistor
+Vin 1 2 sin(0 10 50 0 0)
+.model DIODA D TT=1e-9
+.model zener D BV=6.8
+.model tranzistor NPN tr=1e-9 tf=1e-9
+[tran]
+1e-9
+60e-3
+X
+X
+0
+[ana]
+4 1
+0
+1 1
+1 1 -3.41661E-22 6
+1
+v(out)
+[end]
