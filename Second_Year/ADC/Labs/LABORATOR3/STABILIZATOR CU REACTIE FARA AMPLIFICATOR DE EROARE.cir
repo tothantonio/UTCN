@@ -9,7 +9,7 @@ D4 2 OUTR DIODA
 D5 0 Vz zener
 C1 0 OUTR 1m
 R1 OUTR VZ 220
-RL OUT 0 100
+RL 0 OUT 100
 Q1 OUTR Vz out tranzistor
 Vin 1 2 sin(0 10 50 0 0)
 .model DIODA D TT=1e-9

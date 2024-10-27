@@ -7,8 +7,8 @@ D2 0 1 Dioda
 D3 0 2 Dioda
 D4 2 out Dioda
 D5 0 out Zener
-C out 0 1m
-R out 0 100
+C 0 out 1m
+R o out 100
 Vin 1 2 sin(0 10 50 0 0)
 .Model Dioda D tt=1e-9
 .Model Zener D bv=6.8
