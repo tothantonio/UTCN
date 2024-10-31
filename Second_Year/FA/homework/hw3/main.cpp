@@ -4,7 +4,7 @@ using namespace std;
 
 #define MAX_SIZE 10000
 #define STEP_SIZE 100
-#define NR_TESTS 5
+#define NR_TESTS 10
 #define MAX_THRESHOLD  50
 
 Profiler profiler;
@@ -14,7 +14,7 @@ Profiler profiler;
  * @group 30228
 * Assignment requirements : Analysis & Comparison of Advanced Sorting Methods - HeapSort and QuickSort/QuickSelect
 * QuickSort: I use the partition function and I move all the elements that are lower than my pivot in the first part of the array
-*            After I move the pivot in its correct position so that the bigger elements are in right and the lower elements are in left side
+*            After, I move the pivot in its correct position so that the bigger elements are in right and the lower elements are in left side
 *            I recall the QuickSort function on the both parts, to get a sorted array
 *            Complexity: O(nlogn) for average(random array) and best(the pivot divides the array in two nearly equal parts) and O(n^2) for worst case(the pivot is the smallest or is the largest, sorted array)
 *            NOT STABLE
@@ -29,6 +29,14 @@ Profiler profiler;
 *              Complexity: O(nlogn)
 * QuickSort vs QuickSort Hybrid(+ Insertion Sort): The Hybrid QuickSort does less comparisons and assignments than normal QuickSort
 *                                                  The Hybrid QuickSort is much faster on Small Arrays(including Insertion Sort)
+*
+* Also, we used :
+*   if(right <= left) {
+        return;
+    }
+    As an exit condition, but why it isn't '==' ? Both of them have the same purpose
+    But I think, if we write right == left, it means that we have only one element in the array, so the sorting algorithm would be useless, which is a good exit condition
+    But it does not cover the situation if right < left, so "right <= left" is the best option
  */
 
 struct heap {
@@ -94,20 +102,6 @@ void heapSort(heap &H) {
         H.heapSize--;
         heapify(H, 0);
     }
-}
-
-int randPartition(int array[], int left, int right) {
-    int i = left + rand() % (right - left + 1);
-    swap(array[i], array[right]);
-    int j = left - 1;
-    for(i = left; i < right; i++) {
-        if(array[i] <= array[right]) {
-            j++;
-            swap(array[i], array[j]);
-        }
-    }
-    swap(array[j + 1], array[right]);
-    return j + 1;
 }
 
 int Partition(int array[], int left, int right, int pivot, int size, Operation &comp, Operation &assign) {
@@ -182,6 +176,19 @@ void copy(int dest[], int source[], int n) {
     }
 }
 
+int randPartition(int array[], int left, int right) {
+    int i = left + rand() % (right - left + 1);
+    swap(array[i], array[right]);
+    int j = left - 1;
+    for(i = left; i <= right; i++) {
+        if(array[i] <= array[right]) {
+            j++;
+            swap(array[i], array[j]);
+        }
+    }
+    return j;
+}
+
 int QuickSelect(int array[], int left, int right, int i) {
     if(left == right) {
         return array[left];
@@ -200,7 +207,7 @@ int QuickSelect(int array[], int left, int right, int i) {
 
 void demo() {
 
-    int array[5] = {3, 4, 9, 1, 2};
+    int array[5] = {6, 2, 4, 9, 8};
     int array2[5] = {9, 10, 1, 5, 3};
     cout << "Array1 before Sorting :";
     for(int i = 0; i < 5; i++) {
@@ -265,7 +272,7 @@ void bestCasePerf() {
     for(n = STEP_SIZE; n <= MAX_SIZE; n += STEP_SIZE) {
         for(int test = 0; test <= NR_TESTS; test++)
         {
-            FillRandomArray(array, n, 10, 50000, false, 1);
+            FillRandomArray(array, n);
             bestCaseScenario(array, 0, n - 1);
             QuickSort(array, 0, n - 1, n);
         }
