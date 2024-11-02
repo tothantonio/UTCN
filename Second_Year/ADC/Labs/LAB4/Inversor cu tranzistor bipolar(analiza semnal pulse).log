@@ -1,0 +1,78 @@
+
+                 *********************************************
+                 *                                           *
+                 *             A I M - S p i c e             *
+                 *                                           *
+                 *         Professional Version 2020.100           *
+                 *                                           *
+                 *********************************************
+
+	Date: Fri Nov  1 11:26:20 2024
+	Circuit File: C:\Users\40756\OneDrive\Desktop\Inversor cu tranzistor bipolar(analiza semnal pulse).cir
+	Analysis: Transient
+
+**************************  Circuit Description  **************************
+
+     1:  Inversor cu tranzistor bipolar(analiza semnal pulse)
+     2:  R1 in 1 1k
+     3:  Rb 1 eb 7k
+     4:  Rc out ec 1k
+     5:  C1 in 1 30p
+     6:  
+     7:  C2 0 out 1p
+     8:  !*Acest condensator este pus ca sa corecteze iesirea inversorului
+     9:  
+    10:  Q out 1 0 Tranzistor
+    11:  .Model Tranzistor NPN tr=5e-9 tf=8e-9
+    12:  
+    13:  Vin in 0 pulse(0 5 0 1e-9 1e-9 1e-7 2e-7)
+    14:  Vec ec 0 DC 5
+    15:  Veb eb 0 DC -1
+    16:  
+    17:  !*Vin=0V => tranzistorul Q e blocat => Vout=Vec=5V(de la sursa)
+    18:  !*Vin=5V => transiztorul Q e saturat => Vce=0.2V => Vout=0.2V(e considerat 0 logic)
+    19:  
+    20:  .tran 1e-9 5e-7
+
+***************************  Model Parameters  ****************************
+
+
+***************  Device Parameters (Only for .op analysis)  ***************
+
+
+
+**************************  Analysis Parameters  **************************
+
+	Stepsize ............ : 1e-9
+	Final time .......... : 5e-7
+	Use Initial Conditions: Off
+
+
+
+**************  Options (Only those different from default)  **************
+
+
+
+*************************  Simulation Statistics  *************************
+
+	Total number of iterations.....................: 569
+	Number of iterations for transient analysis....: 564
+	Total number of timepoints.....................: 177
+	Number of timepoints accepted..................: 157
+	Number of timepoints rejected..................: 20
+	Total analysis time (sec)......................: 0.048
+	Transient analysis time (sec)..................: 0.045
+	Time spent in device loading (sec).............: 0.007
+	Time spent in L-U decomposition (sec)..........: 0
+	Time spent in matrix reordering (sec)..........: 0
+	Time spent in matrix solving (sec).............: 0
+	Time spent in transient L-U decomposition (sec): 0
+	Time spent in transient matrix solving (sec)...: 0
+
+***************************  Kernel Messages  *****************************
+
+Circuit: Inversor cu tranzistor bipolar(analiza semnal pulse)
+
+Warning: vin: no DC value, transient time 0 value used
+Warning: vin: no DC value, transient time 0 value used
+

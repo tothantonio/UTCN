@@ -1,0 +1,31 @@
+[aimspice]
+[description]
+219
+Inversor cu tranzistor bipolar(analiza curent continuu)
+R1 in 1 1k
+Rb 1 eb 7k
+Rc out ec 1k
+C1 in 1 15p
+
+Q out 1 0 Tranzistor
+.Model Tranzistor NPN tr=5e-9 tf=8e-9
+
+Vin in 0 DC 5
+Vec ec 0 DC 5
+Veb eb 0 DC -1
+
+[dc]
+1
+Vin
+0
+5
+0.1
+[ana]
+1 1
+0
+1 1
+1 1 0 5
+2
+v(in)
+v(out)
+[end]

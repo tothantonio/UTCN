@@ -1,0 +1,3 @@
+D:/UTCN/Second_Year/FA/homework/hw4/cmake-build-debug/CMakeFiles/hw4.dir
+D:/UTCN/Second_Year/FA/homework/hw4/cmake-build-debug/CMakeFiles/edit_cache.dir
+D:/UTCN/Second_Year/FA/homework/hw4/cmake-build-debug/CMakeFiles/rebuild_cache.dir

@@ -1,0 +1,28 @@
+[aimspice]
+[description]
+149
+INVERSOR SIMPLU ANALIZA DC
+R1 in 1 1k
+Rc out ec 7k
+
+Q out 1 0 Tranzistor
+.Model Tranzistor NPN tr=5e-9 tf=8e-9
+
+Vin in 0 DC 5
+Vec ec 0 DC 5
+
+[dc]
+1
+vin
+0
+5
+0.1
+[ana]
+1 1
+0
+1 1
+1 1 0 5
+2
+v(in)
+v(out)
+[end]
