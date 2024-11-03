@@ -1,0 +1,32 @@
+Vocabulary
+
+data dictionary
+default
+table
+create table
+
+
+Try it / Solve it 
+
+2.create table  graduate_candidates
+   ( student_id number(6,0),
+    last_name varchar2(75) constraint gcs_last_name_nn not null enable,
+ first_name varchar2(75) constraint gcs_first_name_nn not null enable,
+ credits number(5,2) constraint gcs_credits_nn not null enable,
+graduation_date date,
+ constraint gcs_std_id_pk primary key (student_id),
+ constraint gcs_req_fk foreign key(credits) references requirements(credits) enable   
+
+3.describe graduate_candidates;
+
+4.create table kumar_table
+as ( select * from graduate_candidates);
+
+5.insert into kumar_table (student_id, last_name, first_name, credits, graduation_date)
+values(10,'kumar','he',999.99,null);  
+
+6.select * from user_tables;
+select * from user_catalog;
+select distinct(table_type) from user_catalog;
+select * from user_objects;
+select distinct(object_type) from user_objects;

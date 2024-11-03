@@ -1,0 +1,49 @@
+Vocabulary
+
+interval year() to month
+timestamp with local time zone
+blob
+timestamp with time zone
+interval day () to second
+clob
+timestamp
+
+Try it / Solve it 
+
+1.create table time_ex3 (first_column timestamp with time zone,
+second_column timestamp with local time zone);
+insert into time_ex3
+(first_column,
+ second_column)
+values
+(to_timestamp_tz('2016-11-0116:02:08.236+05:30','yyyy-mm-ddhh24:mi:ss.fftzh:tzm'),
+to_timestamp_tz('2016-11-0116:02:08.236+05:30','yyyy-mm-ddhh24:mi:ss.fftzh:tzm'));
+
+create table time_ex4
+(loan_duration1 interval year(3) to month,
+loan_duration2  interval year(2) to month);
+insert into time_ex4 (loan_duration1, loan_duration2 )
+values( interval '120' month(3), interval '3-6' year to month);
+
+create table time_ex5
+(day_duration1 interval day(3) to second,
+day_duration2  interval day(3) to second);
+insert into time_ex5 (day_duration1, day_duration2 )
+values( interval '25' day(2), interval '4 10:30:10' day to second);
+
+2.alter session set time_zone = '-05:00';
+select * from time_ex3;
+
+select to_char( sysdate + loan_duration1 , 'dd-month-yyyy') as "120 months from now", to_char( sysdate + loan_duration2 , 'dd-month-yyyy') as "3 years 6 months from now"
+from time_ex4;
+
+select
+to_char( sysdate , 'dd-month-yyyy hh:mi:ss') as now,
+ to_char( sysdate + day_duration1 , 'dd-month-yyyy hh:mi:ss') as "25 days from now",
+ to_char( sysdate + day_duration2 , 'dd-month-yyyy hh:mi:ss') as "4day10hr30min10sec from now "
+from time_ex5;
+
+3. when your data is international and must be correct for every specific time zone
+
+	
+

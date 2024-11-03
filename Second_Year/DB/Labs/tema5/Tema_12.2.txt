@@ -1,0 +1,81 @@
+Try it / Solve it 
+
+1.
+create table copy_f_food_items
+as ( select * from f_food_items);
+
+
+update copy_f_food_items  set price = 3.75
+where lower(description) = 'strawberry shake';
+update copy_f_food_items  set price = 1.20
+where lower(description) = 'fries';
+
+select * from copy_f_food_items;
+
+2.
+create table copy_f_staffs
+as ( select * from f_staffs);
+
+update copy_f_staffs  set overtime_rate = nvl(overtime_rate, 0) + 0.75
+where lower(first_name || ' ' || last_name) = 'bob miller';
+update copy_f_staffs  set overtime_rate = nvl(overtime_rate, 0) + 0.85
+where lower(first_name || ' ' || last_name) = 'sue doe';
+
+select * from copy_f_staffs;
+
+3.
+create table copy_f_orders
+as ( select * from f_orders);
+
+insert into copy_f_orders(order_number,order_date,order_total,cust_id,staff_id)
+values(5680,to_date('june 12, 2004','fmmonth dd, yyyy'),159.78,145,9);
+insert into copy_f_orders(order_number,order_date,order_total,cust_id,staff_id)
+values(5691,to_date('09-23-2004','mm-dd-yyyy'),145.98,225,12);
+insert into copy_f_orders(order_number,order_date,order_total,cust_id,staff_id)
+values(5701,to_date('july 4, 2004','fmmonth dd, yyyy'),229.31,230,12);
+
+select * from copy_f_orders;
+
+4.
+create table copy_f_customers
+as ( select * from f_customers);
+insert into copy_f_customers(id,first_name,last_name,address,city,state,zip,phone_number)
+values(145,'katie','hernandez','92 chico way','los angeles','ca',98008,'8586667641');
+
+insert into copy_f_customers(id,first_name,last_name,address,city,state,zip,phone_number)
+values(225,'daniel','spode','1923 silverado','denver','co',80219,'7193343523');
+
+insert into copy_f_customers(id,first_name,last_name,address,city,state,zip,phone_number)
+values(230,'adam','zurn','5 admiral way','seattle','wa',null,'4258879009');
+ora-01400: cannot insert null into ("hkumar"."copy_f_customers"."zip")
+
+select * from copy_f_customers;
+
+5.
+update copy_f_staffs  set salary = (select salary from copy_f_staffs where lower(first_name || ' ' || last_name) = 'bob miller')
+where lower(first_name || ' ' || last_name) = 'sue doe';
+
+6.
+insert into copy_f_staffs(id,first_name,last_name,birthdate,salary,overtime_rate,training,staff_type,manager_id,manager_budget,manager_target)
+values(25,'kai','kim',to_date('03-nov-1988','fmdd-mon-yyyy'),6.75,null,null,'order taker',null,null,null);
+
+7.
+update copy_f_staffs  set manager_id = (select manager_id  from copy_f_staffs where lower(first_name || ' ' || last_name) = 'sue doe')
+where lower(first_name || ' ' || last_name) = 'kai kim';
+
+8.
+ora-02292: integrity constraint (hkumar.emp_dept_fk) violated - child record found
+
+9.
+select * from copy_f_staffs;
+delete from copy_f_staffs
+where lower(first_name || ' ' || last_name) = 'kai kim';
+
+10.
+create table lesson7_emp
+as ( select * from employees);
+
+select distinct employee_id from job_history;
+
+delete from lesson7_emp
+where employee_id in ( select distinct employee_id from job_history) ;

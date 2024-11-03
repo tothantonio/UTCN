@@ -1,0 +1,69 @@
+1. 2. 3. 4. done 
+
+1. THINGS ARE CHANGING MAN
+
+2. create table  artists
+(artist_id number(5,0),
+first_name varchar2(25) constraint ait_first_name_nn not null enable,
+last_name varchar2(30) constraint ait_last_name_nn not null enable,
+band_name varchar2(30),
+email varchar2(75) constraint ait_email_nn not null enable,
+hr_rate number(8,2) constraint ait_hr_rate_nn not null enable,
+song_id number(5,0) constraint ait_song_id_nn not null enable,
+constraint ait_id_pk primary key (artist_id)
+);
+
+insert into artists (artist_id, first_name, last_name, band_name, email, hr_rate, song_id)
+select 1 as artist_id,
+case
+when artist is null then 'first name unknown'
+when instr(artist,' ') = 0 then artist
+else substr(artist,1,instr(artist,' ') -1)
+end
+as first_name,
+case
+when artist is null then 'last name unknown'
+when instr(artist,' ') = 0 then artist
+else substr(artist,instr(artist,' '),length(artist))
+end
+as last_name,
+artist as band_name,
+null as email,
+null as hr_rate,
+id as song_id
+
+from d_songs
+where  rownum =1 ;
+
+insert into artists (artist_id, first_name, last_name, band_name, email, hr_rate, song_id)
+values(2,'david','gray','david''s band','some.email@somedomain.com','999999.99',null);
+select * from artists;
+
+alter table artists
+add (specialty varchar2(100), college varchar2(100));
+
+alter table artists
+modify (specialty varchar2(99), college varchar2(98));
+
+alter table artists
+drop column specialty;
+
+alter table artists
+rename column college to university;
+
+alter table artists
+  rename to artists_new_name;
+
+alter table artists_new_name
+modify (university varchar2(98) default 'great college');
+
+alter table artists_new_name
+set unused (university);
+select column_name from user_tab_columns where lower(table_name) = 'artists_new_name';
+
+alter table artists_new_name
+drop unused columns;
+
+rename artists_new_name to artists_new2;
+
+truncate table artists_new2;

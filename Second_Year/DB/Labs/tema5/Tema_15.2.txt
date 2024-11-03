@@ -1,0 +1,64 @@
+Vocabulary 
+
+rownum
+with check options
+with read only
+
+Try it / Solve it 
+
+1.select owner, table_name, column_name, updatable,insertable, deletable
+from user_updatable_columns where lower(table_name) = 'copy_d_songs';
+
+
+select owner, table_name, column_name, updatable,insertable, deletable
+from user_updatable_columns where lower(table_name) = 'copy_d_events';
+
+
+select owner, table_name, column_name, updatable,insertable, deletable
+from user_updatable_columns where lower(table_name) = 'copy_d_cds';
+
+
+select owner, table_name, column_name, updatable,insertable, deletable
+from user_updatable_columns where lower(table_name) = 'copy_d_clients';
+
+2.create or replace view view_copy_d_songs  as
+select *
+from copy_d_songs;
+
+
+3.insert into view_copy_d_songs(id,title,duration,artist,type_code)
+values(88,'mello jello','2 min','the what',4);
+
+
+4.create or replace view read_copy_d_cds  as
+select *
+from copy_d_cds
+where year = '2000'
+with read only ;
+
+5. ora-42399: cannot perform a dml operation on a read-only view
+
+
+6.create or replace view read_copy_d_cds  as
+select *
+from copy_d_cds
+where year = '2000'
+with check option constraint ck_read_copy_d_cds;
+
+7.
+delete from read_copy_d_cds
+where year = '2000';
+
+8.delete from read_copy_d_cds
+where cd_number = 90;
+
+9.delete from read_copy_d_cds
+where year = '2001';
+
+10. year = 2000
+
+11.
+
+12. computing_power = computing_power*2 for year++ 
+
+13. artificiall intelligence will blow up the growth of computing power

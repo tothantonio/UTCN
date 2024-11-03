@@ -1,0 +1,30 @@
+
+Try it / Solve it 
+
+5.
+id number 6 0
+name varchar2 50 n
+date_opened date
+address varchar2 50
+city varchar2 30
+zip_postal_code varchar2 12 n
+phone varchar2 20 n
+email varchar2 75 n
+manager_id number 6 0 n
+emergency_contact varchar2 20 n
+
+6. create table  f_global_locations
+( id number(6,0) constraint f_gln_id_pk primary key , name varchar2(50), date_opened date constraint f_gln_date_opened_nn not null enable, address varchar2(50) constraint f_gln_add_nn not null enable, city varchar2(30)  constraint f_gln_city_nn not null enable, zip_postal_code varchar2(12), phone varchar2(20), email varchar2(75) constraint f_gln_email_uk unique, manager_id number(6,0), emergency_contact varchar2(20));
+
+9. create table  f_global_locations
+( id number(6,0) constraint f_gln_id_pk primary key ,
+name varchar2(50),
+date_opened date constraint f_gln_dt_opened_nn not null enable,
+address varchar2(50) constraint f_gln_add_nn not null enable,
+city varchar2(30)  constraint f_gln_city_nn not null enable,
+zip_postal_code varchar2(12),
+phone varchar2(20),
+email varchar2(75) ,
+manager_id number(6,0),
+emergency_contact varchar2(20),
+ constraint f_gln_email_uk unique(email)

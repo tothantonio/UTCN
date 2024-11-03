@@ -1,0 +1,38 @@
+
+Try it / Solve it 
+
+
+1. add drop enable disable
+
+2. alter table copy_d_clients
+add  constraint copy_d_clt_client_number_pk primary key (client_number);
+
+3. alter table  copy_d_events
+add constraint copy_d_eve_client_number_fk foreign key (client_number) references  copy_d_clients (client_number) enable;
+
+4.
+select constraint_name, constraint_type, table_name
+from user_constraints
+where table_name =  upper('copy_d_clients') ;
+
+select constraint_name, constraint_type, table_name
+from user_constraints
+where table_name =  upper('copy_d_events') ;
+
+5. alter table copy_d_clients
+drop constraint copy_d_clt_client_number_pk cascade  ;
+
+6. insert into copy_d_events(client_number,id,name,event_date,description,cost,venue_id,package_code,theme_code)
+values(7125,140,'cline bas mitzvah',to_date('15-jul-2004','dd-mon-yyyy'),'church and private home formal',4500,105,87,77);
+
+7. alter table copy_d_clients
+disable constraint copy_d_clt_client_number_pk cascade;
+
+8. insert into copy_d_events(client_number,id,name,event_date,description,cost,venue_id,package_code,theme_code)
+values(7125,140,'cline bas mitzvah',to_date('15-jul-2004','dd-mon-yyyy'),'church and private home formal',4500,105,87,77);
+
+9. alter table copy_d_clients
+enable constraint copy_d_clt_client_number_pk ;
+
+10. alter table copy_d_events
+enable constraint copy_d_eve_client_number_fk;

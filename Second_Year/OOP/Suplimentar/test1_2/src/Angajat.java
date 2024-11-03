@@ -1,5 +1,5 @@
 public class Angajat {
-    public static final String COMPANIE;
+    public static String COMPANIE;
     public static int ANGAJATI;
 
     static{

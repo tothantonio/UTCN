@@ -1,0 +1,22 @@
+
+Try it / Solve it 
+
+2.
+animal_id number(6)  - primary key
+license_tag_number number(10)- unique
+admit_date date- not null
+vaccination_date date- not null
+
+3. create table  animals
+( animal_id  number(6,0) constraint anl_anl_id_pk primary key ,
+name varchar2(25),
+license_tag_number number(10,0) constraint anl_l_tag_num_uk unique,
+admit_date  date constraint anl_adt_dat_nn not null enable,
+adoption_id   number(5,0),
+vaccination_date  date constraint anl_vcc_dat_nn not null enable);
+
+4. insert into animals (animal_id, name, license_tag_number, admit_date, adoption_id, vaccination_date)
+values( 101, 'spot', 35540, to_date('10-oct-2004', 'dd-mon-yyyy'), 205, to_date('12-oct-2004', 'dd-mon-yyyy'));
+select * from animals;
+
+5. alter table  animals add constraint anl_adopt_id_fk  foreign key (adoption_id) references  adoptions(id) enable;

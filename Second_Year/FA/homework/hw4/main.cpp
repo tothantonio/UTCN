@@ -151,7 +151,7 @@ void demo() {
         cout << sol.front() << " ";
         sol.pop();
     }
-cout << endl;
+    cout << endl;
 }
 
 void perf() {

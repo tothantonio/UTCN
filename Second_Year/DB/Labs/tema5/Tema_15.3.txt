@@ -1,0 +1,30 @@
+Vocabulary
+
+Top-N analysis
+drop
+inline view
+
+Try it / Solve it 
+
+1.create or replace view view_copy_d_songs  as
+select title, artist
+from copy_d_songs;
+
+
+2.drop view view_copy_d_songs;
+select * from view_copy_d_songs;
+
+3.select * from
+(select last_name, salary from employees order by salary  desc)
+where rownum <= 3;
+
+4.select empm.last_name, empm.salary, dptmx.department_id
+from
+(select dpt.department_id, max(nvl(emp.salary,0)) max_dpt_sal
+from departments dpt left outer join employees emp on dpt.department_id = emp.department_id
+group by dpt.department_id) dptmx left outer join employees empm on dptmx.department_id = empm.department_id
+where nvl(empm.salary,0) = dptmx.max_dpt_sal;
+
+5.select rownum,last_name, salary
+from
+(select * from f_staffs order by salary);

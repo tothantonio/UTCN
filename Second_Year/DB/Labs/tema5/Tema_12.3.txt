@@ -1,0 +1,35 @@
+Try it / Solve it 
+
+2.
+create table copy_f_promotional_menus
+as ( select * from f_promotional_menus);
+alter table copy_f_promotional_menus
+modify(start_date date default trunc(sysdate));
+insert into copy_f_promotional_menus(code,name,start_date,end_date,give_away)
+values('120','new customer',default,to_date('01-jun-2005','dd-mon-yyyy'),' 10% discount coupon');
+
+3.
+create table manager_copy_d_cds
+as ( select * from d_cds);
+insert into manager_copy_d_cds(cd_number,title,producer,year)
+values(20,'hello world here i am','middle earth records','1998');
+merge into manager_copy_d_cds tgt using d_cds src
+on (src.cd_number = tgt.cd_number)
+when matched then update
+set  tgt.title = src.title, tgt.producer = src.producer, tgt.year = src.year
+when not matched then insert
+values (src.cd_number, src.title, src.producer, src.year);
+
+4.
+insert first
+when salary > 20000 then
+into special_sal
+values(employee_id, salary)
+else
+into sal_history
+values(employee_id, hire_date, salary)
+into mgr_history
+values(employee_id, manager_id, salary)
+
+select employee_id, salary, hire_date, manager_id
+from employees;

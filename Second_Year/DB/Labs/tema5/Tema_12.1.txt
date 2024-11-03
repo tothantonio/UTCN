@@ -1,0 +1,36 @@
+Vocabulary
+
+User
+transaction
+explicit
+insert into
+
+
+1. sometimes things get changed
+
+2.create table copy1_d_cds ( cd_number number(3) primary key, title varchar(255) not null, producer varchar(255), year number(4))
+
+3.create table copy_d_songs as (select * from d_songs)
+insert into copy_d_songs
+values (52, 'surfing summer' , null, null, 12)
+insert into copy(d_songs
+
+4.create table copy_d_clients
+as ( select * from d_clients);
+copy_d_clients(client_number,first_name,last_name,phone,email)
+values(6655,'ayako','dahish',3608859030,'dahisha@harbor.net');
+insert into copy_d_clients(client_number,first_name,last_name,phone,email)
+values(6689,'nick','neuville',3608859030,'nnicky@charter.net');
+
+5.insert into copy_d_events(id,name,event_date,description,cost,venue_id,package_code,theme_code,client_number)
+values(110,'ayako anniversary',to_date('07-jul-2004','dd-mon-yyyy'),'party for 50, sixties dress, decorations',0,245,79,240,6655);
+insert into copy_d_events(id,name,event_date,description,cost,venue_id,package_code,theme_code,client_number)
+values(115,'neuville sports banquet',to_date('09-sep-2004','dd-mon-yyyy'),'barbecue at residence, college alumni, 100 people',0,315,87,340,6689);
+
+6.alter table rep_email drop column id;
+alter table rep_email add id number(6,0) constraint rel_id_pk primary key;
+
+insert into rep_email(id, first_name, last_name, email_address)
+select employee_id, first_name, last_name, email
+from employees
+where job_id like '%\_rep' escape '\';
