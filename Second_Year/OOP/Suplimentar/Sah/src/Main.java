@@ -5,6 +5,5 @@ public class Main{
 
         System.out.println("Mutare pion negru de la (6, 0) la (4, 0): " + tabla.mutarePiesa(0, 6, 0, 4));
         tabla.afisareTabla();
-
     }
 }

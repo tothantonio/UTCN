@@ -7,6 +7,5 @@ public abstract class Piesa {
     public String getCuloare(){
         return culoare;
     }
-
     public abstract boolean validMove(int startx, int starty, int endx, int endy, Piesa[][] tabla);
 }
