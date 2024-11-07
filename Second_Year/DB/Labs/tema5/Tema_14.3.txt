@@ -1,3 +1,13 @@
+Vocabulary:
+
+DISABLE CONSTRAINT
+CASCADE clause
+ALTER TABLE
+ENABLE CONSTRAINT
+DROP CONSTRAINT
+DROP COLUMN
+CASCADE CONSTRAINTS
+ 
 
 Try it / Solve it 
 
@@ -36,3 +46,6 @@ enable constraint copy_d_clt_client_number_pk ;
 
 10. alter table copy_d_events
 enable constraint copy_d_eve_client_number_fk;
+
+11.
+Generally to make bulk operations fast

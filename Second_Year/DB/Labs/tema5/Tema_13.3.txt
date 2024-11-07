@@ -2,41 +2,50 @@
 
 1. THINGS ARE CHANGING MAN
 
-2. create table  artists
-(artist_id number(5,0),
-first_name varchar2(25) constraint ait_first_name_nn not null enable,
-last_name varchar2(30) constraint ait_last_name_nn not null enable,
-band_name varchar2(30),
-email varchar2(75) constraint ait_email_nn not null enable,
-hr_rate number(8,2) constraint ait_hr_rate_nn not null enable,
-song_id number(5,0) constraint ait_song_id_nn not null enable,
-constraint ait_id_pk primary key (artist_id)
+2. CREATE TABLE  artists
+(artist_id NUMBER(5,0),
+first_name VARCHAR2(25) CONSTRAINT ait_first_name_nn NOT NULL ENABLE,
+last_name VARCHAR2(30) CONSTRAINT ait_last_name_nn NOT NULL ENABLE,
+band_name VARCHAR2(30),
+email VARCHAR2(75) CONSTRAINT ait_email_nn NOT NULL ENABLE,
+hr_rate NUMBER(8,2) CONSTRAINT ait_hr_rate_nn NOT NULL ENABLE,
+song_id NUMBER(5,0) CONSTRAINT ait_song_id_nn NOT NULL ENABLE,
+CONSTRAINT ait_id_pk PRIMARY KEY (artist_id)
 );
 
-insert into artists (artist_id, first_name, last_name, band_name, email, hr_rate, song_id)
-select 1 as artist_id,
-case
-when artist is null then 'first name unknown'
-when instr(artist,' ') = 0 then artist
-else substr(artist,1,instr(artist,' ') -1)
-end
-as first_name,
-case
-when artist is null then 'last name unknown'
-when instr(artist,' ') = 0 then artist
-else substr(artist,instr(artist,' '),length(artist))
-end
-as last_name,
+ALTER TABLE artists
+DROP CONSTRAINT ait_email_nn;
+
+ALTER TABLE artists
+DROP CONSTRAINT ait_hr_rate_nn;
+
+INSERT INTO artists (artist_id, first_name, last_name, band_name, email, hr_rate, song_id)
+SELECT 1 AS artist_id,
+CASE
+WHEN artist IS NULL THEN 'first name unknown'
+WHEN INSTR(artist,' ') = 0 THEN artist
+ELSE SUBSTR(artist,1,INSTR(artist,' ') -1)
+END
+AS first_name,
+CASE
+WHEN artist IS NULL THEN 'last name unknown'
+WHEN INSTR(artist,' ') = 0 THEN artist
+ELSE SUBSTR(artist,INSTR(artist,' '),LENGTH(artist))
+END
+AS last_name,
 artist as band_name,
-null as email,
-null as hr_rate,
+NULL as email,
+NULL as hr_rate,
 id as song_id
 
-from d_songs
-where  rownum =1 ;
+FROM d_songs
+WHERE  ROWNUM =1 ;
+
+SELECT * FROM artists;
 
 insert into artists (artist_id, first_name, last_name, band_name, email, hr_rate, song_id)
 values(2,'david','gray','david''s band','some.email@somedomain.com','999999.99',null);
+
 select * from artists;
 
 alter table artists
@@ -59,6 +68,7 @@ modify (university varchar2(98) default 'great college');
 
 alter table artists_new_name
 set unused (university);
+
 select column_name from user_tab_columns where lower(table_name) = 'artists_new_name';
 
 alter table artists_new_name
@@ -67,3 +77,79 @@ drop unused columns;
 rename artists_new_name to artists_new2;
 
 truncate table artists_new2;
+
+COMMENT ON TABLE artists_new2 IS 'xxxx';
+
+
+3.
+ALTER TABLE o_employees
+ADD ("Termination" VARCHAR2(100)  DEFAULT  TO_CHAR(SYSDATE,'Month ddth, YYYY') );
+
+4.
+ALTER TABLE o_employees
+ADD (start_date TIMESTAMP WITH LOCAL TIME ZONE);
+
+5.
+TRUNCATE TABLE o_jobs;
+SELECT * FROM  o_jobs;
+
+6.
+7.
+8.
+COMMENT ON TABLE o_jobs IS 'New job description added';
+SELECT table_name, comments
+FROM user_tab_comments WHERE LOWER(table_name) = 'o_jobs';
+
+9.
+ALTER TABLE o_jobs
+RENAME TO o_job_description;
+
+RENAME o_job_description TO o_job_description2
+
+10.
+a.
+CREATE TABLE copy_f_staffs
+AS ( SELECT * FROM f_staffs);
+b.
+DESC copy_f_staffs;
+c.
+DROP TABLE copy_f_staffs;
+d.
+SELECT * FROM copy_f_staffs;
+e.
+DESCRIBE user_recyclebin ;
+SELECT object_name,droptime FROM user_recyclebin  WHERE LOWER(original_name) = 'copy_f_staffs';
+f.
+g.
+FLASHBACK TABLE copy_f_staffs TO BEFORE DROP;
+h.
+DESCRIBE copy_f_staffs;
+
+11.
+a.
+SELECT * FROM copy_f_staffs;
+b.
+UPDATE copy_f_staffs
+SET salary = 12
+WHERE first_name = 'Sue' AND last_name = 'Doe';
+c.
+SELECT * FROM copy_f_staffs;
+d.
+UPDATE copy_f_staffs
+SET salary = 2
+WHERE first_name = 'Sue' AND last_name = 'Doe';
+e.
+SELECT * FROM copy_f_staffs;
+f.
+SELECT versions_operation, versions_starttime,  versions_endtime, id, first_name, last_name, birthdate, salary,overtime_rate,training,staff_type,manager_id, manager_budget,manager_target
+FROM copy_f_staffs
+VERSIONS BETWEEN SCN MINVALUE AND MAXVALUE
+WHERE id = 12;
+g.
+UPDATE copy_f_staffs
+SET salary = (SELECT salary
+FROM copy_f_staffs
+VERSIONS BETWEEN SCN MINVALUE AND MAXVALUE
+WHERE first_name = 'Sue' AND last_name = 'Doe' AND versions_operation IS NULL AND versions_starttime IS NULL)
+WHERE first_name = 'Sue' AND last_name = 'Doe';
+

@@ -17,30 +17,36 @@ Try it / Solve it
 easier to interpret
 levels of acces
 
-2.select d_songs.id, d_songs.title "song title", d_songs.artist
+2.
+select d_songs.id, d_songs.title "song title", d_songs.artist
 from d_songs inner join d_types on d_songs.type_code = d_types.code
 where d_types.description = 'new age';
+
 create view view_d_songs as
 select d_songs.id, d_songs.title "song title", d_songs.artist
 from d_songs inner join d_types on d_songs.type_code = d_types.code
 where d_types.description = 'new age';
 
-3.select d_songs.id, d_songs.title "song title", d_songs.artist
+3.
+select d_songs.id, d_songs.title "song title", d_songs.artist
 from d_songs inner join d_types on d_songs.type_code = d_types.code
 where d_types.description = 'new age';
 
 
-4.create or replace view view_d_songs as
+4.
+create or replace view view_d_songs as
 select d_songs.id, d_songs.title "song title", d_songs.artist, d_songs.type_code
 from d_songs inner join d_types on d_songs.type_code = d_types.code
 where d_types.description = 'new age';
 
-5.create or replace view view_d_events_pkgs as
+5.
+create or replace view view_d_events_pkgs as
 select evt.name "name of event", to_char(evt.event_date, 'dd-month-yyyy')  "event date", thm.description "theme description"
 from  d_events  evt inner join d_themes  thm  on evt.theme_code = thm.code
 where evt.event_date <= add_months(sysdate,1);
 
-6.create or replace view view_min_max_avg_dpt_salary ("department id", "department name", "max salary", "min salary", "average salary") as
+6.
+create or replace view view_min_max_avg_dpt_salary ("department id", "department name", "max salary", "min salary", "average salary") as
 select dpt.department_id, dpt.department_name, max(nvl(emp.salary,0)), min(nvl(emp.salary,0)), round(avg(nvl(emp.salary,0)),2)
 from departments dpt left outer join employees emp on dpt.department_id = emp.department_id
 group by (dpt.department_id, dpt.department_name);

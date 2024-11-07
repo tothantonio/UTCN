@@ -1,0 +1,55 @@
+Database Programming with PL/SQL
+1-1: Introduction to PL/SQL
+
+Vocabulary:
+
+Procedural
+PL/SQL
+
+Try it/ Solve it:
+
+1.
+
+Criteriu
+3GL PL/SQL
+4GL SQL
+Is proprietary to Oracle Corporation  PL/SQL
+Nonprocedural SQL
+Procedural  PL/SQL
+Is ANSI-compliant SQL
+
+2.
+PL/SQL este necesar pentru ca extinde capacitatile SQl - ului care e limitat la interogari. 
+Sunt adaugate elemente de programare procedurala(bucle, conditii, variabile, functii) care permit operatiuni mai complexe
+
+3.
+if, then, else
+loop end loop
+
+if salary > 5000 then
+	bonus := salary * 0.1
+else
+	bonus := salary * 0.05
+endif
+
+4.
+
+variabile:
+v_first_name varchar2(40);
+v_last_name varchar2(40);
+v_first_letter varchar2(1);
+
+asignare
+v_first_letter := get_first_letter(v_last_name);
+
+conditional control
+IF 'N' > 'v_first_letter' THEN
+DBMS_OUTPUT.PUT_LINE('The last name for ' || v_first_name || ' ' || v_last_name || ' is
+between A and M');
+ELSE
+DBMS_OUTPUT.PUT_LINE('The last name for ' || v_first_name || ' ' || v_last_name || ' is
+between N and Z');
+END IF;
+
+functie reutilizabila
+get_first_letter(v_last_name)

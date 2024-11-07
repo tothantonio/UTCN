@@ -1,18 +1,25 @@
 Try it / Solve it 
 
+1.
+If no value is given while row creation and I want the field to take some predefined value
+
 2.
 create table copy_f_promotional_menus
 as ( select * from f_promotional_menus);
+
 alter table copy_f_promotional_menus
 modify(start_date date default trunc(sysdate));
+
 insert into copy_f_promotional_menus(code,name,start_date,end_date,give_away)
 values('120','new customer',default,to_date('01-jun-2005','dd-mon-yyyy'),' 10% discount coupon');
 
 3.
 create table manager_copy_d_cds
 as ( select * from d_cds);
+
 insert into manager_copy_d_cds(cd_number,title,producer,year)
 values(20,'hello world here i am','middle earth records','1998');
+
 merge into manager_copy_d_cds tgt using d_cds src
 on (src.cd_number = tgt.cd_number)
 when matched then update

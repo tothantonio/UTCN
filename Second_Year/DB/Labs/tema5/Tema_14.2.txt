@@ -1,5 +1,22 @@
 
+Vocabulary:
+ON DELETE CASCADE
+Check Constraint
+PRIMARY KEY
+NOT NULL
+ON DELETE SET NULL
+FOREIGN KEY Constraint
+
+
 Try it / Solve it 
+
+1.
+a.  PRIMARY KEY
+Uniquely identify each row in table.
+b.  FOREIGN KEY
+Referential integrity constraint links back parent table's primary/unique key to child table's column.
+c.  CHECK CONSTRAINT
+Explicitly define condition to be met by each row's fields. This condition must be returned as true or unknown.
 
 2.
 animal_id number(6)  - primary key
@@ -15,8 +32,13 @@ admit_date  date constraint anl_adt_dat_nn not null enable,
 adoption_id   number(5,0),
 vaccination_date  date constraint anl_vcc_dat_nn not null enable);
 
+SELECT *
+FROM user_constraints
+WHERE LOWER(table_name) = 'animals';
+
 4. insert into animals (animal_id, name, license_tag_number, admit_date, adoption_id, vaccination_date)
 values( 101, 'spot', 35540, to_date('10-oct-2004', 'dd-mon-yyyy'), 205, to_date('12-oct-2004', 'dd-mon-yyyy'));
+
 select * from animals;
 
 5. alter table  animals add constraint anl_adopt_id_fk  foreign key (adoption_id) references  adoptions(id) enable;

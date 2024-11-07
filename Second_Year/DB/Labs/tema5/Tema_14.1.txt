@@ -1,5 +1,32 @@
+Vocabulary:
+
+UNIQUE Constraint
+NOT NULL Constraint 
+PRIMARY KEY
+CHECK Constraint
+REFERENCES
+UNIQUE Constraint
+FOREIGN KEY
+Table Level Constraint
+Constraint
+Column Level Constraint
+
 
 Try it / Solve it 
+
+1.
+A constraint ajuta ca datele dintr o baza de date sa fie clare. Exemple:
+primary key, foreign key,  unique, not null, check
+
+2.
+Column-level constrains: doar la o singura coloana: not null, unique, check
+Table-level constrains: la mai multe coloane foreign key and unique
+
+3.
+It is easier to identify things
+
+4.
+
 
 5.
 id number 6 0
@@ -16,15 +43,21 @@ emergency_contact varchar2 20 n
 6. create table  f_global_locations
 ( id number(6,0) constraint f_gln_id_pk primary key , name varchar2(50), date_opened date constraint f_gln_date_opened_nn not null enable, address varchar2(50) constraint f_gln_add_nn not null enable, city varchar2(30)  constraint f_gln_city_nn not null enable, zip_postal_code varchar2(12), phone varchar2(20), email varchar2(75) constraint f_gln_email_uk unique, manager_id number(6,0), emergency_contact varchar2(20));
 
-9. create table  f_global_locations
-( id number(6,0) constraint f_gln_id_pk primary key ,
-name varchar2(50),
-date_opened date constraint f_gln_dt_opened_nn not null enable,
-address varchar2(50) constraint f_gln_add_nn not null enable,
-city varchar2(30)  constraint f_gln_city_nn not null enable,
-zip_postal_code varchar2(12),
-phone varchar2(20),
-email varchar2(75) ,
-manager_id number(6,0),
-emergency_contact varchar2(20),
- constraint f_gln_email_uk unique(email)
+8.
+DESCRIBE f_global_locations;
+
+
+9. CREATE TABLE  f_global_locations
+( id NUMBER(6,0) CONSTRAINT f_gln_id_pk PRIMARY KEY ,
+name VARCHAR2(50),
+date_opened DATE CONSTRAINT f_gln_dt_opened_nn NOT NULL ENABLE,
+address VARCHAR2(50) CONSTRAINT f_gln_add_nn NOT NULL ENABLE,
+city VARCHAR2(30)  CONSTRAINT f_gln_city_nn NOT NULL ENABLE,
+zip_postal_code VARCHAR2(12),
+phone VARCHAR2(20),
+email VARCHAR2(75) ,
+manager_id NUMBER(6,0),
+emergency_contact VARCHAR2(20),
+ CONSTRAINT f_gln_email_uk UNIQUE(email)
+
+);

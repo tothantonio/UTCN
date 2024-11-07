@@ -1,6 +1,7 @@
 Vocabulary
 
 data dictionary
+Schema
 default
 table
 create table
@@ -8,25 +9,30 @@ create table
 
 Try it / Solve it 
 
-2.create table  graduate_candidates
-   ( student_id number(6,0),
-    last_name varchar2(75) constraint gcs_last_name_nn not null enable,
- first_name varchar2(75) constraint gcs_first_name_nn not null enable,
- credits number(5,2) constraint gcs_credits_nn not null enable,
-graduation_date date,
- constraint gcs_std_id_pk primary key (student_id),
- constraint gcs_req_fk foreign key(credits) references requirements(credits) enable   
+2.
+CREATE TABLE  graduate_candidates ( student_id NUMBER(6,0), 
+last_name VARCHAR2(75) CONSTRAINT gcs_last_name_nn NOT NULL ENABLE, 
+first_name VARCHAR2(75) CONSTRAINT gcs_first_name_nn NOT NULL ENABLE, 
+credits NUMBER(5,2) CONSTRAINT gcs_credits_nn NOT NULL ENABLE, 
+graduation_date DATE, 
+CONSTRAINT gcs_std_id_pk PRIMARY KEY (student_id)   
+);
 
 3.describe graduate_candidates;
 
-4.create table kumar_table
+4.create table toth_table
 as ( select * from graduate_candidates);
 
-5.insert into kumar_table (student_id, last_name, first_name, credits, graduation_date)
-values(10,'kumar','he',999.99,null);  
+5.insert into toth_table (student_id, last_name, first_name, credits, graduation_date)
+values(10,'toth','antonio',999.99,null);  
 
-6.select * from user_tables;
-select * from user_catalog;
-select distinct(table_type) from user_catalog;
-select * from user_objects;
-select distinct(object_type) from user_objects;
+6.SELECT * FROM user_tables;
+48 rows returned in 0.64 seconds
+SELECT * FROM user_catalog;
+407 rows returned in 0.05 seconds
+SELECT DISTINCT(table_type) FROM user_catalog;
+3 rows returned in 0.02 seconds      
+SELECT * FROM user_objects;
+117 rows returned in 0.19 seconds
+SELECT DISTINCT(object_type) FROM user_objects;
+5 rows returned in 0.02 seconds	
