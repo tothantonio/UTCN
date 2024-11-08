@@ -1,0 +1,49 @@
+[aimspice]
+[description]
+394
+Poarta TTL SI-NU(analiza semnal pulse)
+R1 1 cc 4k
+R2 2 cc 1.6k
+R3 3 cc 130
+R4 6 0 1k
+
+C out 0 1p
+
+Q1A 4 1 a Tranzistor
+Q1B 4 1 b Tranzistor
+Q2 2 4 6 Tranzistor
+Q3 3 2 5 Tranzistor
+Q4 out 6 0 Tranzistor
+.Model Tranzistor NPN tr=5e-9 tf=8e-9
+
+D1 0 a Dioda
+D2 0 b Dioda
+D 5 out Dioda
+.Model Dioda D tt=5e-9
+
+Va a 0 pulse(0 5 0 1e-9 1e-9 1e-6 2e-6)
+Vb b 0 DC 5
+Vcc cc 0 DC 5
+
+[dc]
+1
+Va
+0
+5
+0.1
+[tran]
+1e-9
+6e-6
+X
+X
+0
+[ana]
+4 1
+0
+1 1
+1 1 0 10
+3
+v(out)
+v(a)
+v(b)
+[end]

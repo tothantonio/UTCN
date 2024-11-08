@@ -1,0 +1,69 @@
+
+                 *********************************************
+                 *                                           *
+                 *             A I M - S p i c e             *
+                 *                                           *
+                 *         Professional Version 2020.100           *
+                 *                                           *
+                 *********************************************
+
+	Date: Fri Nov  8 12:37:29 2024
+	Circuit File: D:\UTCN\Second_Year\ADC\Labs\LAB5\TTL CURENT CONTINUU.cir
+	Analysis: DC Transfer Curves
+
+**************************  Circuit Description  **************************
+
+     1:  CIRCUITE LOGICE TTL
+     2:  R1 1 cc 4k
+     3:  R2 2 cc 1.6k
+     4:  R4 3 cc 130
+     5:  R3 6 0 1k
+     6:  
+     7:  Q1A 4 1 A Tranzistor
+     8:  Q1B 4 1 B Tranzistor
+     9:  
+    10:  Q2 2 4 6 Tranzsitor
+    11:  Q3 3 2 5 Tranzistor
+    12:  Q4 out 6 0 Tranzistor
+    13:  .Model Tranzistor NPN tr=5e-9 tf=8e-9
+    14:  
+    15:  D1 0 A Dioda
+    16:  D2 0 B Dioda
+    17:  D 5 out Dioda
+    18:  .Model Dioda D tt=5e-9
+    19:  
+    20:  Va 0 a DC 5
+    21:  Vb 0 b DC 5
+    22:  Vcc cc 0 DC 5
+    23:  
+    24:  
+    25:  .dc va 0 5 0.1
+
+***************************  Model Parameters  ****************************
+
+
+***************  Device Parameters (Only for .op analysis)  ***************
+
+
+
+**************************  Analysis Parameters  **************************
+
+	Source name #1 .. : va
+	Start value #1 .. : 0
+	End value #1 .... : 5
+	Increment value #1: 0.1
+
+
+
+**************  Options (Only those different from default)  **************
+
+
+
+***************************  Kernel Messages  *****************************
+
+Circuit: CIRCUITE LOGICE TTL
+
+Error on line 10 : q2 2 4 6 tranzsitor
+ unable to find definition of model  - default assumed 
+
+

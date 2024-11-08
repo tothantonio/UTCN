@@ -1,0 +1,83 @@
+
+                 *********************************************
+                 *                                           *
+                 *             A I M - S p i c e             *
+                 *                                           *
+                 *         Professional Version 2020.100           *
+                 *                                           *
+                 *********************************************
+
+	Date: Fri Nov  8 12:58:20 2024
+	Circuit File: D:\UTCN\Second_Year\ADC\Labs\LAB5\TTL semnal pulse.cir
+	Analysis: Transient
+
+**************************  Circuit Description  **************************
+
+     1:  Poarta TTL SI-NU(analiza semnal pulse)
+     2:  R1 1 cc 4k
+     3:  R2 2 cc 1.6k
+     4:  R3 3 cc 130
+     5:  R4 6 0 1k
+     6:  
+     7:  C out 0 1p
+     8:  
+     9:  Q1A 4 1 a Tranzistor
+    10:  Q1B 4 1 b Tranzistor
+    11:  Q2 2 4 6 Tranzistor
+    12:  Q3 3 2 5 Tranzistor
+    13:  Q4 out 6 0 Tranzistor
+    14:  .Model Tranzistor NPN tr=5e-9 tf=8e-9
+    15:  
+    16:  D1 0 a Dioda
+    17:  D2 0 b Dioda
+    18:  D 5 out Dioda
+    19:  .Model Dioda D tt=5e-9
+    20:  
+    21:  Va a 0 pulse(0 5 0 1e-9 1e-9 1e-6 2e-6)
+    22:  Vb b 0 DC 5
+    23:  Vcc cc 0 DC 5
+    24:  
+    25:  .tran 1e-9 6e-6
+
+***************************  Model Parameters  ****************************
+
+
+***************  Device Parameters (Only for .op analysis)  ***************
+
+
+
+**************************  Analysis Parameters  **************************
+
+	Stepsize ............ : 1e-9
+	Final time .......... : 6e-6
+	Use Initial Conditions: Off
+
+
+
+**************  Options (Only those different from default)  **************
+
+
+
+*************************  Simulation Statistics  *************************
+
+	Total number of iterations.....................: 1893
+	Number of iterations for transient analysis....: 1879
+	Total number of timepoints.....................: 444
+	Number of timepoints accepted..................: 341
+	Number of timepoints rejected..................: 103
+	Total analysis time (sec)......................: 0.475
+	Transient analysis time (sec)..................: 0.472
+	Time spent in device loading (sec).............: 0.016
+	Time spent in L-U decomposition (sec)..........: 0
+	Time spent in matrix reordering (sec)..........: 0
+	Time spent in matrix solving (sec).............: 0
+	Time spent in transient L-U decomposition (sec): 0
+	Time spent in transient matrix solving (sec)...: 0
+
+***************************  Kernel Messages  *****************************
+
+Circuit: Poarta TTL SI-NU(analiza semnal pulse)
+
+Warning: va: no DC value, transient time 0 value used
+Warning: va: no DC value, transient time 0 value used
+

@@ -1,0 +1,28 @@
+[aimspice]
+[description]
+337
+CIRCUITE LOGICE TTL
+R1 1 cc 4k
+R2 2 cc 1.6k
+R4 3 cc 130
+R3 6 0 1k
+
+Q1A 4 1 A Tranzistor
+Q1B 4 1 B Tranzistor
+
+Q2 2 4 6 Tranzsitor
+Q3 3 2 5 Tranzistor
+Q4 out 6 0 Tranzistor
+.Model Tranzistor NPN tr=5e-9 tf=8e-9
+
+D1 0 A Dioda
+D2 0 B Dioda
+D 5 out Dioda
+.Model Dioda D tt=5e-9
+
+Va a 0 DC 5
+Vb b 0 DC 5
+Vcc cc 0 DC 5
+
+
+[end]
