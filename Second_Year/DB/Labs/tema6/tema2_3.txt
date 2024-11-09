@@ -1,0 +1,78 @@
+Database Programming with PL/SQL
+2-3: Recognizing Data Types
+
+Vocabulary:
+
+Store large blocks of single-byte or fixed width multi-byte NCHAR
+data in the database. - nchar
+
+Hold values, called locators, that specify the location of large
+objects (such as graphic images) that are stored out of line. - large object locator
+
+Hold a single value with no internal components. - scalar
+
+Store large unstructured or structured binary objects. - BLOB(binary large object )
+
+Contain internal elements that are either scalar (record) or
+composite (record and table) - collection
+
+Store large binary files outside of the database. - external lob
+
+Hold values, called pointers, that point to a storage location. - pointer
+
+A schema object with a name, attributes, and methods. - object type
+ 
+Store large blocks of character data in the database - clob(chracter large object)
+
+Try it/ Solve it:
+
+1. In your own words, describe what a data type is and explain why it is important. 
+   Un tip de data e important pentru ca specifica formatul unor variabile, constrangeri, limita de valori
+   
+2. Identify the three data type categories covered in this course.
+	Scalar, Composite, Large Object(LOB)
+	
+3. Identify three data types covered in the Database Programming with SQL course.
+	Varchar2, number, date
+	
+4. What data type can be used in PL/SQL, but can’t be used to define a table column?
+	boolean
+	
+5. Which data type indicates a large data object that is stored outside of the database?
+	BFILE
+	
+6. Identify the data type category (LOB, Scalar, or Composite) for each data type. Each category
+may be used more than once.
+
+CLOB -> LOB
+VARCHAR2 -> Scalar
+BLOB -> LOB
+NUMBER -> Scalar
+BFILE -> LOB
+TIMESTAMP -> Scalar
+NCLOB -> LOB
+RECORD -> Composite
+PLS_INTEGER -> Scalar
+LONG -> Scalar
+TABLE -> Composite
+BOOLEAN -> Scalar
+
+7.Enter the data type category and the data type for each value. The first one has been done for you
+‘Switzerland’ Scalar VARCHAR2
+Text of a resume  Lob CLOB
+100.20 Scalar NUMBER
+A picture Lob BLOB
+1053 Scalar NUMBER
+11-Jun-2016 Scalar Date
+‘Computer science is the
+science of the 21st century.’ Lob Clob
+
+Index Last_name
+1 'Newman'           Composite Table
+2 'Raman'
+3 'Han'
+
+A movie  Lob BLOB
+A sound byte lob BLOB
+FALSE Scalar BOOLEAN
+

@@ -1,0 +1,54 @@
+Database Programming with PL/SQL
+2-2: Recognizing PL/SQL Lexical Units
+
+Vocabulary
+An explicit numeric, character string, date, or Boolean value that
+is not represented by an identifier. - literals
+
+Symbols that have special meaning to an Oracle database. - delimiters(operators)
+
+Words that have special meaning to an Oracle database and
+cannot be used as identifiers. - reserved words
+
+Describe the purpose and use of each code segment and are
+ignored by PL/SQL. - comments
+
+Building blocks of any PL/SQL block and are sequences of
+characters including letters, digits, tabs, returns, and symbols. - identifiers
+
+A name, up to 30 characters in length, given to a PL/SQL object. - identifier
+
+Try It / Solve It Questions
+
+1.
+today | valid
+last name | invalid | contine spatiu
+today’s_date | invalid | are '
+number_of_days_in_february_this_year | valid 
+Isleap$year | valid
+#number | invalid | incepe cu #
+NUMBER# | invalid | are #
+Number1to7 | valid
+
+2.
+create reserved
+make   not reserved
+table  reserved
+seat   not reserved
+alter reserved
+rename reserved
+row    not reserved
+number  reserved
+web  not reserved
+
+3.
+SELECT reserved words
+:= operators
+'TEST' literals
+FALSE  litera 
+-- new process comment
+FROM reserved word
+/* select the country with the
+highest elevation */ comment
+v_test identifier
+4.09 literal

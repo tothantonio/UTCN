@@ -1,0 +1,51 @@
+Database Programming with PL/SQL
+2-1: Using Variables in PL/SQL
+
+Vocabulary
+
+Used for storage of data and manipulation of stored values - variables
+Values passed to a program by a user or by another program to customize the program - parametrii
+
+Try It / Solve It
+
+1.
+A. Expresie
+B. Declaration
+C. Paramatrii
+
+2.
+number_of_copies PLS_INTEGER - valid
+printer_name CONSTANT VARCHAR2(10) - invalid
+deliver_to VARCHAR2(10) := Johnson - invalid
+by_when DATE := SYSDATE+1 - valid
+3. A.
+4. 
+CREATE FUNCTION num_characters (p_string IN VARCHAR2)
+RETURN INTEGER AS
+ v_num_characters INTEGER;
+BEGIN
+ SELECT LENGTH(p_string) INTO v_num_characters
+ FROM dual;
+ RETURN v_num_characters;
+END;
+
+DECLARE
+ v_length_of_string INTEGER;
+BEGIN
+ v_length_of_string := num_characters('Oracle Corporation');
+ DBMS_OUTPUT.PUT_LINE(v_length_of_string);
+END;
+5.
+DECLARE
+ v_country_name VARCHAR2(70) := 'United States of America';
+ v_highest_elevation NUMBER(6, 0);
+ v_lowest_elevation NUMBER(6, 0);
+BEGIN
+ SELECT lowest_elevation, highest_elevation
+ INTO v_highest_elevation, v_lowest_elevation
+ FROM COUNTRIES
+ WHERE country_name = v_country_name;
+
+ DBMS_OUTPUT.PUT_LINE('Highest Elevation: ' || v_highest_elevation);
+ DBMS_OUTPUT.PUT_LINE('Lowest Elevation: ' || v_lowest_elevation);
+END;
