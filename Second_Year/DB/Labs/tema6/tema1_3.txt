@@ -1,0 +1,47 @@
+Database Programming with PL/SQL
+1-3: Creating PL/SQL Blocks
+
+Vocabulary
+
+Unnamed blocks of code not stored in the database and do not
+exist after they are executed - Anonymous
+
+A program that computes and returns a single value - function
+
+Named PL/SQL blocks that are stored in the database and can
+be declared as procedures or functions - subprograme
+
+Software that checks and translates programs written in highlevel programming languages into binary code to execute - PL/SQL compiler
+
+A program that performs an action, but does not have to return a
+value - procedures
+
+
+Try It / Solve It
+
+1.
+declare | optional | contains declaration of variables, constants,
+begin | mandatory | contine cel putin o instructiune
+exception | optional | specifica ce trebuie sa faca programul atunci cand intalneste o eroare
+end; | mandatory | 
+
+2. A. ok
+   B. nu merge pentru ca nu are begin
+   C. nu merge pentru ca nu are cel putin o instructiune intre BEGIN si END;
+   D. ok
+   
+3. A. Anonymous
+   B. Proceduri si functii
+   
+4. 
+begin
+dbms_output.put_line('Hello World!');
+end;
+
+5.
+declare
+data DATE;
+begin
+data := add_months(SYSDATE, 6);
+dbms_output.put_line('In six months the date will be: ' || data);
+end;

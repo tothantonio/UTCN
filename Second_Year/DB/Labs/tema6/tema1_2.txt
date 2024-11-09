@@ -1,0 +1,18 @@
+Database Programming with PL/SQL
+1-2: Benefits of PL/SQL
+
+Vocabulary
+
+portability
+a block
+exceptions
+
+Try It / Solve It
+1. Pentru ca integreaza instructiuni de control, de conditie
+2. Programele pl/sql pot rula oriunde intr un server Oracle, fara sa tina cont de systemul de operare si de platforma
+   putem integra instr in blocuri
+   performanta sporita
+3. pl/sql necesita Oracle database	
+   pl/sql e foarte eficient 
+   are cateva caracteristici ale OOP
+4. aplicatii web, proceduri stocate, triggere
