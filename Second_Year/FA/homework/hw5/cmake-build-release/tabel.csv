@@ -1,0 +1,19 @@
+
+Evaluarea operatiei de cautare pentru un singur factor de umplere de 95%
+
+Factor de umplere, Efort mediu gasite, Efort maxim gasite, Efort mediu negasite, Efort maxim negasite
+0.95, 1, 3, 1, 16
+
+Completarea evaluarii pentru toti factorii de umplere
+
+Factor de umplere, Efort mediu gasite, Efort maxim gasite, Efort mediu negasite, Efort maxim negasite
+0.8, 1, 4, 1, 16
+0.85, 1, 4, 1, 13
+0.9, 1, 5, 1, 13
+0.95, 1, 6, 1, 14
+0.99, 1, 6, 2, 16
+
+Evaluarea operatiei de cautare dupa stergerea unor elemente
+
+Factor de umplere, Efort mediu gasite, Efort maxim gasite, Efort mediu negasite, Efort maxim negasite 
+0.8, 2, 13, 2, 15
