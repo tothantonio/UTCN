@@ -1,0 +1,147 @@
+Database Programming with PL/SQL
+3-1: Review of SQL DML
+Vocabulary
+Statement used to remove existing rows in a table. - delete
+
+Statement used to add new rows to a table. - insert
+
+Statement used to INSERT and/or UPDATE a target table,
+based on matching values in a source table. - merge
+
+Statement used to modify existing rows in a table. - update
+
+When you create, change, or delete an object in a database. - Data definition language
+
+When you change data in an object (for example, by inserting or
+deleting rows). - Data manipulation language
+
+Try It / Solve It
+
+1. 
+
+DELETE FROM students;
+This SQL statement will:
+A. Not execute due to wrong syntax
+B. Delete the first row from STUDENTS
+C. Delete all rows from STUDENTS
+D. None of the above
+
+C. pentru ca nu avem where
+
+2. 
+
+INSERT INTO STUDENTS (id, last_name, first_name)
+ VALUES (29,'Perez','Jessica');
+This SQL statement:
+A. Does an explicit insert pentru ca specifica coloanele in care se insereaza
+
+3. Write a SQL statement to create the above table.
+
+CREATE TABLE grocery_items (
+    product_id INT PRIMARY KEY,
+    brand VARCHAR(50),
+    description VARCHAR(50)
+);
+
+
+4. Write and execute three SQL statements to explicitly add the above data to the table.
+
+INSERT INTO grocery_items (product_id, brand, description) VALUES (110, 'Colgate', 'Toothpaste');
+INSERT INTO grocery_items (product_id, brand, description) VALUES (111, 'Ivory', 'Soap');
+INSERT INTO grocery_items (product_id, brand, description) VALUES (112, 'Heinz', 'Ketchup');
+
+5. Write and execute a SQL statement that will explicitly add your favorite beverage to the table.
+
+INSERT INTO grocery_items (product_id, brand, description) VALUES (113, 'Coca-Cola', 'Soda');
+
+6. Write and execute a SQL statement that modifies the description for Heinz ketchup to “tomato
+catsup”.
+
+UPDATE grocery_items
+SET description = 'tomato catsup'
+WHERE brand = 'Heinz' AND description = 'Ketchup';
+
+7. Write and execute a SQL statement that will implicitly add your favorite candy to the table.
+
+INSERT INTO grocery_items VALUES (114, 'Snickers', 'Candy Bar');
+
+8. Write and execute a SQL statement that changes the soap brand from “Ivory” to “Dove.”
+
+UPDATE grocery_items
+SET brand = 'Dove'
+WHERE brand = 'Ivory' AND description = 'Soap';
+
+9. Write and execute SQL statements to create the new_items table and populate it with the data in
+the table.
+
+CREATE TABLE new_items (
+    product_id INT PRIMARY KEY,
+    brand VARCHAR(50),
+    description VARCHAR(50)
+);
+
+INSERT INTO new_items (product_id, brand, description) VALUES (110, 'Colgate', 'Dental paste');
+INSERT INTO new_items (product_id, brand, description) VALUES (175, 'Dew', 'Soda');
+INSERT INTO new_items (product_id, brand, description) VALUES (275, 'Palmolive', 'Dish detergent');
+
+10.Write a SQL statement that will update the grocery_items table with the brand and description
+from the new_items table when the product ID values match. If they don’t match, add a new row to
+the grocery_items table. DO NOT EXECUTE YOUR STATEMENT YET.
+
+ca sa modificam randurile existente in grocery_items sau sa inseram randuri noi daca do not match, folosim merge
+
+MERGE INTO grocery_items g 
+USING new_items n
+ON (g.product_id = n.product_id)
+WHEN MATCHED THEN
+    UPDATE SET g.brand = n.brand, g.description = n.description
+WHEN NOT MATCHED THEN
+    INSERT (product_id, brand, description)
+    VALUES (n.product_id, n.brand, n.description);
+
+
+specificăm că vrem să modificăm datele în tabela grocery_items, 
+pe care o denumim cu un alias g pentru a o folosi mai simplu în restul codului.
+Specificăm că sursa de date pe care vrem să o comparăm cu grocery_items este tabela new_items, 
+pe care o denumim cu un alias n.
+Aceasta este condiția de potrivire între cele două tabele. 
+În acest caz, verificăm dacă product_id din grocery_items (g.product_id) 
+este egal cu product_id din new_items (n.product_id). 
+Dacă această condiție este îndeplinită, se consideră că rândurile „se potrivesc” și se va aplica secțiunea WHEN MATCHED
+Dacă există o potrivire pe baza condiției ON, executăm această secțiune UPDATE. 
+Aici, actualizăm coloanele brand și description din tabela grocery_items (g) 
+cu valorile corespunzătoare din new_items (n).
+Dacă nu există o potrivire 
+(adică nu există rânduri în grocery_items cu un product_id corespunzător în new_items), 
+executăm secțiunea INSERT. 
+Aceasta adaugă un nou rând 
+în grocery_items cu valorile din new_items pentru product_id, brand și description.
+
+Comanda MERGE în SQL se folosește pentru a combina date din două tabele 
+(în acest caz, grocery_items și new_items). 
+Aceasta permite actualizarea unor rânduri în tabela țintă (în acest caz, grocery_items) 
+dacă există o potrivire între cele două tabele pe baza unei condiții specificate 
+(aici, dacă product_id este același în ambele tabele). 
+De asemenea, comanda permite inserarea de noi rânduri în tabela țintă dacă nu există potrivire
+
+11.How many rows will be updated by the SQL statement in question 10?
+
+1 row will be updated. Only product_id = 110 (Colgate) exists in both tables, so this row will be updated with the new description "Dental paste".
+
+12.How many rows will be inserted by the SQL statement in question 10?
+
+2 rows will be inserted. The product_id values 175 (Dew) and 275 (Palmolive) are not present in grocery_items, so they will be inserted as new rows.
+
+13.Which of the following is true about the SQL statement in question 10?
+
+A. new_items is the source table and grocery_items is the target table. THIS IS TRUE
+
+B. grocery_items is the source table and new_items is the target table.
+
+14.Execute the SQL statement you wrote in question 10, and then SELECT all data from the
+grocery_items table to verify your answers to questions 11 and 12.
+
+SELECT * FROM grocery_items;
+
+1 row was updated (product_id = 110 with updated description "Dental paste").
+2 rows were inserted (product_id = 175 and product_id = 275 with respective brands and descriptions).

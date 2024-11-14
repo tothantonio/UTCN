@@ -1,0 +1,55 @@
+Section 6.2
+
+Vocabulary:
+1.A PL/SQL Collection
+2.INDEX BY table
+3.INDEB BY table of records
+
+Solve it:
+1.A.A named set of many occurrences of the same kind of data stored as a variable
+B.a,c;
+C.INDEX BY table are doar un singur tip de date stocate in ea
+D.INDEX BY table este o colectie de variabile de acelasi fel,iar INDEX BY table of records
+este o colectie de records,tip de data compusa.
+E.Este INDEX BY table of records
+
+2.A.
+DECLARE
+TYPE t_con_rec IS TABLE OF country_id
+INDEX BY BINARY_INTEGER;
+v_countries_tab t_conrec
+
+B.
+DECLARE
+TYPE t_con_rec IS TABLE OF country_id
+INDEX BY BINARY_INTEGER;
+v_countries_tab t_conrec
+v_count BINARY INTEGER:=0;
+BEGIN
+FOR con_rec IN
+(SELECT country_id FROM countries)
+LOOP
+v_count:=v_count+1;
+v_countries_tab(v_count):=con_rec.country_id;
+END LOOP;
+END;
+
+3.A.
+DECLARE 
+TYPE t_emp_rec IS TABLE OF employee_id
+INDEX BY BINARY_INTEGER;
+v_emp_tab t_emprec;
+
+B.DECLARE 
+TYPE t_emp_rec IS TABLE OF employee_id
+INDEX BY BINARY_INTEGER;
+v_emp_tab t_emprec;
+v_count BINARY INTEGER:=0;
+BEGIN
+FOR emprec IN
+(SELECT employee_id FROM employees)
+LOOP
+v_count:=v_count+1;
+v_emp_tab(v_count):=emp_rec.employee_id;
+END LOOP;
+END;

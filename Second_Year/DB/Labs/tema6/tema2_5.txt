@@ -1,0 +1,135 @@
+Database Programming with PL/SQL
+2-5: Writing PL/SQL Executable Statements
+
+Vocabulary
+
+Converts values from one data type to another by using built-in
+functions. - Explicit Conversions
+
+Converts data types dynamically if they are mixed in a
+statement - Implicit Conversions
+
+Try It / Solve It
+
+1. 
+
+DECLARE
+ x VARCHAR2(20);
+BEGIN
+ x := '123' + '456' ;
+ DBMS_OUTPUT.PUT_LINE(x);
+END;
+
+A. What do you think the output will be when you run the above code?
+ o sa dea eroare pt ca pl/sql nu accepta + ca si concatenare
+ 
+B. Now, run the code. What is the output?
+
+579
+
+Statement processed.
+
+C. In your own words, describe what happened when you ran the code. Did any implicit
+conversions take place?
+PL/SQL a facut o conversie implicita
+
+2. Write an anonymous PL/SQL block that assigns the programmer’s full name to a variable, and
+then displays the number of characters in the name.
+
+DECLARE
+full_name VARCHAR2(20);
+name_length NUMBER;       
+BEGIN
+full_name := 'John Doe';
+name_length := LENGTH(full_name);
+DBMS_OUTPUT.PUT_LINE('The length of the full name is: ' || name_length);
+END;
+
+3. Write an anonymous PL/SQL block that uses today's date and outputs it in the format of ‘Month
+dd, yyyy’. Store the date in a DATE variable called my_date. Create another variable of the DATE
+type called v_last_day. Assign the last day of this month to v_last_day. Display the value of
+v_last_day.
+
+declare
+my_date date;
+v_last_day date;
+begin
+my_date := SYSDATE;
+dbms_output.put_line('Today is : ' || my_date);
+v_last_day := last_day(my_date);
+dbms_output.put_line('The last day of this month is  : ' || v_last_day);
+
+end;
+
+4. Modify the program created in question 3 to add 45 days to today’s date and then calculate and
+display the number of months between the two dates.
+
+declare
+my_date date;
+future_date date;
+months_diff number;
+
+begin
+my_date := SYSDATE;
+future_date := my_date + 45;
+
+months_diff := MONTHS_BETWEEN(future_date, my_date);
+
+DBMS_OUTPUT.PUT_LINE('Today is : ' || my_date);
+DBMS_OUTPUT.PUT_LINE('The date 45 days from today is: ' || future_date);
+DBMS_OUTPUT.PUT_LINE('The number of months between the two dates is: ' || ROUND(months_diff, 2));
+end;
+
+5. 
+
+DECLARE
+ x NUMBER(6);
+BEGIN
+ x := 5 + 3 * 2 ;
+ DBMS_OUTPUT.PUT_LINE(x);
+END;
+
+A. What do you think the output will be when you run the above code?
+
+11
+
+B. Now run the code. What is the output?
+
+11
+
+Statement processed
+
+C. In your own words, explain the results.
+Rezultatul este corect pentru ca se respecta ordinea de efectuare a operatiilor * si apoi +
+
+6. 
+
+DECLARE
+ v_number NUMBER;
+ v_boolean BOOLEAN;
+BEGIN
+ v_number := 25;
+ v_boolean := NOT(v_number > 30);
+END;
+
+What value is assigned to v_boolean?
+
+true
+
+DECLARE
+ v_number NUMBER;
+ v_boolean BOOLEAN;
+BEGIN
+ v_number := 25;
+ v_boolean := NOT(v_number > 30);
+ if v_boolean then
+    dbms_output.put_line('TRUE');
+ else  dbms_output.put_line('FALSE');
+ end if;
+END;
+
+7. List two drawbacks to relying on implicit data type conversions.
+
+Conversiile implicite nu sunt rapide
+este mai greu de citit
+daca oracle schimba regula de conversie, codul e afectat

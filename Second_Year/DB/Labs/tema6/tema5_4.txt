@@ -1,0 +1,32 @@
+Practice 5.4
+1. Nu este nevoie sa declaram mai multi cursori pentru a accesa diferite campuri.
+2.DECLARE
+CURSOR cur_country (p_region_id NUMBER) IS
+SELECT country_name, country_area
+FROM countries
+WHERE region_id = p_region_id;
+BEGIN
+OPEN cur_country(5);
+OPEN cur_country(30);
+END;
+3.DECLARE
+CURSOR cur_country (p_region_id NUMBER) IS
+SELECT country_name, country_area
+FROM countries
+WHERE region_id = p_region_id;
+BEGIN
+FOR v_country_record IN cur_country(5) LOOP
+DBMS_OUTPUT.PUT_LINE(v_country_record.country_name||' '||v_country_record.country_area);
+END LOOP;
+END;
+4.DECLARE
+CURSOR cur_country (p_region_id NUMBER, p_region_area NUMBER) IS
+SELECT country_name, country_area
+FROM countries
+WHERE region_id = p_region_id 
+AND country_area > 200000;
+BEGIN
+FOR v_country_record IN cur_country(5) LOOP
+DBMS_OUTPUT.PUT_LINE(v_country_record.country_name||' '||v_country_record.country_area);
+END LOOP;
+END;

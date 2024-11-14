@@ -1,0 +1,49 @@
+Section5.2 SQL/PL
+%ROWTYPE
+RECORD
+%ISOPEN
+%ROWCOUNT
+%NOTFOUND
+
+Try It/Solve It
+1. Retrieves data types
+Preia tipurile de data ale tuturor datelor preluate din baza de date
+
+2 
+DECLARE
+CURSOR wf_holiday_cursor IS
+SELECT country_name, national_holiday_date, national_holiday_name
+FROM wf_countries where region_id=5;
+wf_c_record wf_holiday_cursor%ROWTYPE;
+BEGIN
+OPEN wf_holiday_cursor ;
+LOOP
+FETCH wf_holiday_cursor INTO wf_c_record;
+EXIT WHEN wf_holiday_cursor%NOTFOUND;
+DBMS_OUTPUT.PUT_LINE(wf_c_record.country_name||'
+'||wf_c_record.national_holiday_date||' '||wf_c_record.national_holiday_name);
+END LOOP;
+CLOSE wf_holiday_cursor;
+END;
+
+3
+DECLARE
+CURSOR emp_cursor IS
+SELECT first_name, last_name, job_id, salary
+FROM employees
+ORDER BY salary DESC;
+emp_record emp_cursor%ROWTYPE;
+BEGIN
+OPEN emp_cursor ;
+LOOP
+FETCH emp_cursor INTO emp_record;
+EXIT WHEN emp_cursor%ROWCOUNT > 6;
+DBMS_OUTPUT.PUT_LINE(emp_record.first_name||'
+'||emp_record.last_name||' '||emp_record.job_id||' '||emp_record.salary);
+END LOOP;
+CLOSE emp_cursor;
+END;
+
+4
+Se repeta la infinit.
+5 testat.

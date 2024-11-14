@@ -1,0 +1,45 @@
+Database Programming with PL/SQL
+2-7: Good Programming Practices
+
+
+Try It / Solve It
+
+1. 
+
+Enter and run the following PL/SQL block. It will execute correctly if you have entered it correctly,
+but it contains some examples of bad programming practices.
+
+A. Modify the block to use good programming practices, and re-run the block.
+
+B. Your modified block should contain examples of the following good programming practices:
+explicit data type conversions, meaningful and consistent variable names, use of %TYPE,
+upper and lowercase conventions, single and multi-line comments, and clear indentation.
+
+DECLARE
+ myvar1 VARCHAR2(20);
+ myvar2 number(4);
+BEGIN
+SELECT country_name INTO myvar1
+FROM countries WHERE country_id = 421;
+ myvar2 :=
+ '1234';
+ MYVAR2 := myvar2 * 2;
+ DBMS_OUTPUT.PUT_LINE(myvar1);
+ End;
+ 
+ DECLARE
+    v_country_name VARCHAR2(20);
+    v_country_id number(4) := 421;
+    v_number number(4);
+BEGIN
+    SELECT country_name 
+    INTO v_country_name
+    FROM countries 
+    WHERE country_id = v_country_id;
+
+    v_number :='1234';
+
+    v_number := v_number * 2;
+
+    DBMS_OUTPUT.PUT_LINE(v_country_name);
+End;

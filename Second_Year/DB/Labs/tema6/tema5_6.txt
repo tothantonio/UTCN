@@ -1,0 +1,81 @@
+Section 5.6
+1.DECLARE
+  CURSOR dept_cursor IS SELECT department_id,department_name
+  FROM departments
+  ORDER BY department_id;
+  CURSOR emp_cursor(v_deptno departments.department_id%TYPE) IS SELECT
+  first_name, last_name, salary
+  FROM employees
+  WHERE department_id = v_deptno
+  ORDER BY last_name;
+  BEGIN
+  FOR dept_record IN dept_cursor
+  LOOP
+  DBMS_OUTPUT.PUT_LINE(dept_record.department_id ||' ' ||
+  dept_record.department_name);
+  DBMS_OUTPUT.PUT_LINE('-----------------------------');
+  DBMS_OUTPUT.PUT_LINE(' ');
+  END LOOP;
+  END;
+
+2.DECLARE
+  CURSOR region_curs IS SELECT region_id, region_name
+  FROM world_regions
+  WHERE region_name like '%America%'
+  ORDER BY region_name;
+  CURSOR country_curs(p_region_id world_regions.region_id%TYPE) IS SELECT
+  country_name, area, population
+  FROM countries
+  WHERE region_id = p_region_id
+  ORDER BY country_name;
+  BEGIN
+  FOR region_rec IN region_curs
+  LOOP
+  DBMS_OUTPUT.PUT_LINE(region_rec.region_id ||' ' || region_rec.region_name);
+  DBMS_OUTPUT.PUT_LINE(FOR country_rec IN country_curs(region_rec.region_id)
+  LOOP
+  DBMS_OUTPUT.PUT_LINE(country_rec.country_name || ' ' ||country_rec.area || ' '||country_rec.population);
+  END LOOP;DBMS_OUTPUT.PUT_LINE(' ');
+  END LOOP;
+  END
+
+3.DECLARE
+  CURSOR region_curs IS SELECT region_id,
+  region_name
+  FROM world_regions
+  WHERE region_name LIKE '%America%'
+  ORDER BY region_name;
+  CURSOR country_curs(p_region_id
+  world_regions.region_id%TYPE) IS SELECT
+  country_id, country_name, area, population
+  FROM countries
+  WHERE region_id = p_region_id
+  ORDER BY country_name;
+  CURSOR language_curs(p_country_id 
+  countries.country_id%TYPE) IS SELECT
+  language_name
+  FROM spoken_languages sl, languages l
+  WHERE sl.language_id = l.language_id AND
+  official = 'Y' AND country_id = p_country_id
+  ORDER BY language_name;
+  BEGIN
+  FOR region_rec IN region_curs
+  LOOP
+  DBMS_OUTPUT.PUT_LINE(region_rec.region_i
+  d ||' ' || region_rec.region_name);
+  DBMS_OUTPUT.PUT_LINE('-----------------------------');
+  FOR country_rec IN
+  country_curs(region_rec.region_id)
+  LOOP
+  DBMS_OUTPUT.PUT_LINE
+  (country_rec.country_name || ' '||country_rec.area || ' ' ||country_rec.population);
+  FOR language_rec IN
+  language_curs(country_rec.country_id)
+  LOOP
+  DBMS_OUTPUT.PUT_LINE('--- '||language_rec.language_name);
+  END LOOP;
+  END LOOP;
+  DBMS_OUTPUT.PUT_LINE(' ');
+  END LOOP;
+  END;
+

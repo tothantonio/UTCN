@@ -1,0 +1,98 @@
+Database Programming with PL/SQL
+2-6: Nested Blocks and Variable Scope
+Vocabulary
+
+
+A name given to a block of code which allows access to the
+variables that have scope, but are not visible. - BLOCK LABEL
+
+Consists of all the blocks in which the variable is either local (the
+declaring block) or global (nested blocks within the declaring block). - VARIABLE SCOPE
+
+The portion of the program where the variable can be accessed
+without using a qualifier. - VARIABLE VISIBILITY
+
+
+Try It / Solve It
+
+1. 
+
+DECLARE
+ weight NUMBER(3) := 600;
+ message VARCHAR2(255) := 'Product 10012';
+BEGIN
+ DECLARE
+ weight NUMBER(3) := 1;
+ message VARCHAR2(255) := 'Product 11001';
+ new_locn VARCHAR2(50) := 'Europe';
+ BEGIN
+ weight := weight + 1;
+ new_locn := 'Western ' || new_locn;
+ -- Position 1 --
+ END;
+ weight := weight + 1;
+ message := message || ' is in stock';
+ -- Position 2 --
+END;
+
+A. The value of weight at position 1 is: 2
+
+B. The value of new_locn at position 1 is: Western Europe
+
+C. The value of weight at position 2 is: 601
+
+D. The value of message at position 2 is: Product 10012 is in stock
+
+E. The value of new_locn at position 2 is: Europe
+
+2.
+
+DECLARE
+ v_employee_id employees.employee_id%TYPE;
+ v_job employees.job_id%TYPE;
+BEGIN
+ SELECT employee_id, job_id INTO v_employee_id, v_job
+ FROM employees
+ WHERE employee_id = 100;
+ DECLARE
+ v_employee_id employees.employee_id%TYPE;
+ v_job employees.job_id%TYPE;
+ BEGIN
+ SELECT employee_id, job_id INTO v_employee_id, v_job
+ FROM employees
+ WHERE employee_id = 103;
+ DBMS_OUTPUT.PUT_LINE(v_employee_id || ' is a(n) ' || v_job);
+ END;
+ DBMS_OUTPUT.PUT_LINE(v_employee_id || ' is a(n) ' || v_job);
+END;
+
+A. Why does the inner block display the job_id of employee 103, not employee 100?
+
+Blocul interior are propriile variabile locale v_employee_id și v_job, care sunt diferite de variabilele din blocul exterior.
+Când se execută blocul interior, SELECT-ul preia datele pentru angajatul 103, 
+deci variabilele v_employee_id și v_job din blocul interior vor conține valorile pentru acest angajat.
+
+B. Why does the outer block display the job_id of employee 100, not employee 103?
+
+Blocul exterior are propriile variabile v_employee_id și v_job, care sunt separate de cele ale blocului interior.
+În cadrul blocului exterior, SELECT-ul preia datele pentru angajatul 100, 
+iar aceste valori sunt stocate în variabilele v_employee_id și v_job ale blocului exterior.
+
+C. Modify the code to display the details of employee 100 in the inner block. Use block labels.
+
+DECLARE
+   v_employee_id employees.employee_id%TYPE;
+   v_job employees.job_id%TYPE;
+BEGIN
+   SELECT employee_id, job_id INTO v_employee_id, v_job
+   FROM employees
+   WHERE employee_id = 100;
+   
+   DECLARE
+   BEGIN
+    DBMS_OUTPUT.PUT_LINE(v_employee_id || ' is a(n) ' || v_job); 
+   END; 
+    DBMS_OUTPUT.PUT_LINE(v_employee_id || ' is a(n) ' || v_job); 
+END;
+
+

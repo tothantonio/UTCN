@@ -1,0 +1,154 @@
+Database Programming with PL/SQL
+5-1: Introduction to Explicit Cursors
+
+Vocabulary
+
+Definition: Declared by the programmer for queries that return more than one row.
+Answer: Explicit Cursor
+
+Definition: A label for a context area or a pointer to the context area.
+Answer: Cursor
+
+Definition: Disables a cursor, releases the context area, and undefines the active set.
+Answer: CLOSE Statement
+
+Definition: An allocated memory area used to store the data processed by a SQL statement.
+Answer: Context Area
+
+Definition: Defined automatically by Oracle for all SQL DML statements, and for SELECT statements that return only one row.
+Answer: Implicit Cursor
+
+Definition: Statement that executes the query associated with the cursor, identifies the active set, and positions the cursor pointer to the first row.
+Answer: OPEN Statement
+
+Definition: Statement that retrieves the current row and advances the cursor to the next row either until there are no more rows or until a specified condition is met.
+Answer: FETCH Statement
+
+Definition: The set of rows returned by a multiple-row query in an explicit cursor operation.
+Answer: Active Set
+
+Try It / Solve It
+
+1. Difference Between Implicit and Explicit Cursors
+Answer:
+
+Implicit Cursors: Created automatically by Oracle when a SQL statement is executed that returns only one row. 
+They are simple to use but provide less control over fetching and managing rows.
+
+Explicit Cursors: Defined by the programmer for queries that return more than one row. 
+They allow more control, enabling row-by-row processing of the result set using OPEN, FETCH, and CLOSE statements.
+
+2. SQL Statement that Can Use Either an Explicit or Implicit Cursor
+Answer: SELECT statement can use either an explicit or implicit cursor. 
+An explicit cursor is used for multiple-row queries, while an implicit cursor is used when expecting only one row in the result.
+
+3. Circumstances for Using an Explicit Cursor
+Answer:
+
+When processing multiple rows returned by a query one at a time.
+When performing operations like row-by-row calculations or conditional processing on each row in the result set.
+4. Exercise Using CURRENCIES Table
+Code Solution:
+
+Declare a Cursor currencies_cur to Retrieve All Rows in CURRENCIES Table:
+
+DECLARE
+    CURSOR currencies_cur IS
+        SELECT currency_code, currency_name
+        FROM currencies
+        ORDER BY currency_name;
+    
+    v_currency_code currencies.currency_code%TYPE;
+    v_currency_name currencies.currency_name%TYPE;
+BEGIN
+    OPEN currencies_cur;
+
+    FETCH currencies_cur INTO v_currency_code, v_currency_name;
+    DBMS_OUTPUT.PUT_LINE(v_currency_code || ' ' || v_currency_name);
+
+    CLOSE currencies_cur;
+END;
+
+Expected Output: AFA Afghani
+Modify Code to Fetch and Display All Rows Using a LOOP and EXIT Statement:
+
+DECLARE
+    CURSOR currencies_cur IS
+        SELECT currency_code, currency_name
+        FROM currencies
+        ORDER BY currency_name;
+    
+    v_currency_code currencies.currency_code%TYPE;
+    v_currency_name currencies.currency_name%TYPE;
+BEGIN
+    OPEN currencies_cur;
+    LOOP
+        FETCH currencies_cur INTO v_currency_code, v_currency_name;
+        EXIT WHEN currencies_cur%NOTFOUND;
+        DBMS_OUTPUT.PUT_LINE(v_currency_code || ' ' || v_currency_name);
+    END LOOP;
+    CLOSE currencies_cur;
+END;
+
+Display All Rows in COUNTRIES Table for Region 5, Filtering Non-NULL national_holiday_date:
+
+DECLARE
+    CURSOR region_5_countries_cur IS
+        SELECT country_name, national_holiday_date, national_holiday_name
+        FROM countries
+        WHERE region_id = 5 AND national_holiday_date IS NOT NULL;
+    
+    v_country_name countries.country_name%TYPE;
+    v_national_holiday_date countries.national_holiday_date%TYPE;
+    v_national_holiday_name countries.national_holiday_name%TYPE;
+BEGIN
+    OPEN region_5_countries_cur;
+    LOOP
+        FETCH region_5_countries_cur INTO v_country_name, v_national_holiday_date, v_national_holiday_name;
+        EXIT WHEN region_5_countries_cur%NOTFOUND;
+        DBMS_OUTPUT.PUT_LINE('Country: ' || v_country_name || 
+                             ', National Holiday Date: ' || v_national_holiday_date || 
+                             ', National Holiday Name: ' || v_national_holiday_name);
+    END LOOP;
+    CLOSE region_5_countries_cur;
+END;
+
+5. Guidelines for Declaring and Using Explicit Cursors
+Answer:
+
+Always OPEN an explicit cursor before using it, and CLOSE it after processing is complete.
+Use FETCH statements to retrieve rows one at a time from an explicit cursor.
+Use %NOTFOUND or %FOUND attributes within loops to control when to exit the loop.
+
+6. PL/SQL Block to Display Names of World Regions with a Count of Countries
+
+DECLARE
+    CURSOR regions_cur IS
+        SELECT r.region_name, COUNT(c.country_id) AS country_count
+        FROM regions r
+        JOIN countries c ON r.region_id = c.region_id
+        GROUP BY r.region_name
+        HAVING COUNT(c.country_id) >= 10
+        ORDER BY r.region_name;
+    
+    v_region_name regions.region_name%TYPE;
+    v_country_count NUMBER;
+BEGIN
+    OPEN regions_cur;
+    LOOP
+        FETCH regions_cur INTO v_region_name, v_country_count;
+        EXIT WHEN regions_cur%NOTFOUND;
+        DBMS_OUTPUT.PUT_LINE('Region: ' || v_region_name || ' - Number of Countries: ' || v_country_count);
+    END LOOP;
+    CLOSE regions_cur;
+END;
+
+Explanation:
+
+This PL/SQL block uses an explicit cursor to retrieve the region names and their respective counts of countries.
+Only regions with at least 10 countries are included in the result set, ordered by region name.
+
+
+
+
+

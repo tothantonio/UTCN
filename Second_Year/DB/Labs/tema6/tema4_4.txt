@@ -1,0 +1,63 @@
+Practice 4.4:
+Vocabulary:
+1.While loop
+2.For loop
+
+Try it/Solve it:
+1.declare
+name wf_countries.country_name%type;
+id wf_countries.country_id%type:=51;
+begin
+while id<=55 loop
+select country_name into name from wf_countries where country_id=id;
+DBMS_OUTPUT.PUT_LINE('Tara: ' || name ||' cu id: ' || id );
+id:=id+1;
+end loop;
+end;
+2.declare
+name wf_countries.country_name%type;
+id wf_countries.country_id%type;
+begin
+for id in reverse 51..55 loop
+select country_name into name from wf_countries where country_id=id;
+DBMS_OUTPUT.PUT_LINE('Tara: ' || name ||' cu id: ' || id );
+end loop;
+end;
+3.DROP TABLE new_emps;
+
+CREATE TABLE new_emps AS SELECT * FROM employees;
+
+ALTER TABLE new_emps ADD stars VARCHAR2(50);
+
+DECLARE
+ v_empno new_emps.employee_id%TYPE := 124;
+ v_asterisk new_emps.stars%TYPE := NULL;
+ v_sal_in_thousands new_emps.salary%TYPE;
+BEGIN
+ SELECT NVL(TRUNC(salary/1000), 0) INTO v_sal_in_thousands
+ FROM new_emps WHERE employee_id = v_empno;
+ FOR i in 1..v_sal_in_thousands loop
+ v_asterisk:=v_asterisk||'*';
+ DBMS_OUTPUT.PUT_LINE(v_asterisk);
+ END loop;
+UPDATE new_emps
+ SET stars = v_asterisk
+ WHERE employee_id = v_empno;
+END;
+
+DECLARE
+ v_empno new_emps.employee_id%TYPE := 142;
+ v_asterisk new_emps.stars%TYPE := NULL;
+ v_sal_in_thousands new_emps.salary%TYPE;
+BEGIN
+ SELECT NVL(TRUNC(salary/1000), 0) INTO v_sal_in_thousands
+ FROM new_emps WHERE employee_id = v_empno;
+ FOR i in 1..v_sal_in_thousands loop
+ v_asterisk:=v_asterisk||'*';
+ DBMS_OUTPUT.PUT_LINE(v_asterisk);
+ END loop;
+UPDATE new_emps
+ SET stars = v_asterisk
+ WHERE employee_id = v_empno;
+END;
+

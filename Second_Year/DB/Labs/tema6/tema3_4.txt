@@ -1,0 +1,92 @@
+Database Programming with PL/SQL
+3-4: Using Transaction Control Statements
+
+Vocabulary
+
+An inseparable list of database operations, which must be
+executed either in its entirety or not at all. - transaction
+
+Used for discarding any changes that were made to the
+database after the last COMMIT. - rollback
+
+Used to mark an intermediate point in transaction processing. - savepoint
+
+Keyword used to signal the end of a PL/SQL block, not the end
+of a transaction. - end
+
+Statement used to make database changes permanent. - commit
+
+Try It / Solve It
+
+1. How many transactions are shown in the following code? Explain your reasoning.
+
+ BEGIN
+ INSERT INTO my_savings (account_id, amount)
+VALUES (10377, 200);
+ INSERT INTO my_checking (account_id, amount)
+VALUES (10378, 100);
+ END;
+ 
+  There is one transaction in this code. Both INSERT statements are executed within a single BEGIN...END block, 
+  meaning they are part of the same transaction. In PL/SQL, a transaction ends only when there is a COMMIT or ROLLBACK statement
+ 
+2. Create the endangered species table by running the following statement in Application Express:
+
+CREATE TABLE endangered_species
+ (species_id NUMBER(4) CONSTRAINT es_spec_pk PRIMARY KEY,
+ common_name VARCHAR2(30) CONSTRAINT es_com_name_nn NOT NULL,
+ scientific_name VARCHAR2(30) CONSTRAINT es_sci_name_nn NOT NULL);
+ 
+this code creates a table named endangered_species with three columns:
+species_id: Numeric primary key with a maximum of four digits.
+common_name: A required text field for the common name of the species.
+scientific_name: A required text field for the scientific name of the species.
+
+ 
+3. Examine the following block of code. If you were to run this block, what data do you think would be
+saved in the database?
+
+BEGIN
+ INSERT INTO endangered_species
+ VALUES (100, 'Polar Bear', 'Ursus maritimus');
+ SAVEPOINT sp_100;
+ INSERT INTO endangered_species
+ VALUES (200, 'Spotted Owl', 'Strix occidentalis');
+ SAVEPOINT sp_200;
+ INSERT INTO endangered_species
+ VALUES (300, 'Asiatic Black Bear', 'Ursus thibetanus');
+ ROLLBACK TO sp_100;
+ COMMIT;
+END;
+
+First, a record for 'Polar Bear' (ID 100) is inserted, and a SAVEPOINT named sp_100 is set.
+Then, a record for 'Spotted Owl' (ID 200) is inserted, and another SAVEPOINT named sp_200 is set.
+A record for 'Asiatic Black Bear' (ID 300) is inserted.
+The ROLLBACK TO sp_100 undoes changes made after SAVEPOINT sp_100. 
+Therefore, the 'Spotted Owl' and 'Asiatic Black Bear' entries are removed, but the 'Polar Bear' entry remains.
+The COMMIT then makes the 'Polar Bear' entry permanent.
+Answer: Only the record (100, 'Polar Bear', 'Ursus maritimus') would be saved in the database.
+
+4. Run the block above to test your theory. Confirm your projected data was added.
+
+5. Examine the following block. If you were to run this block, what data do you think would be saved
+in the database? Run the block to test your theory.
+
+BEGIN
+ INSERT INTO endangered_species
+ VALUES (400, 'Blue Gound Beetle', 'Carabus intricatus');
+ SAVEPOINT sp_400;
+ INSERT INTO endangered_species
+ VALUES (500, 'Little Spotted Cat', 'Leopardus tigrinus');
+ ROLLBACK;
+ INSERT INTO endangered_species
+ VALUES (600, 'Veined Tongue-Fern', 'Elaphoglossum nervosum');
+ ROLLBACK TO sp_400;
+END;
+
+Explanation:
+The 'Blue Ground Beetle' (ID 400) is inserted, and a SAVEPOINT sp_400 is set.
+The 'Little Spotted Cat' (ID 500) is then inserted, but the ROLLBACK statement undoes all changes since the beginning of the transaction. Thus, both entries are removed.
+After the rollback, a record for 'Veined Tongue-Fern' (ID 600) is inserted.
+The ROLLBACK TO sp_400 removes this last entry, but it does not restore the 'Blue Ground Beetle' entry because it was removed by the earlier full ROLLBACK.
+Answer: No data would be saved in the database, as both the ROLLBACK statements undo all the inserts.

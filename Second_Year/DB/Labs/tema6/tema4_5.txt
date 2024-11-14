@@ -1,0 +1,24 @@
+Practice 4.5
+
+TRY IT / SOLVE IT
+
+1.BEGIN 
+  FOR v_licenta IN 60..65 LOOP 
+     FOR v_licentav IN 100..110 LOOP
+        DBMS_OUTPUT.PUT_LINE(v_licenta||'-'||v_licentav);
+     END LOOP;
+  END LOOP;
+  END;
+
+2.DECLARED 
+  v_sum NUMBER(5);
+  BEGIN 
+  FOR v_licenta IN 60..65 LOOP 
+     FOR v_licenta IN 100..110 LOOP 
+   v_sum:=v_licenta+v_licentav;
+     DBMS_OUTPUT.PUT_LINE (v_licenta||'-'||v_licentav||'='||v_sum);
+   END LOOP;
+
+  EXIT WHEN v_sum>172;
+  END LOOP; 
+  END;

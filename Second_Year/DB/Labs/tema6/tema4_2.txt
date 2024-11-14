@@ -1,0 +1,120 @@
+Database Programming with PL/SQL
+4-2: Conditional Control: Case Statements
+
+Vocabulary
+
+Definition: An expression that selects a result and returns it into a variable.
+Answer: Expression
+
+Definition: Shows the results of all possible combinations of two conditions.
+Answer: Truth Table
+
+Definition: A block of code that performs actions based on conditional tests.
+Answer: Case Statement
+
+
+Try It / Solve It
+1. PL/SQL Block to Find Number of Airports
+
+DECLARE
+    v_country_name countries.country_name%TYPE := 'Canada'; 
+    v_airports countries.airports%TYPE;
+BEGIN
+    SELECT airports INTO v_airports
+    FROM countries
+    WHERE country_name = v_country_name;
+
+    CASE
+        WHEN v_airports IS NULL THEN
+            DBMS_OUTPUT.PUT_LINE('The number of airports is not available for this country.');
+        WHEN v_airports <= 100 THEN
+            DBMS_OUTPUT.PUT_LINE('There are 100 or fewer airports.');
+        WHEN v_airports BETWEEN 101 AND 1000 THEN
+            DBMS_OUTPUT.PUT_LINE('There are between 101 and 1,000 airports.');
+        WHEN v_airports BETWEEN 1001 AND 10000 THEN
+            DBMS_OUTPUT.PUT_LINE('There are between 1,001 and 10,000 airports.');
+        WHEN v_airports > 10000 THEN
+            DBMS_OUTPUT.PUT_LINE('There are more than 10,000 airports.');
+    END CASE;
+END;
+Explanation: This code retrieves the number of airports for a specified country and uses a CASE statement 
+to output a message based on the number of airports.
+
+2. PL/SQL Block for Coastline Length
+
+DECLARE
+    v_country_name countries.country_name%TYPE := 'Canada';
+    v_coastline countries.coastline%TYPE;
+    v_coastline_description VARCHAR2(50);
+BEGIN
+    SELECT coastline INTO v_coastline
+    FROM countries
+    WHERE country_name = v_country_name;
+
+    v_coastline_description :=
+        CASE
+            WHEN v_coastline = 0 THEN 'no coastline'
+            WHEN v_coastline < 1000 THEN 'a small coastline'
+            WHEN v_coastline < 10000 THEN 'a mid-range coastline'
+            ELSE 'a large coastline'
+        END;
+
+    DBMS_OUTPUT.PUT_LINE('Country ' || v_country_name || ' has ' || v_coastline_description);
+END;
+Explanation: This block retrieves the coastline length for a given country and sets a message based on the coastline range using a CASE expression.
+
+3. PL/SQL Block to Find Number of Countries Using a Specific Currency
+
+DECLARE
+    v_currency_name VARCHAR2(20) := 'Euro';
+    v_country_count NUMBER;
+BEGIN
+    SELECT COUNT(*) INTO v_country_count
+    FROM countries
+    WHERE currency_name = v_currency_name;
+
+    CASE
+        WHEN v_country_count > 20 THEN
+            DBMS_OUTPUT.PUT_LINE('More than 20 countries');
+        WHEN v_country_count BETWEEN 10 AND 20 THEN
+            DBMS_OUTPUT.PUT_LINE('Between 10 and 20 countries');
+        WHEN v_country_count < 10 THEN
+            DBMS_OUTPUT.PUT_LINE('Fewer than 10 countries');
+    END case;
+END;
+Explanation: This block counts the number of countries using a specified currency and uses a CASE statement to display a message based on the count.
+
+4. Analyzing the IF Condition in the Code Block
+DECLARE
+    x BOOLEAN := FALSE;
+    y BOOLEAN;
+    v_color VARCHAR(20) := 'Red';
+BEGIN
+    IF (x OR y) THEN
+        v_color := 'White';
+    ELSE
+        v_color := 'Black';
+    END IF;
+    DBMS_OUTPUT.PUT_LINE(v_color);
+END;
+
+Initial Code Prediction:
+
+Since x is FALSE and y is not initialized, (x OR y) evaluates as NULL, so ELSE executes.
+Output: Black
+
+Change x and y Declarations (x BOOLEAN; y BOOLEAN;)
+
+Both x and y are NULL by default, so (x OR y) is NULL, and the ELSE block executes.
+Output: Black
+
+Set x and y to TRUE (x BOOLEAN := TRUE; y BOOLEAN := TRUE;)
+
+With both x and y as TRUE, (x OR y) evaluates as TRUE, so THEN block executes.
+Output: White
+
+Experiment with AND Condition (IF (x AND y))
+
+If x := TRUE; y := TRUE, x AND y is TRUE, so output is White.
+If x := TRUE; y := FALSE, x AND y is FALSE, so output is Black.
+If x or y is NULL, x AND y evaluates to NULL, so output is Black.

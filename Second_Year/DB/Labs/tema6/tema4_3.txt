@@ -1,0 +1,148 @@
+Vocabulary:
+
+-basic loop
+-exit
+
+Try it/Solve it:
+
+1.
+
+Loop -urile sunt utilizate pentru a executa instructiuni repetitive pana cand este intalnita o conditie EXIT.
+
+2.
+
+-basic loop
+-for
+-while
+
+3.
+
+exit when conditie
+
+4.
+
+DECLARE
+
+contor NUMBER(2) :=1;
+new_country_id countries.country_id%TYPE;
+new_country_name countries.country_name%TYPE;
+
+BEGIN
+ LOOP
+  select country_id, country_name 
+  into new_country_id,  new_country_name
+  from countries
+  where TO_NUMBER(country_id, '99') = contor;
+
+  dbms_output.put_line ('Country id: ' || new_country_id || ' ; Country name: ' || new_country_name);
+  contor := contor+1;
+
+  if contor>3 then exit;
+  end if; 
+
+ END LOOP;
+END;
+
+5.
+
+DECLARE
+
+contor NUMBER(2) :=1;
+new_country_id countries.country_id%TYPE;
+new_country_name countries.country_name%TYPE;
+
+BEGIN
+ LOOP
+  select country_id, country_name 
+  into new_country_id,  new_country_name
+  from countries
+  where TO_NUMBER(country_id, '99') = contor;
+
+  dbms_output.put_line ('Country id: ' || new_country_id || ' ; Country name: ' || new_country_name);
+  contor := contor+1;
+
+  exit when contor>3;
+
+ END LOOP;
+END;
+
+6.
+
+A.
+
+DROP TABLE messages; 
+CREATE TABLE messages (results NUMBER(2)); 
+
+B.
+
+DECLARE 
+
+nr number(2):=1; 
+
+BEGIN 
+ LOOP 
+  if nr<>6 AND nr<>8 then 
+    insert into messages(results) 
+    values(nr); 
+  end if; 
+
+  nr:=nr+1; 
+  exit when nr>10; 
+ END LOOP; 
+END;
+
+C.
+
+select * 
+from messages;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+ 
+

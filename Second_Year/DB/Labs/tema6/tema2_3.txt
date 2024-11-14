@@ -4,7 +4,7 @@ Database Programming with PL/SQL
 Vocabulary:
 
 Store large blocks of single-byte or fixed width multi-byte NCHAR
-data in the database. - nchar
+data in the database. - nclob	
 
 Hold values, called locators, that specify the location of large
 objects (such as graphic images) that are stored out of line. - large object locator

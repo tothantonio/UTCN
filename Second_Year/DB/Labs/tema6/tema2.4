@@ -1,0 +1,89 @@
+Database Programming with PL/SQL
+2-4: Using Scalar Data Types
+
+Vocabulary:
+
+A datatype that stores one of the three possible values used for
+logical calculations: TRUE, FALSE, or NULL.  - boolean
+
+Attribute used to declare a variable according to another
+previously declared variable or database column.  - %TYPE
+
+Try it/Solve it:
+
+1.
+
+A.
+
+number_of_students PLS_INTEGER;		valid
+STUDENT_NAME VARCHAR2(10) = Johnson; invalid
+stu_per_class CONSTANT NUMBER;		invalid
+tomorrow DATE := SYSDATE+1;			valid
+
+B.
+
+Johnson trebuie sa fie 'Johnson'
+stu_per_class trebuie sa aiba o valoare daca e declarat constant
+
+declare
+number_of_students PLS_integer := 20;
+STUDENT_NAME varchar2(10) := 'Johnson';
+stu_per_class CONSTANT NUMBER := 25;
+tomorrow DATE := SYSDATE + 1; 
+
+begin
+DBMS_OUTPUT.PUT_LINE('Number of Students: ' || number_of_students);
+DBMS_OUTPUT.PUT_LINE('Student Name: ' || STUDENT_NAME);
+DBMS_OUTPUT.PUT_LINE('Students per Class: ' || stu_per_class);
+DBMS_OUTPUT.PUT_LINE('Tomorrow''s Date: ' || TO_CHAR(tomorrow, 'DD-MON-YYYY'));
+end;
+
+2.
+
+DECLARE
+ country_name VARCHAR2(50);
+median_age NUMBER(6, 2);
+BEGIN
+ SELECT country_name, median_age INTO country_name, median_age
+ FROM countries
+ WHERE country_name = 'Japan';
+ DBMS_OUTPUT.PUT_LINE('The median age in '|| country_name || ' is '
+ || median_age || '.');
+END;
+
+Is it named well? country_name - yes, median_age - yes, but could be improved in country_median_age
+
+3.
+
+DECLARE
+ country_name countries.country_name%TYPE;
+median_age countries.median_age%TYPE;
+BEGIN
+ SELECT country_name, median_age INTO country_name, median_age
+ FROM countries
+ WHERE country_name = 'Japan';
+ DBMS_OUTPUT.PUT_LINE('The median age in '|| country_name || ' is '
+ || median_age || '.');
+END;
+
+4.
+
+Utilizarea atributului %TYPE în PL/SQL este avantajoasă, 
+deoarece permite variabilelor să moștenească automat tipul de date al unei coloane specifice dintr-un tabel.
+
+Dacă tipul de date al coloanei country_name din tabelul countries este modificat (de exemplu, pentru a permite un text mai lung sau pentru a folosi un alt tip), 
+variabila noastră declarată cu un tip fix va rămâne pe vechiul tip de date. 
+Acest lucru ar putea duce la erori în runtime, cum ar fi trunchierea textului,
+
+5.
+
+DECLARE
+    TODAY DATE := SYSDATE;                
+    TOMORROW TODAY%TYPE;                   
+BEGIN
+    DBMS_OUTPUT.PUT_LINE('Hello World');
+    TOMORROW := TODAY + 1;                 
+    DBMS_OUTPUT.PUT_LINE('Today''s Date: ' || TODAY);
+    DBMS_OUTPUT.PUT_LINE('Tomorrow''s Date: ' || TOMORROW);
+END;
+

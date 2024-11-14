@@ -1,0 +1,41 @@
+Vocabulary:
+FOR CURSOR
+
+Try it:
+1.-rezolva problema unui numar mare de coloane
+-usor de scris
+
+2.DECLARE
+ CURSOR countries_cur IS
+ SELECT country_name, national_holiday_name, national_holiday_date
+ FROM countries
+ WHERE region_id = 5;
+BEGIN
+ FOR countries_rec IN countries_cur LOOP
+ DBMS_OUTPUT.PUT_LINE ('Country: ' || countries_rec.country_name|| ' National holiday: '|| countries_rec.national_holiday_name|| ', held on: '|| countries_rec.national_holiday_date);
+ END LOOP;
+END;
+
+3.BEGIN
+ FOR countries_rec IN (SELECT country_name, national_holiday_name, national_holiday_date FROM countries WHERE region_id = 5;) LOOP
+ DBMS_OUTPUT.PUT_LINE ('Country: ' || countries_rec.country_name|| ' National holiday: '|| countries_rec.national_holiday_name|| ', held on: '|| countries_rec.national_holiday_date);
+ END LOOP;
+END;
+
+4.BEGIN
+ FOR countries_rec IN (SELECT country_name, highest_elevation, climate FROM wf_countries WHERE highest_elevation > 8000) LOOP
+ DBMS_OUTPUT.PUT_LINE (countries_rec.country_name||'  '|| countries_rec.highest_elevation||'  '||countries_rec.climate);
+ END LOOP;
+END;
+
+5.DECLARE
+ CURSOR countries_cur IS
+ SELECT c.country_name, COUNT(s.language_id) AS language FROM wf_countries c JOIN wf_spoken_languages s ON(c.country_id=s.country_id) GROUP BY s.country_id HAVING COUNT(s.language_id)>6;
+ v_nmb NUMBER(2) := 0;
+BEGIN
+ FOR countries_rec IN countries_cur LOOP
+ DBMS_OUTPUT.PUT_LINE(countries_rec.country_name||'  '|| countries_rec.language);
+ v_nmb:=v_nmb+1;
+ END LOOP;
+DBMS_OUTPUT.PUT_LINE(v_nmb||' countries having more than six languages.');
+END;

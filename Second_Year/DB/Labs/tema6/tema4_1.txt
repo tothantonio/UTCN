@@ -1,0 +1,168 @@
+Database Programming with PL/SQL
+4-1: Conditional Control: IF Statements
+
+Vocabulary
+
+Statement that enables PL/SQL to perform actions selectively
+based on conditions. - if statement
+
+Control structures – Repetition statements that enable you to
+execute statements in a PL/SQL block repeatedly. - loop
+
+An expression with a TRUE or FALSE value that is used to
+make a decision. - boolean 
+
+An expression that determines a course of action based on
+conditions and can be used outside a PL/SQL block in a SQL
+statement. - case 
+
+Try It / Solve It
+
+1. What is the purpose of a conditional control structure in PL/SQL?
+Answer: A conditional control structure allows PL/SQL to execute specific code blocks based on whether certain conditions are met.
+
+2. List the three categories of control structures in PL/SQL.
+Conditional control (e.g., IF, CASE)
+Iterative control (e.g., LOOP, WHILE, FOR)
+Sequential control (e.g., GOTO)
+
+3. List the keywords that can be part of an IF statement.
+IF
+THEN
+ELSIF
+ELSE
+END IF
+
+4. List the keywords that are a required part of an IF statement.
+IF
+THEN
+END IF
+
+5. Write a PL/SQL block to find the population of a given country in the countries table. Display a
+message indicating whether the population is greater than or less than 1 billion (1,000,000,000).
+
+Test your block twice using India (country_id = 91) and United Kingdom (country_id = 44). India’s
+population should be greater than 1 billion, while United Kingdom’s should be less than 1 billion.
+
+DECLARE
+  v_population NUMBER;
+BEGIN
+  SELECT population INTO v_population
+  FROM countries
+  WHERE country_id = 91; 
+  
+  IF v_population > 1000000000 THEN
+    DBMS_OUTPUT.PUT_LINE('Population is greater than 1 billion.');
+  ELSE
+    DBMS_OUTPUT.PUT_LINE('Population is less than 1 billion.');
+  END IF;
+END;
+
+6. Modify the code from the previous exercise so that it handles all the following cases:
+A. Population is greater than 1 billion.
+B. Population is greater than 0.
+C. Population is 0.
+D. Population is null. (Display: No data for this country.)
+Run your code using the following country ids. Confirm the indicated results.
+• China (country_id = 86): Population is greater than 1 billion.
+• United Kingdom (country_id = 44): Population is greater than 0.
+• Antarctica (country_id = 672): Population is 0.
+• Europa Island (country_id = 15): No data for this country.
+
+DECLARE
+  v_population NUMBER;
+BEGIN
+  SELECT population INTO v_population
+  FROM countries
+  WHERE country_id = :country_id;  
+  
+  IF v_population > 1000000000 THEN
+    DBMS_OUTPUT.PUT_LINE('Population is greater than 1 billion.');
+  ELSIF v_population > 0 THEN
+    DBMS_OUTPUT.PUT_LINE('Population is greater than 0.');
+  ELSIF v_population = 0 THEN
+    DBMS_OUTPUT.PUT_LINE('Population is 0.');
+  ELSE
+    DBMS_OUTPUT.PUT_LINE('No data for this country.');
+  END IF;
+END;
+
+
+7. Examine the following code:
+DECLARE
+ v_country_id countries.country_name%TYPE := <a value>;
+ v_ind_date countries.date_of_independence%TYPE;
+ v_natl_holiday countries.national_holiday_date%TYPE;
+BEGIN
+ SELECT date_of_independence, national_holiday_date
+ INTO v_ind_date, v_natl_holiday
+ FROM countries
+ WHERE country_id = v_country_id;
+ IF v_ind_date IS NOT NULL THEN
+ DBMS_OUTPUT.PUT_LINE('A');
+ ELSIF v_natl_holiday IS NOT NULL THEN
+ DBMS_OUTPUT.PUT_LINE('B');
+ ELSIF v_natl_holiday IS NULL AND v_ind_date IS NULL THEN
+ DBMS_OUTPUT.PUT_LINE('C');
+ END IF;
+END;
+
+A. What would print if the country has an independence date equaling NULL and a national
+holiday date equaling NULL?
+If both v_ind_date and v_natl_holiday are NULL, the code will print C.
+
+B. What would print if the country has an independence date equaling NULL and a national
+holiday date containing a value?
+If v_ind_date is NULL and v_natl_holiday has a value, the code will print B.
+
+C. What would print if the country has an independence date equaling a value and a national
+holiday date equaling NULL?
+If v_ind_date has a value and v_natl_holiday is NULL, the code will print A.
+
+D. Run a SELECT statement against the COUNTRIES table to determine whether the following
+countries have independence dates or national holiday dates, or both. Predict the output of
+running the anonymous block found at the beginning of this question.
+
+Predicted Outputs:
+Antarctica (672): Both dates are likely NULL, so output should be C.
+Iraq (964): Iraq likely has an independence date but no national holiday, so output should be A.
+Spain (34): Spain might have both dates, so output should be A (since IF only checks independence date).
+United States (1): Likely has both dates; output should be A.
+
+E. Finally, run the anonymous block found at the beginning of this question using each of the
+above country ids as input. Check whether your output answers are correct.
+
+8. Examine the following code. What output do you think it will produce?
+DECLARE
+ v_num1 NUMBER(3) := 123;
+ v_num2 NUMBER;
+BEGIN
+ IF v_num1 <> v_num2 THEN
+ DBMS_OUTPUT.PUT_LINE('The two numbers are not equal');
+ ELSE
+ DBMS_OUTPUT.PUT_LINE('The two numbers are equal');
+ END IF;
+END;
+
+Run the code to check if your prediction was correct. What was the result and why? Modify the
+code to use various comparison operators to see different results.
+
+IF v_num2 IS NULL THEN
+  DBMS_OUTPUT.PUT_LINE('v_num2 is NULL');
+END IF;
+
+9. Write a PL/SQL block to accept a year and check whether it is a leap year. For example, if the
+year entered is 1990, the output should be “1990 is not a leap year.”
+
+DECLARE
+  v_year NUMBER := 2024;  
+BEGIN
+  IF (v_year MOD 400 = 0) OR (v_year MOD 4 = 0 AND v_year MOD 100 <> 0) THEN
+    DBMS_OUTPUT.PUT_LINE(v_year || ' is a leap year');
+  ELSE
+    DBMS_OUTPUT.PUT_LINE(v_year || ' is not a leap year');
+  END IF;
+END;
+
+Hint: A leap year should be exactly divisible by 4, but not exactly divisible by 100. However, any
+year exactly divisible by 400 is a leap year.
