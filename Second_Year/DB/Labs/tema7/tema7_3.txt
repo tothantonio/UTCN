@@ -1,0 +1,191 @@
+Database Programming with PL/SQL
+7-3: Trapping User-Defined Exceptions
+
+Vocabulary:
+
+RAISE_APPLICATION_ERROR: 
+A procedure used to return user-defined error messages from stored subprograms.
+
+RAISE: 
+Use this statement to raise a named exception.
+
+User-defined exceptions: 
+These errors are not automatically raised by the Oracle Server, but are defined by the programmer and are specific to the programmer's code.
+
+Try it/ Solve it:
+
+CREATE TABLE excep_emps AS SELECT * FROM employees;
+
+1.
+
+DECLARE
+    v_dept_id excep_emps.department_id%TYPE := 10;
+    v_rows_updated NUMBER;
+    e_no_rows_updated EXCEPTION;
+BEGIN
+    UPDATE excep_emps
+    SET salary = 10000
+    WHERE department_id = v_dept_id;
+    
+    v_rows_updated := SQL%ROWCOUNT;
+    
+    IF v_rows_updated = 0 THEN
+        RAISE e_no_rows_updated;
+    END IF;
+    
+    DBMS_OUTPUT.PUT_LINE(v_rows_updated || ' rows updated.');
+    
+EXCEPTION
+    WHEN e_no_rows_updated THEN
+        DBMS_OUTPUT.PUT_LINE('No rows were updated for department ID ' || v_dept_id);
+    WHEN OTHERS THEN
+        DBMS_OUTPUT.PUT_LINE('An error occurred: ' || SQLCODE || ' - ' || SQLERRM);
+END;
+If no employees exist in a department, the e_no_rows_updated exception will be raised, and a custom message will be displayed.
+For any other error, it will display the error SQLCODE and SQLERRM.
+
+2.
+
+DECLARE
+    v_dept_id excep_emps.department_id%TYPE := 40;
+    v_rows_updated NUMBER;
+BEGIN
+    UPDATE excep_emps
+    SET salary = 10000
+    WHERE department_id = v_dept_id;
+    
+    v_rows_updated := SQL%ROWCOUNT;
+    
+    IF v_rows_updated = 0 THEN
+        RAISE_APPLICATION_ERROR(-20202, 'No rows were updated for department ID ' || v_dept_id);
+    END IF;
+    
+    DBMS_OUTPUT.PUT_LINE(v_rows_updated || ' rows updated.');
+    
+EXCEPTION
+    WHEN OTHERS THEN
+        DBMS_OUTPUT.PUT_LINE('Error: ' || SQLCODE || ' - ' || SQLERRM);
+END;
+If no rows are updated, it raises error -20202 with a custom message.
+
+3.
+
+DECLARE
+    v_dept_id excep_emps.department_id%TYPE := 40;
+    v_rows_updated NUMBER;
+BEGIN
+    UPDATE excep_emps
+    SET salary = 10000
+    WHERE department_id = v_dept_id;
+    
+    v_rows_updated := SQL%ROWCOUNT;
+    
+    IF v_rows_updated = 0 THEN
+        RAISE_APPLICATION_ERROR(-20202, 'No rows were updated for department ID ' || v_dept_id);
+    END IF;
+    
+    DBMS_OUTPUT.PUT_LINE(v_rows_updated || ' rows updated.');
+    
+EXCEPTION
+    WHEN OTHERS THEN
+        DBMS_OUTPUT.PUT_LINE('Error: ' || SQLCODE || ' - ' || SQLERRM);
+END;
+Running this with department_id = 40 will immediately raise -20202 in the executable section if no rows are updated.
+
+4.
+A.
+
+DECLARE
+    v_dept_id excep_emps.department_id%TYPE := 40;
+    v_count NUMBER;
+BEGIN
+    SELECT COUNT(*) INTO v_count
+    FROM excep_emps
+    WHERE department_id = v_dept_id;
+    
+    DBMS_OUTPUT.PUT_LINE('There are ' || v_count || ' employees');
+    
+    DELETE FROM excep_emps
+    WHERE department_id = v_dept_id;
+    
+    DBMS_OUTPUT.PUT_LINE(SQL%ROWCOUNT || ' employees were deleted');
+    
+    ROLLBACK;
+END;
+First, it counts the employees in department_id = 40 and displays the count.
+Next, it deletes the rows where department_id = 40 and displays the number of rows deleted.
+The ROLLBACK statement undoes the delete operation, restoring the deleted rows.
+
+B.
+
+DECLARE
+    v_dept_id excep_emps.department_id%TYPE := 40;
+    v_count NUMBER;
+    e_no_employees_found EXCEPTION;
+    e_no_rows_deleted EXCEPTION;
+BEGIN
+    SELECT COUNT(*) INTO v_count
+    FROM excep_emps
+    WHERE department_id = v_dept_id;
+    
+    IF v_count = 0 THEN
+        RAISE e_no_employees_found;
+    END IF;
+    
+    DBMS_OUTPUT.PUT_LINE('There are ' || v_count || ' employees');
+    
+    DELETE FROM excep_emps
+    WHERE department_id = v_dept_id;
+    
+    IF SQL%ROWCOUNT = 0 THEN
+        RAISE e_no_rows_deleted;
+    END IF;
+    
+    DBMS_OUTPUT.PUT_LINE(SQL%ROWCOUNT || ' employees were deleted');
+    
+    ROLLBACK;
+    
+EXCEPTION
+    WHEN e_no_employees_found THEN
+        DBMS_OUTPUT.PUT_LINE('No employees found for department ID ' || v_dept_id);
+    WHEN e_no_rows_deleted THEN
+        DBMS_OUTPUT.PUT_LINE('No rows were deleted for department ID ' || v_dept_id);
+END;
+
+If no employees are in the department, it will raise e_no_employees_found.
+If no rows are deleted (for instance, if rows were already deleted), it will raise e_no_rows_deleted.
+
+C.
+
+DECLARE
+    v_dept_id excep_emps.department_id%TYPE := 40;
+    v_count NUMBER;
+BEGIN
+    SELECT COUNT(*) INTO v_count
+    FROM excep_emps
+    WHERE department_id = v_dept_id;
+    
+    IF v_count = 0 THEN
+        RAISE_APPLICATION_ERROR(-20203, 'No employees found for department ID ' || v_dept_id);
+    END IF;
+    
+    DBMS_OUTPUT.PUT_LINE('There are ' || v_count || ' employees');
+    
+    DELETE FROM excep_emps
+    WHERE department_id = v_dept_id;
+    
+    IF SQL%ROWCOUNT = 0 THEN
+        RAISE_APPLICATION_ERROR(-20204, 'No rows were deleted for department ID ' || v_dept_id);
+    END IF;
+    
+    DBMS_OUTPUT.PUT_LINE(SQL%ROWCOUNT || ' employees were deleted');
+    
+    ROLLBACK;
+    
+EXCEPTION
+    WHEN OTHERS THEN
+        DBMS_OUTPUT.PUT_LINE('Error: ' || SQLCODE || ' - ' || SQLERRM);
+END;
+
+If no employees are found, error -20203 will be raised.
+If no rows are deleted, error -20204 will be raised.

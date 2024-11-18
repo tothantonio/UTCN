@@ -1,0 +1,305 @@
+Database Programming with PL/SQL
+7-2: Trapping Oracle Server Exceptions
+
+Vocabulary Definitions:
+
+Predefined Exception Name: 
+Each of these has a predefined name. 
+For example, if the error ORA-01403 occurs when no rows are retrieved from the database in a SELECT statement, 
+then PL/SQL raises the predefined exception-name NO_DATA_FOUND.
+
+EXCEPTION_INIT: 
+Tells the compiler to associate an exception name with an Oracle error number. 
+That allows you to refer to any Oracle Server exception by name and to write a specific handler for it.
+
+SQLERRM: 
+Returns character data containing the message associated with the error number.
+
+User-defined Exception: 
+Each of these has a standard Oracle error number (ORA-nnnnn) and error message, 
+but not a predefined name. We declare our own names for these so that we can reference these names in the exception section.
+
+SQLCODE: 
+Returns the numeric value for the error code (You can assign it to a NUMBER variable).
+
+Try it/ Solve it:
+
+1.
+What are the three types of exceptions that can be handled in a PL/SQL block?
+
+Predefined exceptions: These are exceptions defined by Oracle (e.g., NO_DATA_FOUND, TOO_MANY_ROWS, DUP_VAL_ON_INDEX).
+User-defined exceptions: These are exceptions that the developer defines to handle specific cases that are not predefined.
+Internal exceptions: These are automatically raised by PL/SQL in response to Oracle errors but can also be handled using EXCEPTION_INIT.
+
+2.
+What is the difference in how each of these three types of exceptions is handled in the PL/SQL block?
+
+Predefined exceptions: 
+
+These have predefined names and error codes that Oracle automatically recognizes and raises during execution. 
+You can directly handle them using the exception name (e.g., NO_DATA_FOUND).
+
+User-defined exceptions: 
+You define these yourself and explicitly raise them using the RAISE statement.
+
+Internal exceptions: 
+These include Oracle error messages that occur as a result of specific errors (e.g., ORA-01400). 
+You can use EXCEPTION_INIT to map an error number to a user-defined exception.
+
+3.
+DECLARE
+    v_number NUMBER(6, 2) := 100;
+    v_region_id regions.region_id%TYPE;
+    v_region_name regions.region_name%TYPE;
+BEGIN
+    SELECT region_id, region_name INTO v_region_id, v_region_name
+    FROM regions
+    WHERE region_id = 29;
+    DBMS_OUTPUT.PUT_LINE('Region: ' || v_region_id || ' is: ' || v_region_name);
+    v_number := v_number / 0;
+END;
+
+A. What error message is displayed and why?
+
+The error message ORA-01476: divisor is equal to zero will be displayed because division by zero is attempted with v_number := v_number / 0;.
+
+B. Modify the block to handle this exception and re-run your code. Now what happens and why?
+
+DECLARE
+    v_number NUMBER(6, 2) := 100;
+    v_region_id regions.region_id%TYPE;
+    v_region_name regions.region_name%TYPE;
+BEGIN
+    SELECT region_id, region_name INTO v_region_id, v_region_name
+    FROM regions
+    WHERE region_id = 29;
+    DBMS_OUTPUT.PUT_LINE('Region: ' || v_region_id || ' is: ' || v_region_name);
+    BEGIN
+        v_number := v_number / 0;
+    EXCEPTION
+        WHEN ZERO_DIVIDE THEN
+            DBMS_OUTPUT.PUT_LINE('Cannot divide by zero');
+    END;
+END;
+
+The message "Cannot divide by zero" will be displayed because the exception handler catches the ZERO_DIVIDE error.
+
+C. Modify the block again to change the WHERE clause to region_id = 29. Re-run the block. Now what happens and why?
+DECLARE
+    v_number NUMBER(6, 2) := 100;
+    v_region_id regions.region_id%TYPE;
+    v_region_name regions.region_name%TYPE;
+BEGIN
+    SELECT region_id, region_name INTO v_region_id, v_region_name
+    FROM regions
+    WHERE region_id = 29;
+    DBMS_OUTPUT.PUT_LINE('Region: ' || v_region_id || ' is: ' || v_region_name);
+    v_number := v_number / 0;
+END;
+The error ORA-01403: no data found will be raised because no row is returned when region_id = 29 is queried.
+
+D. Modify the block again to handle the latest exception and re-run your code.
+DECLARE
+    v_number NUMBER(6, 2) := 100;
+    v_region_id regions.region_id%TYPE;
+    v_region_name regions.region_name%TYPE;
+BEGIN
+    BEGIN
+        SELECT region_id, region_name INTO v_region_id, v_region_name
+        FROM regions
+        WHERE region_id = 29;
+        DBMS_OUTPUT.PUT_LINE('Region: ' || v_region_id || ' is: ' || v_region_name);
+    EXCEPTION
+        WHEN NO_DATA_FOUND THEN
+            DBMS_OUTPUT.PUT_LINE('No data found for the region');
+    END;
+    v_number := v_number / 0;
+EXCEPTION
+    WHEN ZERO_DIVIDE THEN
+        DBMS_OUTPUT.PUT_LINE('Cannot divide by zero');
+END;
+
+4. 
+DECLARE
+ CURSOR regions_curs IS
+ SELECT * FROM regions
+ WHERE region_id < 20
+ ORDER BY region_id;
+ regions_rec regions_curs%ROWTYPE;
+ v_count NUMBER(6);
+BEGIN
+ LOOP
+ FETCH regions_curs INTO regions_rec;
+ EXIT WHEN regions_curs%NOTFOUND;
+ DBMS_OUTPUT.PUT_LINE('Region: ' || regions_rec.region_id
+|| ' Name: ' || regions_rec.region_name);
+ END LOOP;
+ CLOSE regions_curs;
+ SELECT COUNT(*) INTO v_count
+ FROM regions
+ WHERE region_id = 1;
+ DBMS_OUTPUT.PUT_LINE('The number of regions is: ' || v_count);
+END;
+
+A. What happens and why?
+The cursor will iterate over the regions with region_id < 20. 
+The SELECT COUNT(*) will return the number of rows with region_id = 1. If region_id = 1 does not exist, it will return 0.
+
+B.
+DECLARE
+    CURSOR regions_curs IS
+        SELECT * FROM regions
+        WHERE region_id < 20
+        ORDER BY region_id;
+    regions_rec regions_curs%ROWTYPE;
+    v_count NUMBER(6);
+BEGIN
+    LOOP
+        FETCH regions_curs INTO regions_rec;
+        EXIT WHEN regions_curs%NOTFOUND;
+        DBMS_OUTPUT.PUT_LINE('Region: ' || regions_rec.region_id
+                             || ' Name: ' || regions_rec.region_name);
+    END LOOP;
+    CLOSE regions_curs;
+    BEGIN
+        SELECT COUNT(*) INTO v_count
+        FROM regions
+        WHERE region_id = 1;
+        DBMS_OUTPUT.PUT_LINE('The number of regions is: ' || v_count);
+    EXCEPTION
+        WHEN NO_DATA_FOUND THEN
+            DBMS_OUTPUT.PUT_LINE('No data found for region_id = 1');
+    END;
+END;
+
+C.
+DECLARE
+    CURSOR regions_curs IS
+        SELECT * FROM regions
+        WHERE region_id < 20
+        ORDER BY region_id;
+    regions_rec regions_curs%ROWTYPE;
+    v_count NUMBER(6);
+BEGIN
+    OPEN regions_curs;  
+    LOOP
+        FETCH regions_curs INTO regions_rec;
+        EXIT WHEN regions_curs%NOTFOUND;
+        DBMS_OUTPUT.PUT_LINE('Region: ' || regions_rec.region_id
+                             || ' Name: ' || regions_rec.region_name);
+    END LOOP;
+    CLOSE regions_curs;
+    BEGIN
+        SELECT COUNT(*) INTO v_count
+        FROM regions
+        WHERE region_id = 1;
+        DBMS_OUTPUT.PUT_LINE('The number of regions is: ' || v_count);
+    EXCEPTION
+        WHEN NO_DATA_FOUND THEN
+            DBMS_OUTPUT.PUT_LINE('No data found for region_id = 1');
+    END;
+END;
+This block will now execute without errors. 
+It will print the regions with region_id < 20, 
+and then either display the count of regions with region_id = 1 or "No data found for region_id = 1" if none exist.
+
+5.
+
+A. Add an exception handler to the following code to trap the following predefined Oracle Server
+
+errors: NO_DATA_FOUND, TOO_MANY_ROWS, and DUP_VAL_ON_INDEX.
+
+DECLARE
+ v_language_id languages.language_id%TYPE;
+ v_language_name languages.language_name%TYPE;
+BEGIN
+ SELECT language_id, language_name INTO v_language_id, v_language_name
+ FROM languages
+ WHERE LOWER(language_name) LIKE '<substring%>'; -- for example 'ab%'
+ INSERT INTO languages(language_id, language_name)
+ VALUES(80, null);
+END;
+
+DECLARE
+    v_language_id languages.language_id%TYPE;
+    v_language_name languages.language_name%TYPE;
+BEGIN
+    SELECT language_id, language_name INTO v_language_id, v_language_name
+    FROM languages
+    WHERE LOWER(language_name) LIKE '<substring%>';
+    INSERT INTO languages(language_id, language_name)
+    VALUES(80, null);
+EXCEPTION
+    WHEN NO_DATA_FOUND THEN
+        DBMS_OUTPUT.PUT_LINE('No data found');
+    WHEN TOO_MANY_ROWS THEN
+        DBMS_OUTPUT.PUT_LINE('Too many rows returned');
+    WHEN DUP_VAL_ON_INDEX THEN
+        DBMS_OUTPUT.PUT_LINE('Duplicate value in index');
+END;
+
+
+B. 
+Test your block twice using each of the following language substrings: ba, ce. There are
+several language_names beginning with “Ba,” but none beginning with “Ce”.
+Now test your block a third time using substring: al. There is exactly one language_name beginning
+with “Al”. Note that language_id 80 (Arabic) already exists. Explain the output.
+
+For ba, there will likely be multiple matches (no exception).
+For ce, there will be no matches, so NO_DATA_FOUND will be triggered.
+
+C. Now (keeping the substring as “al”), add a non_predefined exception handler to trap the ORA01400 exception. Name your exception e_null_not_allowed. Rerun the code and observe the
+results
+
+DECLARE
+    v_language_id languages.language_id%TYPE;
+    v_language_name languages.language_name%TYPE;
+    e_null_not_allowed EXCEPTION;
+BEGIN
+    SELECT language_id, language_name INTO v_language_id, v_language_name
+    FROM languages
+    WHERE LOWER(language_name) LIKE 'al%';
+    INSERT INTO languages(language_id, language_name)
+    VALUES(80, null);
+EXCEPTION
+    WHEN NO_DATA_FOUND THEN
+        DBMS_OUTPUT.PUT_LINE('No data found');
+    WHEN TOO_MANY_ROWS THEN
+        DBMS_OUTPUT.PUT_LINE('Too many rows returned');
+    WHEN DUP_VAL_ON_INDEX THEN
+        DBMS_OUTPUT.PUT_LINE('Duplicate value in index');
+    WHEN e_null_not_allowed THEN
+        DBMS_OUTPUT.PUT_LINE('Null value not allowed');
+END;
+This will now trap ORA-01400 (null values not allowed) and display the appropriate message.
+
+Extension exercise:
+
+1.
+CREATE TABLE error_log
+(who VARCHAR2(30),
+ when DATE,
+ error_code NUMBER(6),
+ error_message VARCHAR2(255));
+
+2.
+DECLARE
+    v_language_id languages.language_id%TYPE;
+    v_language_name languages.language_name%TYPE;
+BEGIN
+    BEGIN
+        SELECT language_id, language_name INTO v_language_id, v_language_name
+        FROM languages
+        WHERE LOWER(language_name) LIKE '<substring%>';
+        INSERT INTO languages(language_id, language_name)
+        VALUES(80, null);
+    EXCEPTION
+        WHEN OTHERS THEN
+            INSERT INTO error_log (who, when, error_code, error_message)
+            VALUES (USER, SYSDATE, SQLCODE, SQLERRM);
+    END;
+END;
+
+
+
+

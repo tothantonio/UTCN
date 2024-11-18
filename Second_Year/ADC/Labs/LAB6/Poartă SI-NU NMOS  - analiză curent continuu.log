@@ -1,0 +1,65 @@
+
+                 *********************************************
+                 *                                           *
+                 *             A I M - S p i c e             *
+                 *                                           *
+                 *         Professional Version 2020.100           *
+                 *                                           *
+                 *********************************************
+
+	Date: Fri Nov 15 13:01:15 2024
+	Circuit File: D:\UTCN\Second_Year\ADC\Labs\LAB6\Poartã SI-NU NMOS  - analizã curent continuu.cir
+	Analysis: DC Transfer Curves
+
+**************************  Circuit Description  **************************
+
+     1:  Poarta SI-NU NMOS(analiza curent continuu)
+     2:  
+     3:  M1 temp b 0 0 NMOS1 l=1u w=10u
+     4:  M2 out a temp temp NMOS1 l=1u w=10u
+     5:  .Model NMOS1 nmos vto=1.5
+     6:  
+     7:  M3 dd gg out out NMOS2 l=10u w=1u
+     8:  .Model NMOS2 nmos vto=2.5
+     9:  
+    10:  Vdd dd 0 DC 5
+    11:  Vgg gg 0 DC 7.5
+    12:  Va a 0 DC 5
+    13:  Vb b 0 DC 5
+    14:  
+    15:  .dc Va 0 5 0.1
+
+***************************  Model Parameters  ****************************
+
+
+***************  Device Parameters (Only for .op analysis)  ***************
+
+
+
+**************************  Analysis Parameters  **************************
+
+	Source name #1 .. : Va
+	Start value #1 .. : 0
+	End value #1 .... : 5
+	Increment value #1: 0.1
+
+
+
+**************  Options (Only those different from default)  **************
+
+
+
+*************************  Simulation Statistics  *************************
+
+	Total number of iterations...........: 122
+	Total analysis time (sec)............: 0.036
+	Time spent in device loading (sec)...: 0
+	Time spent in L-U decomposition (sec): 0
+	Time spent in matrix reordering (sec): 0
+	Time spent in matrix solving (sec)...: 0
+
+***************************  Kernel Messages  *****************************
+
+Circuit: Poarta SI-NU NMOS(analiza curent continuu)
+
+

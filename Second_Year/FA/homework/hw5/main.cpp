@@ -82,7 +82,6 @@ int hashSearch(HashTable T, Entry k) {
     int index1 = 0, index2 = 0;
     do {
         nrOp++;
-
         index2 = h(T, k.id, index1);
 
         if (T.T[index2] != NULL && T.T[index2] != T.del && T.T[index2]->id == k.id) {
@@ -104,9 +103,9 @@ void hashDelete(HashTable &T, int index) {
 void printHashTable(HashTable T) {
     for (int i = 0; i < T.m; i++) {
         if (T.T[i] != NULL)
-            cout << T.T[i]->id << " " << T.T[i]->name << " | ";
+            cout << T.T[i]->id << " " << T.T[i]->name << " / ";
         else
-            cout << "NULL" << " | ";
+            cout << "NULL" << " / ";
     }
     cout << "\n";
 }
@@ -162,6 +161,7 @@ void perf() {
 
         int a[40000] = {0};
 
+        //adaug in tabela elemente random
         for (int i = 0; i < n;) {
             int nrDeAdaugat = rand() % 40000;
 
@@ -179,6 +179,7 @@ void perf() {
 
         FillRandomArray(mElemDeCautat, mElem, 40000, 50000, FALSE, UNSORTED);
 
+        //jumatate din elementele cautate, sunt din tabela, jumate nu sunt
         for (int i = 0; i < mElem / 2; i++) {
             mElemDeCautat[i] = vElemHashTable[i];
         }
@@ -203,6 +204,7 @@ void perf() {
             }
         }
 
+        // verific umplere corecta
         int cnt = 0;
         for (int i = 0; i < T.m; i++)
             if (T.T[i] == NULL) cnt++;
@@ -387,6 +389,6 @@ void perf() {
 }
 
 int main() {
-    //demo();
-    perf();
+    demo();
+    //perf();
 }

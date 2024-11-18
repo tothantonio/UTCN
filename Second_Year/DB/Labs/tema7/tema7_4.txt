@@ -1,0 +1,130 @@
+Database Programming with PL/SQL
+7-4: Recognizing the Scope of Exceptions
+
+Vocabulary:
+
+Unhandled Exception Propagation: 
+When the inner block terminates unsuccessfully, and PL/SQL passes the exception to the outer block.
+
+Scope of Exception: 
+The portion of the program where the exception can be accessed without using a qualifier.
+
+Exception Declaration: 
+The portion of a program in which the exception is declared and accessible.
+
+Try it/ Solve it:
+
+1.
+
+DECLARE
+ v_country_name countries.country_name%TYPE;
+ v_currency_code countries.currency_code%TYPE;
+BEGIN
+ DECLARE
+ e_no_currency EXCEPTION;
+ BEGIN
+ SELECT country_name, currency_code INTO v_country_name, v_currency_code
+ FROM countries
+ WHERE country_id = 672; 
+ IF v_currency_code = 'NONE' THEN
+ RAISE e_no_currency;
+ END IF;
+ EXCEPTION
+ WHEN NO_DATA_FOUND THEN
+ DBMS_OUTPUT.PUT_LINE('This country does not exist');
+ WHEN e_no_currency THEN
+ DBMS_OUTPUT.PUT_LINE('This country exists but has no currency');
+ END;
+ EXCEPTION
+ WHEN OTHERS THEN
+ DBMS_OUTPUT.PUT_LINE('Another type of error occurred');
+END;
+
+A.
+
+For country_id = 5: Since this country ID does not exist, the NO_DATA_FOUND exception is raised in the inner block. 
+This triggers the NO_DATA_FOUND exception handler in the inner block, which outputs: "This country does not exist".
+
+For country_id = 672: The SELECT statement successfully retrieves data for Antarctica, but the currency_code is NONE. 
+This triggers the custom exception e_no_currency, which is also handled in the inner block and outputs: "This country exists but has no currency".
+
+B.
+
+DECLARE
+    v_country_name countries.country_name%TYPE;
+    v_currency_code countries.currency_code%TYPE;
+BEGIN
+    DECLARE
+        e_no_currency EXCEPTION;
+    BEGIN
+        SELECT country_name, currency_code INTO v_country_name, v_currency_code
+        FROM countries
+        WHERE country_id = 672; 
+        
+        IF v_currency_code = 'NONE' THEN
+            RAISE e_no_currency;
+        END IF;
+        
+    EXCEPTION
+        WHEN OTHERS THEN
+            DBMS_OUTPUT.PUT_LINE('Another type of error occurred in the inner block');
+    END;
+    
+EXCEPTION
+    WHEN NO_DATA_FOUND THEN
+        DBMS_OUTPUT.PUT_LINE('This country does not exist');
+    WHEN OTHERS THEN
+        DBMS_OUTPUT.PUT_LINE('Another type of error occurred in the outer block');
+END;
+
+For country_id = 5: 
+The NO_DATA_FOUND exception will now not be handled in the inner block (since the handler was moved to the outer block). 
+This causes the exception to propagate to the outer block, where it’s caught and outputs: "This country does not exist".
+
+For country_id = 672: 
+When e_no_currency is raised in the inner block, 
+it remains unhandled because e_no_currency is declared in the inner block but lacks an associated handler in the inner block or outer block. 
+This results in the generic OTHERS handler in the outer block catching the exception and outputting: 
+"Another type of error occurred in the outer block". 
+The custom exception e_no_currency is out of scope in the outer block, so PL/SQL treats it as an unhandled exception, which OTHERS catches.
+
+C.
+
+DECLARE
+    v_country_name countries.country_name%TYPE;
+    v_currency_code countries.currency_code%TYPE;
+    e_no_currency EXCEPTION; -- Moved to the outer block
+BEGIN
+    BEGIN
+        SELECT country_name, currency_code INTO v_country_name, v_currency_code
+        FROM countries
+        WHERE country_id = 672; 
+        
+        IF v_currency_code = 'NONE' THEN
+            RAISE e_no_currency;
+        END IF;
+        
+    EXCEPTION
+        WHEN NO_DATA_FOUND THEN
+            DBMS_OUTPUT.PUT_LINE('This country does not exist');
+        WHEN e_no_currency THEN
+            DBMS_OUTPUT.PUT_LINE('This country exists but has no currency');
+    END;
+    
+EXCEPTION
+    WHEN OTHERS THEN
+        DBMS_OUTPUT.PUT_LINE('Another type of error occurred');
+END;
+
+For country_id = 5:
+The NO_DATA_FOUND exception is raised and handled by the inner block's NO_DATA_FOUND handler, outputting: "This country does not exist".
+
+For country_id = 672: 
+When e_no_currency is raised, it’s now accessible in the entire block (since it was declared in the outer block), 
+so the WHEN e_no_currency exception handler in the inner block will successfully capture it, outputting: "This country exists but has no currency".
+
+Inner block exception handling allows more targeted and specific responses, 
+while outer block exception handling can capture unhandled exceptions from inner blocks.
+
+Declaring exceptions in outer blocks makes them available throughout the program, 
+which allows inner blocks to raise exceptions that can be handled in any surrounding block where the exception is within scope.

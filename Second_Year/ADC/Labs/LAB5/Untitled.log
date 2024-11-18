@@ -1,0 +1,60 @@
+
+                 *********************************************
+                 *                                           *
+                 *             A I M - S p i c e             *
+                 *                                           *
+                 *         Professional Version 2020.100           *
+                 *                                           *
+                 *********************************************
+
+	Date: Fri Nov 15 12:26:21 2024
+	Circuit File: Untitled
+	Analysis: DC Transfer Curves
+
+**************************  Circuit Description  **************************
+
+     1:  NMOS INVERSOR STATIC
+     2:  !Mxx D G S
+     3:  M1 out in 0 0 nmos_m1 L = 1u W = 1u
+     4:  .model nmos_m1 nmos vto = 1.5
+     5:  M2 vdd vgg out out nmos_m2 L = 25u W = 1u
+     6:  .model nmos_m2 nmos vto = 2.5
+     7:  VDD vdd 0 dc 5
+     8:  VGG vgg 0 dc 7.5
+     9:  Vin in 0 dc 0 Pulse(0 5 0 1e-10 1e-10 1e-9 2e-9)
+    10:  .dc Vin 0.5 1 0.1
+
+***************************  Model Parameters  ****************************
+
+
+***************  Device Parameters (Only for .op analysis)  ***************
+
+
+
+**************************  Analysis Parameters  **************************
+
+	Source name #1 .. : Vin
+	Start value #1 .. : 0.5
+	End value #1 .... : 1
+	Increment value #1: 0.1
+
+
+
+**************  Options (Only those different from default)  **************
+
+
+
+*************************  Simulation Statistics  *************************
+
+	Total number of iterations...........: 21
+	Total analysis time (sec)............: 0.006
+	Time spent in device loading (sec)...: 0
+	Time spent in L-U decomposition (sec): 0
+	Time spent in matrix reordering (sec): 0
+	Time spent in matrix solving (sec)...: 0
+
+***************************  Kernel Messages  *****************************
+
+Circuit: NMOS INVERSOR STATIC
+
+

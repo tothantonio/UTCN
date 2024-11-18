@@ -1,0 +1,169 @@
+Database Programming with PL/SQL
+7-1: Handling Exceptions
+
+Vocabulary Definitions:
+Exception Handler: Code that defines the recovery actions to be performed when execution-time errors occur.
+
+Runtime Error: Occurs when an error is discovered during the execution of a program that disrupts the normal operation of the program.
+
+Try It / Solve It:
+
+1.What happens when Oracle encounters a runtime problem while executing a PL/SQL block?
+
+When Oracle encounters a runtime problem, it raises an exception, 
+which interrupts the normal flow of the program. 
+If no exception handler is defined, the program terminates with an error message.
+
+2.What do you need to add to your PL/SQL block to address these problems?
+
+You need to add an EXCEPTION section to handle errors. 
+Within the EXCEPTION section, you can define specific exception handlers 
+(such as NO_DATA_FOUND, TOO_MANY_ROWS, etc.) to deal with different types of runtime errors.
+
+3.List three advantages of handling exceptions within a PL/SQL block.
+
+Graceful error handling: Allows the program to continue running without abrupt termination.
+Improved user experience: Users are given informative messages about the error, rather than a generic failure.
+Debugging aid: Helps identify the exact nature of the problem, making it easier to fix.
+
+4.Run this PL/SQL code and then answer the questions that follow.
+
+DECLARE
+    v_jobid employees.job_id%TYPE;
+BEGIN
+    SELECT job_id INTO v_jobid
+    FROM employees
+    WHERE department_id = 80;
+END;
+
+A. What happens when you run the block? In your own words, explain what you can do to fix this problem.
+
+This block will throw a TOO_MANY_ROWS exception if there are multiple employees in department 80 because the SELECT INTO expects exactly one row. 
+To fix this, you can either ensure that only one row is returned or use an exception handler to catch the TOO_MANY_ROWS error.
+
+B. Modify the code to fix the problem. Use a TOO_MANY_ROWS exception handler.
+
+DECLARE
+    v_jobid employees.job_id%TYPE;
+BEGIN
+    SELECT job_id INTO v_jobid
+    FROM employees
+    WHERE department_id = 80;
+    EXCEPTION
+        WHEN TOO_MANY_ROWS THEN
+        DBMS_OUTPUT.PUT_LINE('More than one row returned.');
+END;
+
+C. Run your modified code. What happens this time?
+
+The code will no longer raise an unhandled exception. 
+Instead, the message "More than one row returned." will be displayed when there are multiple rows for department 80.
+
+5.Run the following PL/SQL block, which tries to insert a new row (with department_id = 50) into the departments table. What happens and why?
+
+BEGIN
+    INSERT INTO departments (department_id, department_name, manager_id, location_id)
+    VALUES (50, 'A new department', 100, 1500);
+    DBMS_OUTPUT.PUT_LINE('The new department was inserted');
+EXCEPTION
+    WHEN OTHERS THEN
+        DBMS_OUTPUT.PUT_LINE ('An exception has occurred.');
+END;
+
+If a department with department_id = 50 already exists, this code will cause a DUP_VAL_ON_INDEX exception because department_id is likely a unique key. 
+If no such department exists, the insert will succeed, and "The new department was inserted" will be displayed.
+
+6.Create a copy of the employees table and run the following block:
+
+DECLARE
+    v_employee_id emp_temp.employee_id%TYPE;
+    v_last_name emp_temp.last_name%TYPE;
+BEGIN
+    SELECT employee_id, last_name INTO v_employee_id, v_last_name
+    FROM emp_temp
+    WHERE department_id = 10;
+    DBMS_OUTPUT.PUT_LINE('The SELECT was successful');
+EXCEPTION
+    WHEN OTHERS THEN
+        DBMS_OUTPUT.PUT_LINE('An exception has occurred');
+END;
+
+What happens and why?
+
+If there are no employees in department 10, the NO_DATA_FOUND exception will be raised. 
+If there are multiple employees in department 10, the TOO_MANY_ROWS exception will be raised.
+
+7.Modify the code from question 6 to add two more exception handlers:
+
+DECLARE
+    v_employee_id emp_temp.employee_id%TYPE;
+    v_last_name emp_temp.last_name%TYPE;
+BEGIN
+    SELECT employee_id, last_name INTO v_employee_id, v_last_name
+    FROM emp_temp
+    WHERE department_id = 20;
+    DBMS_OUTPUT.PUT_LINE('The SELECT was successful');
+EXCEPTION
+    WHEN NO_DATA_FOUND THEN
+        DBMS_OUTPUT.PUT_LINE('No data found');
+    WHEN TOO_MANY_ROWS THEN
+        DBMS_OUTPUT.PUT_LINE('Too many rows returned');
+    WHEN OTHERS THEN
+        DBMS_OUTPUT.PUT_LINE('An exception has occurred');
+END;
+
+Running this code with department_id = 10 will likely trigger the TOO_MANY_ROWS exception if there are multiple rows for that department. 
+For other department IDs (20, 30), it will handle the respective exception types or print a generic message.
+
+8.List three guidelines for trapping exceptions:
+
+Be specific: Use specific exception handlers like NO_DATA_FOUND and TOO_MANY_ROWS for better clarity.
+Use WHEN OTHERS carefully: Only use it as a last resort to catch unexpected errors.
+Log exceptions: Ensure that meaningful messages are logged to aid debugging and troubleshooting.
+
+9.Explain the output of the following PL/SQL block:
+
+DECLARE
+ v_number NUMBER(2);
+BEGIN
+ v_number := 9999;
+EXCEPTION
+ WHEN OTHERS THEN
+ DBMS_OUTPUT.PUT_LINE('An exception has occurred');
+END;
+
+The output will be "An exception has occurred" because v_number is assigned a value that exceeds the allowed size for a NUMBER(2) datatype 
+(which can hold a maximum of 99). This triggers a VALUE_ERROR exception, which is caught by the WHEN OTHERS handler.
+
+10.Modify the block in question 9 to omit the exception handler, then re-run the block. Explain the output.
+
+DECLARE
+ v_number NUMBER(2);
+BEGIN
+ v_number := 9999;
+ DBMS_OUTPUT.PUT_LINE('An exception has occurred');
+END;
+
+If the exception handler is removed, the program will raise an error and terminate with a VALUE_ERROR because the number 9999 cannot fit in the NUMBER(2) datatype.
+
+11.Explain the output of the following nested PL/SQL block:
+
+DECLARE
+    v_number NUMBER(4);
+BEGIN
+    v_number := 1234;
+    DECLARE
+        v_number NUMBER(4);
+    BEGIN
+        v_number := 5678;
+        v_number := 'A character string';
+    END;
+EXCEPTION
+    WHEN OTHERS THEN
+        DBMS_OUTPUT.PUT_LINE('An exception has occurred');
+        DBMS_OUTPUT.PUT_LINE('The number is: ' || v_number);
+END;
+
+This code will raise an exception in the inner block when trying to assign a string to the v_number variable, which is a NUMBER. 
+The outer block will catch the exception and output "An exception has occurred". 
+The v_number from the outer block will be displayed as 1234 because it is unaffected by the inner block's error.
