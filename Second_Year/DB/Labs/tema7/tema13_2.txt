@@ -1,0 +1,77 @@
+13.2
+Vocabulary 
+
+1.row trigger
+2.DML TRIGGERS 
+3.statement trigger 
+
+Try it/Solve it 
+
+1.trigger_name 
+timing 
+event ON object_name 
+trigger_boddy 
+
+2.
+A.
+CREATE TABLE audit_table
+(action VARCHAR2(50),
+user_name VARCHAR2(30) DEFAULT USER,
+last_change_date TIMESTAMP DEFAULT SYSTIMESTAMP);
+
+B.
+CREATE OR REPLACE TRIGGER audit_TRIGGER 
+AFTER INSERT ON EMPLOYEES 
+BEGIN 
+INSERT INTO AUDIT_TABLE VALUES('Inserting',DEFAULT,DEFAULT);
+END;
+
+C.
+REZULTATUL:Inserting	APEX_PUBLIC_USER	13-NOV-19 01.40.06.079720 PM
+
+D.
+Prin stergerea randului introdus tabela AUDIT nu a suferit modificari.
+
+3.
+FIRES only once -FALSE 
+Row trigger- trace pentru fiecare rand afectat 
+S T- trage o singura data pt fiecare executie a functie, chiar daca niciun rand nu a fost afectat 
+
+4.
+insert -1
+update-1
+delete-1
+
+5.
+CREATE OR REPLACE TRIGGER audit_TRIGGER 
+BEFORE UPDATE ON EMPLOYEES 
+BEGIN 
+INSERT INTO AUDIT_TABLE VALUES('Updating',DEFAULT,DEFAULT);
+END;
+
+UPDATE EMPLOYEES 
+SET FIRST_NAME='George'
+where employee_id=999
+
+Se introduc in tabela audit informatiile aferente
+
+A.
+
+CREATE OR REPLACE TRIGGER AUDIT_TRIGGER
+BEFORE UPDATE OF SALARY ON EMPLOYEES 
+BEGIN 
+    IF TO_CHAR(SYSDATE,'HH24:MI') NOT BETWEEN '06:00' and '18:00' THEN 
+       RAISE_APPLICATION_ERROR(-20500,'Nu se pot modifica salariile in afara orelor de munca!');
+    END IF;
+END;
+
+
+B.
+
+SELECT TO_CHAR(SYSDATE,'HH24:MI') FROM dual;
+
+UPDATE employees
+SET salary = 25000
+WHERE employee_id = 100;
+
+-in momentul in care am facut problema, ora era 00:21- si s-a afisat mesajul de eroare

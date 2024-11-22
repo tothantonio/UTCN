@@ -1,0 +1,89 @@
+9-5: Review of Object Privileges
+Vocabulary
+Allows the grantee to invoke and execute a PL/SQL subprogram: EXECUTE
+Allows the grantee to create indexes on the table: INDEX
+Allows the use of a specific database object, 
+such as a table, a view, or a PL/SQL procedure, by one or more database users: SELECT (or generic object privilege depending on context)
+Allows the grantee to ALTER the table: ALTER
+Allows the grantee to check for the existence of rows in a table using foreign key constraints: REFERENCES
+
+Try It / Solve It
+1.Grant SELECT and DML privileges to user SUSAN:
+
+
+GRANT SELECT, INSERT, UPDATE, DELETE ON COUNTRIES TO SUSAN;
+
+2.About user TOM's table TOMTAB:
+
+A. Will the INSERT statement work?
+
+No, it will not work because TOM has not granted any privileges on the table TOMTAB to your user account.
+
+B. Will the INSERT work if it's included in your procedure?
+
+No, because the procedure runs under the privileges of the procedure owner (definer's rights by default), and you still lack the necessary privileges.
+
+C. Will my_ins_proc work after TOM executes GRANT INSERT ON tomtab TO <your user name>?
+
+Yes, the procedure will work because you now have the INSERT privilege on TOMTAB.
+
+
+D. TOM revokes your INSERT privilege and creates a procedure:
+
+CREATE OR REPLACE PROCEDURE tom_ins_proc
+IS
+BEGIN
+  INSERT INTO tom.tomtab (...) VALUES (...);
+END;
+
+
+To execute tom_ins_proc, TOM must grant you the EXECUTE privilege on the procedure:
+
+GRANT EXECUTE ON tom_ins_proc TO <your user name>;
+Yes, the INSERT will work because the procedure runs with TOM's privileges (definer's rights).
+
+3.
+Display all procedures and functions you can execute:
+	SELECT OBJECT_NAME FROM ALL_OBJECTS WHERE OBJECT_TYPE IN ('FUNCTION','PROCEDURE')
+
+4.
+
+Collaborative activity with another student:
+
+. Create a table:
+
+CREATE TABLE NEW_DEPT_TAB AS SELECT * FROM DEPARTMENT;
+
+b. Create a procedure:
+
+CREATE OR REPLACE PROCEDURE ins_new_dept IS
+BEGIN
+  INSERT INTO NEW_DEPT_TAB (department_id, department_name)
+  VALUES (10, 'NEW DEPARTMENT');
+END;
+
+
+c. Grant EXECUTE privilege:
+
+GRANT EXECUTE ON ins_new_dept TO <other student>;
+
+d. Check procedure definition:
+
+SELECT OBJECT_NAME, OBJECT_TYPE
+FROM ALL_OBJECTS
+WHERE OWNER = '<your schema>' AND OBJECT_NAME = 'INS_NEW_DEPT';
+
+
+e-f. Execute the procedure and verify:
+
+EXEC <other student's schema>.ins_new_dept;
+SELECT * FROM NEW_DEPT_TAB;
+
+
+h. Revoke EXECUTE privilege:
+
+REVOKE EXECUTE ON ins_new_dept FROM <other student>;
+
+i. Check procedure access:
+
+SELECT * FROM ALL_OBJECTS WHERE OBJECT_NAME = 'INS_NEW_DEPT';

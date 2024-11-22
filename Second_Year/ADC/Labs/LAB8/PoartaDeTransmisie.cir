@@ -1,0 +1,35 @@
+[aimspice]
+[description]
+195
+Poarta de Tranzitie
+
+MP in an out dd PMOS
+MN in a out ss NMOS 
+.Model NMOS nmos vto=1.5
+.Model PMOS pmos vto=-1.5
+
+Vin in 0 DC 5
+Vss ss 0 DC 0
+Vdd dd 0 DC 5
+Van an 0 DC 0
+Va a 0 DC 5
+
+[dc]
+1
+Vin
+0
+5
+0.1
+[ana]
+1 2
+0
+1 1
+1 1 0 5
+1
+v(out)
+0
+1 1
+1 1 0 5
+1
+v(in)
+[end]

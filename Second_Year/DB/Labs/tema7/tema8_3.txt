@@ -1,0 +1,108 @@
+Database Programming with PL/SQL
+8-3: Passing Parameters
+
+Vocabulary Answers
+Returns a value to the caller: OUT parameter
+Provides values for a subprogram to process: IN parameter
+Lists actual parameters in arbitrary order using the => operator: Named notation
+Lists some parameters as positional and some as named: Mixed notation
+Lists parameters in the same order as formal parameters: Positional notation
+Supplies an input value, which may be returned as a modified value: IN OUT parameter
+
+Try It / Solve It Answers
+1. Parameter Modes
+
+IN (Default): Input only; cannot be modified within the procedure.
+OUT: Returns a value to the caller.
+IN OUT: Passes a value and returns a modified value.
+
+2. Procedure for find_area_pop
+
+A. Create Procedure
+
+CREATE OR REPLACE PROCEDURE find_area_pop (
+    p_country_id IN NUMBER,
+    p_country_name OUT VARCHAR2,
+    p_population OUT NUMBER
+) IS
+BEGIN
+    SELECT country_name, population
+    INTO p_country_name, p_population
+    FROM countries
+    WHERE country_id = p_country_id;
+EXCEPTION
+    WHEN NO_DATA_FOUND THEN
+        DBMS_OUTPUT.PUT_LINE('No country found with ID: ' || p_country_id);
+END find_area_pop;
+
+B. Anonymous Block
+
+DECLARE
+    v_country_name VARCHAR2(50);
+    v_population NUMBER;
+BEGIN
+    find_area_pop(2, v_country_name, v_population);
+    DBMS_OUTPUT.PUT_LINE('Country: ' || v_country_name || ', Population: ' || v_population);
+END;
+
+C. Add Population Density
+
+CREATE OR REPLACE PROCEDURE find_area_pop (
+    p_country_id IN NUMBER,
+    p_country_name OUT VARCHAR2,
+    p_population OUT NUMBER,
+    p_density OUT NUMBER
+) IS
+    v_area NUMBER;
+BEGIN
+    SELECT country_name, population, area
+    INTO p_country_name, p_population, v_area
+    FROM countries
+    WHERE country_id = p_country_id;
+
+    p_density := p_population / v_area;
+EXCEPTION
+    WHEN NO_DATA_FOUND THEN
+        DBMS_OUTPUT.PUT_LINE('No country found with ID: ' || p_country_id);
+END find_area_pop;
+
+
+D. Modified Anonymous Block
+
+DECLARE
+    v_country_name VARCHAR2(50);
+    v_population NUMBER;
+    v_density NUMBER;
+BEGIN
+    find_area_pop(2, v_country_name, v_population, v_density);
+    DBMS_OUTPUT.PUT_LINE('Country: ' || v_country_name || 
+                         ', Population: ' || v_population || 
+                         ', Density: ' || v_density);
+END;
+
+3. Procedure for Square
+
+CREATE OR REPLACE PROCEDURE square_number (
+    p_number IN OUT NUMBER
+) IS
+BEGIN
+    p_number := p_number * p_number;
+END square_number;
+
+Anonymous Block Testing Square
+
+DECLARE
+    v_number NUMBER;
+BEGIN
+    v_number := 4;
+    square_number(v_number);
+    DBMS_OUTPUT.PUT_LINE('Square: ' || v_number);
+
+    v_number := 7;
+    square_number(v_number);
+    DBMS_OUTPUT.PUT_LINE('Square: ' || v_number);
+
+    v_number := -20;
+    square_number(v_number);
+    DBMS_OUTPUT.PUT_LINE('Square: ' || v_number);
+END;

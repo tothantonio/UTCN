@@ -1,0 +1,140 @@
+Database Programming with PL/SQL
+8-2: Using Parameters in Procedures
+
+Vocabulary Answers
+Pass or communicate data between the caller and subprogram: Parameters
+The actual value assigned to a parameter: Actual parameter
+Can be literal values, variables, or expressions that are provided in the parameter list of a called subprogram: Actual parameter
+A parameter name declared in the procedure heading: Formal parameter
+
+Try It / Solve It 
+
+1. Parameters in PL/SQL Subprograms
+Parameters are variables declared in the procedure or function header that allow the caller to pass data into the subprogram or receive data back. 
+They enhance flexibility and reusability by enabling the subprogram to perform operations with different inputs.
+
+2. Procedure with the COUNTRIES Table
+
+A. Create get_country_info Procedure
+
+CREATE OR REPLACE PROCEDURE get_country_info (p_country_id IN NUMBER) IS
+    v_country_name VARCHAR2(50);
+    v_capital_city VARCHAR2(50);
+BEGIN
+    SELECT country_name, capital_city
+    INTO v_country_name, v_capital_city
+    FROM countries
+    WHERE country_id = p_country_id;
+    DBMS_OUTPUT.PUT_LINE('Country: ' || v_country_name || ', Capital: ' || v_capital_city);
+EXCEPTION
+    WHEN NO_DATA_FOUND THEN
+        DBMS_OUTPUT.PUT_LINE('No country found with ID: ' || p_country_id);
+END get_country_info;
+
+B. Execute with country_id = 90
+
+BEGIN
+    get_country_info(90);
+END;
+
+C. Execute with country_id = 95
+This will trigger a NO_DATA_FOUND exception and display an appropriate message.
+
+D. Modified Procedure with Exception Handler
+CREATE OR REPLACE PROCEDURE get_country_info (p_country_id IN NUMBER) IS
+    v_country_name VARCHAR2(50);
+    v_capital_city VARCHAR2(50);
+BEGIN
+    SELECT country_name, capital_city
+    INTO v_country_name, v_capital_city
+    FROM countries
+    WHERE country_id = p_country_id;
+    DBMS_OUTPUT.PUT_LINE('Country: ' || v_country_name || ', Capital: ' || v_capital_city);
+EXCEPTION
+    WHEN NO_DATA_FOUND THEN
+        DBMS_OUTPUT.PUT_LINE('No country found with ID: ' || p_country_id);
+END get_country_info;
+
+Re-execute for country_id = 95: This will now handle the exception gracefully and display the message.
+
+3. Formal vs. Actual Parameters
+
+Formal Parameter: Declared in the procedure or function header. It serves as a placeholder for the actual value.
+Actual Parameter: The real value passed to the subprogram during execution.
+Variations of Actual Parameters: Literal values, variables, expressions.
+
+4. Procedure for Region and Elevation
+
+A. Create Procedure for Region and Elevation Count
+
+CREATE OR REPLACE PROCEDURE count_high_elevations (
+    p_region_id IN NUMBER,
+    p_elevation IN NUMBER
+) IS
+    v_count NUMBER;
+BEGIN
+    SELECT COUNT(*)
+    INTO v_count
+    FROM countries
+    WHERE region_id = p_region_id AND highest_elevation > p_elevation;
+
+    DBMS_OUTPUT.PUT_LINE('Countries in region ' || p_region_id || 
+                         ' with elevation > ' || p_elevation || ': ' || v_count);
+END count_high_elevations;
+
+B. Execute with region_id = 5 and elevation = 2000
+
+BEGIN
+    count_high_elevations(5, 2000);
+END;
+
+
+C. Describe Procedure
+
+DESCRIBE count_high_elevations;
+
+D. Modified Procedure with Third Parameter
+
+CREATE OR REPLACE PROCEDURE count_high_elevations (
+    p_region_id IN NUMBER,
+    p_elevation IN NUMBER,
+    p_start_char IN CHAR
+) IS
+    v_count NUMBER;
+BEGIN
+    SELECT COUNT(*)
+    INTO v_count
+    FROM countries
+    WHERE region_id = p_region_id 
+      AND highest_elevation > p_elevation
+      AND SUBSTR(country_name, 1, 1) = p_start_char;
+
+    DBMS_OUTPUT.PUT_LINE('Countries in region ' || p_region_id || 
+                         ' with elevation > ' || p_elevation || 
+                         ' and name starting with "' || p_start_char || '": ' || v_count);
+END count_high_elevations;
+
+
+E. Anonymous Block with Parameters 5, 2000, 'B':
+
+DECLARE
+    v_region_id NUMBER := 5;
+    v_elevation NUMBER := 2000;
+    v_start_char CHAR := 'B';
+BEGIN
+    count_high_elevations(v_region_id, v_elevation, v_start_char);
+END;
+
+F. Passing Parameters in Different Order
+
+BEGIN
+    count_high_elevations(5, 'B', 2000);
+END;
+An error occurs due to type mismatch or incorrect ordering.
+
+Corrected Anonymous Block:
+
+BEGIN
+    count_high_elevations(5, 2000, 'B'); -- Correct order
+END;
+	

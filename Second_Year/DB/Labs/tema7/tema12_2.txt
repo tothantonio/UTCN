@@ -1,0 +1,57 @@
+ 12.2
+
+
+Vocabulary
+1)NOCOPY
+2)FORALL
+3)BULK COLLECT Clause
+4)DETERMINISTIC Clause
+5)RETURNING Clause
+6)Bulk Binding
+
+Try it
+
+1)?
+
+Call Duration (secs)
+--------------------
+Just IN OUT: .16
+With NOCOPY: 0
+
+2)
+
+24000
+17000
+6000
+
+26400
+18700
+6600
+=>  creste salariul cu 10%
+
+3)
+CREATE OR REPLACE PROCEDURE get_dep IS
+TYPE t_dep IS TABLE OF departments%ROWTYPE INDEX BY BINARY_INTEGER;
+v_deptab t_dep;
+BEGIN
+SELECT* BULK COLLECT INTO v_deptab FROM departments;
+FOR i IN v_deptab.FIRST..v_deptab.LAST LOOP
+IF v_deptab.EXISTS(i) THEN
+DBMS_OUTPUT.PUT_LINE(v_deptab(i).location_id);
+END IF;
+END LOOP;
+END get_dep;
+
+4)
+CREATE OR REPLACE PROCEDURE delete_row IS
+TYPE emp_temp IS TABLE OF employees%ROWTYPE INDEX BY BINARY_INTEGER;
+v_emptab emp_temp;
+BEGIN
+SELECT* BULK COLLECT INTO v_emptab FROM employees;
+FOR i IN v_emptab.FIRST..v_emptab.LAST LOOP
+
+DELETE FROM emp_temp
+WHERE DEPARTMENT_ID=20
+RETURNING department_id INTO emp_temp;
+END LOOP;
+END delete_row;

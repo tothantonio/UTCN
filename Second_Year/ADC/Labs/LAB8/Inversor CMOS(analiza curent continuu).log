@@ -1,0 +1,65 @@
+
+                 *********************************************
+                 *                                           *
+                 *             A I M - S p i c e             *
+                 *                                           *
+                 *         Professional Version 2020.100           *
+                 *                                           *
+                 *********************************************
+
+	Date: Wed Nov 20 14:51:10 2024
+	Circuit File: D:\UTCN\Second_Year\ADC\Labs\LAB8\Inversor CMOS(analiza curent continuu).cir
+	Analysis: DC Transfer Curves
+
+**************************  Circuit Description  **************************
+
+     1:  Inversor CMOS
+     2:  
+     3:  Mp dd in out dd PMOS1
+     4:  .Model PMOS1 pmos vto=-1.5
+     5:  
+     6:  Mn out in 0 0 NMOS1
+     7:  .Model NMOS1 nmos vto=1.5
+     8:  
+     9:  C1 out 0 15p
+    10:  
+    11:  Vin in 0 dc 0 pulse(0 5 0 1e-10 1e-10 1e-6 2e-6)
+    12:  Vss ss 0 DC 0
+    13:  Vdd dd 0 DC 5
+    14:  .dc Vin 0 5 0.1
+
+***************************  Model Parameters  ****************************
+
+
+***************  Device Parameters (Only for .op analysis)  ***************
+
+
+
+**************************  Analysis Parameters  **************************
+
+	Source name #1 .. : Vin
+	Start value #1 .. : 0
+	End value #1 .... : 5
+	Increment value #1: 0.1
+
+
+
+**************  Options (Only those different from default)  **************
+
+
+
+*************************  Simulation Statistics  *************************
+
+	Total number of iterations...........: 126
+	Total analysis time (sec)............: 0.017
+	Time spent in device loading (sec)...: 0.002
+	Time spent in L-U decomposition (sec): 0
+	Time spent in matrix reordering (sec): 0
+	Time spent in matrix solving (sec)...: 0
+
+***************************  Kernel Messages  *****************************
+
+Circuit: Inversor CMOS
+
+Warning: Node ss has less than two connections
+

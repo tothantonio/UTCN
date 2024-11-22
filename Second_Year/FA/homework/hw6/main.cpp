@@ -1,28 +1,28 @@
 #include <iostream>
-#include <fstream>
 #include <list>
+#include "Profiler.h"
 using namespace std;
-
+Profiler profiler;
 
 /*
  * @author Antonio-Roberto Toth
  * @group 30228
-* Assignment Requirments: Multi-way Trees. Transforms between different representations
-* I implemented iterative and recursvie binary tree traversal in O(n) with constant additional memory
-* Number of print key operations is the same. idk if this is good :(
+* Assignment Requirements: Multi-way Trees. Transforms between different representations
+* I implemented iterative and recursive binary tree traversal in O(n) with constant additional memory
+* Number of print key operations is the same, i guess this is how it should be.
 *
 * For Pretty Print for the tree represented by parent[] vector, I iterate through the array and for each son of current node
 * I print it and call pretty print for him.
 * Complexity : O(n^2)
 *
-* For Pretty Print for Multi-way tree representation I use a stucture Node2 where each node has a Key and a list of pointers(sons)
+* For Pretty Print for Multi-way tree representation I use a structure Node2 where each node has a Key and a list of pointers(sons)
 * I print the current node and then call pretty-print for all of his children
 * Complexity : O(n)
 *
 * For Pretty Print for Binary Tree I use a structure where each node has left and right pointer to child/brother, it's like a preorder
 * Complexity : O(n)
 *
-* For T1, the transformation from  the parent representation to the multy way representation, I iterate through the parent[] array
+* For T1, the transformation from  the parent representation to the multi way representation, I iterate through the parent[] array
 * I create a new object Node2 using an auxiliary array list[] for constant-time access
 * Then I identify the root, and add each node to it's parent's sons list
 * Time Complexity : O(n), I iterate through parent[] once, Space Complexity: O(n), for the list[] and tree nodes
@@ -30,7 +30,7 @@ using namespace std;
 * For T2, the transformation from the parent representation to the binary representation, I recursively traverse the multi-way tree(R2)
 * For the first child I set the left pointer, and for siblings set the right pointer
 * Time Complexity : O(n), as each node is visited once
-* Space Complxity : O(n)
+* Space Complexity : O(n)
 *
  */
 
@@ -67,7 +67,7 @@ void prettyPrintR1(int parent[], int n, int indexParent, int tabs) {
 
 void prettyPrintR2(Node2 *R2, int tabs) {
     for(int i = 0; i < tabs; i++) {
-        cout << " ";
+        cout << "  ";
     }
     cout << R2->key << endl;
     for(auto it : R2->sons) {
@@ -78,7 +78,7 @@ void prettyPrintR2(Node2 *R2, int tabs) {
 void prettyPrintR3(Node3 *R3, int tabs) {
     if(R3 != NULL) {
         for(int i = 0; i < tabs; i++) {
-            cout << " ";
+            cout << "  ";
         }
         cout << R3->key << endl;
         prettyPrintR3(R3->left, tabs + 1);
@@ -126,21 +126,21 @@ Node3* T2(Node2* root) {
     return newNode;
 }
 
-void recursivePreorder(Node *root, int& recOP) {
+void recursivePreorder(Node *root, Operation& recOP) {
     if(root == NULL) {
         return;
     }
-    recOP++;
+    recOP.count();
     //cout << root->key << " ";
     recursivePreorder(root->left, recOP);
     recursivePreorder(root->right, recOP);
 }
 
-void iterativePreorder(Node *root, int& iterOP) {
+void iterativePreorder(Node *root, Operation& iterOP) {
     Node *curr = root;
     while(curr != NULL) {
         if(curr->left == NULL) {
-            iterOP++;
+            iterOP.count();
             //cout << curr->key << " ";
             curr = curr->right;
         } else {
@@ -150,7 +150,7 @@ void iterativePreorder(Node *root, int& iterOP) {
             }
             if(pred->right == NULL) {
                 pred->right = curr;
-                iterOP++;
+                iterOP.count();
                 //cout << curr->key << " ";
                 curr = curr->left;
             } else {
@@ -189,17 +189,18 @@ void demo() {
 }
 
 void recursiveVsIterative() {
-    int recOP = 0, iterOP = 0;
     for(int size = 100; size < 10000; size += 100) {
+        Operation recOP = profiler.createOperation("Recursive", size);
+        Operation iterOP = profiler.createOperation("Iterative", size);
         Node *root = generateBinaryTree(size);
         recursivePreorder(root, recOP);
         iterativePreorder(root, iterOP);
     }
-    cout << recOP << " " << iterOP << endl;
+    profiler.showReport();
 }
 
 int main() {
-    //demo();
-    recursiveVsIterative();
+    demo();
+    //recursiveVsIterative();
     return 0;
 }

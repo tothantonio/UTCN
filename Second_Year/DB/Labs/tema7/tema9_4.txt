@@ -1,0 +1,152 @@
+9-4: Managing Procedures and Functions
+
+Vocabulary Answers
+The dictionary table that contains source code for all of the subprograms that you own:
+USER_SOURCE
+
+The dictionary table that contains the names and types of procedures and functions that you own:
+USER_PROCEDURES
+
+The dictionary table that contains source code for subprograms that are owned by others who have granted you the EXECUTE privilege:
+ALL_SOURCE
+
+
+Try It / Solve It
+1. Propagation of Exceptions
+A. Create a duplicate of the DEPARTMENTS table
+
+CREATE TABLE my_depts AS SELECT * FROM departments;
+ALTER TABLE my_depts
+ ADD CONSTRAINT my_dept_id_pk PRIMARY KEY (department_id);
+
+
+B. Create add_my_dept procedure
+
+CREATE OR REPLACE PROCEDURE add_my_dept
+ (p_dept_id IN VARCHAR2, p_dept_name IN VARCHAR2) IS
+BEGIN
+ INSERT INTO my_depts (department_id, department_name)
+ VALUES (p_dept_id, p_dept_name);
+END add_my_dept;
+
+. Anonymous block to test add_my_dept for duplicate department_id (e.g., department_id = 10)
+
+BEGIN
+    add_my_dept(10, 'Human Resources');
+END;
+
+Prediction: The block will fail with a DUP_VAL_ON_INDEX exception because department_id 10 already exists in my_depts.
+
+
+9-4: Managing Procedures and Functions
+Vocabulary Answers
+The dictionary table that contains source code for all of the subprograms that you own:
+USER_SOURCE
+
+The dictionary table that contains the names and types of procedures and functions that you own:
+USER_PROCEDURES
+
+The dictionary table that contains source code for subprograms that are owned by others who have granted you the EXECUTE privilege:
+ALL_SOURCE
+
+Try It / Solve It
+1. Propagation of Exceptions
+A. Create a duplicate of the DEPARTMENTS table
+
+CREATE TABLE my_depts AS SELECT * FROM departments;
+ALTER TABLE my_depts
+ ADD CONSTRAINT my_dept_id_pk PRIMARY KEY (department_id);
+B. Create add_my_dept procedure
+
+CREATE OR REPLACE PROCEDURE add_my_dept
+ (p_dept_id IN VARCHAR2, p_dept_name IN VARCHAR2) IS
+BEGIN
+ INSERT INTO my_depts (department_id, department_name)
+ VALUES (p_dept_id, p_dept_name);
+END add_my_dept;
+C. Anonymous block to test add_my_dept for duplicate department_id (e.g., department_id = 10)
+
+sql
+Copiază codul
+BEGIN
+    add_my_dept(10, 'Human Resources');
+END;
+Prediction: The block will fail with a DUP_VAL_ON_INDEX exception because department_id 10 already exists in my_depts.
+
+D. Modify the procedure to handle the exception
+
+CREATE OR REPLACE PROCEDURE add_my_dept
+ (p_dept_id IN VARCHAR2, p_dept_name IN VARCHAR2) IS
+BEGIN
+ INSERT INTO my_depts (department_id, department_name)
+ VALUES (p_dept_id, p_dept_name);
+EXCEPTION
+ WHEN OTHERS THEN
+    DBMS_OUTPUT.PUT_LINE('An error occurred: Could not insert record.');
+END add_my_dept;
+
+Test again for duplicate department_id 10:
+
+BEGIN
+    add_my_dept(10, 'Human Resources');
+END;
+
+Prediction: Instead of failing, the exception will be caught, 
+and the error message An error occurred: Could not insert record. will be displayed.
+
+
+E. Remove the exception handler
+
+CREATE OR REPLACE PROCEDURE add_my_dept
+ (p_dept_id IN VARCHAR2, p_dept_name IN VARCHAR2) IS
+BEGIN
+ INSERT INTO my_depts (department_id, department_name)
+ VALUES (p_dept_id, p_dept_name);
+END add_my_dept;
+
+
+Test again for duplicate department_id 10:
+The block will fail with a DUP_VAL_ON_INDEX exception as there is no exception handling.
+
+
+F. Create outer_proc procedure that calls add_my_dept
+
+CREATE OR REPLACE PROCEDURE outer_proc IS
+ v_dept NUMBER(2) := 10;
+ v_dname VARCHAR2(30) := 'Admin';
+BEGIN
+ add_my_dept(v_dept, v_dname);
+EXCEPTION
+ WHEN OTHERS THEN
+    DBMS_OUTPUT.PUT_LINE('Exception was propagated to outer_proc');
+END;
+
+
+G. Test outer_proc from an anonymous block
+
+BEGIN
+    outer_proc;
+END;
+
+
+Prediction:
+When outer_proc is executed, the DUP_VAL_ON_INDEX exception from add_my_dept will propagate to outer_proc, where it will be caught. 
+The message Exception was propagated to outer_proc will be displayed.
+
+2. List all procedures created
+
+SELECT object_name
+FROM user_procedures
+WHERE object_type = 'PROCEDURE';
+
+3. Delete the outer_proc procedure
+
+DROP PROCEDURE outer_proc;
+
+4. List the source code for the add_my_dept procedure
+
+SELECT line, text
+FROM user_source
+WHERE name = 'ADD_MY_DEPT'
+ORDER BY line;
+

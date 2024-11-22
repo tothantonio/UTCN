@@ -1,0 +1,3 @@
+D:/UTCN/Second_Year/FA/homework/hw7/cmake-build-release/CMakeFiles/hw7.dir
+D:/UTCN/Second_Year/FA/homework/hw7/cmake-build-release/CMakeFiles/edit_cache.dir
+D:/UTCN/Second_Year/FA/homework/hw7/cmake-build-release/CMakeFiles/rebuild_cache.dir

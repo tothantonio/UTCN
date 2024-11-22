@@ -1,0 +1,64 @@
+
+                 *********************************************
+                 *                                           *
+                 *             A I M - S p i c e             *
+                 *                                           *
+                 *         Professional Version 2020.100           *
+                 *                                           *
+                 *********************************************
+
+	Date: Wed Nov 20 15:09:04 2024
+	Circuit File: D:\UTCN\Second_Year\ADC\Labs\LAB8\PoartaDeTransmisie.cir
+	Analysis: DC Transfer Curves
+
+**************************  Circuit Description  **************************
+
+     1:  Poarta de Tranzitie
+     2:  
+     3:  MP in an out dd PMOS
+     4:  MN in a out ss NMOS 
+     5:  .Model NMOS nmos vto=1.5
+     6:  .Model PMOS pmos vto=-1.5
+     7:  
+     8:  Vin in 0 DC 5
+     9:  Vss ss 0 DC 0
+    10:  Vdd dd 0 DC 5
+    11:  Van an 0 DC 0
+    12:  Va a 0 DC 5
+    13:  
+    14:  .dc Vin 0 5 0.1
+
+***************************  Model Parameters  ****************************
+
+
+***************  Device Parameters (Only for .op analysis)  ***************
+
+
+
+**************************  Analysis Parameters  **************************
+
+	Source name #1 .. : Vin
+	Start value #1 .. : 0
+	End value #1 .... : 5
+	Increment value #1: 0.1
+
+
+
+**************  Options (Only those different from default)  **************
+
+
+
+*************************  Simulation Statistics  *************************
+
+	Total number of iterations...........: 107
+	Total analysis time (sec)............: 0.015
+	Time spent in device loading (sec)...: 0
+	Time spent in L-U decomposition (sec): 0
+	Time spent in matrix reordering (sec): 0
+	Time spent in matrix solving (sec)...: 0
+
+***************************  Kernel Messages  *****************************
+
+Circuit: Poarta de Tranzitie
+
+

@@ -1,0 +1,88 @@
+Vocabulary:
+1.User Defined function
+
+Try It/Solve It:
+1.SELECT last_name, salary
+FROM f_emps 
+WHERE sal_increase(salary , 5)>10000
+2.-the column list of a select statement
+-the condition of a where clause
+-connect by, start with, order by, group by
+-the values clause of an insert statement
+-the set clause of an update statement
+3.SELECT last_name, salary,sal_increase(salary,5)
+FROM f_emps 
+ORDER BY sal_increase(salary,5) desc;
+4.SELECT department_id, sum(salary),sal_increase(salary,5)
+FROM f_emps
+GROUP BY department_id
+HAVING sum(sal_increase(salary,5)) > 20000;
+5.CREATE OR REPLACE FUNCTION check_dept
+ (p_dept_id f_depts.department_id%TYPE)
+ RETURN BOOLEAN IS
+ v_dept_id f_depts.department_id%TYPE;
+BEGIN
+ SELECT department_id INTO v_dept_id
+ FROM f_depts
+ WHERE department_id = p_dept_id;
+ RETURN TRUE;
+EXCEPTION
+ WHEN NO_DATA_FOUND THEN
+ RETURN FALSE;
+END;
+
+6.create or replace procedure insert_emps(p_id f_emps.employee_id%type,p_last
+f_emps.last_name%type,p_sal f_emps.salary%type,p_dep f_emps.department_id%type)
+is
+begin
+if check_dept(p_dep)=true then
+insert into f_emps values(p_id,p_last,p_sal,p_dep);
+else
+dbms_output.put_line('The department does not exist!');
+end if;
+end;
+7.begin
+insert_emps(800,'Jokinen',5000,750);
+end;
+8.create or replace procedure insert_emp(p_id f_emps.employee_id%type,p_last
+f_emps.last_name%type,p_sal f_emps.salary%type,p_dep f_emps.department_id%type)
+is
+begin
+if check_dept(p_dep)=true then
+insert into f_emps values(p_id,p_last,p_sal,p_dep);
+else
+insert into departments(department_id,department_name) values(p_dep,'Temporary');
+insert into f_emps values(p_id,p_last,p_sal,p_dep);
+dbms_output.put_line('The department and employee inserted!');
+end if;
+end;
+9.
+10.CREATE OR REPLACE FUNCTION get_sal
+ (p_emp_id f_emps.employee_id%TYPE)
+ RETURN NUMBER
+IS
+ v_salary f_emps.salary%TYPE;
+BEGIN
+ SELECT salary INTO v_salary
+ FROM f_emps
+ WHERE employee_id = p_emp_id;
+ RETURN v_salary;
+END;
+11.CREATE OR REPLACE FUNCTION upd_sal
+ (p_emp_id f_emps.employee_id%TYPE)
+ RETURN NUMBER
+IS
+ v_salary f_emps.salary%TYPE;
+BEGIN
+ SELECT salary INTO v_salary
+ FROM f_emps
+ WHERE employee_id = p_emp_id;
+ v_salary := v_salary * 2;
+ UPDATE f_emps
+ SET salary = v_salary
+ WHERE employee_id = p_emp_id;
+ RETURN v_salary;
+END;
+SELECT employee_id, last_name, salary, upd_sal(employee_id)
+ FROM f_emps
+ WHERE employee_id = 100;

@@ -1,0 +1,100 @@
+Database Programming with PL/SQL
+8-1: Creating Procedures
+
+Vocabulary Answers
+Named PL/SQL blocks that are compiled and stored in the database: Procedures
+
+Indicates the DECLARE section of a subprogram: IS
+
+Unnamed executable PL/SQL blocks that cannot be reused or stored in the database for later use: Anonymous blocks
+Named PL/SQL blocks that can accept parameters and are compiled and stored in the database: Procedures
+Try It / Solve It Answers
+1. Difference Between Code Sample A and Code Sample B
+Code Sample A is an anonymous block, meaning it is not stored in the database and cannot be reused.
+Code Sample B defines a stored procedure, which is compiled and stored in the database, can accept parameters, and can be reused multiple times.
+2. Benefits of Subprograms
+Code Reusability: Subprograms can be reused multiple times, reducing code duplication.
+Modularity: Makes the code more organized and easier to manage.
+Improved Maintainability: Changes can be made in one place, improving maintainability.
+Parameterization: Allows passing parameters to customize behavior.
+Performance Optimization: Stored subprograms are precompiled, resulting in faster execution.
+3. Description of a Stored Procedure
+A stored procedure is a named block of PL/SQL code stored in the database. It is precompiled, reusable, and can accept input/output parameters to perform specific tasks such as updates, inserts, or business logic.
+
+4. Practice Activities
+A. Create the name_change Procedure:
+
+CREATE OR REPLACE PROCEDURE name_change IS
+BEGIN
+    UPDATE employees_dup
+    SET first_name = 'Susan'
+    WHERE department_id = 80;
+END name_change;
+B. Execute the Procedure:
+
+BEGIN
+    name_change;
+END;
+C. Verify the Update:
+
+
+SELECT * FROM employees_dup WHERE department_id = 80;
+5. Create the pay_raise Procedure:
+
+
+CREATE OR REPLACE PROCEDURE pay_raise IS
+BEGIN
+    UPDATE employees_dup
+    SET salary = 30000;
+END pay_raise;
+Execute the Procedure:
+
+
+BEGIN
+    pay_raise;
+END;
+
+SELECT * FROM employees_dup;
+
+
+6. Modify and Test the name_change Procedure with an Error:
+
+CREATE PROCEDURE name_change IS
+BEGIN
+    UPDAT employees_dup 
+    SET first_name = 'Susan'
+    WHERE department_id = 80;
+END name_change;
+
+7. Correct and Recreate the Procedure:
+
+CREATE OR REPLACE PROCEDURE name_change IS
+BEGIN
+    UPDATE employees_dup
+    SET first_name = 'Susan'
+    WHERE department_id = 80;
+END name_change;
+
+8. Create and Execute Procedure for Salary Updates:
+
+CREATE OR REPLACE PROCEDURE update_salaries IS
+BEGIN
+    UPDATE employees_dup
+    SET salary = 1000
+    WHERE department_id = 80;
+
+    UPDATE employees_dup
+    SET salary = 2000
+    WHERE department_id = 50;
+
+    UPDATE employees_dup
+    SET salary = 3000
+    WHERE department_id NOT IN (80, 50);
+END update_salaries;
+
+
+BEGIN
+    update_salaries;
+END;
+
+SELECT department_id, salary FROM employees_dup;

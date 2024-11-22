@@ -1,0 +1,21 @@
+13.1
+Vocabulary
+1.APPLICATION TRIGGERS
+2.TRIGGERS
+3.DATABASE TRIGGERS
+Try It / Solve It 
+1.
+Pentru ca acțiunile specificate să fie efectuate automat.
+2.
+*Instrucțiuni DML care modifică datele dintr-un tabel (INSERT, UPDATE sau DELETE)
+*Declarații DDL
+*Evenimente de sistem, cum ar fi pornirea, oprirea și mesajele de eroare
+*Evenimente ale utilizatorului, cum ar fi deconectarea și deconectarea
+3.
+
+Pentru toate declanșatoarele de rânduri sau pentru declanșatoarele de declarații care au fost declanșate
+ca urmare a unui DELETE CASCADE, există două restricții importante privind tabelele de mutare și constrângere.
+Aceste restricții împiedică un declanșator să vadă un set inconsistent de date.
+4.
+Diferența fundamentală dintre Trigger și Procedură este că Trigger-ul se execută automat la aparițiile 
+unui eveniment, în timp ce Procedura este executată atunci când este invocată în mod explicit.

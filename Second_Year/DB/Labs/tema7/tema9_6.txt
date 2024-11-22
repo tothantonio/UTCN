@@ -1,0 +1,46 @@
+9-6: Using Invoker’s Rights
+Vocabulary
+
+Routines are bound to the schema in which they reside: Definer's Rights
+Routines let you centralize data retrieval whereas multiple users can manage their own data using a single code base: Invoker's Rights
+Subprograms that allow your session to have two or more active transactions at the same time: Autonomous Transactions
+
+Try It / Solve It
+
+
+1.Describe both procedures:
+
+DESCRIBE IACAD_SCHEMA.show_emps_def;
+DESCRIBE IACAD_SCHEMA.show_emps_inv;
+
+2.SQL to select directly from the table:
+
+SELECT * FROM IACAD_SCHEMA.EMPS WHERE employee_id = 100;
+
+3.Differences between definer's rights and invoker's rights:
+
+Definer's Rights: Executes with the privileges of the schema where the procedure resides.
+Invoker's Rights: Executes with the privileges of the user invoking the procedure, allowing centralized logic while respecting user-specific access
+
+4.Execute show_emps_def with employee_id = 100:
+
+EXEC IACAD_SCHEMA.show_emps_def(100);
+
+Explanation: The procedure will succeed if your schema can access IACAD_SCHEMA.EMPS. Since definer's rights are used, it uses the privileges of IACAD_SCHEMA.
+
+5.Execute show_emps_def with employee_id = 10:
+
+EXEC IACAD_SCHEMA.show_emps_def(10);
+
+Explanation: Since no employee with ID 10 exists, the NO_DATA_FOUND exception will be raised, and the procedure will print a message indicating no data found.
+
+6.Execute show_emps_inv with employee_id = 100:
+
+EXEC IACAD_SCHEMA.show_emps_inv(100);
+
+Explanation: This procedure runs under invoker's rights, so it will only work if your schema has direct access to IACAD_SCHEMA.EMPS.
+
+7.Changes needed for show_emps_inv to work:
+
+Grant the required SELECT privilege on EMPS to your schema.
+Ensure proper parameter data types and handling are in place.
