@@ -28,6 +28,7 @@ Profiler profiler;
  *
  * OS_DELETE:
  * First I make the classic delete for an element from a tree, and then I go, from the point where the node is deleted, upwards
+ * If the node has max one child, I swap the child with the node, otherwise, if the node has 2 children, I swap it with his successor
  * I remake the size of each node. The tree does not require re-balancing because delete operation does not increase the height
  * And even if the tree is not balanced, the complexity at OS_SELECT and OS_DELETE remains O(logn)
  * Complexity: O(logn)
@@ -114,36 +115,36 @@ bst* succ(bst *node, int n) {
     return parent;
 }
 
-bst* OS_DELETE(bst* root, bst* z, int n) {
+bst* OS_DELETE(bst* root, bst* z, int n) { // z = node to be deleted
     Operation op = profiler.createOperation("Delete Op", n);
 
-    bst *y = NULL, *x = NULL;
+    bst *y = NULL, *x = NULL; // y = the node that is actually deleted, x = the child of y which will replace y
 
     op.count(3);
-    if(z->left == NULL || z->right == NULL) {
+    if(z->left == NULL || z->right == NULL) { // if z has at most one child
         y = z;
     } else {
         y = succ(z, n);
     }
 
     op.count(2);
-    if(y->left != NULL) {
+    if(y->left != NULL) { // if y has a child, it will be x
         x = y->left;
     } else {
         x = y->right;
     }
 
     op.count();
-    if(x != NULL) {
+    if(x != NULL) { // we link x to y's parent
         op.count();
         x->parent = y->parent;
     }
 
     op.count();
-    if(y->parent == NULL) {
+    if(y->parent == NULL) { // if y is root of tree, we set x as root
         root = x;
     } else {
-        if(y == (y->parent)->left) {
+        if(y == (y->parent)->left) { // if y is left or right child of its parent
             (y->parent)->left = x;
         } else {
             (y->parent)->right = x;
@@ -151,12 +152,12 @@ bst* OS_DELETE(bst* root, bst* z, int n) {
     }
 
     op.count();
-    if(y != z) {
+    if(y != z) { // if the deleted node was successor of z
         op.count();
         z->key = y->key;
     }
 
-    for(bst *p = y->parent; p != NULL; p = p->parent) {
+    for(bst *p = y->parent; p != NULL; p = p->parent) { // update the size for each node
         op.count(3);
         p->size = (p->left == NULL ? 0 : (p->left)->size) + (p->right == NULL ? 0 : (p->right)->size) + 1;
     }
@@ -189,12 +190,12 @@ int *generateArray(int size) {
 }
 
 void demo() {
-    int array[] = {1, 3, 2, 4, 5};
+    int array[] = {1, 2, 3, 4, 5};
     int size = sizeof(array) / sizeof(array[0]);
     bst* root = BUILD_TREE(0, size - 1, array, NULL);
     prettyPrint(root, 0);
 
-    bst* node = OS_SELECT(root, 4, size - 1);
+    bst* node = OS_SELECT(root, 3, size - 1);
     cout << "Nodul cautat: " << node->key << endl;
 
     cout << "Nod de sters : " << node->key << endl;
