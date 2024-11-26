@@ -21,7 +21,7 @@
   * [Fundamental Algorithms](Second_Year/FA)
   * [Databases](Second_Year/DB)
   * [Object Oriented Programming](Second_Year/OOP)
-  * [Analog and Numeric Circuits](Second_Year/ANC)
+  * [Analog and Numeric Circuits](Second_Year/ADC)
 
   
      
