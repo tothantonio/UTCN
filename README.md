@@ -18,11 +18,11 @@
 
   ### 3️⃣Semester
 
-  * [Fundamental Algorithms]
-  * [Databases]
-  * [Object Oriented Programming]
-  * [Electronic Measurements and Sensors]
-  * [Analog and Numeric Circuits]
+  * [Fundamental Algorithms](Second_Year/FA)
+  * [Databases](Second_Year/DB)
+  * [Object Oriented Programming](Second_Year/OOP)
+  * [Electronic Measurements and Sensors](Second_Year/EMS)
+  * [Analog and Numeric Circuits](Second_Year/ANC)
 
   
      
