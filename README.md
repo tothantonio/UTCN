@@ -18,5 +18,11 @@
 
   ### 3️⃣Semester
 
+  * [Fundamental Algorithms]
+  * [Databases]
+  * [Object Oriented Programming]
+  * [Electronic Measurements and Sensors]
+  * [Analog and Numeric Circuits]
+
   
      
