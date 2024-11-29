@@ -217,7 +217,6 @@ void perf() {
             }
         }
     }
-
     profiler.divideValues("Select Op", NR_TESTS);
     profiler.divideValues("Delete Op", NR_TESTS);
 
