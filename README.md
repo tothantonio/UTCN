@@ -18,5 +18,10 @@
 
   ### 3️⃣Semester
 
+  * [Fundamental Algorithms](Second_Year/FA)
+  * [Databases](Second_Year/DB)
+  * [Object Oriented Programming](Second_Year/OOP)
+  * [Analog and Digital Circuits](Second_Year/ADC)
+
   
      
