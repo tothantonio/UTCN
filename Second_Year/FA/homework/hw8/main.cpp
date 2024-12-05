@@ -28,7 +28,7 @@ Profiler profiler;
  * Finds the root of the set that an elements belongs to
  * Traverses the parent pointers recursively until it reaches the root of a set(an element whose parent its itself)
  * Makes all nodes along the path directly point to the root
- * Complexity: O(1)
+ * Complexity: O(n)
  *
  * Kruskal:
  * A greedy algorithm (uses the smallest available edge, ensuring local optimal choice)
