@@ -9,6 +9,21 @@ using namespace std;
  * @author Antonio-Roberto Toth
  * @group 30228
  * Assignment Requirements: Breadth First Search
+ *
+ * I implemented the get_neighbors function, where I check the up, down, left and right positions to be inside the grid
+ * and if so, I add them in the list
+ * Complexity: O(1)
+ *
+ * I implemented BFS function, where I initialize each node with color white, its distance to infinity, and parent to NULL.
+ * I start from the first node, making him gray, distance = 0, parent = NULL and add it to the queue.
+ * I take each node from the queue and for each untraversed(white) neighbor , I make it gray, its distance is the distance of current node + 1,
+ * and the parent is the current node. After I finish with that node, I make it black.
+ * Complexity O(V + E).
+ *
+ * I implemented the pretty_print for BFS printing the current node, and then I recursively call the function for his children.
+ * Complexity: O(n ^ 2)
+ *
+ * For the shortest_path function I use BFS, and then I rebuild the path by going on the parent from the destination node to the start node.
  */
 
 int get_neighbors(const Grid *grid, Point p, Point neighb[]) {
@@ -18,10 +33,12 @@ int get_neighbors(const Grid *grid, Point p, Point neighb[]) {
     // note: the size of the array neighb is guaranteed to be at least 4
     int count = 0;
     int dir[4][2] = {{-1, 0}, {1, 0}, {0, -1}, {0, 1}};
+
     for(int i = 0; i < 4; i ++) {
         int newRow = p.row + dir[i][0];
         int newCol = p.col + dir[i][1];
 
+        //check if neighbors are in the grid
         if(newRow >= 0 && newRow < grid->rows && newCol >= 0 && newCol < grid->cols && grid->mat[newRow][newCol] == 0) {
             neighb[count].row = newRow;
             neighb[count].col = newCol;
@@ -145,8 +162,6 @@ void bfs(Graph *graph, Node *s, Operation *op) // O(V + E) complexity
                 v->dist = u->dist + 1;
                 v->parent = u;
                 q.push(v);
-
-                if (op != NULL) op->count();
             }
         }
         if(op != NULL) op->count(1);
@@ -158,7 +173,10 @@ void pretty_print_tree(int n, int parent, int *p, Point *repr, int tabs = 0) {
     for(int i = 0; i < tabs; i ++) {
         cout << "\t";
     }
+    //print current node
     cout << "(" << repr[parent].row << ", " << repr[parent].col << ")" << endl;
+    //iterate through all nodes to find the children of the current node
+    //recursive call with child node's index
     for(int i = 0; i < n; i++) {
         if(p[i] == parent) {
             pretty_print_tree(n, i, p, repr, tabs + 1);
@@ -250,7 +268,7 @@ int shortest_path(Graph *graph, Node *start, Node *end, Node *path[])
     // if end is not reachable from start, return -1
     // note: the size of the array path is guaranteed to be at least 1000
 
-    bfs(graph, start, NULL);
+    bfs(graph, start, NULL); // run BFS to get the shortest path
     if(end->color == COLOR_WHITE) {
         return -1;
     }
@@ -298,33 +316,37 @@ void UNION(nodeSet *x, nodeSet *y) {
 }
 
 void generate(Graph &graph, int nrEdges) {
+    //initialize adjacency matrix to represent the graph
     int **adMatrix = new int *[graph.nrNodes];
     for(int i = 0; i < graph.nrNodes; i++) {
         adMatrix[i] = new int[graph.nrNodes]{0};
     }
 
-    int nComponents = graph.nrNodes;
+    int nComponents = graph.nrNodes; // initial number of connected comp.
 
-    nodeSet **a = new nodeSet *[graph.nrNodes]{NULL};
+    nodeSet **a = new nodeSet *[graph.nrNodes]{NULL}; // array of disjoint-set ds
 
     for(int i = 0; i < graph.nrNodes; i++) {
-        a[i] = MAKESET();
+        a[i] = MAKESET(); // each node is initialized, it sets the disjoint-set ds
     }
 
+    //the number of edges is limited to the max edges in a graph
     nrEdges = nrEdges < graph.nrNodes * (graph.nrNodes - 1) / 2 ? nrEdges : graph.nrNodes * (graph.nrNodes - 1) / 2;
 
     int cntEdges = 0;
     while(cntEdges < nrEdges - nComponents + 1) {
+        //select 2 random nodes
         int u = rand() % graph.nrNodes;
         int v = rand() % graph.nrNodes;
 
-        if(u != v && adMatrix[u][v] == 0 && adMatrix[v][u] == 0) {
+        if(u != v && adMatrix[u][v] == 0 && adMatrix[v][u] == 0) { //if nodes dif and no edge, add a edge
             adMatrix[u][v] = 1;
             adMatrix[v][u] = 1;
             graph.v[u]->adjSize++;
             graph.v[v]->adjSize++;
             cntEdges++;
 
+            //if nodes belong to dif comp, unify them
             if(FINDSET(a[u]) != FINDSET(a[v])) {
                 UNION(a[u], a[v]);
                 nComponents--;
@@ -332,31 +354,22 @@ void generate(Graph &graph, int nrEdges) {
         }
     }
 
-    for(int i = 1; i < graph.nrNodes && nComponents > 1; i++) {
-        if(FINDSET(a[0]) != FINDSET(a[i])) {
-            adMatrix[0][1] = 1;
-            adMatrix[1][0] = 1;
-            graph.v[0]->adjSize++;
-            graph.v[1]->adjSize++;
-
-            UNION(a[0], a[i]);
-            nComponents--;
-        }
-    }
-
+    //making an adjacency list for each node, for using BFS algorithm.
     for(int i = 0; i < graph.nrNodes; i++) {
-        if(graph.v[i]->adjSize > 0) {
-            graph.v[i]->adj = new Node *[graph.v[i]->adjSize];
-            graph.v[i]->adjSize = 0;
+        if(graph.v[i]->adjSize > 0) { // if the node has neighbors
+            graph.v[i]->adj = new Node *[graph.v[i]->adjSize]; // allocate memory for the neighbors
+            graph.v[i]->adjSize = 0; // reset the size of the neighbors
 
-            for(int j = 0; j < graph.nrNodes; j++) {
-                if(adMatrix[i][j] == 1) {
-                    graph.v[i]->adj[graph.v[i]->adjSize] = graph.v[j];
-                    graph.v[i]->adjSize++;
+            for(int j = 0; j < graph.nrNodes; j++) { // iterate through the adjacency matrix
+                if(adMatrix[i][j] == 1) { // if there is an edge between the nodes
+                    graph.v[i]->adj[graph.v[i]->adjSize] = graph.v[j]; // add the neighbor to the list
+                    graph.v[i]->adjSize++; // increment the size of the neighbors
                 }
             }
         }
     }
+
+    //clean up the mess
     for(int i = 0; i < graph.nrNodes; i++) {
         delete[] adMatrix[i];
     }

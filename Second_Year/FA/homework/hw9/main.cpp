@@ -21,7 +21,7 @@ enum{
     COMMAND_BFS_STEP,
     COMMAND_BFS_TREE,
     COMMAND_PATH,
-    COMMAND_PERF
+    COMMAND_PERF,
 };
 
 typedef struct{
@@ -193,7 +193,7 @@ void readCommand(COMMAND *c, const Grid *grid)
             validCommand = 1;
         }else if(strcmp(token, "neighb") == 0 || strcmp(token, "neighbors") == 0 ||
                 strcmp(token, "bfs") == 0 || strcmp(token, "bfs_step") == 0 || strcmp(token, "bfs_tree") == 0 || 
-                strcmp(token, "path") == 0){
+                strcmp(token, "path") == 0 || strcmp(token, "knight") == 0){
             if(strcmp(token, "neighb") == 0 || strcmp(token, "neighbors") == 0){
                 c->command = COMMAND_NEIGHB;
             }else if(strcmp(token, "bfs") == 0){
