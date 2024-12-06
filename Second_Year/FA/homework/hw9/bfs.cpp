@@ -8,7 +8,22 @@ int get_neighbors(const Grid *grid, Point p, Point neighb[])
     // the point p will have at most 4 neighbors (up, down, left, right)
     // avoid the neighbors that are outside the grid limits or fall into a wall
     // note: the size of the array neighb is guaranteed to be at least 4
-    return 0;
+
+    int count = 0;
+    int directions[4][2] = {{-1, 0}, {1, 0}, {0, -1}, {0, 1}}; // Up, Down, Left, Right
+
+    for (int i = 0; i < 4; ++i) {
+        int newRow = p.row + directions[i][0];
+        int newCol = p.col + directions[i][1];
+
+        if (newRow >= 0 && newRow < grid->rows && newCol >= 0 && newCol < grid->cols && grid->mat[newRow][newCol] == 0) {
+            neighb[count].row = newRow;
+            neighb[count].col = newCol;
+            count++;
+        }
+    }
+
+    return count;
 }
 
 void grid_to_graph(const Grid *grid, Graph *graph)
@@ -85,7 +100,7 @@ void free_graph(Graph *graph)
     graph->nrNodes = 0;
 }
 
-void bfs(Graph *graph, Node *s, Operation *op)
+void bfs(Graph *graph, Node *s, Operation *op) // O(V + E) complexity
 {
     // TOOD: implement the BFS algorithm on the graph, starting from the node s
     // at the end of the algorithm, every node reachable from s should have the color BLACK

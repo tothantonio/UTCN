@@ -60,7 +60,20 @@ void MAKESET(int x, int n) {
     parent[x].key = x;
 }
 
+int FINDSET(int x, int n) { // gaseste root ul
+    Operation op = profiler.createOperation("Operations FINDSET", n);
+    op.count();
+    if(parent[x].key == x) {
+        return x;
+    }
+    op.count();
+    parent[x].key = FINDSET(parent[x].key, n); // urcam in sus pe set
+    return parent[x].key;
+}
+
 void UNION(int x, int y, int n) { // doar dupa ce findset(x) != findset(y)
+    x = FINDSET(x, n);
+    y = FINDSET(y, n);
     Operation op = profiler.createOperation("Operations UNION", n);
     if(parent[x].rank == parent[y].rank) {
         op.count(2);
@@ -76,17 +89,6 @@ void UNION(int x, int y, int n) { // doar dupa ce findset(x) != findset(y)
         parent[y].key = parent[x].key;
         // la fel nu mai cresc rank-ul
     }
-}
-
-int FINDSET(int x, int n) { // gaseste root ul
-    Operation op = profiler.createOperation("Operations FINDSET", n);
-    op.count();
-    if(parent[x].key == x) {
-        return x;
-    }
-    op.count();
-    parent[x].key = FINDSET(parent[x].key, n); // urcam in sus pe set
-    return parent[x].key;
 }
 
 void printSets(int n) {
@@ -117,7 +119,7 @@ void kruskal(int n) {
     for(auto& e : edges) {
         if(FINDSET(e.x, n) != FINDSET(e.y, n)) {
             mst.push_back(e);
-            UNION(FINDSET(e.x, n), FINDSET(e.y, n), n);
+            UNION(e.x, e.y, n);
         }
     }
 }
