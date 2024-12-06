@@ -38,6 +38,13 @@ typedef struct{
     Node **v;
 }Graph;
 
+struct nodeSet {
+    int rank;
+    nodeSet *parent;
+};
+
+
+
 int get_neighbors(const Grid *grid, Point p, Point neighb[]);
 void grid_to_graph(const Grid *grid, Graph *graph);
 void free_graph(Graph *graph);

@@ -1,0 +1,4 @@
+# ninja log v6
+3	2419	7551849157304588	CMakeFiles/hw9.dir/main.cpp.obj	826b00386935b0e
+8	3452	7551849157304588	CMakeFiles/hw9.dir/bfs.cpp.obj	58b031ef6508c09d
+3452	3631	7551849191827977	hw9.exe	15ead5caa28cba3
