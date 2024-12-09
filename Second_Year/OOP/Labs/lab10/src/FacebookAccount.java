@@ -1,7 +1,8 @@
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
-public class FacebookAccount {
+public class FacebookAccount implements Comparable{
     public String name;
     public int age;
     public String current_location;
@@ -38,12 +39,17 @@ public class FacebookAccount {
         return friendsFromLocation;
     }
 
-    public static int compareByName(FacebookAccount a, FacebookAccount b) {
-        return a.getName().compareTo(b.getName());
+    public int compareTo(Object o) {
+        FacebookAccount other = (FacebookAccount) o;
+        return this.name.compareTo(other.name);
     }
 
     public static void sortByName(List<FacebookAccount> accounts) {
-        accounts.sort(FacebookAccount::compareByName);
+        Collections.sort(accounts);
+    }
+
+    public static void sortByNameDesc(List<FacebookAccount> accounts) {
+        Collections.sort(accounts, Collections.reverseOrder());
     }
 
     public List<FacebookAccount> getFriends() {return friends;}
@@ -52,4 +58,8 @@ public class FacebookAccount {
     public String getCurrentLocation() {return current_location;}
 
     public void setCurrentLocation(String location) {current_location = location;}
+
+    public String toString() {
+        return name + " " + age + " " + current_location;
+    }
 }
