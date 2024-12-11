@@ -24,6 +24,7 @@ using namespace std;
  * Complexity: O(n ^ 2)
  *
  * For the shortest_path function I use BFS, and then I rebuild the path by going on the parent from the destination node to the start node.
+ * Complexity: O(V + E)
  */
 
 int get_neighbors(const Grid *grid, Point p, Point neighb[]) {
