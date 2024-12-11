@@ -7,15 +7,15 @@ public class C {
     }
     public static void main(String[] args) {
         C obj = new C();
-        System.out.println(obj.a.valoare);
-        System.out.println(obj.b.valoare); //
-        System.out.println(obj.a.nume); //
-        System.out.println(obj.b.nume); //
-        System.out.println(obj.a); //
-        System.out.println(obj.b); //
-        System.out.println(obj.a instanceof B); //
-        System.out.println(obj.b instanceof A); //
-        System.out.println(obj.b.getClass().getName()); //
-        System.out.println(A.info); //
+        System.out.println(obj.a.valoare); // 34
+        System.out.println(obj.b.valoare); // 34
+        System.out.println(obj.a.nume); // Mos Nicolae Craciun
+        System.out.println(obj.b.nume); // Mos Nicolae Craciun
+        System.out.println(obj.a); // Cadouri
+        System.out.println(obj.b); // Cadouri
+        System.out.println(obj.a instanceof B); // true
+        System.out.println(obj.b instanceof A); // true
+        System.out.println(obj.b.getClass().getName()); // A
+        System.out.println(A.info); // Decembrie 6
     }
 }
