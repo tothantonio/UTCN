@@ -128,7 +128,9 @@ bool dfsVisit(Graph G, Node *u, bool topoSort = false, NodeLinkedList **first = 
             if (op != NULL) op->count();
             u->adj[i]->parent = u;
             bool result = dfsVisit(G, u->adj[i], topoSort, first, op);
-            acyclic = acyclic == false ? false : result;
+            if (acyclic) {
+                acyclic = result;
+            }
         } else if (u->adj[i]->color == GRAY && u != u->adj[i]) {
             acyclic = false;
         }
@@ -159,7 +161,9 @@ bool dfs(Graph G, bool topoSort = false, NodeLinkedList **first = NULL, Operatio
         if (G.vertices[i]->color == WHITE) {
             bool result = dfsVisit(G, G.vertices[i], topoSort, first, op);
             // if the graph is acyclic, set the acyclic variable to the result of the dfsVisit function
-            acyclic = acyclic == false ? false : result;
+            if (acyclic) {
+                acyclic = result;
+            }
         }
     }
 
@@ -191,7 +195,6 @@ void STRONG_CONNECT(Graph G, Node *u, int &index, LinkedList &L, int &nComponent
             u->lowLink = min(u->lowLink, u->adj[i]->index);
         }
     }
-
     Node *v;
     if (u->lowLink == u->index) {
         nComponents++;
