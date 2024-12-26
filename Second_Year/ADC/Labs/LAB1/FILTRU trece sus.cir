@@ -1,13 +1,18 @@
 [aimspice]
 [description]
-113
+82
 Filtru Trece-Sus
-c1 in out 470n
-r1 out 0 10k
-!vin in 0 dc 5 sin(0 5 1k 0 0)
-vin in 0 dc 5 sin(0 5 10 0 0)
+c1 in out 1800n
+r1 out 0 1k
+vin in 0 dc 5 sin(0 5 100 0 0)
 
 
+[dc]
+1
+vin
+0
+5
+0.1
 [tran]
 1e-9
 6e-3
@@ -18,7 +23,7 @@ X
 4 1
 0
 1 1
-1 1 -4 6
+1 1 0 5
 2
 v(in)
 v(out)

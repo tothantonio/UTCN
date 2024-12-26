@@ -7,8 +7,8 @@
                  *                                           *
                  *********************************************
 
-	Date: Fri Nov  1 11:28:13 2024
-	Circuit File: C:\Users\40756\OneDrive\Desktop\Inversor cu tranzistor bipolar(analiza curent continuu).cir
+	Date: Thu Dec 26 16:03:08 2024
+	Circuit File: D:\UTCN\Second_Year\ADC\Labs\LAB4\Inversor cu tranzistor bipolar(analiza curent continuu).cir
 	Analysis: DC Transfer Curves
 
 **************************  Circuit Description  **************************
@@ -26,10 +26,7 @@
     11:  Vec ec 0 DC 5
     12:  Veb eb 0 DC -1
     13:  
-    14:  !*Vin=0V => tranzistorul Q e blocat => Vout=Vec=5V(de la sursa)
-    15:  !*Vin=5V => transiztorul Q e saturat => Vce=0.2V => Vout=0.2V(e considerat 0 logic)
-    16:  
-    17:  .dc Vin 0 5 0.1
+    14:  .dc Vin 0 5 0.1
 
 ***************************  Model Parameters  ****************************
 
@@ -54,7 +51,7 @@
 *************************  Simulation Statistics  *************************
 
 	Total number of iterations...........: 125
-	Total analysis time (sec)............: 0.02
+	Total analysis time (sec)............: 0.021
 	Time spent in device loading (sec)...: 0.002
 	Time spent in L-U decomposition (sec): 0
 	Time spent in matrix reordering (sec): 0

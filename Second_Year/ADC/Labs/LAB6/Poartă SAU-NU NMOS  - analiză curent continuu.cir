@@ -1,7 +1,7 @@
 [aimspice]
 [description]
-287
-Poarta SAU-NU NMOS(analiza semnal pulse)
+258
+Poarta SAU-NU NMOS(analiza curent continuu)
 
 M1 out b 0 0 NMOS1 l=1u w=10u
 M2 out a 0 0 NMOS1 l=1u w=10u
@@ -12,28 +12,20 @@ M3 dd gg out out NMOS2 l=10u w=1u
 
 Vdd dd 0 DC 5
 Vgg gg 0 DC 7.5
-Va a 0 pulse(0 5 0 1e-10 1e-10 1e-9 2e-9)
+Va a 0 DC 5
 Vb b 0 DC 0
-
 [dc]
 1
 Va
 0
 5
 0.1
-[tran]
-1e-10
-5e-9
-X
-X
-0
 [ana]
-4 1
+1 1
 0
 1 1
 1 1 0 5
-3
+2
 v(out)
-v(b)
 v(a)
 [end]

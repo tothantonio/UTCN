@@ -1,0 +1,75 @@
+
+                 *********************************************
+                 *                                           *
+                 *             A I M - S p i c e             *
+                 *                                           *
+                 *         Professional Version 2020.100           *
+                 *                                           *
+                 *********************************************
+
+	Date: Thu Dec 26 16:06:32 2024
+	Circuit File: D:\UTCN\Second_Year\ADC\Labs\LAB6\Inversor NMOS static - analizã pulse.cir
+	Analysis: Transient
+
+**************************  Circuit Description  **************************
+
+     1:  Inversor NMOS static(analiza semnal pulse)
+     2:  
+     3:  !*Ordinea parametrilor pentru tranzistorul NMOS: DGSB
+     4:  M1 out in 0 0 NMOS1 l=1u w=1u
+     5:  .Model NMOS1 nmos vto=1.5
+     6:  
+     7:  M2 dd gg out out NMOS2 l=25u w=1u
+     8:  .Model NMOS2 nmos vto=2.5
+     9:  
+    10:  Vin in 0 pulse(0 5 0 1e-10 1e-10 1e-9 2e-9)
+    11:  Vdd dd 0 DC 5
+    12:  Vgg gg 0 DC 7.5
+    13:  
+    14:  !*Vin=0V => M1 blocat => Vout=Vgg-Vt=7.5V-2.5V=5V
+    15:  !*Vin=5V => M1 deschis => Vout=0V
+    16:  
+    17:  .tran 1e-10 5e-9
+
+***************************  Model Parameters  ****************************
+
+
+***************  Device Parameters (Only for .op analysis)  ***************
+
+
+
+**************************  Analysis Parameters  **************************
+
+	Stepsize ............ : 1e-10
+	Final time .......... : 5e-9
+	Use Initial Conditions: Off
+
+
+
+**************  Options (Only those different from default)  **************
+
+
+
+*************************  Simulation Statistics  *************************
+
+	Total number of iterations.....................: 274
+	Number of iterations for transient analysis....: 263
+	Total number of timepoints.....................: 90
+	Number of timepoints accepted..................: 89
+	Number of timepoints rejected..................: 1
+	Total analysis time (sec)......................: 0.025
+	Transient analysis time (sec)..................: 0.02
+	Time spent in device loading (sec).............: 0
+	Time spent in L-U decomposition (sec)..........: 0
+	Time spent in matrix reordering (sec)..........: 0
+	Time spent in matrix solving (sec).............: 0
+	Time spent in transient L-U decomposition (sec): 0
+	Time spent in transient matrix solving (sec)...: 0
+
+***************************  Kernel Messages  *****************************
+
+Circuit: Inversor NMOS static(analiza semnal pulse)
+
+Warning: vin: no DC value, transient time 0 value used
+Warning: vin: no DC value, transient time 0 value used
+

@@ -7,8 +7,8 @@
                  *                                           *
                  *********************************************
 
-	Date: Fri Nov  1 11:26:20 2024
-	Circuit File: C:\Users\40756\OneDrive\Desktop\Inversor cu tranzistor bipolar(analiza semnal pulse).cir
+	Date: Thu Dec 26 16:03:22 2024
+	Circuit File: D:\UTCN\Second_Year\ADC\Labs\LAB4\Inversor cu tranzistor bipolar(analiza semnal pulse).cir
 	Analysis: Transient
 
 **************************  Circuit Description  **************************
@@ -29,10 +29,7 @@
     14:  Vec ec 0 DC 5
     15:  Veb eb 0 DC -1
     16:  
-    17:  !*Vin=0V => tranzistorul Q e blocat => Vout=Vec=5V(de la sursa)
-    18:  !*Vin=5V => transiztorul Q e saturat => Vce=0.2V => Vout=0.2V(e considerat 0 logic)
-    19:  
-    20:  .tran 1e-9 5e-7
+    17:  .tran 1e-9 5e-7
 
 ***************************  Model Parameters  ****************************
 
@@ -60,9 +57,9 @@
 	Total number of timepoints.....................: 177
 	Number of timepoints accepted..................: 157
 	Number of timepoints rejected..................: 20
-	Total analysis time (sec)......................: 0.048
-	Transient analysis time (sec)..................: 0.045
-	Time spent in device loading (sec).............: 0.007
+	Total analysis time (sec)......................: 0.038
+	Transient analysis time (sec)..................: 0.029
+	Time spent in device loading (sec).............: 0.003
 	Time spent in L-U decomposition (sec)..........: 0
 	Time spent in matrix reordering (sec)..........: 0
 	Time spent in matrix solving (sec).............: 0

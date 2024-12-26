@@ -7,20 +7,19 @@
                  *                                           *
                  *********************************************
 
-	Date: Fri Oct 11 12:44:41 2024
-	Circuit File: D:\UTCN\Second_Year\ADC\Labs\LABORATOR1\FILTRU trece sus.cir
+	Date: Thu Dec 26 15:59:54 2024
+	Circuit File: D:\UTCN\Second_Year\ADC\Labs\LAB1\FILTRU trece sus.cir
 	Analysis: Transient
 
 **************************  Circuit Description  **************************
 
      1:  Filtru Trece-Sus
-     2:  c1 in out 470n
-     3:  r1 out 0 10k
-     4:  !vin in 0 dc 5 sin(0 5 1k 0 0)
-     5:  vin in 0 dc 5 sin(0 5 1k 0 0)
+     2:  c1 in out 1800n
+     3:  r1 out 0 1k
+     4:  vin in 0 dc 5 sin(0 5 100 0 0)
+     5:  
      6:  
-     7:  
-     8:  .tran 1e-9 6e-3
+     7:  .tran 1e-9 6e-3
 
 ***************************  Model Parameters  ****************************
 
@@ -43,13 +42,13 @@
 
 *************************  Simulation Statistics  *************************
 
-	Total number of iterations.....................: 157
-	Number of iterations for transient analysis....: 154
-	Total number of timepoints.....................: 78
-	Number of timepoints accepted..................: 76
-	Number of timepoints rejected..................: 2
-	Total analysis time (sec)......................: 0.03
-	Transient analysis time (sec)..................: 0.024
+	Total number of iterations.....................: 151
+	Number of iterations for transient analysis....: 148
+	Total number of timepoints.....................: 75
+	Number of timepoints accepted..................: 75
+	Number of timepoints rejected..................: 0
+	Total analysis time (sec)......................: 0.023
+	Transient analysis time (sec)..................: 0.02
 	Time spent in device loading (sec).............: 0
 	Time spent in L-U decomposition (sec)..........: 0
 	Time spent in matrix reordering (sec)..........: 0

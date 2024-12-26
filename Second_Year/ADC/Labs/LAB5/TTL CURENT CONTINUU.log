@@ -7,7 +7,7 @@
                  *                                           *
                  *********************************************
 
-	Date: Fri Nov  8 12:37:29 2024
+	Date: Thu Dec 26 16:05:56 2024
 	Circuit File: D:\UTCN\Second_Year\ADC\Labs\LAB5\TTL CURENT CONTINUU.cir
 	Analysis: DC Transfer Curves
 
@@ -22,7 +22,7 @@
      7:  Q1A 4 1 A Tranzistor
      8:  Q1B 4 1 B Tranzistor
      9:  
-    10:  Q2 2 4 6 Tranzsitor
+    10:  Q2 2 4 6 Tranzistor
     11:  Q3 3 2 5 Tranzistor
     12:  Q4 out 6 0 Tranzistor
     13:  .Model Tranzistor NPN tr=5e-9 tf=8e-9
@@ -32,12 +32,12 @@
     17:  D 5 out Dioda
     18:  .Model Dioda D tt=5e-9
     19:  
-    20:  Va 0 a DC 5
-    21:  Vb 0 b DC 5
+    20:  Va a 0 DC 5
+    21:  Vb b 0 DC 5
     22:  Vcc cc 0 DC 5
     23:  
     24:  
-    25:  .dc va 0 5 0.1
+    25:  .dc Va 0 5 0.1
 
 ***************************  Model Parameters  ****************************
 
@@ -48,7 +48,7 @@
 
 **************************  Analysis Parameters  **************************
 
-	Source name #1 .. : va
+	Source name #1 .. : Va
 	Start value #1 .. : 0
 	End value #1 .... : 5
 	Increment value #1: 0.1
@@ -59,11 +59,17 @@
 
 
 
+*************************  Simulation Statistics  *************************
+
+	Total number of iterations...........: 163
+	Total analysis time (sec)............: 0.023
+	Time spent in device loading (sec)...: 0
+	Time spent in L-U decomposition (sec): 0
+	Time spent in matrix reordering (sec): 0
+	Time spent in matrix solving (sec)...: 0
+
 ***************************  Kernel Messages  *****************************
 
 Circuit: CIRCUITE LOGICE TTL
-
-Error on line 10 : q2 2 4 6 tranzsitor
- unable to find definition of model  - default assumed 
 
 

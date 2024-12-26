@@ -1,0 +1,67 @@
+
+                 *********************************************
+                 *                                           *
+                 *             A I M - S p i c e             *
+                 *                                           *
+                 *         Professional Version 2020.100           *
+                 *                                           *
+                 *********************************************
+
+	Date: Thu Dec 26 16:00:31 2024
+	Circuit File: D:\UTCN\Second_Year\ADC\Labs\LAB2\redresor_dubla_alternanta.cir
+	Analysis: Transient
+
+**************************  Circuit Description  **************************
+
+     1:  Redresor dubla alternanta in punte
+     2:  D1 1 2 diodaS
+     3:  D2 0 1 diodaS
+     4:  D3 0 3 diodaS
+     5:  D4 3 2 diodaS
+     6:  .Model diodaS D tt=1e-9
+     7:  Rl 2 0 100
+     8:  vin 1 3 sin(0 5 1k 0 0)
+     9:  .tran 1e-9 6e-3
+
+***************************  Model Parameters  ****************************
+
+
+***************  Device Parameters (Only for .op analysis)  ***************
+
+
+
+**************************  Analysis Parameters  **************************
+
+	Stepsize ............ : 1e-9
+	Final time .......... : 6e-3
+	Use Initial Conditions: Off
+
+
+
+**************  Options (Only those different from default)  **************
+
+
+
+*************************  Simulation Statistics  *************************
+
+	Total number of iterations.....................: 762
+	Number of iterations for transient analysis....: 755
+	Total number of timepoints.....................: 188
+	Number of timepoints accepted..................: 141
+	Number of timepoints rejected..................: 47
+	Total analysis time (sec)......................: 0.03
+	Transient analysis time (sec)..................: 0.028
+	Time spent in device loading (sec).............: 0
+	Time spent in L-U decomposition (sec)..........: 0
+	Time spent in matrix reordering (sec)..........: 0
+	Time spent in matrix solving (sec).............: 0
+	Time spent in transient L-U decomposition (sec): 0
+	Time spent in transient matrix solving (sec)...: 0
+
+***************************  Kernel Messages  *****************************
+
+Circuit: Redresor dubla alternanta in punte
+
+Warning: vin: no DC value, transient time 0 value used
+Warning: vin: no DC value, transient time 0 value used
+

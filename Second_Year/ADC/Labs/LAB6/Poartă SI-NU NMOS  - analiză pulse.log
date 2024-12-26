@@ -1,0 +1,73 @@
+
+                 *********************************************
+                 *                                           *
+                 *             A I M - S p i c e             *
+                 *                                           *
+                 *         Professional Version 2020.100           *
+                 *                                           *
+                 *********************************************
+
+	Date: Thu Dec 26 16:08:41 2024
+	Circuit File: D:\UTCN\Second_Year\ADC\Labs\LAB6\Poartã SI-NU NMOS  - analizã pulse.cir
+	Analysis: Transient
+
+**************************  Circuit Description  **************************
+
+     1:  Poarta SI-NU NMOS(analiza semnal pulse)
+     2:  
+     3:  M1 temp b 0 0 NMOS1 l=1u w=10u
+     4:  M2 out a temp temp NMOS1 l=1u w=10u
+     5:  .Model NMOS1 nmos vto=1.5
+     6:  
+     7:  M3 dd gg out out NMOS2 l=10u w=1u
+     8:  .Model NMOS2 nmos vto=2.5
+     9:  
+    10:  Vdd dd 0 DC 5
+    11:  Vgg gg 0 DC 7.5
+    12:  Va a 0 pulse(0 5 0 1e-10 1e-10 1e-9 2e-9)
+    13:  Vb b 0 DC 5
+    14:  
+    15:  .tran 1e-10 5e-9
+
+***************************  Model Parameters  ****************************
+
+
+***************  Device Parameters (Only for .op analysis)  ***************
+
+
+
+**************************  Analysis Parameters  **************************
+
+	Stepsize ............ : 1e-10
+	Final time .......... : 5e-9
+	Use Initial Conditions: Off
+
+
+
+**************  Options (Only those different from default)  **************
+
+
+
+*************************  Simulation Statistics  *************************
+
+	Total number of iterations.....................: 277
+	Number of iterations for transient analysis....: 266
+	Total number of timepoints.....................: 90
+	Number of timepoints accepted..................: 89
+	Number of timepoints rejected..................: 1
+	Total analysis time (sec)......................: 0.018
+	Transient analysis time (sec)..................: 0.016
+	Time spent in device loading (sec).............: 0
+	Time spent in L-U decomposition (sec)..........: 0
+	Time spent in matrix reordering (sec)..........: 0
+	Time spent in matrix solving (sec).............: 0
+	Time spent in transient L-U decomposition (sec): 0
+	Time spent in transient matrix solving (sec)...: 0
+
+***************************  Kernel Messages  *****************************
+
+Circuit: Poarta SI-NU NMOS(analiza semnal pulse)
+
+Warning: va: no DC value, transient time 0 value used
+Warning: va: no DC value, transient time 0 value used
+

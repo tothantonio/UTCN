@@ -7,8 +7,8 @@
                  *                                           *
                  *********************************************
 
-	Date: Fri Oct 18 10:39:05 2024
-	Circuit File: D:\UTCN\Second_Year\ADC\Labs\LABORATOR1\redresor_mono.cir
+	Date: Thu Dec 26 16:00:14 2024
+	Circuit File: D:\UTCN\Second_Year\ADC\Labs\LAB2\redresor_mono.cir
 	Analysis: Transient
 
 **************************  Circuit Description  **************************
@@ -50,9 +50,9 @@
 	Total number of timepoints.....................: 130
 	Number of timepoints accepted..................: 105
 	Number of timepoints rejected..................: 25
-	Total analysis time (sec)......................: 0.07
-	Transient analysis time (sec)..................: 0.064
-	Time spent in device loading (sec).............: 0.003
+	Total analysis time (sec)......................: 0.035
+	Transient analysis time (sec)..................: 0.031
+	Time spent in device loading (sec).............: 0.002
 	Time spent in L-U decomposition (sec)..........: 0
 	Time spent in matrix reordering (sec)..........: 0
 	Time spent in matrix solving (sec).............: 0

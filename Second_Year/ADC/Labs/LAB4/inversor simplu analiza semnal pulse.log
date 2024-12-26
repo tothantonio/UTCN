@@ -7,9 +7,9 @@
                  *                                           *
                  *********************************************
 
-	Date: Fri Nov  1 11:23:42 2024
+	Date: Thu Dec 26 16:03:48 2024
 	Circuit File: D:\UTCN\Second_Year\ADC\Labs\LAB4\inversor simplu analiza semnal pulse.cir
-	Analysis: DC Transfer Curves
+	Analysis: Transient
 
 **************************  Circuit Description  **************************
 
@@ -25,7 +25,7 @@
     10:  Vin in 0 pulse(0 5 0 1e-9 1e-9 1e-7 2e-7)
     11:  Vec ec 0 DC 5
     12:  
-    13:  .dc vin 0 5 0.1
+    13:  .tran 1e-9 6e-7
 
 ***************************  Model Parameters  ****************************
 
@@ -36,10 +36,9 @@
 
 **************************  Analysis Parameters  **************************
 
-	Source name #1 .. : vin
-	Start value #1 .. : 0
-	End value #1 .... : 5
-	Increment value #1: 0.1
+	Stepsize ............ : 1e-9
+	Final time .......... : 6e-7
+	Use Initial Conditions: Off
 
 
 
@@ -49,12 +48,19 @@
 
 *************************  Simulation Statistics  *************************
 
-	Total number of iterations...........: 105
-	Total analysis time (sec)............: 0.036
-	Time spent in device loading (sec)...: 0
-	Time spent in L-U decomposition (sec): 0
-	Time spent in matrix reordering (sec): 0
-	Time spent in matrix solving (sec)...: 0
+	Total number of iterations.....................: 721
+	Number of iterations for transient analysis....: 716
+	Total number of timepoints.....................: 227
+	Number of timepoints accepted..................: 195
+	Number of timepoints rejected..................: 32
+	Total analysis time (sec)......................: 0.027
+	Transient analysis time (sec)..................: 0.023
+	Time spent in device loading (sec).............: 0.001
+	Time spent in L-U decomposition (sec)..........: 0.001
+	Time spent in matrix reordering (sec)..........: 0
+	Time spent in matrix solving (sec).............: 0
+	Time spent in transient L-U decomposition (sec): 0.001
+	Time spent in transient matrix solving (sec)...: 0
 
 ***************************  Kernel Messages  *****************************
 

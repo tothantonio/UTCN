@@ -7,13 +7,13 @@
                  *                                           *
                  *********************************************
 
-	Date: Fri Nov 15 13:01:41 2024
+	Date: Thu Dec 26 16:07:33 2024
 	Circuit File: D:\UTCN\Second_Year\ADC\Labs\LAB6\Poartã SAU-NU NMOS  - analizã curent continuu.cir
-	Analysis: Transient
+	Analysis: DC Transfer Curves
 
 **************************  Circuit Description  **************************
 
-     1:  Poarta SAU-NU NMOS(analiza semnal pulse)
+     1:  Poarta SAU-NU NMOS(analiza curent continuu)
      2:  
      3:  M1 out b 0 0 NMOS1 l=1u w=10u
      4:  M2 out a 0 0 NMOS1 l=1u w=10u
@@ -24,10 +24,9 @@
      9:  
     10:  Vdd dd 0 DC 5
     11:  Vgg gg 0 DC 7.5
-    12:  Va a 0 pulse(0 5 0 1e-10 1e-10 1e-9 2e-9)
+    12:  Va a 0 DC 5
     13:  Vb b 0 DC 0
-    14:  
-    15:  .tran 1e-10 5e-9
+    14:  .dc Va 0 5 0.1
 
 ***************************  Model Parameters  ****************************
 
@@ -38,9 +37,10 @@
 
 **************************  Analysis Parameters  **************************
 
-	Stepsize ............ : 1e-10
-	Final time .......... : 5e-9
-	Use Initial Conditions: Off
+	Source name #1 .. : Va
+	Start value #1 .. : 0
+	End value #1 .... : 5
+	Increment value #1: 0.1
 
 
 
@@ -50,24 +50,15 @@
 
 *************************  Simulation Statistics  *************************
 
-	Total number of iterations.....................: 276
-	Number of iterations for transient analysis....: 264
-	Total number of timepoints.....................: 90
-	Number of timepoints accepted..................: 89
-	Number of timepoints rejected..................: 1
-	Total analysis time (sec)......................: 0.064
-	Transient analysis time (sec)..................: 0.054
-	Time spent in device loading (sec).............: 0.004
-	Time spent in L-U decomposition (sec)..........: 0
-	Time spent in matrix reordering (sec)..........: 0
-	Time spent in matrix solving (sec).............: 0.001
-	Time spent in transient L-U decomposition (sec): 0
-	Time spent in transient matrix solving (sec)...: 0.001
+	Total number of iterations...........: 124
+	Total analysis time (sec)............: 0.013
+	Time spent in device loading (sec)...: 0
+	Time spent in L-U decomposition (sec): 0
+	Time spent in matrix reordering (sec): 0
+	Time spent in matrix solving (sec)...: 0
 
 ***************************  Kernel Messages  *****************************
 
-Circuit: Poarta SAU-NU NMOS(analiza semnal pulse)
+Circuit: Poarta SAU-NU NMOS(analiza curent continuu)
 
-Warning: va: no DC value, transient time 0 value used
-Warning: va: no DC value, transient time 0 value used
 

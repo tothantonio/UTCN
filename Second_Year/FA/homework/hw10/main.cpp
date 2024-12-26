@@ -139,7 +139,7 @@ bool dfsVisit(Graph G, Node *u, bool topoSort = false, NodeLinkedList **first = 
     if (op != NULL) op->count();
     u->color = BLACK;
 
-    // if the topoSort parameter is true, insert the vertex in the linked list
+    // if the topoSort parameter is true, insert the vertex
     if (topoSort == true) {
         insertFirst(first, u);
     }
