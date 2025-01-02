@@ -2,6 +2,7 @@ package centruSpatial;
 
 import javax.swing.*;
 import java.awt.*;
+import java.util.ArrayList;
 import java.util.Arrays;
 
 public class MainGUI {
@@ -21,7 +22,7 @@ public class MainGUI {
 
         adaugaButton.addActionListener(e -> {
             String nume = numeField.getText();
-            Apolo apolo = new Apolo(nume, 50000, "Alb", 1969, (java.util.ArrayList<String>) Arrays.asList("Luna"));
+            Apolo apolo = new Apolo(nume, 50000, "Alb", 1969, new ArrayList<>(Arrays.asList("Luna")));
             centru.adaugaAeronava(apolo);
             listaAeronaveModel.addElement(apolo.getNume());
             numeField.setText("");

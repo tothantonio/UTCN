@@ -11,11 +11,6 @@ public class Apolo extends Aeronava{
         this.planeteDestinatie = planeteDestinatie;
     }
 
-    public ArrayList<String> getPlaneteDestinatie() {
-        return planeteDestinatie;
-    }
-
-    public String toString() {
-        return super.toString() + ", Planete Destinatie=" + planeteDestinatie;
-    }
+    public ArrayList<String> getPlaneteDestinatie() {return planeteDestinatie;}
+    public String toString() {return super.toString() + ", Planete Destinatie=" + planeteDestinatie;}
 }

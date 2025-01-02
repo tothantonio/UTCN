@@ -13,25 +13,11 @@ public abstract class Aeronava implements Comparable<Aeronava> {
         this.anFabricatie = anFabricatie;
     }
 
-    public String getNume() {
-        return nume;
-    }
-
-    public int getMaxKm() {
-        return maxKm;
-    }
-
-    public String getCuloare() {
-        return culoare;
-    }
-
-    public int getAnFabricatie() {
-        return anFabricatie;
-    }
-
-    public int compareTo(Aeronava aeronava) {
-        return this.nume.compareTo(aeronava.nume);
-    }
+    public String getNume() {return nume;}
+    public int getMaxKm() {return maxKm;}
+    public String getCuloare() {return culoare;}
+    public int getAnFabricatie() {return anFabricatie;}
+    public int compareTo(Aeronava aeronava) {return this.nume.compareTo(aeronava.nume);}
 
     public String toString() {
         return "Aeronava " +
