@@ -7,7 +7,7 @@
                  *                                           *
                  *********************************************
 
-	Date: Thu Dec 26 16:05:37 2024
+	Date: Thu Jan  9 12:10:05 2025
 	Circuit File: D:\UTCN\Second_Year\ADC\Labs\LAB5\TTL semnal pulse.cir
 	Analysis: Transient
 
@@ -65,8 +65,8 @@
 	Total number of timepoints.....................: 444
 	Number of timepoints accepted..................: 341
 	Number of timepoints rejected..................: 103
-	Total analysis time (sec)......................: 0.084
-	Transient analysis time (sec)..................: 0.079
+	Total analysis time (sec)......................: 0.075
+	Transient analysis time (sec)..................: 0.073
 	Time spent in device loading (sec).............: 0.006
 	Time spent in L-U decomposition (sec)..........: 0
 	Time spent in matrix reordering (sec)..........: 0

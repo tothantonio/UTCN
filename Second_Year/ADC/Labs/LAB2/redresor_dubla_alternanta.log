@@ -7,7 +7,7 @@
                  *                                           *
                  *********************************************
 
-	Date: Thu Dec 26 16:00:31 2024
+	Date: Thu Jan  9 11:49:12 2025
 	Circuit File: D:\UTCN\Second_Year\ADC\Labs\LAB2\redresor_dubla_alternanta.cir
 	Analysis: Transient
 
@@ -49,9 +49,9 @@
 	Total number of timepoints.....................: 188
 	Number of timepoints accepted..................: 141
 	Number of timepoints rejected..................: 47
-	Total analysis time (sec)......................: 0.03
-	Transient analysis time (sec)..................: 0.028
-	Time spent in device loading (sec).............: 0
+	Total analysis time (sec)......................: 0.026
+	Transient analysis time (sec)..................: 0.025
+	Time spent in device loading (sec).............: 0.001
 	Time spent in L-U decomposition (sec)..........: 0
 	Time spent in matrix reordering (sec)..........: 0
 	Time spent in matrix solving (sec).............: 0

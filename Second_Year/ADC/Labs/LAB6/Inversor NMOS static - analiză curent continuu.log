@@ -7,7 +7,7 @@
                  *                                           *
                  *********************************************
 
-	Date: Thu Dec 26 16:06:22 2024
+	Date: Thu Jan  9 12:10:59 2025
 	Circuit File: D:\UTCN\Second_Year\ADC\Labs\LAB6\Inversor NMOS static - analizã curent continuu.cir
 	Analysis: DC Transfer Curves
 
@@ -54,11 +54,11 @@
 *************************  Simulation Statistics  *************************
 
 	Total number of iterations...........: 120
-	Total analysis time (sec)............: 0.019
+	Total analysis time (sec)............: 0.009
 	Time spent in device loading (sec)...: 0
 	Time spent in L-U decomposition (sec): 0
 	Time spent in matrix reordering (sec): 0
-	Time spent in matrix solving (sec)...: 0.001
+	Time spent in matrix solving (sec)...: 0
 
 ***************************  Kernel Messages  *****************************
 

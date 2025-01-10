@@ -7,7 +7,7 @@
                  *                                           *
                  *********************************************
 
-	Date: Thu Dec 26 16:05:56 2024
+	Date: Thu Jan  9 12:10:21 2025
 	Circuit File: D:\UTCN\Second_Year\ADC\Labs\LAB5\TTL CURENT CONTINUU.cir
 	Analysis: DC Transfer Curves
 
@@ -62,11 +62,11 @@
 *************************  Simulation Statistics  *************************
 
 	Total number of iterations...........: 163
-	Total analysis time (sec)............: 0.023
-	Time spent in device loading (sec)...: 0
+	Total analysis time (sec)............: 0.025
+	Time spent in device loading (sec)...: 0.001
 	Time spent in L-U decomposition (sec): 0
 	Time spent in matrix reordering (sec): 0
-	Time spent in matrix solving (sec)...: 0
+	Time spent in matrix solving (sec)...: 0.001
 
 ***************************  Kernel Messages  *****************************
 

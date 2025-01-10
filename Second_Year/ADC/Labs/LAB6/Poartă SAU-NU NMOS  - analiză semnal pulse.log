@@ -7,7 +7,7 @@
                  *                                           *
                  *********************************************
 
-	Date: Thu Dec 26 16:08:09 2024
+	Date: Thu Jan  9 12:16:42 2025
 	Circuit File: D:\UTCN\Second_Year\ADC\Labs\LAB6\Poartã SAU-NU NMOS  - analizã semnal pulse.cir
 	Analysis: Transient
 
@@ -55,9 +55,9 @@
 	Total number of timepoints.....................: 90
 	Number of timepoints accepted..................: 89
 	Number of timepoints rejected..................: 1
-	Total analysis time (sec)......................: 0.028
-	Transient analysis time (sec)..................: 0.027
-	Time spent in device loading (sec).............: 0.001
+	Total analysis time (sec)......................: 0.03
+	Transient analysis time (sec)..................: 0.025
+	Time spent in device loading (sec).............: 0
 	Time spent in L-U decomposition (sec)..........: 0
 	Time spent in matrix reordering (sec)..........: 0
 	Time spent in matrix solving (sec).............: 0

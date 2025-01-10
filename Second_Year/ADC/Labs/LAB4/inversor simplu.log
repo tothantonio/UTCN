@@ -7,7 +7,7 @@
                  *                                           *
                  *********************************************
 
-	Date: Thu Dec 26 16:04:01 2024
+	Date: Thu Jan  9 12:08:29 2025
 	Circuit File: D:\UTCN\Second_Year\ADC\Labs\LAB4\inversor simplu.cir
 	Analysis: DC Transfer Curves
 
@@ -48,7 +48,7 @@
 *************************  Simulation Statistics  *************************
 
 	Total number of iterations...........: 123
-	Total analysis time (sec)............: 0.02
+	Total analysis time (sec)............: 0.013
 	Time spent in device loading (sec)...: 0
 	Time spent in L-U decomposition (sec): 0
 	Time spent in matrix reordering (sec): 0

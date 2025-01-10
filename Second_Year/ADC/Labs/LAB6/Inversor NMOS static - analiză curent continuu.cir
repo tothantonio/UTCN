@@ -1,6 +1,6 @@
 [aimspice]
 [description]
-350
+264
 Inversor NMOS static(analiza curent continuu)
 
 !*Ordine parametri tranzistor NMOS: DGSB
@@ -14,8 +14,6 @@ Vin in 0 DC 0
 Vdd dd 0 DC 5
 Vgg gg 0 DC 7.5
 
-!*Vin=0V => M1 blocat => Vout=Vgg-Vt=7.5V-2.5V=5V
-!*Vin=5V => M1 deschis => Vout=0V
 
 [dc]
 1

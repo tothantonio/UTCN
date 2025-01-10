@@ -7,7 +7,7 @@
                  *                                           *
                  *********************************************
 
-	Date: Thu Dec 26 16:03:22 2024
+	Date: Thu Jan  9 12:03:00 2025
 	Circuit File: D:\UTCN\Second_Year\ADC\Labs\LAB4\Inversor cu tranzistor bipolar(analiza semnal pulse).cir
 	Analysis: Transient
 
@@ -57,9 +57,9 @@
 	Total number of timepoints.....................: 177
 	Number of timepoints accepted..................: 157
 	Number of timepoints rejected..................: 20
-	Total analysis time (sec)......................: 0.038
-	Transient analysis time (sec)..................: 0.029
-	Time spent in device loading (sec).............: 0.003
+	Total analysis time (sec)......................: 0.024
+	Transient analysis time (sec)..................: 0.019
+	Time spent in device loading (sec).............: 0
 	Time spent in L-U decomposition (sec)..........: 0
 	Time spent in matrix reordering (sec)..........: 0
 	Time spent in matrix solving (sec).............: 0

@@ -7,9 +7,9 @@
                  *                                           *
                  *********************************************
 
-	Date: Thu Dec 26 16:10:09 2024
+	Date: Thu Jan  9 14:19:07 2025
 	Circuit File: D:\UTCN\Second_Year\ADC\Labs\LAB8\Inversor CMOS(analiza curent continuu).cir
-	Analysis: Transient
+	Analysis: DC Transfer Curves
 
 **************************  Circuit Description  **************************
 
@@ -21,12 +21,13 @@
      6:  Mn out in 0 0 NMOS1
      7:  .Model NMOS1 nmos vto=1.5
      8:  
-     9:  C1 out 0 15p
+     9:  C1 out 0 0.01p
     10:  
     11:  Vin in 0 dc 0 pulse(0 5 0 1e-10 1e-10 1e-6 2e-6)
     12:  Vss ss 0 DC 0
     13:  Vdd dd 0 DC 5
-    14:  .tran 1e-9 6e-6
+    14:  
+    15:  .dc Vin 0 5 0.1
 
 ***************************  Model Parameters  ****************************
 
@@ -37,9 +38,10 @@
 
 **************************  Analysis Parameters  **************************
 
-	Stepsize ............ : 1e-9
-	Final time .......... : 6e-6
-	Use Initial Conditions: Off
+	Source name #1 .. : Vin
+	Start value #1 .. : 0
+	End value #1 .... : 5
+	Increment value #1: 0.1
 
 
 
@@ -49,19 +51,12 @@
 
 *************************  Simulation Statistics  *************************
 
-	Total number of iterations.....................: 358
-	Number of iterations for transient analysis....: 352
-	Total number of timepoints.....................: 161
-	Number of timepoints accepted..................: 161
-	Number of timepoints rejected..................: 0
-	Total analysis time (sec)......................: 0.021
-	Transient analysis time (sec)..................: 0.019
-	Time spent in device loading (sec).............: 0.002
-	Time spent in L-U decomposition (sec)..........: 0
-	Time spent in matrix reordering (sec)..........: 0
-	Time spent in matrix solving (sec).............: 0
-	Time spent in transient L-U decomposition (sec): 0
-	Time spent in transient matrix solving (sec)...: 0
+	Total number of iterations...........: 126
+	Total analysis time (sec)............: 0.055
+	Time spent in device loading (sec)...: 0
+	Time spent in L-U decomposition (sec): 0
+	Time spent in matrix reordering (sec): 0
+	Time spent in matrix solving (sec)...: 0
 
 ***************************  Kernel Messages  *****************************
 

@@ -7,8 +7,8 @@
                  *                                           *
                  *********************************************
 
-	Date: Sat Oct 26 13:50:35 2024
-	Circuit File: D:\UTCN\Second_Year\ADC\Labs\LABORATOR3\Stabilizator parametric cu Dioda Zener.cir
+	Date: Thu Jan  9 12:06:58 2025
+	Circuit File: D:\UTCN\Second_Year\ADC\Labs\LAB3\Stabilizator parametric cu Dioda Zener.cir
 	Analysis: Transient
 
 **************************  Circuit Description  **************************
@@ -52,8 +52,8 @@
 	Total number of timepoints.....................: 343
 	Number of timepoints accepted..................: 270
 	Number of timepoints rejected..................: 73
-	Total analysis time (sec)......................: 0.035
-	Transient analysis time (sec)..................: 0.03
+	Total analysis time (sec)......................: 0.023
+	Transient analysis time (sec)..................: 0.02
 	Time spent in device loading (sec).............: 0
 	Time spent in L-U decomposition (sec)..........: 0
 	Time spent in matrix reordering (sec)..........: 0
