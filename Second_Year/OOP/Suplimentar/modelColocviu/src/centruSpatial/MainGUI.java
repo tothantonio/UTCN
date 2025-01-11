@@ -9,7 +9,7 @@ public class MainGUI {
     public static void main(String[] args) {
         CentruSpatial centru = new CentruSpatial();
 
-        JFrame frame = new JFrame("Centrul Spațial Marte");
+        JFrame frame = new JFrame("Centrul Spațial");
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.setSize(500, 500);
 

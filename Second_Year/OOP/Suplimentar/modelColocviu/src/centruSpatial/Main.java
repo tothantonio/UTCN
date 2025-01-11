@@ -1,11 +1,28 @@
 package centruSpatial;
 
-import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.Scanner;
 
 public class Main {
-    public static void main(String[] args) throws NoRachetaException {
+    public static void main(String[] args) {
+
+        Om om1 = new Om("Ion");
+        Om om2 = new Om("Vasile");
+        Om om3 = new Om("Gheorghe");
+
+        Robot robot1 = new Robot("R2D2");
+        Robot robot2 = new Robot("C3PO");
+
+        om1.mananca();
+        om2.doarme();
+        om3.lucreaza();
+        om1.pauza();
+
+        robot1.mananca();
+        robot2.doarme();
+        robot1.lucreaza();
+        robot2.pauza();
+
         CentruSpatial centru = new CentruSpatial();
         ArrayList<String> planete = new ArrayList<>();
 
@@ -21,9 +38,7 @@ public class Main {
         centru.adaugaAeronava(apolo2);
         centru.adaugaAeronava(apolo3);
 
-        centru.afiseazaAeronave();
-
-        Scanner sc =  new Scanner(System.in);
+        Scanner sc = new Scanner(System.in);
         System.out.println("Introduceti anul de plecare: ");
         int data = sc.nextInt();
 
@@ -31,6 +46,12 @@ public class Main {
         centru.pleacaRacheta(apolo2, 2001);
         centru.pleacaRacheta(apolo3, 2003);
 
-        centru.printRachetaPlecareDupa(data);
+        try {
+            centru.printRachetaPlecareDupa(data);
+        } catch (NoRachetaException e) {
+            System.out.println(e.getMessage());
+        }
+
+        centru.afiseazaAeronave();
     }
 }

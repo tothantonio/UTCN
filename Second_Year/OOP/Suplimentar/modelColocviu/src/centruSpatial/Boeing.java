@@ -9,8 +9,5 @@ public class Boeing extends Aeronava{
         this.pilot = pilot;
         this.nrPasageri = nrPasageri;
     }
-
-    public Pilot getPilot() {return pilot;}
-    public int getNrPasageri() {return nrPasageri;}
     public String toString() {return super.toString() + ", Pilot=" + pilot + ", Numar Pasageri=" + nrPasageri;}
 }

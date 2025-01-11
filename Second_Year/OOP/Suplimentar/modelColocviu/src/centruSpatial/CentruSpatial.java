@@ -1,44 +1,35 @@
 package centruSpatial;
-import java.time.LocalDate;
+
 import java.util.ArrayList;
-import java.util.Collections;
+import java.util.List;
 
 public class CentruSpatial {
-    private ArrayList<Aeronava> aeronave = new ArrayList<>();
-    private ArrayList<Apolo> rachetePlecare = new ArrayList<>();
-    int dataPlecare;
+    private ArrayList<Apolo> aeronave = new ArrayList<>();
 
-    public void adaugaAeronava(Aeronava aeronava) {
-        aeronave.add(aeronava);
-    }
-
-    public void pleacaRacheta(Apolo racheta, int dataPlecare) {
-        rachetePlecare.add(racheta);
-        this.dataPlecare = dataPlecare;
-        System.out.println("Racheta " + racheta.getNume() + " a plecat in anul " + dataPlecare);
-    }
-
-    public void printRachetaPlecareDupa(int data) throws NoRachetaException {
-        boolean gasit = false;
-        for(Apolo racheta : rachetePlecare) {
-            if(dataPlecare > data) {
-                System.out.println(racheta);
-                gasit = true;
-            }
-        }
-        if(!gasit) {
-            throw new NoRachetaException("Nu exista rachete plecate dupa de data de " + data);
-        }
-    }
-
-    public int getNumarAeronave() {
-        return aeronave.size();
-    }
+    public void adaugaAeronava(Apolo apolo) {aeronave.add(apolo);}
 
     public void afiseazaAeronave() {
-        Collections.sort(aeronave);
-        for(Aeronava aeronava : aeronave) {
-            System.out.println(aeronava);
+        for (Apolo apolo : aeronave) {
+            System.out.println(apolo);
         }
     }
+
+    public void pleacaRacheta(Apolo apolo, int anPlecare) {apolo.setAnPlecare(anPlecare);}
+
+    public void printRachetaPlecareDupa(int an) throws NoRachetaException {
+        List<Apolo> racheteDupaData = new ArrayList<>();
+        for (Apolo apolo : aeronave) {
+            if (apolo.getAnPlecare() > an) {
+                racheteDupaData.add(apolo);
+            }
+        }
+        if (racheteDupaData.isEmpty()) {
+            throw new NoRachetaException("Nu exista rachete plecate dupa de data de " + an);
+        }
+        for (Apolo apolo : racheteDupaData) {
+            System.out.println(apolo);
+        }
+    }
+
+    public int getNumarAeronave() {return aeronave.size();}
 }
