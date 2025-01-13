@@ -22,6 +22,13 @@ public class Main {
             System.out.println(e.getMessage());
         }
 
+        try{
+            checkTriangleInSquare((Triangle) shapes.get(1), (Square) shapes.get(8));
+            //triunghiul albastru cu patratul roz
+        } catch(InclusionNotPossibleException e){
+            System.out.println(e.getMessage());
+        }
+
         sortByArea(shapes);
 
         System.out.println("\nFormele sortate dupa aria lor:\n");
@@ -32,6 +39,9 @@ public class Main {
     }
     /*
     *   Red Triangle cannot fit in the Orange Square.
+
+        Blue Triangle can fit in the PinkSquare.
+
         Formele sortate dupa aria lor:
 
         Orange Square Area: 1,00
