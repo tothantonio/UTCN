@@ -4,12 +4,12 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class CentruSpatial {
-    private ArrayList<Apolo> aeronave = new ArrayList<>();
+    private ArrayList<Aeronava> aeronave = new ArrayList<>();
 
-    public void adaugaAeronava(Apolo apolo) {aeronave.add(apolo);}
+    public void adaugaAeronava(Aeronava aeronava) {aeronave.add(aeronava);}
 
     public void afiseazaAeronave() {
-        for (Apolo apolo : aeronave) {
+        for (Aeronava apolo : aeronave) {
             System.out.println(apolo);
         }
     }
@@ -18,9 +18,11 @@ public class CentruSpatial {
 
     public void printRachetaPlecareDupa(int an) throws NoRachetaException {
         List<Apolo> racheteDupaData = new ArrayList<>();
-        for (Apolo apolo : aeronave) {
-            if (apolo.getAnPlecare() > an) {
-                racheteDupaData.add(apolo);
+        for (Aeronava aeronava : aeronave) {
+            if(aeronava instanceof Apolo) {
+                if (((Apolo) aeronava).getAnPlecare() > an) {
+                    racheteDupaData.add((Apolo) aeronava);
+                }
             }
         }
         if (racheteDupaData.isEmpty()) {
@@ -32,4 +34,11 @@ public class CentruSpatial {
     }
 
     public int getNumarAeronave() {return aeronave.size();}
+
+    public void afisareSortareAlfabetic() {
+        aeronave.sort(Aeronava::compareTo);
+        for (Aeronava aeronava : aeronave) {
+            System.out.println(aeronava);
+        }
+    }
 }
