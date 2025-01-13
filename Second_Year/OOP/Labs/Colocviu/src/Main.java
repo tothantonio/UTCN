@@ -40,7 +40,7 @@ public class Main {
     /*
     *   Red Triangle cannot fit in the Orange Square.
 
-        Blue Triangle can fit in the PinkSquare.
+        Blue Triangle can fit in the Pink Square.
 
         Formele sortate dupa aria lor:
 
@@ -61,7 +61,7 @@ public class Main {
 
     public static void checkTriangleInSquare(Triangle triangle, Square square) throws InclusionNotPossibleException {
         if (triangle.getBase() <= square.getSide() && triangle.getHeight() <= square.getSide()) {
-            System.out.println("\n" + triangle.getColor() + " Triangle can fit in the " + square.getColor() +  "Square.");
+            System.out.println("\n" + triangle.getColor() + " Triangle can fit in the " + square.getColor() +  " Square.");
         } else {
             throw new InclusionNotPossibleException("\n" + triangle.getColor() + " Triangle cannot fit in the " + square.getColor() +  " Square.");
         }
