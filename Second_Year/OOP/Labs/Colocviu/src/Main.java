@@ -27,9 +27,23 @@ public class Main {
         System.out.println("\nFormele sortate dupa aria lor:\n");
         for (GeometricShape shape : shapes) {
             //cu doua zecimale
-            System.out.println(shape.getClass().getSimpleName() + " Area: " + String.format("%.2f", shape.getArea()) + " Color: " + shape.getColor());
+            System.out.println(shape.getColor() + " " + shape.getClass().getSimpleName() + " Area: " + String.format("%.2f", shape.getArea()));
         }
     }
+    /*
+    *   Red Triangle cannot fit in the Orange Square.
+        Formele sortate dupa aria lor:
+
+        Orange Square Area: 1,00
+        Red Triangle Area: 6,00
+        Purple Square Area: 16,00
+        Blue Triangle Area: 24,00
+        Magenta Triangle Area: 54,00
+        Pink Square Area: 64,00
+        Green Circle Area: 78,54
+        Yellow Circle Area: 153,94
+        Cyan Circle Area: 254,47
+     */
 
     public static void sortByArea(ArrayList<GeometricShape> shapes) {
         Collections.sort(shapes, Comparator.comparingDouble(GeometricShape::getArea));
@@ -37,9 +51,9 @@ public class Main {
 
     public static void checkTriangleInSquare(Triangle triangle, Square square) throws InclusionNotPossibleException {
         if (triangle.getBase() <= square.getSide() && triangle.getHeight() <= square.getSide()) {
-            System.out.println("\nTriangle can fit in the square.");
+            System.out.println("\n" + triangle.getColor() + " Triangle can fit in the " + square.getColor() +  "Square.");
         } else {
-            throw new InclusionNotPossibleException("\nTriangle cannot fit in the square.");
+            throw new InclusionNotPossibleException("\n" + triangle.getColor() + " Triangle cannot fit in the " + square.getColor() +  " Square.");
         }
     }
 }
