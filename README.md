@@ -2,12 +2,12 @@
 
   ### 1️⃣Semester 
 
-  * [Linear Algebra and Analytical Geometry](First_Year/ALGA)
-  * [Mathematical Analysis](First_Year/AM-I)
-  * [Physics](First_Year/FIZ)
-  * [Special Mathematics](First_Year/MS)
-  * [Computer Programming](First_Year/PC)
-  * [Logic Design](First_Year/PL)
+  * [Linear Algebra and Analytical Geometry](First_Year/I/ALGA)
+  * [Mathematical Analysis](First_Year/I/AM-I)
+  * [Physics](First_Year/I/FIZ)
+  * [Special Mathematics](First_Year/I/MS)
+  * [Computer Programming](First_Year/I/PC)
+  * [Logic Design](First_Year/I/PL)
 
   ### 2️⃣Semester
   
