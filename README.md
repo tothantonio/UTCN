@@ -22,6 +22,8 @@
   * [Databases](Second_Year/DB)
   * [Object Oriented Programming](Second_Year/OOP)
   * [Analog and Digital Circuits](Second_Year/ADC)
+  * [Special mathematics in engineering](Second_Year/SME)
+  * [Electronic measurements and sensors](Second_Year/EMS)
 
   
      
