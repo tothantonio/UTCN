@@ -11,19 +11,19 @@
 
   ### 2️⃣Semester
   
-  * [Electrotechnics](First_Year/ET)
-  * [Assembly Language Programming](First_Year/PLA)
-  * [ Digital System Design](First_Year/PSN)
-  * [Data Structures and Algorithms](First_Year/SDA)
+  * [Electrotechnics](First_Year/II/ET)
+  * [Assembly Language Programming](First_Year/II/PLA)
+  * [ Digital System Design](First_Year/II/PSN)
+  * [Data Structures and Algorithms](First_Year/II/SDA)
 
   ### 3️⃣Semester
 
-  * [Fundamental Algorithms](Second_Year/FA)
-  * [Databases](Second_Year/DB)
-  * [Object Oriented Programming](Second_Year/OOP)
-  * [Analog and Digital Circuits](Second_Year/ADC)
-  * [Special mathematics in engineering](Second_Year/SME)
-  * [Electronic measurements and sensors](Second_Year/EMS)
+  * [Fundamental Algorithms](Second_Year/I/FA)
+  * [Databases](Second_Year/I/DB)
+  * [Object Oriented Programming](Second_Year/I/OOP)
+  * [Analog and Digital Circuits](Second_Year/I/ADC)
+  * [Special mathematics in engineering](Second_YearI//SME)
+  * [Electronic measurements and sensors](Second_Year/I/EMS)
 
   
      
