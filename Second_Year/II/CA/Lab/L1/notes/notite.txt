@@ -1,0 +1,30 @@
+L1
+
+intre process si begin se declara val specifice procesului(var locale)
+
+procesele intr-un cod se ruleaza in paralel, insa in proces, codul se ruleaza secvential
+
+semnalul == fir
+variabila == nimic
+
+variabilele se asigneaza instant
+semnalele se asigneaza doar la finalul procesului in care sunt incluse
+
+
+AC
+MPG + counter
+rolul primului counter e de divizor de frecventa
+cand toti bitii sunt de 1 se face enable la registru
+asigura 1 la apasarea butonului
+
+SO
+citeste inainte laboratorul
+quiz uri 
+colocviu 
+3 teme complexe
+
+TP
+learn git branching
+git cheat sheet
+maven dependencies
+draw.io
