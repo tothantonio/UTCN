@@ -1,0 +1,14 @@
+AC L4
+instr R - register register (intre reg) - opcode = 0, function face dif intr instr R
+instr I - register const (imediat)
+instr J - jump in cod
+opcode = codul instructiunii - pt a diferentia instr
+RISC  = reduced instr processor - arhi Harvard
+CISC  = complex instr processor
+rs = source
+rd = dest
+MIPS:
+in main control, in functie de opcode, activez sau nu flag-urile
+pe sapt urm:
+
+Un prg simplu, cu o bucla, o conditie, 

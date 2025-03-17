@@ -1,0 +1,13 @@
+S = single responsablity
+O = open/closed principle(open for extension, closed for modification)
+L = Liskov Substitution()
+I = Interface Segregation
+D = Dependency Inversion
+
+arhitectura in straturi:
+
+de la UI -> DB
+
+L1: persistance(clase, repo-uri) - ia date din DB sau primeste date
+L2: business(clase) - servicii
+L3: presentation(UI)

@@ -1,0 +1,4 @@
+/snap/clion/326/bin/cmake/linux/x64/bin/cmake -DCMAKE_BUILD_TYPE=Debug -DCMAKE_MAKE_PROGRAM=/snap/clion/326/bin/ninja/linux/x64/ninja -G Ninja -S /media/toni/stuff/TUCN/UTCN/Second_Year/II/ECG/Lab/L3/L3 -B /media/toni/stuff/TUCN/UTCN/Second_Year/II/ECG/Lab/L3/L3/cmake-build-debug
+-- Configuring done (0.0s)
+-- Generating done (0.0s)
+-- Build files have been written to: /media/toni/stuff/TUCN/UTCN/Second_Year/II/ECG/Lab/L3/L3/cmake-build-debug

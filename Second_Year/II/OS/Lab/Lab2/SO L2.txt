@@ -1,0 +1,73 @@
+SO - L2
+
+format general comenzi - command_name arguments
+daca se doreste executia comenzii fara blocarea terminalului, se pune la final &
+gedit test.c & - editeaza fisierul in background
+
+comenzi multiple:
+
+| - output ul primei comenzi e input pt ce a de a doua
+&& - a doua comanda se executa daca prima s a executat cu succes
+|| - a doua comanda se executa daca prima nu s-a executat cu succes
+
+ex: gcc test.c -o test && ./test
+
+comenzi redirectare:
+< - standard input
+> - standard output
+2> - standard error
+
+ex: ls /etc > contents.txt 2> /dev/null
+
+comenzi uzuale:
+cp - copiaza unul sau mai multe fisiere dintr-o locatie in alta
+ex:cp /etc/passwd my_passwd_copy.txt
+mv - muta unul sau mai multe fisiere dintr-o locatie in alta
+ex:mv my_passwd_copy.txt users_list.txt
+less - putem vedea in terminal un fisier text
+ex:less users_list.txt
+grep - cauta un anumit continut intr-un fisier
+ex: grep root users_list.txt - se afiseaza liniile ce contin "root"
+grep -v root users_list.txt - se afiseaza liniile ce NU contin "root"
+
+fundamente teoretice:
+
+wc = numara cuvinte, linii sau caractere
+wc users_list.txt
+wc -l users_list.txt
+wc -w users_list.txt
+wc -m users_list.txt
+
+cut = ajuta la filtrarea informatiei dintr-un output
+cut -d: -f 1,6 /etc/passwd
+
+find = cauta fisiere intr-o ierarhie de directoare
+find /usr/bin -type f -perm 0755
+
+variabile de mediu:
+USER, HOME, PATH
+
+mai citesc la lab!
+
+
+Lab:
+^ face match doar de la inceputul liniei
+grep "^$USER:" /etc/passwd = folosit pt orice sistem
+	
+	
+1.less etc/passwd
+2.grep -v text1 exemplu.txt | grep -v text2
+3.ls -l  | grep "^d" | wc -l
+4.
+#!/bin/bash
+
+for FNAME in `find . -name "*.c"`
+do
+        #echo $FNAME
+        SIZE=`wc -l $FNAME | cut -d" " -f 1`
+        #echo $SIZE
+        if test $SIZE -gt 20; then
+                echo $FNAME
+        fi
+done
+

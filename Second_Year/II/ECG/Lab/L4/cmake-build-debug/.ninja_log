@@ -1,0 +1,4 @@
+# ninja log v6
+1	507	1742142857942998500	CMakeFiles/L4.dir/main.cpp.o	a67d5ef3a225b5a3
+1	32	1742143262103913000	build.ninja	614ced66575eb4cf
+2	793	1742142876645124700	CMakeFiles/L4.dir/testTransform.cpp.o	9cb9d01c5f0fd5aa

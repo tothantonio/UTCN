@@ -1,0 +1,7 @@
+AC - L2
+SSD:
+fiecare afisor este activat de un anod
+intrarile sunt semnalul de clk si 8 semnale de cate 4 biti
+care codifica cifrele hexazecimale de afisat
+iesirile sunt anozii si catozii
+cu ajutorul MUX-urilor 8:1 afisoarele sunt activate alternativ

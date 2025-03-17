@@ -1,0 +1,3 @@
+/media/toni/stuff/TUCN/UTCN/Second_Year/II/ECG/Lab/L4/cmake-build-debug/CMakeFiles/L4.dir
+/media/toni/stuff/TUCN/UTCN/Second_Year/II/ECG/Lab/L4/cmake-build-debug/CMakeFiles/edit_cache.dir
+/media/toni/stuff/TUCN/UTCN/Second_Year/II/ECG/Lab/L4/cmake-build-debug/CMakeFiles/rebuild_cache.dir

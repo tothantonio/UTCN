@@ -1,0 +1,4 @@
+INFO: [VRFC 10-163] Analyzing VHDL file "/media/toni/stuff/TUCN/UTCN/Second_Year/II/CA/Lab/L1/test_env/test_env.srcs/sources_1/new/MPG.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'MPG'
+INFO: [VRFC 10-163] Analyzing VHDL file "/media/toni/stuff/TUCN/UTCN/Second_Year/II/CA/Lab/L1/test_env/test_env.srcs/sources_1/new/test_new.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'test_new'
