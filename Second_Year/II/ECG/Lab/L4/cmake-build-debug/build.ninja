@@ -41,6 +41,43 @@ include CMakeFiles/rules.ninja
 
 cmake_ninja_workdir = /media/toni/stuff/TUCN/UTCN/Second_Year/II/ECG/Lab/L4/cmake-build-debug/
 # =============================================================================
+# Object build statements for EXECUTABLE target untitled1
+
+
+#############################################
+# Order-only phony target for untitled1
+
+build cmake_object_order_depends_target_untitled1: phony || .
+
+build CMakeFiles/untitled1.dir/main.cpp.o: CXX_COMPILER__untitled1_unscanned_Debug /media/toni/stuff/TUCN/UTCN/Second_Year/II/ECG/Lab/L4/main.cpp || cmake_object_order_depends_target_untitled1
+  DEP_FILE = CMakeFiles/untitled1.dir/main.cpp.o.d
+  FLAGS = -g -std=gnu++23 -fdiagnostics-color=always
+  OBJECT_DIR = CMakeFiles/untitled1.dir
+  OBJECT_FILE_DIR = CMakeFiles/untitled1.dir
+
+build CMakeFiles/untitled1.dir/testTransform.cpp.o: CXX_COMPILER__untitled1_unscanned_Debug /media/toni/stuff/TUCN/UTCN/Second_Year/II/ECG/Lab/L4/testTransform.cpp || cmake_object_order_depends_target_untitled1
+  DEP_FILE = CMakeFiles/untitled1.dir/testTransform.cpp.o.d
+  FLAGS = -g -std=gnu++23 -fdiagnostics-color=always
+  OBJECT_DIR = CMakeFiles/untitled1.dir
+  OBJECT_FILE_DIR = CMakeFiles/untitled1.dir
+
+
+# =============================================================================
+# Link build statements for EXECUTABLE target untitled1
+
+
+#############################################
+# Link the executable untitled1
+
+build untitled1: CXX_EXECUTABLE_LINKER__untitled1_Debug CMakeFiles/untitled1.dir/main.cpp.o CMakeFiles/untitled1.dir/testTransform.cpp.o
+  FLAGS = -g
+  OBJECT_DIR = CMakeFiles/untitled1.dir
+  POST_BUILD = :
+  PRE_LINK = :
+  TARGET_FILE = untitled1
+  TARGET_PDB = untitled1.dbg
+
+# =============================================================================
 # Object build statements for EXECUTABLE target L4
 
 
@@ -61,12 +98,6 @@ build CMakeFiles/L4.dir/testTransform.cpp.o: CXX_COMPILER__L4_unscanned_Debug /m
   OBJECT_DIR = CMakeFiles/L4.dir
   OBJECT_FILE_DIR = CMakeFiles/L4.dir
 
-build CMakeFiles/L4.dir/transform.cpp.o: CXX_COMPILER__L4_unscanned_Debug /media/toni/stuff/TUCN/UTCN/Second_Year/II/ECG/Lab/L4/transform.cpp || cmake_object_order_depends_target_L4
-  DEP_FILE = CMakeFiles/L4.dir/transform.cpp.o.d
-  FLAGS = -g -std=gnu++23 -fdiagnostics-color=always
-  OBJECT_DIR = CMakeFiles/L4.dir
-  OBJECT_FILE_DIR = CMakeFiles/L4.dir
-
 
 # =============================================================================
 # Link build statements for EXECUTABLE target L4
@@ -75,7 +106,7 @@ build CMakeFiles/L4.dir/transform.cpp.o: CXX_COMPILER__L4_unscanned_Debug /media
 #############################################
 # Link the executable L4
 
-build L4: CXX_EXECUTABLE_LINKER__L4_Debug CMakeFiles/L4.dir/main.cpp.o CMakeFiles/L4.dir/testTransform.cpp.o CMakeFiles/L4.dir/transform.cpp.o | /usr/local/lib/libSDL3.so.0.2.4
+build L4: CXX_EXECUTABLE_LINKER__L4_Debug CMakeFiles/L4.dir/main.cpp.o CMakeFiles/L4.dir/testTransform.cpp.o | /usr/local/lib/libSDL3.so.0.2.4
   FLAGS = -g
   LINK_LIBRARIES = -Wl,-rpath,/usr/local/lib  /usr/local/lib/libSDL3.so.0.2.4
   OBJECT_DIR = CMakeFiles/L4.dir
@@ -118,7 +149,7 @@ build rebuild_cache: phony CMakeFiles/rebuild_cache.util
 #############################################
 # Folder: /media/toni/stuff/TUCN/UTCN/Second_Year/II/ECG/Lab/L4/cmake-build-debug
 
-build all: phony L4
+build all: phony untitled1 L4
 
 # =============================================================================
 # Built-in targets

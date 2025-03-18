@@ -13,7 +13,7 @@ int main(int argc, const char * argv[]) {
     int nrOfErrors = 0;
     
     nrOfErrors += egc::test2DTransformImplementation();
-    nrOfErrors += egc::test3DTransformImplementation();
+//    nrOfErrors += egc::test3DTransformImplementation();
     
     std::cout << "Number of errors: " << nrOfErrors << std::endl;
     

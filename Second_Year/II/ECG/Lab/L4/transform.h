@@ -16,8 +16,19 @@ namespace egc {
     const double PI = atan(1.0) * 4;
 
     //transformation matrices in 2D
-    mat3 translate(const vec2 translateArray);
-    mat3 translate(float tx, float ty);
+    mat3 translate(const vec2 translateArray) {
+        mat3 translationMatrix;
+        translationMatrix.at(0, 2) = translateArray.x;
+        translationMatrix.at(1, 2) = translateArray.y;
+        return translationMatrix;
+    }
+
+    mat3 translate(float tx, float ty) {
+        mat3 translationMatrix;
+        translationMatrix.at(0, 2) = tx;
+        translationMatrix.at(1, 2) = ty;
+        return translationMatrix;
+    }
 
     mat3 scale(const vec2 scaleArray);
     mat3 scale(float sx, float sy);
