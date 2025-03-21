@@ -24,7 +24,7 @@ namespace egc {
     }
 
      mat3 translate(float tx, float ty){
-        mat3 translationMatrix;
+        mat3 translationMatrix = mat3();
         translationMatrix.at(0, 2) = tx;
         translationMatrix.at(1, 2) = ty;
         return translationMatrix;
