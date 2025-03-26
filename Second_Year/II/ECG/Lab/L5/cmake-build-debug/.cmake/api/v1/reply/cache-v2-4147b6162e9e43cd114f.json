@@ -55,7 +55,7 @@
 				}
 			],
 			"type" : "INTERNAL",
-			"value" : "/media/toni/stuff/TUCN/UTCN/Second_Year/II/ECG/Lab/L4/cmake-build-debug"
+			"value" : "/media/toni/stuff/TUCN/UTCN/Second_Year/II/ECG/Lab/L5/cmake-build-debug"
 		},
 		{
 			"name" : "CMAKE_CACHE_MAJOR_VERSION",
@@ -115,7 +115,7 @@
 				}
 			],
 			"type" : "INTERNAL",
-			"value" : "/snap/clion/326/bin/cmake/linux/x64/bin/cmake"
+			"value" : "/snap/clion/332/bin/cmake/linux/x64/bin/cmake"
 		},
 		{
 			"name" : "CMAKE_CPACK_COMMAND",
@@ -127,7 +127,7 @@
 				}
 			],
 			"type" : "INTERNAL",
-			"value" : "/snap/clion/326/bin/cmake/linux/x64/bin/cpack"
+			"value" : "/snap/clion/332/bin/cmake/linux/x64/bin/cpack"
 		},
 		{
 			"name" : "CMAKE_CTEST_COMMAND",
@@ -139,7 +139,7 @@
 				}
 			],
 			"type" : "INTERNAL",
-			"value" : "/snap/clion/326/bin/cmake/linux/x64/bin/ctest"
+			"value" : "/snap/clion/332/bin/cmake/linux/x64/bin/ctest"
 		},
 		{
 			"name" : "CMAKE_CXX_COMPILER",
@@ -543,7 +543,7 @@
 				}
 			],
 			"type" : "STATIC",
-			"value" : "/media/toni/stuff/TUCN/UTCN/Second_Year/II/ECG/Lab/L4/cmake-build-debug/CMakeFiles/pkgRedirects"
+			"value" : "/media/toni/stuff/TUCN/UTCN/Second_Year/II/ECG/Lab/L5/cmake-build-debug/CMakeFiles/pkgRedirects"
 		},
 		{
 			"name" : "CMAKE_GENERATOR",
@@ -603,7 +603,7 @@
 				}
 			],
 			"type" : "INTERNAL",
-			"value" : "/media/toni/stuff/TUCN/UTCN/Second_Year/II/ECG/Lab/L4"
+			"value" : "/media/toni/stuff/TUCN/UTCN/Second_Year/II/ECG/Lab/L5"
 		},
 		{
 			"name" : "CMAKE_INSTALL_PREFIX",
@@ -655,7 +655,7 @@
 				}
 			],
 			"type" : "UNINITIALIZED",
-			"value" : "/snap/clion/326/bin/ninja/linux/x64/ninja"
+			"value" : "/snap/clion/332/bin/ninja/linux/x64/ninja"
 		},
 		{
 			"name" : "CMAKE_MODULE_LINKER_FLAGS",
@@ -843,7 +843,7 @@
 				}
 			],
 			"type" : "STATIC",
-			"value" : "L4"
+			"value" : "L5"
 		},
 		{
 			"name" : "CMAKE_RANLIB",
@@ -887,7 +887,7 @@
 				}
 			],
 			"type" : "INTERNAL",
-			"value" : "/snap/clion/326/bin/cmake/linux/x64/share/cmake-3.30"
+			"value" : "/snap/clion/332/bin/cmake/linux/x64/share/cmake-3.30"
 		},
 		{
 			"name" : "CMAKE_SHARED_LINKER_FLAGS",
@@ -1142,7 +1142,7 @@
 			"value" : "FALSE"
 		},
 		{
-			"name" : "L4_BINARY_DIR",
+			"name" : "L5_BINARY_DIR",
 			"properties" : 
 			[
 				{
@@ -1151,10 +1151,10 @@
 				}
 			],
 			"type" : "STATIC",
-			"value" : "/media/toni/stuff/TUCN/UTCN/Second_Year/II/ECG/Lab/L4/cmake-build-debug"
+			"value" : "/media/toni/stuff/TUCN/UTCN/Second_Year/II/ECG/Lab/L5/cmake-build-debug"
 		},
 		{
-			"name" : "L4_IS_TOP_LEVEL",
+			"name" : "L5_IS_TOP_LEVEL",
 			"properties" : 
 			[
 				{
@@ -1166,7 +1166,7 @@
 			"value" : "ON"
 		},
 		{
-			"name" : "L4_SOURCE_DIR",
+			"name" : "L5_SOURCE_DIR",
 			"properties" : 
 			[
 				{
@@ -1175,7 +1175,7 @@
 				}
 			],
 			"type" : "STATIC",
-			"value" : "/media/toni/stuff/TUCN/UTCN/Second_Year/II/ECG/Lab/L4"
+			"value" : "/media/toni/stuff/TUCN/UTCN/Second_Year/II/ECG/Lab/L5"
 		},
 		{
 			"name" : "SDL3_DIR",
