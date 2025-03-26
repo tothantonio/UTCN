@@ -20,6 +20,8 @@ bool quit { false };
 float mouseX { -1.0f }, mouseY { -1.0f };
 
 float displayScale { 1.0f };
+float rotationAngle { 0.0f };
+float scaleFactor {0.0f};
 
 polygon p;
 
@@ -64,76 +66,88 @@ bool initWindow()
 }
 
 void initPolygon() {
-
-    p.addVertex(vec3(100.0f, 100.0f, 1.0f));
-    p.addVertex(vec3(400.0f, 100.0f, 1.0f));
+    p.addVertex(vec3(100.0f, 100.0f, 1.0f)); // P1
+    p.addVertex(vec3(400.0f, 100.0f, 1.0f)); // P2
+    p.addVertex(vec3(400.0f, 200.0f, 1.0f)); // P3
+    p.addVertex(vec3(100.0f, 200.0f, 1.0f)); // P4
 }
 
 void processEvents() {
 
     //Check for events in queue
     while (SDL_PollEvent(&currentEvent)) {
-        
+
         //User requests quit
         if(currentEvent.type == SDL_EVENT_QUIT) {
-            
             quit = true;
         }
-        
+
         //Mouse event -> pressed button
         if(currentEvent.type == SDL_EVENT_MOUSE_BUTTON_DOWN) {
-            
+
             if(currentEvent.button.button == SDL_BUTTON_LEFT) {
-                
+
                 SDL_GetMouseState(&mouseX, &mouseY);
                 mouseX /= displayScale;
                 mouseY /= displayScale;
                 std::cout << "Mouse click => " << "x: " << mouseX << ", y: " << mouseY << std::endl;
             }
         }
-        
+
         //Mouse event -> mouse movement
         if(currentEvent.type == SDL_EVENT_MOUSE_MOTION) {
-            
+
             SDL_MouseButtonFlags mouseButtons = SDL_GetMouseState(nullptr, nullptr);
             if (mouseButtons & SDL_BUTTON_MASK(SDL_BUTTON_LEFT)) {
-                
+
                 SDL_GetMouseState(&mouseX, &mouseY);
                 mouseX /= displayScale;
                 mouseY /= displayScale;
                 std::cout << "Mouse move => " << "x: " << mouseX << ", y: " << mouseY << std::endl;
             }
         }
-        
+
         //Keyboard event
         if(currentEvent.type == SDL_EVENT_KEY_DOWN) {
-            
             switch(currentEvent.key.key) {
-                    
-                case SDLK_UP:
+                case SDLK_UP: {
+                    scaleFactor += 0.1f;
+                    mat3 transformationMatrix = translate(100.0f, 100.0f) * scale(scaleFactor, scaleFactor) * translate(-100.0f, -100.0f);
+                    p.transformationMatrix = transformationMatrix;
                     break;
-                    
-                case SDLK_R:
+                }
+                case SDLK_DOWN: {
+                    scaleFactor -= 0.1f;
+                    mat3 transformationMatrix = translate(100.0f, 100.0f) * scale(scaleFactor, scaleFactor) * translate(-100.0f, -100.0f);
+                    p.transformationMatrix = transformationMatrix;
                     break;
-                    
+                }
+                case SDLK_RIGHT: {
+                    rotationAngle += 10.0f;
+                    mat3 transformationMatrix = translate(250.0f, 150.0f) * rotate(rotationAngle) * translate(-250.0f, -150.0f);
+                    p.transformationMatrix = transformationMatrix;
+                    break;
+                }
+                case SDLK_LEFT: {
+                    rotationAngle -= 10.0f;
+                    mat3 transformationMatrix = translate(250.0f, 150.0f) * rotate(rotationAngle) * translate(-250.0f, -150.0f);
+                    p.transformationMatrix = transformationMatrix;
+                    break;
+                }
                 case SDLK_ESCAPE:
-                    
                     quit = true;
                     break;
-                    
                 default:
                     break;
             }
         }
     }
 }
-
 void drawFrame() {
 
     //Clear the background
     SDL_SetRenderDrawColor(renderer, backgroundColor.r, backgroundColor.g, backgroundColor.b, backgroundColor.a);
     SDL_RenderClear(renderer);
-
     p.draw(renderer);
 
     //Update window
@@ -178,7 +192,6 @@ int main(int argc, char * argv[]) {
 
     //Game loop
     while (!quit) {
-
         processEvents();
         drawFrame();
     }
