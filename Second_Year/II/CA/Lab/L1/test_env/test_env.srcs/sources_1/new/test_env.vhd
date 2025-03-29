@@ -26,113 +26,68 @@ Port ( digit : in std_logic_vector(31 downto 0);
          an    : out std_logic_vector(7 downto 0));
 end component;
 
---component REGFILE is
---Port ( clk : in std_logic;
---         ra1 : in std_logic_vector(4 downto 0);
---         ra2 : in std_logic_vector(4 downto 0);
---         wa  : in std_logic_vector(4 downto 0);
---         wd  : in std_logic_vector(31 downto 0);
---         regwr : in std_logic;
---         rd1 : out std_logic_vector(31 downto 0);
---         rd2 : out std_logic_vector(31 downto 0)
---         );
---end component;
-
-component RAM is
+component IFetch is
 Port ( clk : in STD_LOGIC;
+           Jump : in STD_LOGIC;
+           JumpAddress : in STD_LOGIC_VECTOR (31 downto 0);
+           PCSrc : in STD_LOGIC;
+           BranchAddress : in STD_LOGIC_VECTOR (31 downto 0);
            en : in STD_LOGIC;
-           we : in STD_LOGIC;
-           address : in STD_LOGIC_VECTOR (5 downto 0);
-           di : in STD_LOGIC_VECTOR (31 downto 0);
-           do : out STD_LOGIC_VECTOR (3 downto 0));
+           rst : in STD_LOGIC;
+           Instruction : out STD_LOGIC_VECTOR (31 downto 0);
+           PC : out STD_LOGIC_VECTOR (31 downto 0));
 end component;
 
-signal cnt: std_logic_vector(5 downto 0) := (others => '0');
-signal en: std_logic := '0';
-signal digits: std_logic_vector(31 downto 0) := (others => '0');
---signal regwr : std_logic := '0';
-signal rst : std_logic := '0';
-signal we : std_logic := '0';
-type memory is array(0 to 31) of std_logic_vector(31 downto 0);
-signal rom : memory := (others => "0");
+component ID is
+    Port ( clk: in STD_LOGIC;
+           RegWrite : in STD_LOGIC;
+           Instr : in STD_LOGIC_VECTOR (25 downto 0);
+           RegDst : in STD_LOGIC;
+           en : in STD_LOGIC;
+           ExtOp : in STD_LOGIC;
+           rd1 : out STD_LOGIC_VECTOR (31 downto 0);
+           rd2 : out STD_LOGIC_VECTOR (31 downto 0);
+           wd : in STD_LOGIC_VECTOR (31 downto 0);
+           ext_imm : out STD_LOGIC_VECTOR (31 downto 0);
+           func : out STD_LOGIC_VECTOR (5 downto 0);
+           sa : out STD_LOGIC_VECTOR (4 downto 0));
+end component;
 
---signal rd1 : std_logic_vector(31 downto 0) := (others => '0');
---signal rd2 : std_logic_vector(31 downto 0) := (others => '0');
+component UC is
+    Port ( Instr : in STD_LOGIC_VECTOR (5 downto 0);
+           RedDst : out STD_LOGIC;
+           ExtOp : out STD_LOGIC;
+           ALUSrc : out STD_LOGIC;
+           Branch : out STD_LOGIC;
+           Jump : out STD_LOGIC;
+           ALUOp : out STD_LOGIC_VECTOR(2 downto 0);
+           MemWrite : out STD_LOGIC;
+           MemtoReg : out STD_LOGIC;
+           RegWrite : out STD_LOGIC;
+           Br_ne : out STD_LOGIC
+           );
+end component;
 
---signal a: std_logic_vector(31 downto 0) := (others => '0');
---signal b: std_logic_vector(31 downto 0) := (others => '0');
---signal res: std_logic_vector(31 downto 0) := (others => '0');
+signal enable: std_logic := '0';
+signal digits: std_logic_vector (31 downto 0) := (others => '0');
 
+--IFetch
+signal reset : STD_LOGIC :='0';
+signal PC_4 : STD_LOGIC_VECTOR(31 downto 0) := (others => '0');
+signal Instruction : STD_LOGIC_VECTOR(31 downto 0) := (others => '0');
 
 begin
 
-conectareMPG1: MPG port map(clk, btn(0), en);
-conectareMPG2: MPG port map(clk, btn(1), we);
-conectareMPG3: MPG port map(clk, btn(2), rst);
+connectMPG1: MPG port map(clk, btn(0), enable);
+connectMPG2: MPG port map(clk, btn(1), reset);
 
---led(7 downto 0) <= sw(7 downto 0);
+connectIFetch: IFetch port map(clk, sw(0), X"00000000", sw(1), X"00000010", enable, reset, Instruction, PC_4);
 
---counterTask1:
---process(clk)
---begin
---    if rising_edge(clk) then
---        if en = '1' then
---            if sw(0) = '0' then
---                cnt <= cnt + 1;
---            else cnt <= cnt - 1;
---            end if;
---        end if;
---    end if;
---end process;
-
---counterTask2:
---process(clk)
---begin
---    if rising_edge(clk) then
---        if en = '1' then
---            cnt <= cnt + 1;
---        end if;
---    end if; 
---end process;
-
---mux4x1:
---process(cnt)
---begin
- --   case cnt is
- --           when "00" => a <= x"0000000" & sw(3 downto 0);
- --                        b <= x"0000000" & sw(7 downto 4);
- --                        res <= a + b;
- --           when "01" => a <= x"0000000" & sw(3 downto 0);
- --                        b <= x"0000000" & sw(7 downto 4);
- --                        res <= a - b;
- --           when "10" => res <= x"00000" & "00" & sw(7 downto 0) & "00";
- --           when "11" => res <= x"000000" & "00" & sw(7 downto 2);
- --           when others => res <= x"00000000";
- --       end case;
-     
- --    if res = 0 then
- --       led(8) <= '1';
- --    else led(8) <= '0';
- --     end if;
---end process;
-
---digits <= res;
-counter:
-process(clk, rst)
-begin
-    if rst = '1' then
-        cnt <= "000000";    
-    elsif rising_edge(clk) and en = '1' then
-            cnt <= cnt + 1;
-    end if;
-end process;
-
---digits <= ROM(conv_integer (cnt));
---digits <= rd1 + rd2;
-
---conectareREGFILE: REGFILE port map (clk, cnt, cnt, cnt, digits, regwr, rd1, rd2);
-conectareRAM : RAM port map(clk, '1', we, cnt, digits, digits);
-digits <= digits(29 downto 0) & "00";
-conectareSSD:SSD port map(digits, clk, cat, an);
+with sw(7) select
+    digits <= PC_4 when '1',
+              Instruction when '0',
+              (others => 'X') when others;
+              
+displaySSD: SSD port map(digits, clk, cat, an);
 
 end Behavioral;
