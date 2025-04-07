@@ -16,7 +16,7 @@ end IFetch;
 
 architecture Behavioral of IFetch is
 
-signal PC, mux1, mux2, addr: std_logic_vector(31 downto 0);
+signal pc_in, pc_reg, mux0_addr : std_logic_vector(31 downto 0);
 
 type rom_type is array (0 to 31) of std_logic_vector(31 downto 0);
 signal rom : rom_type := (
@@ -41,29 +41,26 @@ signal rom : rom_type := (
 
 begin
 
+--mecanismul de actualizare a lui pc_in
+
+mux0_addr <= BranchAddress when PCSrc = '1' else pc_reg + 1;
+pc_in <= JumpAddress when Jump = '1' else mux0_addr;
+
+--procesul de actualizare a lui pc_reg
 process(clk)
 begin
-    if rst = '1' then
-        addr <= (others => '0');
-    elsif rising_edge(clk) then
-        if en = '1' then
-            addr <= mux2;
+    if rising_edge(clk) then
+        if rst = '1' then pc_reg <= (others => '0');
+        elsif en = '1' then pc_reg <= pc_in;
         end if;
     end if;
 end process;
 
-PC <= addr + 4;
-
-mux1 <= PC when PCSrc = '0' else BranchAddress;
-mux2 <= mux1 when Jump = '0' else JumpAddress;
-
-PC_4 <= PC;
-
-process(clk)
+process(pc_reg)
 begin
-    if rising_edge(clk) then
-        Instruction <= rom(conv_integer(addr(6 downto 2)));
-    end if;
+    Instruction <= rom(conv_integer(pc_reg));
 end process;
+
+PC_4 <= pc_reg + 1;
 
 end Behavioral;

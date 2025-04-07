@@ -35,7 +35,7 @@ Port ( clk : in STD_LOGIC;
            en : in STD_LOGIC;
            rst : in STD_LOGIC;
            Instruction : out STD_LOGIC_VECTOR (31 downto 0);
-           PC : out STD_LOGIC_VECTOR (31 downto 0));
+           PC_4 : out STD_LOGIC_VECTOR (31 downto 0));
 end component;
 
 component ID is
@@ -55,7 +55,7 @@ end component;
 
 component UC is
     Port ( Instr : in STD_LOGIC_VECTOR (5 downto 0);
-           RedDst : out STD_LOGIC;
+           RegDst : out STD_LOGIC;
            ExtOp : out STD_LOGIC;
            ALUSrc : out STD_LOGIC;
            Branch : out STD_LOGIC;
@@ -68,26 +68,110 @@ component UC is
            );
 end component;
 
-signal enable: std_logic := '0';
-signal digits: std_logic_vector (31 downto 0) := (others => '0');
+component EX is
+    Port ( rd1 : in STD_LOGIC_VECTOR (31 downto 0);
+           aluSrc : in STD_LOGIC;
+           rd2 : in STD_LOGIC_VECTOR (31 downto 0);
+           ext_imm : in STD_LOGIC_VECTOR (31 downto 0);
+           sa : in STD_LOGIC_VECTOR (4 downto 0);
+           func : in STD_LOGIC_VECTOR (5 downto 0);
+           aluOp : in STD_LOGIC_VECTOR (2 downto 0);
+           pc : in STD_LOGIC_VECTOR (31 downto 0);
+           --rt: in STD_LOGIC_VECTOR(4 downto 0);
+           --rd: in STD_LOGIC_VECTOR(4 downto 0);
+           --RegDst: in STD_LOGIC;
+           zero : out STD_LOGIC;
+           aluRes : out STD_LOGIC_VECTOR (31 downto 0);
+           branchAdress : out STD_LOGIC_VECTOR (31 downto 0)
+           --rWA: out STD_LOGIC_VECTOR(4 downto 0)
+           );
+end component;
+
+component mem is
+    Port ( memWrite : in STD_LOGIC;
+           aluResIn : in STD_LOGIC_VECTOR (31 downto 0);
+           rd2 : in STD_LOGIC_VECTOR (31 downto 0);
+           clk : in STD_LOGIC;
+           en : in STD_LOGIC;
+           memData : out STD_LOGIC_VECTOR (31 downto 0);
+           aluResOut : out STD_LOGIC_VECTOR (31 downto 0));
+end component;
+
+signal enable: STD_LOGIC := '0';
+signal digits: STD_LOGIC_VECTOR (31 downto 0) := (others => '0');
 
 --IFetch
-signal reset : STD_LOGIC :='0';
+signal reset, PCSrc : STD_LOGIC :='0';
 signal PC_4 : STD_LOGIC_VECTOR(31 downto 0) := (others => '0');
 signal Instruction : STD_LOGIC_VECTOR(31 downto 0) := (others => '0');
+signal JumpAddress, BranchAddress : STD_LOGIC_VECTOR(31 downto 0) := (others => '0');
+
+--IDecode
+signal wd, rd1, rd2, ext_imm, ext_func, ext_sa : STD_LOGIC_VECTOR(31 downto 0);
+signal func : STD_LOGIC_VECTOR(5 downto 0);
+signal sa : STD_LOGIC_VECTOR(4 downto 0);
+
+--Main Controls
+signal RegDst, ExtOp, ALUSrc, Branch, Jump, MemWrite, MemToReg, RegWrite, Br_ne: STD_LOGIC;
+signal ALUOp: STD_LOGIC_VECTOR(2 downto 0);
+
+--Execute
+signal ALURes: STD_LOGIC_VECTOR(31 downto 0);
+signal zero : STD_LOGIC;
+
+--Memory
+signal MemData : STD_LOGIC_VECTOR(31 downto 0);
+signal ALUResOut: STD_LOGIC_VECTOR(31 downto 0);
 
 begin
 
 connectMPG1: MPG port map(clk, btn(0), enable);
 connectMPG2: MPG port map(clk, btn(1), reset);
 
-connectIFetch: IFetch port map(clk, sw(0), X"00000000", sw(1), X"00000010", enable, reset, Instruction, PC_4);
+connectIFetch: IFetch port map(clk, Jump, JumpAddress, PCSrc, BranchAddress, enable, reset, Instruction, PC_4);
+connectIDecode: ID port map(clk, RegWrite, Instruction(25 downto 0), RegDst, enable, ExtOp, rd1, rd2, wd, ext_imm, func, sa);
+connectMainControl : UC port map(Instruction(31 downto 26), RegDst, ExtOp, ALUSrc, Branch, Jump, ALUOp, MemWrite, MemToReg, RegWrite, Br_ne);
+connectExecute: EX port map(rd1, aluSrc, rd2, ext_imm, sa, func, ALUOp, PC_4, zero, ALURes, BranchAddress);
+connectMemory: mem port map(MemWrite, ALURes, rd2, clk, enable, MemData, ALUResOut);
 
-with sw(7) select
-    digits <= PC_4 when '1',
-              Instruction when '0',
-              (others => 'X') when others;
+--Write back
+wd <= ALUResOut when MemtoReg = '0' else MemData;
+
+--Validarea saltului conditionat
+PCSrc <= (Branch and zero) or (not(zero) and Br_ne);
+
+--Adresa de salt neconditionat
+JumpAddress <= PC_4(31 downto 26) & Instruction(25 downto 0);
+
+process(sw(7 downto 5), clk)
+begin
+  case sw(7 downto 5) is  
+    when "000" => digits <= Instruction;
+    when "001" => digits <= PC_4;
+    when "010" => digits <= rd1;
+    when "011" => digits <= rd2;
+    when "100" => digits <= ext_imm;
+    when "101" => digits <= aluRes;
+    when "110" => digits <= memData;
+    when "111" => digits <= wd;
+    when others => digits <= (others => '0');
+  end case;
+end process;
               
 displaySSD: SSD port map(digits, clk, cat, an);
+
+led(11) <= Br_ne;
+led(7) <= RegDst;
+led(6) <= ExtOp;
+led(5) <= ALUSrc;
+led(4) <= Branch;
+led(3) <= Jump;
+led(2) <= MemWrite;
+led(1) <= MemtoReg;
+led(0) <= RegWrite;
+
+led(8) <= AlUOp(0);
+led(9) <= AlUOp(1);
+led(10) <= AlUOp(2);
 
 end Behavioral;

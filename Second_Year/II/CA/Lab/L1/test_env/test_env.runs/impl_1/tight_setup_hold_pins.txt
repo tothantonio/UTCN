@@ -1,0 +1,7 @@
++====================+===================+================================+
+| Launch Setup Clock | Launch Hold Clock | Pin                            |
++====================+===================+================================+
+| sys_clk_pin        | sys_clk_pin       | connectIFetch/pc_reg_reg[16]/D |
+| sys_clk_pin        | sys_clk_pin       | connectIFetch/pc_reg_reg[4]/D  |
+| sys_clk_pin        | sys_clk_pin       | connectIFetch/pc_reg_reg[5]/D  |
++--------------------+-------------------+--------------------------------+

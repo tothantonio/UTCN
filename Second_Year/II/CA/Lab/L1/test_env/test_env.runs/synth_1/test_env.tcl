@@ -70,8 +70,6 @@ proc create_report { reportName command } {
   }
 }
 OPTRACE "synth_1" START { ROLLUP_AUTO }
-set_param xicom.use_bs_reader 1
-set_param chipscope.maxJobs 2
 OPTRACE "Creating in-memory project" START { }
 create_project -in_memory -part xc7a100tcsg324-1
 
@@ -87,8 +85,13 @@ set_property ip_cache_permissions {read write} [current_project]
 OPTRACE "Creating in-memory project" END { }
 OPTRACE "Adding files" START { }
 read_vhdl -library xil_defaultlib {
+  /media/toni/stuff/TUCN/UTCN/Second_Year/II/CA/Lab/L1/test_env/test_env.srcs/sources_1/new/EX.vhd
+  /media/toni/stuff/TUCN/UTCN/Second_Year/II/CA/Lab/L1/test_env/test_env.srcs/sources_1/new/ID.vhd
+  /media/toni/stuff/TUCN/UTCN/Second_Year/II/CA/Lab/L1/test_env/test_env.srcs/sources_1/new/IFetch.vhd
   /media/toni/stuff/TUCN/UTCN/Second_Year/II/CA/Lab/L1/test_env/test_env.srcs/sources_1/new/MPG.vhd
   /media/toni/stuff/TUCN/UTCN/Second_Year/II/CA/Lab/L1/test_env/test_env.srcs/sources_1/new/SSD.vhd
+  /media/toni/stuff/TUCN/UTCN/Second_Year/II/CA/Lab/L1/test_env/test_env.srcs/sources_1/new/UC.vhd
+  /media/toni/stuff/TUCN/UTCN/Second_Year/II/CA/Lab/L1/test_env/test_env.srcs/sources_1/new/mem.vhd
   /media/toni/stuff/TUCN/UTCN/Second_Year/II/CA/Lab/L1/test_env/test_env.srcs/sources_1/new/test_env.vhd
 }
 OPTRACE "Adding files" END { }

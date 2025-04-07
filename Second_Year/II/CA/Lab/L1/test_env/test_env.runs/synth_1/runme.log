@@ -9,6 +9,7 @@
     ** Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
 
 source test_env.tcl -notrace
+create_project: Time (s): cpu = 00:00:09 ; elapsed = 00:00:09 . Memory (MB): peak = 1323.523 ; gain = 0.027 ; free physical = 3479 ; free virtual = 15518
 Command: read_checkpoint -auto_incremental -incremental /media/toni/stuff/TUCN/UTCN/Second_Year/II/CA/Lab/L1/test_env/test_env.srcs/utils_1/imports/synth_1/test_new.dcp
 INFO: [Vivado 12-5825] Read reference checkpoint from /media/toni/stuff/TUCN/UTCN/Second_Year/II/CA/Lab/L1/test_env/test_env.srcs/utils_1/imports/synth_1/test_new.dcp for incremental synthesis
 INFO: [Vivado 12-7989] Please ensure there are no constraint changes
@@ -21,46 +22,60 @@ INFO: [Designutils 20-5440] No compile time benefit to using incremental synthes
 INFO: [Designutils 20-4379] Flow is switching to default flow due to incremental criteria not met. If you would like to alter this behaviour and have the flow terminate instead, please set the following parameter config_implementation {autoIncr.Synth.RejectBehavior Terminate}
 INFO: [Synth 8-7079] Multithreading enabled for synth_design using a maximum of 4 processes.
 INFO: [Synth 8-7078] Launching helper process for spawning children vivado processes
-INFO: [Synth 8-7075] Helper process launched with PID 265204
+INFO: [Synth 8-7075] Helper process launched with PID 358396
 INFO: [Synth 8-11241] undeclared symbol 'REGCCE', assumed default net type 'wire' [/tools/Xilinx/Vivado/2022.2/data/verilog/src/unimacro/BRAM_SINGLE_MACRO.v:2170]
 ---------------------------------------------------------------------------------
-Starting RTL Elaboration : Time (s): cpu = 00:00:04 ; elapsed = 00:00:05 . Memory (MB): peak = 1946.711 ; gain = 371.770 ; free physical = 368 ; free virtual = 12828
-Synthesis current peak Physical Memory [PSS] (MB): peak = 1369.552; parent = 1164.697; children = 204.854
-Synthesis current peak Virtual Memory [VSS] (MB): peak = 2942.680; parent = 1946.715; children = 995.965
+Starting RTL Elaboration : Time (s): cpu = 00:00:07 ; elapsed = 00:00:08 . Memory (MB): peak = 1946.707 ; gain = 371.770 ; free physical = 2263 ; free virtual = 14459
+Synthesis current peak Physical Memory [PSS] (MB): peak = 1368.974; parent = 1164.429; children = 204.545
+Synthesis current peak Virtual Memory [VSS] (MB): peak = 2919.648; parent = 1946.711; children = 972.938
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-638] synthesizing module 'test_env' [/media/toni/stuff/TUCN/UTCN/Second_Year/II/CA/Lab/L1/test_env/test_env.srcs/sources_1/new/test_env.vhd:14]
-INFO: [Synth 8-3491] module 'MPG' declared at '/media/toni/stuff/TUCN/UTCN/Second_Year/II/CA/Lab/L1/test_env/test_env.srcs/sources_1/new/MPG.vhd:5' bound to instance 'conectareMPG' of component 'MPG' [/media/toni/stuff/TUCN/UTCN/Second_Year/II/CA/Lab/L1/test_env/test_env.srcs/sources_1/new/test_env.vhd:48]
+INFO: [Synth 8-3491] module 'MPG' declared at '/media/toni/stuff/TUCN/UTCN/Second_Year/II/CA/Lab/L1/test_env/test_env.srcs/sources_1/new/MPG.vhd:5' bound to instance 'connectMPG1' of component 'MPG' [/media/toni/stuff/TUCN/UTCN/Second_Year/II/CA/Lab/L1/test_env/test_env.srcs/sources_1/new/test_env.vhd:128]
 INFO: [Synth 8-638] synthesizing module 'MPG' [/media/toni/stuff/TUCN/UTCN/Second_Year/II/CA/Lab/L1/test_env/test_env.srcs/sources_1/new/MPG.vhd:11]
 INFO: [Synth 8-256] done synthesizing module 'MPG' (0#1) [/media/toni/stuff/TUCN/UTCN/Second_Year/II/CA/Lab/L1/test_env/test_env.srcs/sources_1/new/MPG.vhd:11]
-WARNING: [Synth 8-614] signal 'en' is read in the process but is not in the sensitivity list [/media/toni/stuff/TUCN/UTCN/Second_Year/II/CA/Lab/L1/test_env/test_env.srcs/sources_1/new/test_env.vhd:96]
-WARNING: [Synth 8-614] signal 'cnt' is read in the process but is not in the sensitivity list [/media/toni/stuff/TUCN/UTCN/Second_Year/II/CA/Lab/L1/test_env/test_env.srcs/sources_1/new/test_env.vhd:96]
-INFO: [Synth 8-3491] module 'SSD' declared at '/media/toni/stuff/TUCN/UTCN/Second_Year/II/CA/Lab/L1/test_env/test_env.srcs/sources_1/new/SSD.vhd:6' bound to instance 'conectareSSD' of component 'SSD' [/media/toni/stuff/TUCN/UTCN/Second_Year/II/CA/Lab/L1/test_env/test_env.srcs/sources_1/new/test_env.vhd:106]
+INFO: [Synth 8-3491] module 'MPG' declared at '/media/toni/stuff/TUCN/UTCN/Second_Year/II/CA/Lab/L1/test_env/test_env.srcs/sources_1/new/MPG.vhd:5' bound to instance 'connectMPG2' of component 'MPG' [/media/toni/stuff/TUCN/UTCN/Second_Year/II/CA/Lab/L1/test_env/test_env.srcs/sources_1/new/test_env.vhd:129]
+INFO: [Synth 8-3491] module 'IFetch' declared at '/media/toni/stuff/TUCN/UTCN/Second_Year/II/CA/Lab/L1/test_env/test_env.srcs/sources_1/new/IFetch.vhd:5' bound to instance 'connectIFetch' of component 'IFetch' [/media/toni/stuff/TUCN/UTCN/Second_Year/II/CA/Lab/L1/test_env/test_env.srcs/sources_1/new/test_env.vhd:131]
+INFO: [Synth 8-638] synthesizing module 'IFetch' [/media/toni/stuff/TUCN/UTCN/Second_Year/II/CA/Lab/L1/test_env/test_env.srcs/sources_1/new/IFetch.vhd:17]
+INFO: [Synth 8-256] done synthesizing module 'IFetch' (0#1) [/media/toni/stuff/TUCN/UTCN/Second_Year/II/CA/Lab/L1/test_env/test_env.srcs/sources_1/new/IFetch.vhd:17]
+INFO: [Synth 8-3491] module 'ID' declared at '/media/toni/stuff/TUCN/UTCN/Second_Year/II/CA/Lab/L1/test_env/test_env.srcs/sources_1/new/ID.vhd:5' bound to instance 'connectIDecode' of component 'ID' [/media/toni/stuff/TUCN/UTCN/Second_Year/II/CA/Lab/L1/test_env/test_env.srcs/sources_1/new/test_env.vhd:132]
+INFO: [Synth 8-638] synthesizing module 'ID' [/media/toni/stuff/TUCN/UTCN/Second_Year/II/CA/Lab/L1/test_env/test_env.srcs/sources_1/new/ID.vhd:20]
+INFO: [Synth 8-256] done synthesizing module 'ID' (0#1) [/media/toni/stuff/TUCN/UTCN/Second_Year/II/CA/Lab/L1/test_env/test_env.srcs/sources_1/new/ID.vhd:20]
+INFO: [Synth 8-3491] module 'UC' declared at '/media/toni/stuff/TUCN/UTCN/Second_Year/II/CA/Lab/L1/test_env/test_env.srcs/sources_1/new/UC.vhd:4' bound to instance 'connectMainControl' of component 'UC' [/media/toni/stuff/TUCN/UTCN/Second_Year/II/CA/Lab/L1/test_env/test_env.srcs/sources_1/new/test_env.vhd:133]
+INFO: [Synth 8-638] synthesizing module 'UC' [/media/toni/stuff/TUCN/UTCN/Second_Year/II/CA/Lab/L1/test_env/test_env.srcs/sources_1/new/UC.vhd:19]
+INFO: [Synth 8-256] done synthesizing module 'UC' (0#1) [/media/toni/stuff/TUCN/UTCN/Second_Year/II/CA/Lab/L1/test_env/test_env.srcs/sources_1/new/UC.vhd:19]
+WARNING: [Synth 8-5640] Port 'rt' is missing in component declaration [/media/toni/stuff/TUCN/UTCN/Second_Year/II/CA/Lab/L1/test_env/test_env.srcs/sources_1/new/test_env.vhd:71]
+WARNING: [Synth 8-5640] Port 'rd' is missing in component declaration [/media/toni/stuff/TUCN/UTCN/Second_Year/II/CA/Lab/L1/test_env/test_env.srcs/sources_1/new/test_env.vhd:71]
+WARNING: [Synth 8-5640] Port 'regdst' is missing in component declaration [/media/toni/stuff/TUCN/UTCN/Second_Year/II/CA/Lab/L1/test_env/test_env.srcs/sources_1/new/test_env.vhd:71]
+WARNING: [Synth 8-5640] Port 'rwa' is missing in component declaration [/media/toni/stuff/TUCN/UTCN/Second_Year/II/CA/Lab/L1/test_env/test_env.srcs/sources_1/new/test_env.vhd:71]
+INFO: [Synth 8-3491] module 'EX' declared at '/media/toni/stuff/TUCN/UTCN/Second_Year/II/CA/Lab/L1/test_env/test_env.srcs/sources_1/new/EX.vhd:6' bound to instance 'connectExecute' of component 'EX' [/media/toni/stuff/TUCN/UTCN/Second_Year/II/CA/Lab/L1/test_env/test_env.srcs/sources_1/new/test_env.vhd:134]
+INFO: [Synth 8-638] synthesizing module 'EX' [/media/toni/stuff/TUCN/UTCN/Second_Year/II/CA/Lab/L1/test_env/test_env.srcs/sources_1/new/EX.vhd:25]
+INFO: [Synth 8-226] default block is never used [/media/toni/stuff/TUCN/UTCN/Second_Year/II/CA/Lab/L1/test_env/test_env.srcs/sources_1/new/EX.vhd:58]
+INFO: [Synth 8-256] done synthesizing module 'EX' (0#1) [/media/toni/stuff/TUCN/UTCN/Second_Year/II/CA/Lab/L1/test_env/test_env.srcs/sources_1/new/EX.vhd:25]
+INFO: [Synth 8-3491] module 'mem' declared at '/media/toni/stuff/TUCN/UTCN/Second_Year/II/CA/Lab/L1/test_env/test_env.srcs/sources_1/new/mem.vhd:5' bound to instance 'connectMemory' of component 'mem' [/media/toni/stuff/TUCN/UTCN/Second_Year/II/CA/Lab/L1/test_env/test_env.srcs/sources_1/new/test_env.vhd:135]
+INFO: [Synth 8-638] synthesizing module 'mem' [/media/toni/stuff/TUCN/UTCN/Second_Year/II/CA/Lab/L1/test_env/test_env.srcs/sources_1/new/mem.vhd:15]
+INFO: [Synth 8-256] done synthesizing module 'mem' (0#1) [/media/toni/stuff/TUCN/UTCN/Second_Year/II/CA/Lab/L1/test_env/test_env.srcs/sources_1/new/mem.vhd:15]
+INFO: [Synth 8-226] default block is never used [/media/toni/stuff/TUCN/UTCN/Second_Year/II/CA/Lab/L1/test_env/test_env.srcs/sources_1/new/test_env.vhd:148]
+WARNING: [Synth 8-614] signal 'Instruction' is read in the process but is not in the sensitivity list [/media/toni/stuff/TUCN/UTCN/Second_Year/II/CA/Lab/L1/test_env/test_env.srcs/sources_1/new/test_env.vhd:146]
+WARNING: [Synth 8-614] signal 'PC_4' is read in the process but is not in the sensitivity list [/media/toni/stuff/TUCN/UTCN/Second_Year/II/CA/Lab/L1/test_env/test_env.srcs/sources_1/new/test_env.vhd:146]
+WARNING: [Synth 8-614] signal 'rd1' is read in the process but is not in the sensitivity list [/media/toni/stuff/TUCN/UTCN/Second_Year/II/CA/Lab/L1/test_env/test_env.srcs/sources_1/new/test_env.vhd:146]
+WARNING: [Synth 8-614] signal 'rd2' is read in the process but is not in the sensitivity list [/media/toni/stuff/TUCN/UTCN/Second_Year/II/CA/Lab/L1/test_env/test_env.srcs/sources_1/new/test_env.vhd:146]
+WARNING: [Synth 8-614] signal 'ext_imm' is read in the process but is not in the sensitivity list [/media/toni/stuff/TUCN/UTCN/Second_Year/II/CA/Lab/L1/test_env/test_env.srcs/sources_1/new/test_env.vhd:146]
+WARNING: [Synth 8-614] signal 'ALURes' is read in the process but is not in the sensitivity list [/media/toni/stuff/TUCN/UTCN/Second_Year/II/CA/Lab/L1/test_env/test_env.srcs/sources_1/new/test_env.vhd:146]
+WARNING: [Synth 8-614] signal 'MemData' is read in the process but is not in the sensitivity list [/media/toni/stuff/TUCN/UTCN/Second_Year/II/CA/Lab/L1/test_env/test_env.srcs/sources_1/new/test_env.vhd:146]
+WARNING: [Synth 8-614] signal 'wd' is read in the process but is not in the sensitivity list [/media/toni/stuff/TUCN/UTCN/Second_Year/II/CA/Lab/L1/test_env/test_env.srcs/sources_1/new/test_env.vhd:146]
+INFO: [Synth 8-3491] module 'SSD' declared at '/media/toni/stuff/TUCN/UTCN/Second_Year/II/CA/Lab/L1/test_env/test_env.srcs/sources_1/new/SSD.vhd:6' bound to instance 'displaySSD' of component 'SSD' [/media/toni/stuff/TUCN/UTCN/Second_Year/II/CA/Lab/L1/test_env/test_env.srcs/sources_1/new/test_env.vhd:161]
 INFO: [Synth 8-638] synthesizing module 'SSD' [/media/toni/stuff/TUCN/UTCN/Second_Year/II/CA/Lab/L1/test_env/test_env.srcs/sources_1/new/SSD.vhd:13]
 INFO: [Synth 8-226] default block is never used [/media/toni/stuff/TUCN/UTCN/Second_Year/II/CA/Lab/L1/test_env/test_env.srcs/sources_1/new/SSD.vhd:35]
 WARNING: [Synth 8-614] signal 'digit' is read in the process but is not in the sensitivity list [/media/toni/stuff/TUCN/UTCN/Second_Year/II/CA/Lab/L1/test_env/test_env.srcs/sources_1/new/SSD.vhd:32]
 INFO: [Synth 8-256] done synthesizing module 'SSD' (0#1) [/media/toni/stuff/TUCN/UTCN/Second_Year/II/CA/Lab/L1/test_env/test_env.srcs/sources_1/new/SSD.vhd:13]
 INFO: [Synth 8-256] done synthesizing module 'test_env' (0#1) [/media/toni/stuff/TUCN/UTCN/Second_Year/II/CA/Lab/L1/test_env/test_env.srcs/sources_1/new/test_env.vhd:14]
-WARNING: [Synth 8-3848] Net led in module/entity test_env does not have driver. [/media/toni/stuff/TUCN/UTCN/Second_Year/II/CA/Lab/L1/test_env/test_env.srcs/sources_1/new/test_env.vhd:10]
 WARNING: [Synth 8-7129] Port led[15] in module test_env is either unconnected or has no load
 WARNING: [Synth 8-7129] Port led[14] in module test_env is either unconnected or has no load
 WARNING: [Synth 8-7129] Port led[13] in module test_env is either unconnected or has no load
 WARNING: [Synth 8-7129] Port led[12] in module test_env is either unconnected or has no load
-WARNING: [Synth 8-7129] Port led[11] in module test_env is either unconnected or has no load
-WARNING: [Synth 8-7129] Port led[10] in module test_env is either unconnected or has no load
-WARNING: [Synth 8-7129] Port led[9] in module test_env is either unconnected or has no load
-WARNING: [Synth 8-7129] Port led[8] in module test_env is either unconnected or has no load
-WARNING: [Synth 8-7129] Port led[7] in module test_env is either unconnected or has no load
-WARNING: [Synth 8-7129] Port led[6] in module test_env is either unconnected or has no load
-WARNING: [Synth 8-7129] Port led[5] in module test_env is either unconnected or has no load
-WARNING: [Synth 8-7129] Port led[4] in module test_env is either unconnected or has no load
-WARNING: [Synth 8-7129] Port led[3] in module test_env is either unconnected or has no load
-WARNING: [Synth 8-7129] Port led[2] in module test_env is either unconnected or has no load
-WARNING: [Synth 8-7129] Port led[1] in module test_env is either unconnected or has no load
-WARNING: [Synth 8-7129] Port led[0] in module test_env is either unconnected or has no load
 WARNING: [Synth 8-7129] Port btn[4] in module test_env is either unconnected or has no load
 WARNING: [Synth 8-7129] Port btn[3] in module test_env is either unconnected or has no load
 WARNING: [Synth 8-7129] Port btn[2] in module test_env is either unconnected or has no load
-WARNING: [Synth 8-7129] Port btn[1] in module test_env is either unconnected or has no load
 WARNING: [Synth 8-7129] Port sw[15] in module test_env is either unconnected or has no load
 WARNING: [Synth 8-7129] Port sw[14] in module test_env is either unconnected or has no load
 WARNING: [Synth 8-7129] Port sw[13] in module test_env is either unconnected or has no load
@@ -69,33 +84,30 @@ WARNING: [Synth 8-7129] Port sw[11] in module test_env is either unconnected or 
 WARNING: [Synth 8-7129] Port sw[10] in module test_env is either unconnected or has no load
 WARNING: [Synth 8-7129] Port sw[9] in module test_env is either unconnected or has no load
 WARNING: [Synth 8-7129] Port sw[8] in module test_env is either unconnected or has no load
-WARNING: [Synth 8-7129] Port sw[7] in module test_env is either unconnected or has no load
-WARNING: [Synth 8-7129] Port sw[6] in module test_env is either unconnected or has no load
-WARNING: [Synth 8-7129] Port sw[5] in module test_env is either unconnected or has no load
 WARNING: [Synth 8-7129] Port sw[4] in module test_env is either unconnected or has no load
 WARNING: [Synth 8-7129] Port sw[3] in module test_env is either unconnected or has no load
 WARNING: [Synth 8-7129] Port sw[2] in module test_env is either unconnected or has no load
 WARNING: [Synth 8-7129] Port sw[1] in module test_env is either unconnected or has no load
 WARNING: [Synth 8-7129] Port sw[0] in module test_env is either unconnected or has no load
 ---------------------------------------------------------------------------------
-Finished RTL Elaboration : Time (s): cpu = 00:00:05 ; elapsed = 00:00:06 . Memory (MB): peak = 2014.680 ; gain = 439.738 ; free physical = 397 ; free virtual = 12815
-Synthesis current peak Physical Memory [PSS] (MB): peak = 1369.552; parent = 1164.697; children = 204.854
-Synthesis current peak Virtual Memory [VSS] (MB): peak = 3010.648; parent = 2014.684; children = 995.965
+Finished RTL Elaboration : Time (s): cpu = 00:00:10 ; elapsed = 00:00:11 . Memory (MB): peak = 2015.676 ; gain = 440.738 ; free physical = 2325 ; free virtual = 14551
+Synthesis current peak Physical Memory [PSS] (MB): peak = 1456.239; parent = 1251.694; children = 204.545
+Synthesis current peak Virtual Memory [VSS] (MB): peak = 2988.617; parent = 2015.680; children = 972.938
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:06 ; elapsed = 00:00:06 . Memory (MB): peak = 2032.492 ; gain = 457.551 ; free physical = 397 ; free virtual = 12814
-Synthesis current peak Physical Memory [PSS] (MB): peak = 1369.552; parent = 1164.697; children = 204.854
-Synthesis current peak Virtual Memory [VSS] (MB): peak = 3028.461; parent = 2032.496; children = 995.965
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:10 ; elapsed = 00:00:11 . Memory (MB): peak = 2033.488 ; gain = 458.551 ; free physical = 2325 ; free virtual = 14551
+Synthesis current peak Physical Memory [PSS] (MB): peak = 1456.239; parent = 1251.694; children = 204.545
+Synthesis current peak Virtual Memory [VSS] (MB): peak = 3006.430; parent = 2033.492; children = 972.938
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:06 ; elapsed = 00:00:06 . Memory (MB): peak = 2032.492 ; gain = 457.551 ; free physical = 397 ; free virtual = 12814
-Synthesis current peak Physical Memory [PSS] (MB): peak = 1369.552; parent = 1164.697; children = 204.854
-Synthesis current peak Virtual Memory [VSS] (MB): peak = 3028.461; parent = 2032.496; children = 995.965
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:10 ; elapsed = 00:00:11 . Memory (MB): peak = 2033.488 ; gain = 458.551 ; free physical = 2332 ; free virtual = 14557
+Synthesis current peak Physical Memory [PSS] (MB): peak = 1456.239; parent = 1251.694; children = 204.545
+Synthesis current peak Virtual Memory [VSS] (MB): peak = 3006.430; parent = 2033.492; children = 972.938
 ---------------------------------------------------------------------------------
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2032.492 ; gain = 0.000 ; free physical = 397 ; free virtual = 12814
+Netlist sorting complete. Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:00.01 . Memory (MB): peak = 2033.488 ; gain = 0.000 ; free physical = 2332 ; free virtual = 14558
 INFO: [Project 1-570] Preparing netlist for logic optimization
 
 Processing XDC Constraints
@@ -106,53 +118,65 @@ INFO: [Project 1-236] Implementation specific constraints were found while readi
 Resolution: To avoid this warning, move constraints listed in [.Xil/test_env_propImpl.xdc] to another XDC file and exclude this new file from synthesis with the used_in_synthesis property (File Properties dialog in GUI) and re-run elaboration/synthesis.
 Completed Processing XDC Constraints
 
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2170.242 ; gain = 0.000 ; free physical = 390 ; free virtual = 12808
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2173.238 ; gain = 0.000 ; free physical = 2341 ; free virtual = 14561
 INFO: [Project 1-111] Unisim Transformation Summary:
 No Unisim elements were transformed.
 
-Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.01 . Memory (MB): peak = 2170.242 ; gain = 0.000 ; free physical = 390 ; free virtual = 12808
+Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2173.238 ; gain = 0.000 ; free physical = 2341 ; free virtual = 14561
 INFO: [Designutils 20-5440] No compile time benefit to using incremental synthesis; A full resynthesis will be run
 INFO: [Designutils 20-4379] Flow is switching to default flow due to incremental criteria not met. If you would like to alter this behaviour and have the flow terminate instead, please set the following parameter config_implementation {autoIncr.Synth.RejectBehavior Terminate}
 INFO: [Synth 8-11241] undeclared symbol 'REGCCE', assumed default net type 'wire' [/tools/Xilinx/Vivado/2022.2/data/verilog/src/unimacro/BRAM_SINGLE_MACRO.v:2170]
 ---------------------------------------------------------------------------------
-Finished Constraint Validation : Time (s): cpu = 00:00:12 ; elapsed = 00:00:13 . Memory (MB): peak = 2170.242 ; gain = 595.301 ; free physical = 377 ; free virtual = 12797
-Synthesis current peak Physical Memory [PSS] (MB): peak = 1376.172; parent = 1171.352; children = 204.854
-Synthesis current peak Virtual Memory [VSS] (MB): peak = 3134.195; parent = 2138.230; children = 995.965
+Finished Constraint Validation : Time (s): cpu = 00:00:21 ; elapsed = 00:00:22 . Memory (MB): peak = 2173.238 ; gain = 598.301 ; free physical = 2163 ; free virtual = 14597
+Synthesis current peak Physical Memory [PSS] (MB): peak = 1456.239; parent = 1251.694; children = 204.545
+Synthesis current peak Virtual Memory [VSS] (MB): peak = 3114.164; parent = 2141.227; children = 972.938
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Loading Part and Timing Information
 ---------------------------------------------------------------------------------
 Loading part: xc7a100tcsg324-1
 ---------------------------------------------------------------------------------
-Finished Loading Part and Timing Information : Time (s): cpu = 00:00:12 ; elapsed = 00:00:13 . Memory (MB): peak = 2170.242 ; gain = 595.301 ; free physical = 377 ; free virtual = 12797
-Synthesis current peak Physical Memory [PSS] (MB): peak = 1376.172; parent = 1171.352; children = 204.854
-Synthesis current peak Virtual Memory [VSS] (MB): peak = 3134.195; parent = 2138.230; children = 995.965
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:21 ; elapsed = 00:00:23 . Memory (MB): peak = 2173.238 ; gain = 598.301 ; free physical = 2163 ; free virtual = 14597
+Synthesis current peak Physical Memory [PSS] (MB): peak = 1456.239; parent = 1251.694; children = 204.545
+Synthesis current peak Virtual Memory [VSS] (MB): peak = 3114.164; parent = 2141.227; children = 972.938
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Applying 'set_property' XDC Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:12 ; elapsed = 00:00:13 . Memory (MB): peak = 2170.242 ; gain = 595.301 ; free physical = 381 ; free virtual = 12801
-Synthesis current peak Physical Memory [PSS] (MB): peak = 1376.172; parent = 1171.352; children = 204.854
-Synthesis current peak Virtual Memory [VSS] (MB): peak = 3134.195; parent = 2138.230; children = 995.965
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:21 ; elapsed = 00:00:23 . Memory (MB): peak = 2173.238 ; gain = 598.301 ; free physical = 2163 ; free virtual = 14597
+Synthesis current peak Physical Memory [PSS] (MB): peak = 1456.239; parent = 1251.694; children = 204.545
+Synthesis current peak Virtual Memory [VSS] (MB): peak = 3114.164; parent = 2141.227; children = 972.938
 ---------------------------------------------------------------------------------
-WARNING: [Synth 8-327] inferring latch for variable 'cnt_reg' [/media/toni/stuff/TUCN/UTCN/Second_Year/II/CA/Lab/L1/test_env/test_env.srcs/sources_1/new/test_env.vhd:100]
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:12 ; elapsed = 00:00:13 . Memory (MB): peak = 2170.242 ; gain = 595.301 ; free physical = 385 ; free virtual = 12806
-Synthesis current peak Physical Memory [PSS] (MB): peak = 1376.172; parent = 1171.352; children = 204.854
-Synthesis current peak Virtual Memory [VSS] (MB): peak = 3134.195; parent = 2138.230; children = 995.965
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:21 ; elapsed = 00:00:23 . Memory (MB): peak = 2173.238 ; gain = 598.301 ; free physical = 2176 ; free virtual = 14611
+Synthesis current peak Physical Memory [PSS] (MB): peak = 1456.239; parent = 1251.694; children = 204.545
+Synthesis current peak Virtual Memory [VSS] (MB): peak = 3114.164; parent = 2141.227; children = 972.938
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start RTL Component Statistics 
 ---------------------------------------------------------------------------------
 Detailed RTL Component Info : 
 +---Adders : 
-	   2 Input    5 Bit       Adders := 1     
+	   2 Input   32 Bit       Adders := 3     
+	   3 Input   32 Bit       Adders := 1     
++---XORs : 
+	   2 Input     32 Bit         XORs := 1     
 +---Registers : 
-	                1 Bit    Registers := 3     
+	               32 Bit    Registers := 1     
+	                1 Bit    Registers := 6     
++---RAMs : 
+	               2K Bit	(64 X 32 bit)          RAMs := 1     
+	             1024 Bit	(32 X 32 bit)          RAMs := 1     
 +---Muxes : 
 	  33 Input   32 Bit        Muxes := 1     
+	   2 Input   32 Bit        Muxes := 4     
+	   2 Input   16 Bit        Muxes := 1     
 	   8 Input    8 Bit        Muxes := 1     
+	   2 Input    5 Bit        Muxes := 2     
+	  13 Input    3 Bit        Muxes := 1     
+	   9 Input    2 Bit        Muxes := 1     
+	   9 Input    1 Bit        Muxes := 9     
 ---------------------------------------------------------------------------------
 Finished RTL Component Statistics 
 ---------------------------------------------------------------------------------
@@ -169,26 +193,14 @@ Finished Part Resource Summary
 Start Cross Boundary and Area Optimization
 ---------------------------------------------------------------------------------
 WARNING: [Synth 8-7080] Parallel synthesis criteria is not met
+WARNING: [Synth 8-3917] design test_env has port led[10] driven by constant 0
 WARNING: [Synth 8-7129] Port led[15] in module test_env is either unconnected or has no load
 WARNING: [Synth 8-7129] Port led[14] in module test_env is either unconnected or has no load
 WARNING: [Synth 8-7129] Port led[13] in module test_env is either unconnected or has no load
 WARNING: [Synth 8-7129] Port led[12] in module test_env is either unconnected or has no load
-WARNING: [Synth 8-7129] Port led[11] in module test_env is either unconnected or has no load
-WARNING: [Synth 8-7129] Port led[10] in module test_env is either unconnected or has no load
-WARNING: [Synth 8-7129] Port led[9] in module test_env is either unconnected or has no load
-WARNING: [Synth 8-7129] Port led[8] in module test_env is either unconnected or has no load
-WARNING: [Synth 8-7129] Port led[7] in module test_env is either unconnected or has no load
-WARNING: [Synth 8-7129] Port led[6] in module test_env is either unconnected or has no load
-WARNING: [Synth 8-7129] Port led[5] in module test_env is either unconnected or has no load
-WARNING: [Synth 8-7129] Port led[4] in module test_env is either unconnected or has no load
-WARNING: [Synth 8-7129] Port led[3] in module test_env is either unconnected or has no load
-WARNING: [Synth 8-7129] Port led[2] in module test_env is either unconnected or has no load
-WARNING: [Synth 8-7129] Port led[1] in module test_env is either unconnected or has no load
-WARNING: [Synth 8-7129] Port led[0] in module test_env is either unconnected or has no load
 WARNING: [Synth 8-7129] Port btn[4] in module test_env is either unconnected or has no load
 WARNING: [Synth 8-7129] Port btn[3] in module test_env is either unconnected or has no load
 WARNING: [Synth 8-7129] Port btn[2] in module test_env is either unconnected or has no load
-WARNING: [Synth 8-7129] Port btn[1] in module test_env is either unconnected or has no load
 WARNING: [Synth 8-7129] Port sw[15] in module test_env is either unconnected or has no load
 WARNING: [Synth 8-7129] Port sw[14] in module test_env is either unconnected or has no load
 WARNING: [Synth 8-7129] Port sw[13] in module test_env is either unconnected or has no load
@@ -197,42 +209,70 @@ WARNING: [Synth 8-7129] Port sw[11] in module test_env is either unconnected or 
 WARNING: [Synth 8-7129] Port sw[10] in module test_env is either unconnected or has no load
 WARNING: [Synth 8-7129] Port sw[9] in module test_env is either unconnected or has no load
 WARNING: [Synth 8-7129] Port sw[8] in module test_env is either unconnected or has no load
-WARNING: [Synth 8-7129] Port sw[7] in module test_env is either unconnected or has no load
-WARNING: [Synth 8-7129] Port sw[6] in module test_env is either unconnected or has no load
-WARNING: [Synth 8-7129] Port sw[5] in module test_env is either unconnected or has no load
 WARNING: [Synth 8-7129] Port sw[4] in module test_env is either unconnected or has no load
 WARNING: [Synth 8-7129] Port sw[3] in module test_env is either unconnected or has no load
 WARNING: [Synth 8-7129] Port sw[2] in module test_env is either unconnected or has no load
 WARNING: [Synth 8-7129] Port sw[1] in module test_env is either unconnected or has no load
 WARNING: [Synth 8-7129] Port sw[0] in module test_env is either unconnected or has no load
 ---------------------------------------------------------------------------------
-Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:13 ; elapsed = 00:00:15 . Memory (MB): peak = 2170.242 ; gain = 595.301 ; free physical = 367 ; free virtual = 12792
-Synthesis current peak Physical Memory [PSS] (MB): peak = 1376.172; parent = 1171.352; children = 204.854
-Synthesis current peak Virtual Memory [VSS] (MB): peak = 3134.195; parent = 2138.230; children = 995.965
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:29 ; elapsed = 00:00:32 . Memory (MB): peak = 2173.238 ; gain = 598.301 ; free physical = 2164 ; free virtual = 14623
+Synthesis current peak Physical Memory [PSS] (MB): peak = 1456.239; parent = 1251.694; children = 204.545
+Synthesis current peak Virtual Memory [VSS] (MB): peak = 3114.164; parent = 2141.227; children = 972.938
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start ROM, RAM, DSP, Shift Register and Retiming Reporting
+---------------------------------------------------------------------------------
+
+Distributed RAM: Preliminary Mapping Report (see note below)
++------------+-------------------------------+-----------+----------------------+----------------+
+|Module Name | RTL Object                    | Inference | Size (Depth x Width) | Primitives     | 
++------------+-------------------------------+-----------+----------------------+----------------+
+|test_env    | connectMemory/memory_data_reg | Implied   | 64 x 32              | RAM64X1S x 32  | 
+|test_env    | connectIDecode/reg_file_reg   | Implied   | 32 x 32              | RAM32M x 12    | 
++------------+-------------------------------+-----------+----------------------+----------------+
+
+Note: The table above is a preliminary report that shows the Distributed RAMs at the current stage of the synthesis flow. Some Distributed RAMs may be reimplemented as non Distributed RAM primitives later in the synthesis flow. Multiple instantiated RAMs are reported only once.
+---------------------------------------------------------------------------------
+Finished ROM, RAM, DSP, Shift Register and Retiming Reporting
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Applying XDC Timing Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:17 ; elapsed = 00:00:19 . Memory (MB): peak = 2170.242 ; gain = 595.301 ; free physical = 294 ; free virtual = 12719
-Synthesis current peak Physical Memory [PSS] (MB): peak = 1470.134; parent = 1265.342; children = 204.854
-Synthesis current peak Virtual Memory [VSS] (MB): peak = 3134.195; parent = 2138.230; children = 995.965
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:38 ; elapsed = 00:00:40 . Memory (MB): peak = 2173.238 ; gain = 598.301 ; free physical = 2110 ; free virtual = 14570
+Synthesis current peak Physical Memory [PSS] (MB): peak = 1482.173; parent = 1277.690; children = 204.545
+Synthesis current peak Virtual Memory [VSS] (MB): peak = 3114.164; parent = 2141.227; children = 972.938
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Timing Optimization
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Timing Optimization : Time (s): cpu = 00:00:18 ; elapsed = 00:00:19 . Memory (MB): peak = 2170.242 ; gain = 595.301 ; free physical = 267 ; free virtual = 12691
-Synthesis current peak Physical Memory [PSS] (MB): peak = 1470.134; parent = 1265.342; children = 204.854
-Synthesis current peak Virtual Memory [VSS] (MB): peak = 3134.195; parent = 2138.230; children = 995.965
+Finished Timing Optimization : Time (s): cpu = 00:00:59 ; elapsed = 00:01:02 . Memory (MB): peak = 2173.238 ; gain = 598.301 ; free physical = 1996 ; free virtual = 14457
+Synthesis current peak Physical Memory [PSS] (MB): peak = 1594.974; parent = 1390.491; children = 204.545
+Synthesis current peak Virtual Memory [VSS] (MB): peak = 3145.445; parent = 2172.508; children = 972.938
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start ROM, RAM, DSP, Shift Register and Retiming Reporting
+---------------------------------------------------------------------------------
+
+Distributed RAM: Final Mapping Report
++------------+-------------------------------+-----------+----------------------+----------------+
+|Module Name | RTL Object                    | Inference | Size (Depth x Width) | Primitives     | 
++------------+-------------------------------+-----------+----------------------+----------------+
+|test_env    | connectMemory/memory_data_reg | Implied   | 64 x 32              | RAM64X1S x 32  | 
+|test_env    | connectIDecode/reg_file_reg   | Implied   | 32 x 32              | RAM32M x 12    | 
++------------+-------------------------------+-----------+----------------------+----------------+
+
+---------------------------------------------------------------------------------
+Finished ROM, RAM, DSP, Shift Register and Retiming Reporting
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Technology Mapping
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Technology Mapping : Time (s): cpu = 00:00:18 ; elapsed = 00:00:19 . Memory (MB): peak = 2170.242 ; gain = 595.301 ; free physical = 267 ; free virtual = 12691
-Synthesis current peak Physical Memory [PSS] (MB): peak = 1470.134; parent = 1265.342; children = 204.854
-Synthesis current peak Virtual Memory [VSS] (MB): peak = 3134.195; parent = 2138.230; children = 995.965
+Finished Technology Mapping : Time (s): cpu = 00:01:00 ; elapsed = 00:01:02 . Memory (MB): peak = 2173.238 ; gain = 598.301 ; free physical = 1999 ; free virtual = 14460
+Synthesis current peak Physical Memory [PSS] (MB): peak = 1594.974; parent = 1390.491; children = 204.545
+Synthesis current peak Virtual Memory [VSS] (MB): peak = 3145.445; parent = 2172.508; children = 972.938
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start IO Insertion
@@ -250,49 +290,49 @@ Start Final Netlist Cleanup
 Finished Final Netlist Cleanup
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished IO Insertion : Time (s): cpu = 00:00:22 ; elapsed = 00:00:23 . Memory (MB): peak = 2170.242 ; gain = 595.301 ; free physical = 292 ; free virtual = 12717
-Synthesis current peak Physical Memory [PSS] (MB): peak = 1470.134; parent = 1265.342; children = 204.854
-Synthesis current peak Virtual Memory [VSS] (MB): peak = 3134.195; parent = 2138.230; children = 995.965
+Finished IO Insertion : Time (s): cpu = 00:01:06 ; elapsed = 00:01:09 . Memory (MB): peak = 2173.238 ; gain = 598.301 ; free physical = 2024 ; free virtual = 14486
+Synthesis current peak Physical Memory [PSS] (MB): peak = 1594.974; parent = 1390.491; children = 204.545
+Synthesis current peak Virtual Memory [VSS] (MB): peak = 3145.445; parent = 2172.508; children = 972.938
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Instances
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Instances : Time (s): cpu = 00:00:22 ; elapsed = 00:00:23 . Memory (MB): peak = 2170.242 ; gain = 595.301 ; free physical = 292 ; free virtual = 12717
-Synthesis current peak Physical Memory [PSS] (MB): peak = 1470.134; parent = 1265.342; children = 204.854
-Synthesis current peak Virtual Memory [VSS] (MB): peak = 3134.195; parent = 2138.230; children = 995.965
+Finished Renaming Generated Instances : Time (s): cpu = 00:01:06 ; elapsed = 00:01:09 . Memory (MB): peak = 2173.238 ; gain = 598.301 ; free physical = 2025 ; free virtual = 14487
+Synthesis current peak Physical Memory [PSS] (MB): peak = 1594.974; parent = 1390.491; children = 204.545
+Synthesis current peak Virtual Memory [VSS] (MB): peak = 3145.445; parent = 2172.508; children = 972.938
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Rebuilding User Hierarchy
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:22 ; elapsed = 00:00:23 . Memory (MB): peak = 2170.242 ; gain = 595.301 ; free physical = 292 ; free virtual = 12717
-Synthesis current peak Physical Memory [PSS] (MB): peak = 1470.134; parent = 1265.342; children = 204.854
-Synthesis current peak Virtual Memory [VSS] (MB): peak = 3134.195; parent = 2138.230; children = 995.965
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:01:06 ; elapsed = 00:01:09 . Memory (MB): peak = 2173.238 ; gain = 598.301 ; free physical = 2025 ; free virtual = 14487
+Synthesis current peak Physical Memory [PSS] (MB): peak = 1594.974; parent = 1390.491; children = 204.545
+Synthesis current peak Virtual Memory [VSS] (MB): peak = 3145.445; parent = 2172.508; children = 972.938
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Ports
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Ports : Time (s): cpu = 00:00:22 ; elapsed = 00:00:23 . Memory (MB): peak = 2170.242 ; gain = 595.301 ; free physical = 292 ; free virtual = 12717
-Synthesis current peak Physical Memory [PSS] (MB): peak = 1470.142; parent = 1265.350; children = 204.854
-Synthesis current peak Virtual Memory [VSS] (MB): peak = 3134.195; parent = 2138.230; children = 995.965
+Finished Renaming Generated Ports : Time (s): cpu = 00:01:06 ; elapsed = 00:01:09 . Memory (MB): peak = 2173.238 ; gain = 598.301 ; free physical = 2025 ; free virtual = 14487
+Synthesis current peak Physical Memory [PSS] (MB): peak = 1594.974; parent = 1390.491; children = 204.545
+Synthesis current peak Virtual Memory [VSS] (MB): peak = 3145.445; parent = 2172.508; children = 972.938
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:22 ; elapsed = 00:00:23 . Memory (MB): peak = 2170.242 ; gain = 595.301 ; free physical = 292 ; free virtual = 12717
-Synthesis current peak Physical Memory [PSS] (MB): peak = 1470.142; parent = 1265.350; children = 204.854
-Synthesis current peak Virtual Memory [VSS] (MB): peak = 3134.195; parent = 2138.230; children = 995.965
+Finished Handling Custom Attributes : Time (s): cpu = 00:01:06 ; elapsed = 00:01:09 . Memory (MB): peak = 2173.238 ; gain = 598.301 ; free physical = 2025 ; free virtual = 14487
+Synthesis current peak Physical Memory [PSS] (MB): peak = 1594.974; parent = 1390.491; children = 204.545
+Synthesis current peak Virtual Memory [VSS] (MB): peak = 3145.445; parent = 2172.508; children = 972.938
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Nets
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Nets : Time (s): cpu = 00:00:22 ; elapsed = 00:00:23 . Memory (MB): peak = 2170.242 ; gain = 595.301 ; free physical = 292 ; free virtual = 12717
-Synthesis current peak Physical Memory [PSS] (MB): peak = 1470.173; parent = 1265.381; children = 204.854
-Synthesis current peak Virtual Memory [VSS] (MB): peak = 3134.195; parent = 2138.230; children = 995.965
+Finished Renaming Generated Nets : Time (s): cpu = 00:01:06 ; elapsed = 00:01:09 . Memory (MB): peak = 2173.238 ; gain = 598.301 ; free physical = 2025 ; free virtual = 14487
+Synthesis current peak Physical Memory [PSS] (MB): peak = 1594.974; parent = 1390.491; children = 204.545
+Synthesis current peak Virtual Memory [VSS] (MB): peak = 3145.445; parent = 2172.508; children = 972.938
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Writing Synthesis Report
@@ -305,47 +345,51 @@ Report BlackBoxes:
 +-+--------------+----------+
 
 Report Cell Usage: 
-+------+-------+------+
-|      |Cell   |Count |
-+------+-------+------+
-|1     |BUFG   |     1|
-|2     |CARRY4 |    10|
-|3     |LUT1   |     3|
-|4     |LUT2   |     2|
-|5     |LUT3   |     9|
-|6     |LUT4   |    12|
-|7     |LUT5   |     5|
-|8     |LUT6   |     5|
-|9     |FDRE   |    38|
-|10    |LD     |     5|
-|11    |IBUF   |     2|
-|12    |OBUF   |    15|
-|13    |OBUFT  |    16|
-+------+-------+------+
++------+---------+------+
+|      |Cell     |Count |
++------+---------+------+
+|1     |BUFG     |     1|
+|2     |CARRY4   |    46|
+|3     |LUT1     |     2|
+|4     |LUT2     |    12|
+|5     |LUT3     |   113|
+|6     |LUT4     |    60|
+|7     |LUT5     |   129|
+|8     |LUT6     |   234|
+|9     |RAM32M   |    10|
+|10    |RAM32X1D |     4|
+|11    |RAM64X1S |    32|
+|12    |FDRE     |    73|
+|13    |IBUF     |     6|
+|14    |OBUF     |    27|
+|15    |OBUFT    |     4|
++------+---------+------+
 ---------------------------------------------------------------------------------
-Finished Writing Synthesis Report : Time (s): cpu = 00:00:22 ; elapsed = 00:00:23 . Memory (MB): peak = 2170.242 ; gain = 595.301 ; free physical = 292 ; free virtual = 12717
-Synthesis current peak Physical Memory [PSS] (MB): peak = 1470.188; parent = 1265.396; children = 204.854
-Synthesis current peak Virtual Memory [VSS] (MB): peak = 3134.195; parent = 2138.230; children = 995.965
+Finished Writing Synthesis Report : Time (s): cpu = 00:01:06 ; elapsed = 00:01:10 . Memory (MB): peak = 2173.238 ; gain = 598.301 ; free physical = 2025 ; free virtual = 14487
+Synthesis current peak Physical Memory [PSS] (MB): peak = 1594.974; parent = 1390.491; children = 204.545
+Synthesis current peak Virtual Memory [VSS] (MB): peak = 3145.445; parent = 2172.508; children = 972.938
 ---------------------------------------------------------------------------------
-Synthesis finished with 0 errors, 0 critical warnings and 38 warnings.
-Synthesis Optimization Runtime : Time (s): cpu = 00:00:20 ; elapsed = 00:00:22 . Memory (MB): peak = 2170.242 ; gain = 457.551 ; free physical = 347 ; free virtual = 12771
-Synthesis Optimization Complete : Time (s): cpu = 00:00:22 ; elapsed = 00:00:24 . Memory (MB): peak = 2170.242 ; gain = 595.301 ; free physical = 348 ; free virtual = 12772
+Synthesis finished with 0 errors, 0 critical warnings and 22 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:01:03 ; elapsed = 00:01:07 . Memory (MB): peak = 2173.238 ; gain = 458.551 ; free physical = 2067 ; free virtual = 14529
+Synthesis Optimization Complete : Time (s): cpu = 00:01:06 ; elapsed = 00:01:10 . Memory (MB): peak = 2173.238 ; gain = 598.301 ; free physical = 2067 ; free virtual = 14529
 INFO: [Project 1-571] Translating synthesized netlist
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2170.242 ; gain = 0.000 ; free physical = 366 ; free virtual = 12791
-INFO: [Netlist 29-17] Analyzing 15 Unisim elements for replacement
+Netlist sorting complete. Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:00.02 . Memory (MB): peak = 2175.473 ; gain = 0.000 ; free physical = 2179 ; free virtual = 14640
+INFO: [Netlist 29-17] Analyzing 92 Unisim elements for replacement
 INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
 INFO: [Project 1-570] Preparing netlist for logic optimization
 INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2170.242 ; gain = 0.000 ; free physical = 328 ; free virtual = 12752
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2206.422 ; gain = 0.000 ; free physical = 2119 ; free virtual = 14580
 INFO: [Project 1-111] Unisim Transformation Summary:
-  A total of 5 instances were transformed.
-  LD => LDCE: 5 instances
+  A total of 46 instances were transformed.
+  RAM32M => RAM32M (RAMD32(x6), RAMS32(x2)): 10 instances
+  RAM32X1D => RAM32X1D (RAMD32(x2)): 4 instances
+  RAM64X1S => RAM64X1S (RAMS64E): 32 instances
 
-Synth Design complete, checksum: e7ee09c2
+Synth Design complete, checksum: d7153605
 INFO: [Common 17-83] Releasing license: Synthesis
-32 Infos, 78 Warnings, 0 Critical Warnings and 0 Errors encountered.
+50 Infos, 55 Warnings, 0 Critical Warnings and 0 Errors encountered.
 synth_design completed successfully
-synth_design: Time (s): cpu = 00:00:28 ; elapsed = 00:00:28 . Memory (MB): peak = 2170.242 ; gain = 846.715 ; free physical = 473 ; free virtual = 12897
+synth_design: Time (s): cpu = 00:01:20 ; elapsed = 00:01:18 . Memory (MB): peak = 2206.422 ; gain = 882.898 ; free physical = 2349 ; free virtual = 14810
 INFO: [Common 17-1381] The checkpoint '/media/toni/stuff/TUCN/UTCN/Second_Year/II/CA/Lab/L1/test_env/test_env.runs/synth_1/test_env.dcp' has been generated.
 INFO: [runtcl-4] Executing : report_utilization -file test_env_utilization_synth.rpt -pb test_env_utilization_synth.pb
-INFO: [Common 17-206] Exiting Vivado at Mon Mar 10 13:32:29 2025...
+INFO: [Common 17-206] Exiting Vivado at Mon Apr  7 17:06:19 2025...

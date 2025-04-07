@@ -8,8 +8,8 @@ find_package(SDL3 REQUIRED)
 set(PROJECT_HEADERS
         transform.h
         vec2.h
-        vec3.h
-        vec4.h
+        ../L6/vec3.h
+        ../L6/vec4.h
         mat3.h
         mat4.h
         polygon.h

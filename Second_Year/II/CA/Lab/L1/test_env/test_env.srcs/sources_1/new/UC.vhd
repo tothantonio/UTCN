@@ -3,7 +3,7 @@ use IEEE.STD_LOGIC_1164.ALL;
 
 entity UC is
     Port ( Instr : in STD_LOGIC_VECTOR (5 downto 0);
-           RedDst : out STD_LOGIC;
+           RegDst : out STD_LOGIC;
            ExtOp : out STD_LOGIC;
            ALUSrc : out STD_LOGIC;
            Branch : out STD_LOGIC;
@@ -23,7 +23,7 @@ begin
 process(Instr)
 begin
 
-RedDst <= '0';
+RegDst <= '0';
 ExtOp <= '0';
 ALUSrc <= '0';
 Branch <= '0';
@@ -36,31 +36,34 @@ RegWrite <= '0';
 
 case Instr is
     when "000000" => --Tip R
-    RedDst <= '1'; RegWrite <= '1'; ALUOp <= "000";
+    RegDst <= '1'; RegWrite <= '1'; ALUOp <= "000";
     
-   when "000001" => --ADDI
+   when "001000" => --ADDI
    ExtOp <= '1';ALUSrc <= '1'; RegWrite <= '1'; ALUOp <= "001";
    
-   when "000111" => --LW
+   when "100011" => --LW
    ExtOp <= '1';ALUSrc <= '1'; MemtoReg <= '1'; RegWrite <= '1'; ALUOp <= "001";
    
-   when "000011" => --SW
+   when "101011" => --SW
    ExtOp <= '1';ALUSrc <= '1'; MemWrite <= '1'; ALUOp <= "001";        
     
    when "000100" => --BEQ
    ExtOp <= '1'; Branch <= '1'; ALUOp <= "010";                      
    
-   when "000101" => --ORI
+   when "001101" => --ORI
    ExtOp <= '1';ALUSrc <= '1';RegWrite <= '1';  ALUOp <= "011";
    
-   when "000110" => --BNE
+   when "000101" => --BNE
     ExtOp <= '1'; Br_ne <= '1';  ALUOp <= "010"; 
    
-   when "100000" => --JUMP
+   when "000010" => --JUMP
    Jump <= '1';
    
    when others => 
-   RedDst <= '0'; ExtOp <= '0'; ALUSrc <= '0'; Branch <= '0'; Br_ne <= '0'; Jump <= '0'; ALUOp <= "000"; MemWrite <= '0'; MemtoReg <= '0'; RegWrite <= '0';
+   RegDst <= '0'; ExtOp <= '0'; ALUSrc <= '0'; 
+   Branch <= '0'; Br_ne <= '0'; Jump <= '0'; 
+   ALUOp <= "000"; MemWrite <= '0'; MemtoReg <= '0'; 
+   RegWrite <= '0';
 end case;
 end process;
 
