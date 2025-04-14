@@ -1,7 +1,7 @@
 Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
 -------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2022.2 (lin64) Build 3671981 Fri Oct 14 04:59:54 MDT 2022
-| Date         : Mon Apr  7 17:08:26 2025
+| Date         : Mon Apr 14 13:47:20 2025
 | Host         : Toni-HP-ProBook running 64-bit Ubuntu 24.04.2 LTS
 | Command      : report_control_sets -verbose -file test_env_control_sets_placed.rpt
 | Design       : test_env
@@ -27,7 +27,7 @@ Table of Contents
 |    Minimum number of control sets                        |     5 |
 |    Addition due to synthesis replication                 |     0 |
 |    Addition due to physical synthesis replication        |     0 |
-| Unused register locations in slices containing registers |     7 |
+| Unused register locations in slices containing registers |     9 |
 +----------------------------------------------------------+-------+
 * Control sets can be merged at opt_design using control_set_merge or merge_equivalent_drivers
 ** Run report_qor_suggestions for automated merging and remapping suggestions
@@ -58,26 +58,26 @@ Table of Contents
 +--------------+-----------------------+------------------------+-----------------+--------------+
 | Clock Enable | Synchronous Set/Reset | Asynchronous Set/Reset | Total Registers | Total Slices |
 +--------------+-----------------------+------------------------+-----------------+--------------+
-| No           | No                    | No                     |              39 |           12 |
+| No           | No                    | No                     |              39 |           13 |
 | No           | No                    | Yes                    |               0 |            0 |
 | No           | Yes                   | No                     |               0 |            0 |
 | Yes          | No                    | No                     |               2 |            1 |
-| Yes          | No                    | Yes                    |               0 |            0 |
-| Yes          | Yes                   | No                     |              32 |           21 |
+| Yes          | No                    | Yes                    |              30 |           17 |
+| Yes          | Yes                   | No                     |               0 |            0 |
 +--------------+-----------------------+------------------------+-----------------+--------------+
 
 
 4. Detailed Control Set Information
 -----------------------------------
 
-+----------------+----------------------+-------------------+------------------+----------------+--------------+
-|  Clock Signal  |     Enable Signal    |  Set/Reset Signal | Slice Load Count | Bel Load Count | Bels / Slice |
-+----------------+----------------------+-------------------+------------------+----------------+--------------+
-|  clk_IBUF_BUFG | connectMPG1/eqOp     |                   |                1 |              2 |         2.00 |
-|  clk_IBUF_BUFG | connectIFetch/p_0_in |                   |                8 |             32 |         4.00 |
-|  clk_IBUF_BUFG | connectMPG1/E[0]     | connectMPG2/SR[0] |               21 |             32 |         1.52 |
-|  clk_IBUF_BUFG |                      |                   |               12 |             39 |         3.25 |
-|  clk_IBUF_BUFG | connectIFetch/p_1_in |                   |               11 |             88 |         8.00 |
-+----------------+----------------------+-------------------+------------------+----------------+--------------+
++----------------+------------------------------+-------------------+------------------+----------------+--------------+
+|  Clock Signal  |         Enable Signal        |  Set/Reset Signal | Slice Load Count | Bel Load Count | Bels / Slice |
++----------------+------------------------------+-------------------+------------------+----------------+--------------+
+|  clk_IBUF_BUFG | connectMPG1/eqOp             |                   |                1 |              2 |         2.00 |
+|  clk_IBUF_BUFG | connectMPG1/E[0]             | connectMPG2/AR[0] |               17 |             30 |         1.76 |
+|  clk_IBUF_BUFG | connectIFetch/p_0_in         |                   |                8 |             32 |         4.00 |
+|  clk_IBUF_BUFG |                              |                   |               13 |             39 |         3.00 |
+|  clk_IBUF_BUFG | connectIFetch/PCReg_reg[6]_1 |                   |               11 |             88 |         8.00 |
++----------------+------------------------------+-------------------+------------------+----------------+--------------+
 
 

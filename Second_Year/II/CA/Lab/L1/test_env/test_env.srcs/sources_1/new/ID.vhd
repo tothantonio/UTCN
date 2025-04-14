@@ -37,8 +37,7 @@ func <= Instr(5 downto 0);
 sa <= Instr(10 downto 6);
 
 ext_Imm(15 downto 0) <= Instr(15 downto 0); --bitii mai putin semnificativi sunt copiati direct
-ext_imm(31 downto 16) <= (others => Instr(15)) when ExtOp = '1' else -- bitii cei mai putini semnificativi se aleg in functie de extOp
-(others => '0');
+ext_imm(31 downto 16) <= (others => Instr(15)) when ExtOp = '1' else (others => '0'); -- bitii cei mai putini semnificativi se aleg in functie de extOp
 
 process(clk)
     begin

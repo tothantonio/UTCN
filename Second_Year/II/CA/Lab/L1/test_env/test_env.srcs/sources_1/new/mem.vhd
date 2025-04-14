@@ -16,29 +16,19 @@ architecture Behavioral of mem is
 
 type data_memory is array(0 to 63) of std_logic_vector(31 downto 0);
 signal memory_data : data_memory := (
-        X"0000000C", -- address of the start of the array
-        X"0000000A", -- length of the array
-        X"00000000",
-        X"00000000",
-        X"00000000",
-        X"00000000",
-        X"00000000",
-        X"00000000",
-        X"00000000", -- addr 8 of the result
-        X"00000000",
-        X"00000000",
-        X"00000000",
-        X"00000001", -- 1 -- addr of the start of array 12
-        X"00000002", -- 2
-        X"00000003", -- 3
-        X"00000004", -- 4
-        X"00000005", -- 5
-        X"00000006", -- 6
-        X"00000007", -- 7
-        X"00000008", -- 8
-        X"00000009", -- 9
-        X"0000000A", -- 10
-others => X"00000000");
+X"0000000C", --adresa lui A - adr0
+X"00000005", -- adr4
+X"00000000", -- adr8
+
+X"00000008", -- 1 -adr12
+X"00000002", -- 2
+X"00000003", -- 3
+X"00000004", -- 4
+X"00000005", -- 5
+
+  others => X"00000000"
+);
+
 
 begin
 

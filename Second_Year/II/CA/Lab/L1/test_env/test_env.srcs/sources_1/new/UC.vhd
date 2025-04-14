@@ -35,8 +35,8 @@ MemtoReg <= '0';
 RegWrite <= '0';
 
 case Instr is
-    when "000000" => --Tip R
-    RegDst <= '1'; RegWrite <= '1'; ALUOp <= "000";
+   when "000000" => --Tip R
+   RegDst <= '1'; RegWrite <= '1'; ALUOp <= "000";
     
    when "001000" => --ADDI
    ExtOp <= '1';ALUSrc <= '1'; RegWrite <= '1'; ALUOp <= "001";
@@ -48,21 +48,30 @@ case Instr is
    ExtOp <= '1';ALUSrc <= '1'; MemWrite <= '1'; ALUOp <= "001";        
     
    when "000100" => --BEQ
-   ExtOp <= '1'; Branch <= '1'; ALUOp <= "010";                      
+   ExtOp <= '1'; Branch <= '1'; ALUOp <= "010";    
+   
+   when "000101" => --BNE
+   ExtOp <= '1'; Br_ne <= '1';  ALUOp <= "010";                   
    
    when "001101" => --ORI
    ExtOp <= '1';ALUSrc <= '1';RegWrite <= '1';  ALUOp <= "011";
    
-   when "000101" => --BNE
-    ExtOp <= '1'; Br_ne <= '1';  ALUOp <= "010"; 
+   when "001100" => --ANDI
+   ExtOp <= '1';ALUSrc <= '1';RegWrite <= '1';  ALUOp <= "100";
    
    when "000010" => --JUMP
    Jump <= '1';
    
    when others => 
-   RegDst <= '0'; ExtOp <= '0'; ALUSrc <= '0'; 
-   Branch <= '0'; Br_ne <= '0'; Jump <= '0'; 
-   ALUOp <= "000"; MemWrite <= '0'; MemtoReg <= '0'; 
+   RegDst <= '0'; 
+   ExtOp <= '0'; 
+   ALUSrc <= '0'; 
+   Branch <= '0'; 
+   Br_ne <= '0'; 
+   Jump <= '0'; 
+   ALUOp <= "000"; 
+   MemWrite <= '0'; 
+   MemtoReg <= '0'; 
    RegWrite <= '0';
 end case;
 end process;

@@ -1,7 +1,7 @@
 Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
 ----------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version     : Vivado v.2022.2 (lin64) Build 3671981 Fri Oct 14 04:59:54 MDT 2022
-| Date             : Mon Apr  7 17:09:53 2025
+| Date             : Mon Apr 14 13:48:43 2025
 | Host             : Toni-HP-ProBook running 64-bit Ubuntu 24.04.2 LTS
 | Command          : report_power -file test_env_power_routed.rpt -pb test_env_power_summary_routed.pb -rpx test_env_power_routed.rpx
 | Design           : test_env
@@ -30,10 +30,10 @@ Table of Contents
 ----------
 
 +--------------------------+--------------+
-| Total On-Chip Power (W)  | 0.136        |
+| Total On-Chip Power (W)  | 0.135        |
 | Design Power Budget (W)  | Unspecified* |
 | Power Budget Margin (W)  | NA           |
-| Dynamic (W)              | 0.038        |
+| Dynamic (W)              | 0.037        |
 | Device Static (W)        | 0.097        |
 | Effective TJA (C/W)      | 4.6          |
 | Max Ambient (C)          | 84.4         |
@@ -52,17 +52,18 @@ Table of Contents
 +--------------------------+-----------+----------+-----------+-----------------+
 | On-Chip                  | Power (W) | Used     | Available | Utilization (%) |
 +--------------------------+-----------+----------+-----------+-----------------+
-| Clocks                   |     0.002 |        3 |       --- |             --- |
-| Slice Logic              |     0.005 |      808 |       --- |             --- |
-|   LUT as Logic           |     0.004 |      506 |     63400 |            0.80 |
+| Clocks                   |     0.001 |        3 |       --- |             --- |
+| Slice Logic              |     0.004 |      697 |       --- |             --- |
+|   LUT as Logic           |     0.003 |      370 |     63400 |            0.58 |
 |   LUT as Distributed RAM |    <0.001 |       76 |     19000 |            0.40 |
 |   CARRY4                 |    <0.001 |       46 |     15850 |            0.29 |
-|   Register               |    <0.001 |       75 |    126800 |            0.06 |
+|   F7/F8 Muxes            |    <0.001 |       43 |     63400 |            0.07 |
+|   Register               |    <0.001 |       73 |    126800 |            0.06 |
 |   Others                 |     0.000 |       12 |       --- |             --- |
-| Signals                  |     0.007 |      748 |       --- |             --- |
+| Signals                  |     0.007 |      559 |       --- |             --- |
 | I/O                      |     0.025 |       37 |       210 |           17.62 |
 | Static Power             |     0.097 |          |           |                 |
-| Total                    |     0.136 |          |           |                 |
+| Total                    |     0.135 |          |           |                 |
 +--------------------------+-----------+----------+-----------+-----------------+
 
 
@@ -72,7 +73,7 @@ Table of Contents
 +-----------+-------------+-----------+-------------+------------+-------------+-------------+------------+
 | Source    | Voltage (V) | Total (A) | Dynamic (A) | Static (A) | Powerup (A) | Budget (A)  | Margin (A) |
 +-----------+-------------+-----------+-------------+------------+-------------+-------------+------------+
-| Vccint    |       1.000 |     0.029 |       0.014 |      0.015 |       NA    | Unspecified | NA         |
+| Vccint    |       1.000 |     0.027 |       0.012 |      0.015 |       NA    | Unspecified | NA         |
 | Vccaux    |       1.800 |     0.019 |       0.001 |      0.018 |       NA    | Unspecified | NA         |
 | Vcco33    |       3.300 |     0.011 |       0.007 |      0.004 |       NA    | Unspecified | NA         |
 | Vcco25    |       2.500 |     0.000 |       0.000 |      0.000 |       NA    | Unspecified | NA         |
@@ -141,9 +142,9 @@ Table of Contents
 +------------------+-----------+
 | Name             | Power (W) |
 +------------------+-----------+
-| test_env         |     0.038 |
-|   connectIDecode |     0.004 |
-|   connectIFetch  |     0.007 |
+| test_env         |     0.037 |
+|   connectIDecode |     0.005 |
+|   connectIFetch  |     0.005 |
 +------------------+-----------+
 
 
