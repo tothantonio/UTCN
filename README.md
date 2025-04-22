@@ -25,5 +25,11 @@
   * [Special mathematics in engineering](Second_YearI//SME)
   * [Electronic measurements and sensors](Second_Year/I/EMS)
 
+  ### 4️⃣Semester
   
-     
+  * [Operating Systems](Second_Year/II/OS)
+  * [Numerical Methods](Second_Year/II/NM)
+  * [Computer Assisted Graphics](Second_Year/II/ECG)
+  * [System Theory](Second_Year/II/ST)
+  * [Computer Architecture](Second_Year/II/CA)
+  * [Fundamental Programming](Second_Year/II/PT)
