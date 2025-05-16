@@ -1,7 +1,7 @@
 Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
 ----------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version     : Vivado v.2022.2 (lin64) Build 3671981 Fri Oct 14 04:59:54 MDT 2022
-| Date             : Mon Apr 14 13:48:43 2025
+| Date             : Mon Apr 28 12:32:38 2025
 | Host             : Toni-HP-ProBook running 64-bit Ubuntu 24.04.2 LTS
 | Command          : report_power -file test_env_power_routed.rpt -pb test_env_power_summary_routed.pb -rpx test_env_power_routed.rpx
 | Design           : test_env
@@ -30,10 +30,10 @@ Table of Contents
 ----------
 
 +--------------------------+--------------+
-| Total On-Chip Power (W)  | 0.135        |
+| Total On-Chip Power (W)  | 0.133        |
 | Design Power Budget (W)  | Unspecified* |
 | Power Budget Margin (W)  | NA           |
-| Dynamic (W)              | 0.037        |
+| Dynamic (W)              | 0.036        |
 | Device Static (W)        | 0.097        |
 | Effective TJA (C/W)      | 4.6          |
 | Max Ambient (C)          | 84.4         |
@@ -52,18 +52,17 @@ Table of Contents
 +--------------------------+-----------+----------+-----------+-----------------+
 | On-Chip                  | Power (W) | Used     | Available | Utilization (%) |
 +--------------------------+-----------+----------+-----------+-----------------+
-| Clocks                   |     0.001 |        3 |       --- |             --- |
-| Slice Logic              |     0.004 |      697 |       --- |             --- |
-|   LUT as Logic           |     0.003 |      370 |     63400 |            0.58 |
+| Clocks                   |     0.002 |        3 |       --- |             --- |
+| Slice Logic              |     0.004 |      637 |       --- |             --- |
+|   LUT as Logic           |     0.003 |      348 |     63400 |            0.55 |
 |   LUT as Distributed RAM |    <0.001 |       76 |     19000 |            0.40 |
-|   CARRY4                 |    <0.001 |       46 |     15850 |            0.29 |
-|   F7/F8 Muxes            |    <0.001 |       43 |     63400 |            0.07 |
+|   CARRY4                 |    <0.001 |       38 |     15850 |            0.24 |
 |   Register               |    <0.001 |       73 |    126800 |            0.06 |
-|   Others                 |     0.000 |       12 |       --- |             --- |
-| Signals                  |     0.007 |      559 |       --- |             --- |
+|   Others                 |     0.000 |       11 |       --- |             --- |
+| Signals                  |     0.006 |      574 |       --- |             --- |
 | I/O                      |     0.025 |       37 |       210 |           17.62 |
 | Static Power             |     0.097 |          |           |                 |
-| Total                    |     0.135 |          |           |                 |
+| Total                    |     0.133 |          |           |                 |
 +--------------------------+-----------+----------+-----------+-----------------+
 
 
@@ -73,7 +72,7 @@ Table of Contents
 +-----------+-------------+-----------+-------------+------------+-------------+-------------+------------+
 | Source    | Voltage (V) | Total (A) | Dynamic (A) | Static (A) | Powerup (A) | Budget (A)  | Margin (A) |
 +-----------+-------------+-----------+-------------+------------+-------------+-------------+------------+
-| Vccint    |       1.000 |     0.027 |       0.012 |      0.015 |       NA    | Unspecified | NA         |
+| Vccint    |       1.000 |     0.026 |       0.011 |      0.015 |       NA    | Unspecified | NA         |
 | Vccaux    |       1.800 |     0.019 |       0.001 |      0.018 |       NA    | Unspecified | NA         |
 | Vcco33    |       3.300 |     0.011 |       0.007 |      0.004 |       NA    | Unspecified | NA         |
 | Vcco25    |       2.500 |     0.000 |       0.000 |      0.000 |       NA    | Unspecified | NA         |
@@ -139,12 +138,12 @@ Table of Contents
 3.1 By Hierarchy
 ----------------
 
-+------------------+-----------+
-| Name             | Power (W) |
-+------------------+-----------+
-| test_env         |     0.037 |
-|   connectIDecode |     0.005 |
-|   connectIFetch  |     0.005 |
-+------------------+-----------+
++-----------------+-----------+
+| Name            | Power (W) |
++-----------------+-----------+
+| test_env        |     0.036 |
+|   connectID     |     0.003 |
+|   connectIFetch |     0.006 |
++-----------------+-----------+
 
 

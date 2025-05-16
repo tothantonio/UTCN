@@ -13,6 +13,13 @@ end test_env;
 
 architecture Behavioral of test_env is
 
+signal func: std_logic_vector (5 downto 0);
+signal sa: std_logic_vector (4 downto 0);
+signal en, rst: std_logic := '0';
+signal output, Instruction, PC, rd1, rd2, wd, ext_imm, branchAdress, aluRes, aluResOut, memData, JumpAddress : std_logic_vector(31 downto 0);
+signal RegDst, ExtOp, ALUSrc, Branch, Jump, MemWrite, MemtoReg, RegWrite, zero, PCSrc, Br_ne: std_logic;
+signal ALUOp: std_logic_vector(2 downto 0);
+
 component MPG is
     port(clk : in std_logic;
          btn : in std_logic;
@@ -27,7 +34,7 @@ Port ( digit : in std_logic_vector(31 downto 0);
 end component;
 
 component IFetch is
-Port ( clk : in STD_LOGIC;
+    Port ( clk : in STD_LOGIC;
            Jump : in STD_LOGIC;
            JumpAddress : in STD_LOGIC_VECTOR (31 downto 0);
            PCSrc : in STD_LOGIC;
@@ -35,7 +42,7 @@ Port ( clk : in STD_LOGIC;
            en : in STD_LOGIC;
            rst : in STD_LOGIC;
            Instruction : out STD_LOGIC_VECTOR (31 downto 0);
-           PC_4 : out STD_LOGIC_VECTOR (31 downto 0));
+           PC : out STD_LOGIC_VECTOR (31 downto 0));
 end component;
 
 component ID is
@@ -76,12 +83,10 @@ component EX is
            sa : in STD_LOGIC_VECTOR (4 downto 0);
            func : in STD_LOGIC_VECTOR (5 downto 0);
            aluOp : in STD_LOGIC_VECTOR (2 downto 0);
-           PC_4 : in STD_LOGIC_VECTOR (31 downto 0);
-           RegDst: in STD_LOGIC;
-           Zero : out STD_LOGIC;
+           pc : in STD_LOGIC_VECTOR (31 downto 0);
+           zero : out STD_LOGIC;
            aluRes : out STD_LOGIC_VECTOR (31 downto 0);
-           BranchAddress : out STD_LOGIC_VECTOR (31 downto 0)
-           );
+           branchAdress : out STD_LOGIC_VECTOR (31 downto 0));
 end component;
 
 component mem is
@@ -94,85 +99,57 @@ component mem is
            aluResOut : out STD_LOGIC_VECTOR (31 downto 0));
 end component;
 
-signal enable: STD_LOGIC := '0';
-signal digits: STD_LOGIC_VECTOR (31 downto 0) := (others => '0');
-
---IFetch
-signal reset, PCSrc : STD_LOGIC :='0';
-signal PC_4 : STD_LOGIC_VECTOR(31 downto 0) := (others => '0');
-signal Instruction : STD_LOGIC_VECTOR(31 downto 0) := (others => '0');
-signal JumpAddress, BranchAddress : STD_LOGIC_VECTOR(31 downto 0) := (others => '0');
-
---IDecode
-signal wd, rd1, rd2, ext_imm, ext_func, ext_sa : STD_LOGIC_VECTOR(31 downto 0);
-signal func : STD_LOGIC_VECTOR(5 downto 0);
-signal sa : STD_LOGIC_VECTOR(4 downto 0);
-
---Main Controls
-signal RegDst, ExtOp, ALUSrc, Branch, Jump, MemWrite, MemToReg, RegWrite, Br_ne: STD_LOGIC;
-signal ALUOp: STD_LOGIC_VECTOR(2 downto 0);
-
---Execute
-signal ALURes: STD_LOGIC_VECTOR(31 downto 0);
-signal Zero : STD_LOGIC;
-
---Memory
-signal MemData : STD_LOGIC_VECTOR(31 downto 0);
-signal ALUResOut: STD_LOGIC_VECTOR(31 downto 0);
-
 begin
 
-connectMPG1: MPG port map(clk, btn(0), enable);
-connectMPG2: MPG port map(clk, btn(1), reset);
+connectMPG1: MPG port map(clk, btn(0), en);
+connectMPG2: MPG port map(clk, btn(1), rst);
+connectIFetch: IFetch port map(clk, Jump, JumpAddress, PCSrc, BranchAdress, en, rst, Instruction, PC);
+connectSSD: SSD port map(output, clk, cat, an);
+connectUC: UC port map(Instruction(31 downto 26), RegDst, ExtOp, ALUSrc, Branch, Jump, ALUOp, MemWrite, MemtoReg, RegWrite, Br_ne);
+connectID: ID port map(clk, RegWrite, Instruction(25 downto 0), RegDst, en, ExtOp, rd1, rd2, wd, ext_imm, func, sa);
+connectEX: EX port map(rd1, aluSrc, rd2, ext_imm, sa, func, aluOp, pc, zero , aluRes, branchAdress);
+connectMEM: mem port map(MemWrite, aluRes, rd2, clk, en, memData, aluResOut);
 
-connectIFetch: IFetch port map(clk, Jump, JumpAddress, PCSrc, BranchAddress, enable, reset, Instruction, PC_4);
-connectIDecode: ID port map(clk, RegWrite, Instruction(25 downto 0), RegDst, enable, ExtOp, rd1, rd2, wd, ext_imm, func, sa);
-connectMainControl : UC port map(Instruction(31 downto 26), RegDst, ExtOp, ALUSrc, Branch, Jump, ALUOp, MemWrite, MemToReg, RegWrite, Br_ne);
-connectExecute: EX port map(rd1, aluSrc, rd2, ext_imm, sa, func, ALUOp, PC_4, RegDst, Zero, ALURes, BranchAddress);
-connectMemory: mem port map(MemWrite, ALURes, rd2, clk, enable, MemData, ALUResOut);
+JumpAddress <= (Instruction(25 downto 0) & "00") & PC(31 downto 28);
+PCSrc <= (Branch and zero) or (not(zero) and Br_ne);
 
-JumpAddress <= PC_4(31 downto 28) & Instruction(25 downto 0) & "00";
-PCSrc <= (Branch and Zero) or (not(Zero) and Br_ne);
 wd <= aluResOut when MemtoReg = '0' else memData;
 
-process(sw(7 downto 5), Instruction, PC_4, rd1, rd2, ext_imm, aluRes, memData, wd)
+process(sw(7 downto 5), Instruction, PC, rd1, rd2, ext_imm, aluRes, memData, wd)
 begin
   case sw(7 downto 5) is 
     when "000" =>
-      digits <= Instruction;
+      output <= Instruction;
     when "001" =>
-      digits <= PC_4;
+      output <= PC;
     when "010" =>
-      digits <= rd1;
+      output <= rd1;
     when "011" =>
-      digits <= rd2;
+      output <= rd2;
     when "100" =>
-      digits <= ext_imm;
+      output <= ext_imm;
     when "101" =>
-       digits <= aluRes;
+       output <= aluRes;
     when "110" =>
-       digits <= memData;
+       output <= memData;
      when "111" =>        
-       digits <= wd;
+       output <= wd;
     when others =>
-      digits <= (others => '0');
+      output <= (others => '0');
   end case;
 end process;
-              
-displaySSD: SSD port map(digits, clk, cat, an);
-
-led(0) <= RegWrite;
-led(1) <= MemtoReg;
-led(2) <= MemWrite;
-led(3) <= Jump;
-led(4) <= Branch;
-led(5) <= ALUSrc;
-led(6) <= ExtOp;
-led(7) <= RegDst;
-led(8) <= ALUOp(0);
-led(9) <= ALUOp(1);
-led(10) <= ALUOp(2);
 
 led(11) <= Br_ne;
+led(10) <= ALUOp(2);
+led(9) <= ALUOp(1);
+led(8) <= ALUOp(0);
+led(7) <= RegDst;
+led(6) <= ExtOp;
+led(5) <= ALUSrc;
+led(4) <= Branch;
+led(3) <= Jump;
+led(2) <= MemWrite;
+led(1) <= MemtoReg;
+led(0) <= RegWrite;
 
 end Behavioral;

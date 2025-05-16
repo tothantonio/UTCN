@@ -1,7 +1,7 @@
 Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
 --------------------------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2022.2 (lin64) Build 3671981 Fri Oct 14 04:59:54 MDT 2022
-| Date         : Mon Apr 14 13:48:42 2025
+| Date         : Mon Apr 28 12:32:38 2025
 | Host         : Toni-HP-ProBook running 64-bit Ubuntu 24.04.2 LTS
 | Command      : report_methodology -file test_env_methodology_drc_routed.rpt -pb test_env_methodology_drc_routed.pb -rpx test_env_methodology_drc_routed.rpx
 | Design       : test_env
@@ -35,14 +35,14 @@ Table of Contents
 -----------------
 LUTAR-1#1 Warning
 LUT drives async reset alert  
-LUT cell connectMPG2/PCReg[31]_i_3, with 2 or more inputs, drives asynchronous preset/clear pin(s) connectIFetch/PCReg_reg[27]/CLR, connectIFetch/PCReg_reg[28]/CLR,
-connectIFetch/PCReg_reg[29]/CLR, connectIFetch/PCReg_reg[2]/CLR,
-connectIFetch/PCReg_reg[2]_replica/CLR, connectIFetch/PCReg_reg[30]/CLR,
-connectIFetch/PCReg_reg[31]/CLR, connectIFetch/PCReg_reg[3]/CLR,
-connectIFetch/PCReg_reg[4]/CLR, connectIFetch/PCReg_reg[5]/CLR,
-connectIFetch/PCReg_reg[5]_replica/CLR, connectIFetch/PCReg_reg[6]/CLR,
-connectIFetch/PCReg_reg[7]/CLR, connectIFetch/PCReg_reg[8]/CLR,
-connectIFetch/PCReg_reg[9]/CLR (the first 15 of 32 listed). The LUT may glitch and trigger an unexpected reset, even if it is a properly timed path.
+LUT cell connectMPG2/Q[31]_i_3, with 2 or more inputs, drives asynchronous preset/clear pin(s) connectIFetch/Q_reg[25]/CLR, connectIFetch/Q_reg[26]/CLR,
+connectIFetch/Q_reg[27]/CLR, connectIFetch/Q_reg[28]/CLR,
+connectIFetch/Q_reg[29]/CLR, connectIFetch/Q_reg[2]/CLR,
+connectIFetch/Q_reg[30]/CLR, connectIFetch/Q_reg[31]/CLR,
+connectIFetch/Q_reg[3]/CLR, connectIFetch/Q_reg[4]/CLR,
+connectIFetch/Q_reg[5]/CLR, connectIFetch/Q_reg[6]/CLR,
+connectIFetch/Q_reg[7]/CLR, connectIFetch/Q_reg[8]/CLR,
+connectIFetch/Q_reg[9]/CLR (the first 15 of 32 listed). The LUT may glitch and trigger an unexpected reset, even if it is a properly timed path.
 Related violations: <none>
 
 TIMING-18#1 Warning
