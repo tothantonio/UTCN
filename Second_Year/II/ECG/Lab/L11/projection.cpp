@@ -93,11 +93,6 @@ namespace egc {
     //clip only those triangles for which all vertices are outside the viewing volume
     bool clipTriangleInHomegeneousCoordinates(const std::vector<egc::vec4> &triangle)
     {
-        // for (auto vertex : triangle) {
-        //     if (clipPointInHomogeneousCoordinate(vertex)) {
-        //         return true;
-        //     }
-        // }
         return false;
     }
 
@@ -137,11 +132,5 @@ namespace egc {
     //use the SDL_RenderDrawLine to draw the normal vector
 	void displayNormalVectors(egc::vec3 &normalVector, egc::vec4 &triangleCenter, SDL_Renderer *renderer, egc::mat4 viewTransformMatrix, egc::mat4 perspectiveMatrix)
     {
-        // vec4 normal = vec4(normalVector.x, normalVector.y, normalVector.z, 0);
-        // vec4 secondPoint = triangleCenter + normal * 10;
-        //
-        // secondPoint = viewTransformMatrix * perspectiveMatrix * secondPoint;
-        // triangleCenter = viewTransformMatrix * perspectiveMatrix * triangleCenter;
-        // SDL_RenderLine(renderer, triangleCenter.x / triangleCenter.w, triangleCenter.y / triangleCenter.w, secondPoint.x / secondPoint.w, secondPoint.y / secondPoint.w);
     }
 }
