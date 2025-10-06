@@ -1,0 +1,349 @@
+Sageata in sus - History Comenzi
+CTRL+C intrerupere rulare
+
+
+
+sudo rpm --import https://packages.microsoft.com/keys/microsoft.asc
+cat <<EOF | sudo tee /etc/yum.repos.d/vscode.repo
+[code]
+name=Visual Studio Code
+baseurl=https://packages.microsoft.com/yumrepos/vscode
+enabled=1
+gpgcheck=1
+gpgkey=https://packages.microsoft.com/keys/microsoft.asc
+EOF
+
+
+dnf check-update
+sudo dnf install code
+
+====
+elm installation in VSCODE
+
+https://github.com/alexmunda/vscode-elm
+- gif
+https://www.tutorialspoint.com/elm/elm_environment_setup.htm
+
+- instalare: node  si npm   
+Ubuntu, Debian: 
+sudo apt update && sudo apt install nodejs npm
+
+======
+Node.js=a server-side platform based on the Google Chrome V8 JavaScript engine.
+-easily run JavaScript programs on the server. 
+Features Node.js:
+1_ High efficiency and speed
+2_ Node.js is a cross-platform
+3_ Node.js has a good relationship with microservices
+4_ Ability to create SPA programs (single page)
+5_ Ability to create real-time programs
+6_ Ability to create chat programs and online games
+
+FEDORA, REDHAT
+https://blog.eldernode.com/install-node-js-on-fedora/
+
+sudo yum check-update 
+sudo curl -sL https://rpm.nodesource.com/setup_16.x | bash - && yum groupinstall 'Development Tools'
+
+=install Node.js 16.x and npm
+sudo yum install -y nodejs
+==sau
+sudo dnf install -y nodejs
+## To install the Yarn package manager, run:
+     curl -sL https://dl.yarnpkg.com/rpm/yarn.repo | sudo tee /etc/yum.repos.d/yarn.repo
+     sudo yum install yarn
+
+=Run Demo HTTP Server:
+==create a web server with text “Welcome to Node.js“
+==create a demo_server.js file to do this. 
+
+gedit http_demo_server.js
+
+cat <<EOF | sudo tee http_demo_server.js
+var http = require('http'); 
+http.createServer(function (req, res) 
+	{ 
+	res.writeHead(200, {'Content-Type': 'text/plain'}); 
+	res.end('Welcome to Node.js'); 
+	}
+   ).listen(3001, "127.0.0.1"); 
+   console.log('Server running at http://127.0.0.1:3001/');
+EOF
+==verificare:
+sudo gedit http_demo_server.js
+
+=Instalare Google Chrome
+UBUNTU
+wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb && sudo dpkg -i google-chrome-stable_current_amd64.deb && sudo apt -f install && sudo apt install google-chrome-stable
+
+FEDORA:
+sudo dnf install fedora-workstation-repositories && sudo dnf config-manager --set-enabled google-chrome && sudo dnf install google-chrome-stable
+
+==start webserver:
+node --inspect http_demo_server.js
+
+The web server has been started on port 3001.
+- DESCHIDERE BROWSER- GOOGLE CHROME-URL in browser:
+http://127.0.0.1:3001/ 
+===
+In folder de user (ex. /home/<nume user>) se deschide VSCode
+===
+Terminal:
+$ https://github.com/elm/compiler/blob/master/installers/linux/README.md
+$ curl -L -o elm.gz https://github.com/elm/compiler/releases/download/0.19.1/binary-for-linux-64-bit.gz
+$ gunzip elm.gz
+$ chmod +x elm
+$ sudo mv elm /usr/local/bin/
+$ elm --help
+----------
+I highly recommend working through <https://guide.elm-lang.org> to get started.
+It teaches many important concepts, including how to use `elm` in the terminal.
+-------------------------------------------------------------------------------
+The most common commands are:
+    elm repl
+        Open up an interactive programming session. Type in Elm expressions like
+        (2 + 2) or (String.length "test") and see if they equal four!
+    
+    elm init
+        Start an Elm project. It creates a starter elm.json file and provides a
+        link explaining what to do from there.
+    
+    elm reactor
+        Compile code with a click. It opens a file viewer in your browser, and
+        when you click on an Elm file, it compiles and you see the result.
+There are a bunch of other commands as well though. Here is a full list:
+    elm repl    --help
+    elm init    --help
+    elm reactor --help
+    elm make    --help
+    elm install --help
+    elm bump    --help
+    elm diff    --help
+    elm publish --help
+Adding the --help flag gives a bunch of additional details about each one.
+Be sure to ask on the Elm slack if you run into trouble! Folks are friendly and
+happy to help out. They hang out there because it is fun, so be kind to get the
+best results!
+==========
+$ sudo npm install --save-dev elm-tooling
+$ npx elm-tooling init
+$ npx elm-tooling install
+100% elm 0.19.1
+100% elm-format 0.8.5
+100% elm-json 0.2.10
+elm 0.19.1 link created: node_modules/.bin/elm -> /home/u/.elm/elm-tooling/elm/0.19.1/elm
+    To run: npx elm
+elm-format 0.8.5 link created: node_modules/.bin/elm-format -> /home/u/.elm/elm-tooling/elm-format/0.8.5/elm-format
+    To run: npx elm-format
+elm-json 0.2.10 link created: node_modules/.bin/elm-json -> /home/u/.elm/elm-tooling/elm-json/0.2.10/elm-json
+    To run: npx elm-json
+
+$ npx elm --help
+
+$ elm repl
+bash: elm: command not found
+
+$ npx elm repl
+---- Elm 0.19.1 ----------------------------------------------------------------
+Say :help for help and :exit to exit! More at <https://elm-lang.org/0.19.1/repl>
+--------------------------------------------------------------------------------
+> 1+1
+2 : number
+ 
+> "Hello"++" World"
+"Hello World" : String
+
+> True && False
+False : Bool
+
+> 1+" Hello"
+-- TYPE MISMATCH ---------------------------------------------------------- REPL
+I cannot do addition with String values like this one:
+3|   1+" Hello"
+       ^^^^^^^^
+The (+) operator only works with Int and Float values.
+Hint: Switch to the (++) operator to append strings!
+
+> (+)
+<function> : number -> number -> number
+
+> increment n=n+1
+<function> : number -> number
+
+> increment 1
+2 : number
+
+> favoriteNumber=2
+2 : number
+
+> greetings="Hello"
+"Hello" : String
+
+> n=10
+-- SHADOWING -------------------------------------------------------------- REPL
+The name `n` is first defined here:
+5| n=10
+   ^
+But then it is defined AGAIN over here:
+4| increment n=n+1
+             ^
+Think of a more helpful name for one of them and you should be all set!
+> :reset
+<reset>
+> n=10
+10 : number
+> double n=n+2
+-- SHADOWING -------------------------------------------------------------- REPL
+The name `n` is first defined here:
+3| n=10
+   ^
+But then it is defined AGAIN over here:
+2| double n=n+2
+         ^
+Think of a more helpful name for one of them and you should be all set!
+
+> double n=n*2
+-- SHADOWING -------------------------------------------------------------- REPL
+The name `n` is first defined here:
+3| n=10
+   ^
+But then it is defined AGAIN over here:
+2| double n=n*2
+          ^
+Think of a more helpful name for one of them and you should be all set!
+> :reset
+<reset>
+
+> double n=n*2
+<function> : number -> number
+
+> doubleString s=s++", "++s
+<function> : String -> String
+
+
+> rightTriangle a b c =a*a+b*b== c*c
+<function> : number -> number -> number -> Bool
+
+
+
+> rightTriangle : Float->Float -> Float -> Bool
+| rightTriangle a b c =a*a+b*b==c*c
+|   
+
+<function> : Float -> Float -> Float -> Bool
+
+
+> booltToAnswer b=if b then "Yes" else "No"
+<function> : Bool -> String
+
+2| nope n=if n=False then "Nope"
+              ^
+Maybe you want == instead? To check if two values are equal?
+
+Note: I may be getting confused by your indentation. I think I am still parsing
+the `nope` definition. Is this supposed to be part of a definition after that?
+If so, the problem may be a bit before the equals sign. I need all definitions
+to be indented exactly the same amount, so the problem may be that this new
+definition has too many spaces in front of it.
+
+> howBig n=if n<10 then "Small" else if n<100 then "Medium" else "Large"
+<function> : number -> String
+> howBig 3
+"Small" : String
+> howBig 11
+"Medium" : String
+> howBig 110
+"Large" : String
+
+> howBig n=
+|    if n<10 then 
+|   "Small"
+|   else if n<100 then
+|   "Medium"
+|   else
+|   "Large"
+|   
+<function> : number -> String
+
+> fact n=if n==0 then 1 else n*fact(n-1)
+<function> : number -> number
+
+> fact 5-1
+119 : number
+> fact (5-1)
+24 : number
+
+> pow n i= if i==0 then 1 else n*pow n (i-1)
+<function> : number -> number1 -> number
+> pow 2 3
+8 : number
+> pow 3 2
+9 : number
+
+> slowAdd a b= if b==0 then a else 1+slowAdd a (b-1)
+<function> : number -> number1 -> number
+> slowAdd 1 100
+101 : number
+> slowAdd 100 1
+101 : number
+> slowAdd 1 1000
+1001 : number
+> slowAdd 1000 1
+1001 : number
+> slowAdd 1 10000
+RangeError: Maximum call stack size exceeded
+> slowAdd 10000 1
+10001 : number
+> slowAdd 100000 1
+100001 : number
+
+> betterAdd a b= if b==0 then a else betterAdd (a+1) (b-1)
+<function> : number -> number1 -> number
+> betterAdd 1 10000
+10001 : number
+> betterAdd 1 100000
+100001 : number
+> betterAdd 1 1000000
+1000001 : number
+
+
+> factAcc n acc= if n==0 then acc else factAcc (n-1) (acc*n)
+<function> : number -> number -> number
+> factAcc 10 1
+3628800 : number
+> factAcc 5 1
+120 : number
+
+> factAccHelper n acc= if n==0 then acc else factAccHelper (n-1) (acc*n)
+<function> : number -> number -> number
+> factAcc n=factAccHelper n 1
+<function> : number -> number
+
+> fib n= if (n==0)||(n==1) then 1 else (fib(n-1)) + (fib(n-2))
+<function> : number1 -> number
+> fib 20
+10946 : number
+> fib 30
+1346269 : number
+
+>fib 50
+CTRL+C intrerupere rulare
+
+$npx elm repl
+
+> fibTailHelper f1 f2  n= if n==0 then f2 else fibTailHelper f2 (f1+f2) (n-1)
+<function> : number -> number -> number1 -> number
+> fibTail n=fibTailHelper 0 1 n
+<function> : number -> number1
+> fibTail 50
+20365011074 : number
+> fibTail 100
+573147844013817200000 : number
+> fibTail 1000
+7.0330367711422765e+208 : number
+
+
+
+
+
+

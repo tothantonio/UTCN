@@ -1,0 +1,47 @@
+L2 elm
+
+Exercise 2.2.1:
+
+> fullTitle {firsName =  "Haskell", idDr = True, lstName =  "Curry"} 
+"Dr. Haskell Curry" : String
+
+Exercise 2.3.3:
+
+> formatAddress: Address -> String
+| formatAddress address =
+|   "Baritiu Street" ++ " " ++  String.fromInt(26) ++ ", " ++  "Cluj-Napoca" ++ ", " ++ "Romania"
+|
+<function> : Address -> String
+> formatAddress (Address "Baritiu street" 26 "Cluj-Napoca" "Romania")
+"Baritiu Street 26, Cluj-Napoca, Romania" : String
+
+Exercise 2.5.1:
+Try to remove the last line ( _ -> "Better luck next time" ) and check if the code could
+be compiled.
+
+doesn't compile:(
+
+Exercise 2.5.2
+Try to swap the 1 -> "Gold" and _ -> "Better luck next time" lines. Evalu-
+ate the following expressions in the REPL (numberToMedal 1) , (numberToMedal 2) ,
+(numberToMedal 10)
+
+> numberToMedal 1
+-- REDUNDANT PATTERN --------------------------------------------- src\Types.elm
+
+The 2nd pattern is redundant:
+
+12|     case n of
+13|         _ -> "Better luck next time"
+14|>        2 -> "Silved"
+15|         3 -> "Broze"
+16|         1 -> "Gold"
+
+analog for numberToMedal 2
+
+Question 2.7.1 *
+What is the cardinality of the Bool type?
+2
+
+
+

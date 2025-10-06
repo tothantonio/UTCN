@@ -1,0 +1,143 @@
+Sageata in sus - History Comenzi
+CTRL+C intrerupere rulare
+
+Visual Studio Code User and Workspace Settings- Help
+https://code.visualstudio.com/docs/getstarted/settings#_settingsjson
+
+In folder de user (ex. /home/<nume user>) se deschide VSCode
+cd /home/<USER NAME>/
+
+$ npx elm repl
+$ mkdir L2
+$ cd L2
+$ npx elm init
+
+Hello! Elm projects always start with an elm.json file. I can create them!
+Now you may be wondering, what will be in this file? How do I add Elm files to
+my project? How do I see it in the browser? How will my code grow? Do I need
+more directories? What about tests? Etc.
+Check out <https://elm-lang.org/0.19.1/init> for all the answers!
+Knowing all that, would you like me to create an elm.json file now? [Y/n]: Y
+
+-- NO OFFLINE SOLUTION ---------------------------------------------------------
+
+I tried to create an elm.json with the following direct dependencies:
+
+    elm/browser
+    elm/core
+    elm/html
+
+I could not find compatible versions though, but that may be because I could not
+connect to https://package.elm-lang.org to get the latest list of packages. Are
+you able to connect to the internet? Please ask around one of the community
+forums at https://elm-lang.org/community for help!
+
+- deschidere internet
+
+$ npx elm init
+Hello! Elm projects always start with an elm.json file. I can create them!
+
+Now you may be wondering, what will be in this file? How do I add Elm files to
+my project? How do I see it in the browser? How will my code grow? Do I need
+more directories? What about tests? Etc.
+
+Check out <https://elm-lang.org/0.19.1/init> for all the answers!
+
+Knowing all that, would you like me to create an elm.json file now? [Y/n]: y
+Okay, I created it. Now read that link!
+
+Terminal:
+echo $PATH
+
+This prints /usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin on my computer. 
+-When run"
+elm make src/Main.elm
+terminal starts by searching these five directories for an executable file named elm. It finds /usr/local/bin/elm and then runs /usr/local/bin/elm make src/Main.elm with whatever arguments I gave.
+
+===
+
+https://code.visualstudio.com/docs/getstarted/settings#_settingsjson
+VSCODE: 
+-Settings editor 
+- Workspace tab or open that tab directly with the Preferences: Open Workspace Settings command.
+FILE-Preferences: Settings
+Workspace
+Open Workspace Settings (JSON) 
+
+- mai deschid odata tot si se deschide: settings.json
+
+"[elm]": {
+    "editor.formatOnSave": true
+},
+===settings.json
+{
+    "window.zoomLevel": 2,
+    "workbench.colorTheme": "Default High Contrast",
+    "workbench.settings.editor": "json",
+    "[elm]": {
+        "editor.formatOnSave": true
+    }
+}
+
+=====
+
+-Deschdere folder F2 (OPEN FOLDER in VSCode)
+>src   Click 
+-File-New file
+Records.elm
+
+module Records exposing (..)
+x=42
+
+$ elm make src/Records.elm
+
+=> se obtine: elm.json 
+
+{
+    "type": "application",
+    "source-directories": [
+        "src"
+    ],
+    "elm-version": "0.19.1",
+    "dependencies": {
+        "direct": {
+            "elm/browser": "1.0.2",
+            "elm/core": "1.0.5",
+            "elm/html": "1.0.0"
+        },
+        "indirect": {
+            "elm/json": "1.1.3",
+            "elm/time": "1.0.0",
+            "elm/url": "1.0.0",
+            "elm/virtual-dom": "1.0.3"
+        }
+    },
+    "test-dependencies": {
+        "direct": {},
+        "indirect": {}
+    }
+}
+
+===
+$ elm reactor
+
+Ctrl+click: 
+http://localhost:8000/
+
+SAU
+
+$npx elm reactor
+http://localhost:8000/elm.json
+
+SAU
+cd L2
+npx elm-json -v tree
+
+
+
+
+ 
+
+
+
+

@@ -1,0 +1,69 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "D:\\TUCN\\UTCN\\Third_Year\\PG\\Lab1\\l1\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{98B90B61-78CB-4AC2-B0B8-7C178A15AAC2}|l1\\l1.vcxproj|D:\\TUCN\\UTCN\\Third_Year\\PG\\Lab1\\l1\\l1\\GPSLab1.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{98B90B61-78CB-4AC2-B0B8-7C178A15AAC2}|l1\\l1.vcxproj|solutionrelative:l1\\GPSLab1.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{98B90B61-78CB-4AC2-B0B8-7C178A15AAC2}|l1\\l1.vcxproj|D:\\TUCN\\UTCN\\Third_Year\\PG\\Lab1\\l1\\l1\\main.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{98B90B61-78CB-4AC2-B0B8-7C178A15AAC2}|l1\\l1.vcxproj|solutionrelative:l1\\main.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{98B90B61-78CB-4AC2-B0B8-7C178A15AAC2}|l1\\l1.vcxproj|D:\\TUCN\\UTCN\\Third_Year\\PG\\Lab1\\l1\\l1\\GPSLab1.hpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{98B90B61-78CB-4AC2-B0B8-7C178A15AAC2}|l1\\l1.vcxproj|solutionrelative:l1\\GPSLab1.hpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 1,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "GPSLab1.hpp",
+              "DocumentMoniker": "D:\\TUCN\\UTCN\\Third_Year\\PG\\Lab1\\l1\\l1\\GPSLab1.hpp",
+              "RelativeDocumentMoniker": "l1\\GPSLab1.hpp",
+              "ToolTip": "D:\\TUCN\\UTCN\\Third_Year\\PG\\Lab1\\l1\\l1\\GPSLab1.hpp",
+              "RelativeToolTip": "l1\\GPSLab1.hpp",
+              "ViewState": "AgIAAAkAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2025-10-01T12:43:43.661Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "GPSLab1.cpp",
+              "DocumentMoniker": "D:\\TUCN\\UTCN\\Third_Year\\PG\\Lab1\\l1\\l1\\GPSLab1.cpp",
+              "RelativeDocumentMoniker": "l1\\GPSLab1.cpp",
+              "ToolTip": "D:\\TUCN\\UTCN\\Third_Year\\PG\\Lab1\\l1\\l1\\GPSLab1.cpp",
+              "RelativeToolTip": "l1\\GPSLab1.cpp",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2025-10-01T12:35:31.322Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "main.cpp",
+              "DocumentMoniker": "D:\\TUCN\\UTCN\\Third_Year\\PG\\Lab1\\l1\\l1\\main.cpp",
+              "RelativeDocumentMoniker": "l1\\main.cpp",
+              "ToolTip": "D:\\TUCN\\UTCN\\Third_Year\\PG\\Lab1\\l1\\l1\\main.cpp",
+              "RelativeToolTip": "l1\\main.cpp",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2025-10-01T12:22:14.263Z"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

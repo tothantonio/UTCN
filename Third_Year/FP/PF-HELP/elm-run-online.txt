@@ -1,0 +1,19 @@
+-- https://elm-editor.com 
+-- module Main exposing (..)
+-- https://elm-lang.org/examples/hello
+import Html exposing (text)
+
+howBigLetIn n =
+ let
+  smallNumber = 10
+  mediumNumber = 100
+ in
+  if n < smallNumber then "Small"
+  else if n < mediumNumber then "Medium"
+  else "Large"
+  
+main =
+-- text "Hello!"
+  howBigLetIn 10 |>Html.text
+   
+   

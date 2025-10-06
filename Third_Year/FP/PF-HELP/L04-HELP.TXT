@@ -1,0 +1,928 @@
+L 04
+Precizare: in Haskell/ML vor fi reluate functii similare celor din Elm
+
+1. Module: EXPORT / Import doar unele functii si tipuri
+Sources L04:
+Ex. Date.elm
+
+module Date exposing (daysInMonth, Month(..), Date)
+
+> import Date
+> daysInMonth
+-- ERROR
+-- referire la simboluri exportate:
+> Date.daysInMonth
+
+-- "as:" util in redenumire Module importate
+
+> import Date as D
+> D.daysInMonth
+
+-- cu exposing:
+> import Date as D exposing (Month(..))
+> D.daysInMonth Jan
+31 : Int
+
+====================
+-- Partialitate si Currying
+-- Functiile pot returna functii ca rezultat.
+-- Fiecare functie cu nr. mai mic de argumente decat nr. parametrilor returneaza o functie !
+-- O functie CURRY isi ia argumentele pe rand 
+-- De fiecare data cand sunt date 1 sau mai multe argumente, dar NU TOATE! functia va retuna o functie care ASTEAPTA argumentele ramase. 
+-- Procesul se repeta pana cand sunt incluse toate arguemntele si poate fi retunata o valoare calculata a functiei
+
+-- tail recursive Fibonacci:
+> fibTail n f1 f2 = if n == 0 then f2 else fibTail (n-1) f2 (f1+f2)
+
+To avoid passing 0 and 1 to f1 and f2 
+- Scurtare cod folosind Curry: partial 
+
+Functions.elm (fibTailPf)
+fibTailPf =
+ let
+   fibTailHelper f1 f2 i = if i == 0 then f2 else fibTailHelper f2 (f1 + f2) (i - 1)
+ in
+   fibTailHelper 0 1
+   
+-- Apel
+> fibTailPf 1
+1 : Int
+> fibTailPf 0
+1 : Int
+> fibTailPf 2
+2 : Int
+> fibTailPf 10
+89 : Int
+     
+-- Stil folosit: POINT-FREE  se ascund parametrii (Points) functiei
+-- Aici Lipseste Indexul n Fibonacci 
+-- acesta va fi pasat ca al 3-lea argument (i.e. for i ) to fibTailHelper
+-- fibTailHelper este CURRY 
+============================
+-- FUNCTII LAMBDA=ANONIME
+Exemplu: functia de compunere
+-- Matematic: applyTwice f(x) = f(f(x))= (f o f)(x)
+-- Aplicam pe f(x) = x + 1
+
+> applyTwice f x = f (f x)
+> let f x = x + 1 in (applyTwice f 1)
+3 : number
+
+-- cu lambda \
+> applyTwice (\x -> x + 1) 1
+3 : number
+
+-- LAMBDA + CURRY:
+- lambda cu parametrii currry multiplii
+
+> (\x -> \y -> \z -> z + y + z) 1 2 3
+6 : number
+
+Rescriere: \x -> \y -> \z -> z + y + z 
+\x y z -> z + y + z
+
+====================
+Closure= Functie ce retine mediul cand e creata
+Mediul=parametrii+definitii locale ale functiei
+
+Functions.elm (betweenClo)
+betweenClo lo hi =
+ let
+  betweenInner n = (lo <= n) && (n <= hi)
+ in
+  betweenInner
+  
+Apel: lo=2 hi=14 interval
+> betweenClo 2 14 40
+False : Bool
+> betweenClo 2 14 1
+False : Bool
+> betweenClo 2 14 2
+True : Bool
+
+positive = betweenClo 0 ((2 ^ 31) - 1)
+> positive 10
+True : Bool
+> positive -10
+False : Bool
+
+====================
+Functii Combinator - functii fara variabile libere adica functii ce fac referire strict la argumentele sale.
+- ex. functia CONSTANTA
+
+Functions.elm (const)
+const x = \_ -> x
+
+Functions.elm (flip)
+flip f = \x -> \y -> f y x
+  
+pow n i este n^i
+
+-- square este definita normal, “simple” style
+square n = pow n 2
+-- cube: flip in point-free style
+cubePf = (flip pow) 3
+
+
+-- Apel
+> pow 2 3
+8 : number
+> square 5
+25 : number
+> cubePf 3
+27 : number
+> cubePf 4
+64 : number
+
+====================
+-- Functie UnCURRY: functia CURRY cu 2 argumente => returneaza o FUNCTIE cu tuplu de 2
+
+Functions.elm (uncurry)
+uncurry f = \(x, y) -> f x y
+
+-- Apel
+> uncurry (+) (2,3)
+5 : number
+> uncurry (\x y->x+y*55) (2,3)
+167 : number
+> uncurry (\x y->x++y) ("abc","def")
+"abcdef" : String
+
+-- folosire la procesare unele liste in continuare
+
+===================
+LISTE -partea 2
+-- studiul unor functii  din Elm core library, in forma non tail-recursive.
+-- se pot folosi si standard din Core: ex. List.length, List.filter 
+
+Help: in special pt. foldr, foldl: reprezentat grafic pe liste
+https://elmprogramming.com/list.html
+
+Core List: functii implementate
+https://package.elm-lang.org/packages/elm/core/1.0.5/List
+
+1) Obtinere sau Stergere: take and drop
+Generalizare head si tail prin adaugare CONTOR (ex.n): cate elemente se adauga sau sterg la take or drop
+
+Lists.elm (take, drop)
+take n l = if n <= 0 then [] 
+ else
+  case l of 
+   [] -> []
+   x::xs -> x :: take (n - 1) xs
+
+drop n l =
+ if n <= 0 then l
+  else
+   case l of
+    [] -> []
+    _::xs -> drop (n - 1) xs
+    
+>L.take 3 [1, 2, 3,4,5]
+>[1,2,3] : List number
+> L.take 10 [1, 2, 3, 4, 5]
+[1,2,3,4,5] : List number
+> L.drop 3 [1, 2, 3, 4, 5]
+[4,5] : List number
+> L.drop 10 [1, 2, 3, 4, 5]
+[] : List number
+
+Direct cu functia din Core:
+> List.take 3 [10,20,30,40,50]
+[10,20,30] : List number
+> List.drop 3 [10,20,30,40,50]
+[40,50] : List number
+
+=====
+takeWhile and dropWhile
+- Generalizare take si drop: functie predicat (ex. p: (\x -> x < 3)) (returneaza True / False)
+
+Lists.elm (takeWhile, dropWhile)
+takeWhile p l =
+ case l of 
+  [] -> []
+  x::xs -> 
+   if p x then x :: takeWhile p xs else []
+   
+dropWhile p l = 
+ case l of 
+  [] -> []
+  x::xs -> if p x then dropWhile p xs else x::xs
+  
+-- predicat p este (\x -> x < 3)
+> import Lists as L
+> L.takeWhile (\x -> x < 3) [1, 2, 3, 4, 1, 2]
+[1,2] : List number
+> L.dropWhile (\x -> x < 3) [1, 2, 3, 4, 1, 2]
+[3,4,1,2] : List number
+> L.takeWhile (\x -> square x <10) [1, 2, 3, 4, 1, 2]
+[1,2,3] : List number
+>  L.dropWhile (\x -> square x <10) [1, 2, 3, 4, 1, 2]
+[4,1,2] : List number
+
+===================
+LISTE-TUPLE: zip and unzip
+-- CREARE liste Tuple din 2 Liste: zip; invers: Unzip
+-- Utilizare INDEX pozitie in Lista ex. 
+[(primul lista 1, primul lista 2), (al 2-lea lista 1, al 2-lea lista 2)...]
+
+Lists.elm (zip, unzip)
+zip lx ly = 
+ case (lx, ly) of 
+  (x::xs, y::ys) -> (x, y)::(zip xs ys)
+  _ -> []
+  
+unzip l = 
+ case l of 
+  [] -> ([], []) 
+   (x, y)::ls -> let(xs, ys) = unzip ls in (x::xs, y::ys)
+
+-- ATENTIE APOSTROF 'a' !
+> import Lists as L
+> L.zip [97, 98, 99] ['a', 'b', 'c']
+
+[(97,'a'),(98,'b'),(99,'c')]: List ( number, Char )
+    
+> L.unzip [("Romania", "Bucharest"), ("Germany", "Berlin"), ("France", "Paris")]
+
+(["Romania","Germany","France"],["Bucharest","Berlin","Paris"]) : ( List String, List String )
+
+
+Direct cu functia din Core: doar unzip
+https://package.elm-lang.org/packages/elm/core/1.0.5/Lists
+> List.unzip [("Romania", "Bucharest"), ("Germany", "Berlin"), ("France", "Paris")]
+ 
+===================
+MAP -Transformare Liste
+- Creare Noua lista: schimbarea FIECARUI ELEMENT DIN LISTA initiala prin aplicarea unei functii 
+
+Lists.elm (map)
+map fn l =
+ case l of
+  [] -> []
+  x::xs -> (fn x)::map fn xs
+
+> import Lists as L
+> import Functions as F
+> L.map (\x -> x + 1) [1, 2, 3]
+[2,3,4] : List number
+
+-- Lista noua: aplica functia de adunare cu 1 (x+1) fiecarui element din lista initiala
+
+> L.map (L.take 1) [[1, 2], [3, 4, 5], [6, 7]]
+[[1],[3],[6]] : List (List number)
+
+-- Lista noua: aplica functia L.take 1 fiecarui element (lista ex. [1,2]) din lista initiala; ex. din [1,2] se ia primul element ca lista [1];
+
+-- alte exemple 
+> L.map (L.take 0) [[1, 2], [3, 4, 5], [6, 7]]
+[[],[],[]] : List (List number)
+> L.map (L.take 1) [[1, 2], [3, 4, 5], [6, 7]]
+[[1],[3],[6]] : List (List number)
+> L.map (L.take 2) [[1, 2], [3, 4, 5], [6, 7]]
+[[1,2],[3,4],[6,7]] : List (List number)
+
+> L.map (F.uncurry (+)) [(1, 2), (3, 4), (5, 6)]
+[3,7,11] : List number
+
+-- 1+2=3, 3+4=7 5+6=11 creare lista cu sumele (+) el. din lista initiala
+-- vedeti mai sus exemple cu  uncurry
+> uncurry (+) (2,3)
+5 : number
+
+
+Direct cu functia din Core: 
+https://package.elm-lang.org/packages/elm/core/1.0.5/Lists
+> List.map (\x -> x + 1) [1, 2, 3]
+[2,3,4] : List number
+> List.map (List.take 2) [[1, 2], [3, 4, 5], [6, 7]]
+[[1,2],[3,4],[6,7]] : List (List number)
+
+==================
+FILTRARE liste
+-creare o NOUA Lista doar cu elementele primei liste ce indeplinesc(TRUE) un anumit predicat (conditie)
+
+Lists.elm (filter)
+filter pred l = 
+ case l of
+  [] -> []
+  x::xs -> 
+   if (pred x) then x::filter pred xs else filter pred xs
+
+
+> import Lists as L
+> import Functions as F
+> L.filter (\x -> x < 3) [1, 2, 3, 4, 1, 2]
+[1,2,1,2] : List number
+> L.filter (\x -> x >= 3) [1, 2, 3, 4, 1, 2]
+[3,4] : List number
+> L.filter (F.const True) [1, 2, 3, 4, 1, 2]
+[1, 2, 3, 4, 1, 2] : List number
+> L.filter (F.const False) [1, 2, 3, 4, 1, 2]
+[] : List number
+
+
+Direct cu functia din Core: 
+https://package.elm-lang.org/packages/elm/core/1.0.5/Lists
+> List.filter (\x -> x < 3) [1, 2, 3, 4, 1, 2]
+
+=====
+FOLD STANGA (L) si DREAPTA (R) - procesare liste
+- procesare FIECARE EL. din lista si returnarea unui rezultat
+pe o OPERATIE Specificata si o valoare intiala 
+
+- la Stanga-LEFT porneste de la primul el. din lista
+- la Dreapta-RIGHT porneste de la ultimul el. din lista
+
+Lists.elm (foldr, foldl)
+
+foldr op start l =
+ case l of
+  [] -> start
+  x::xs -> op x (foldr op start xs)
+  
+foldl op start l =
+ case l of
+  [] -> start
+  x::xs -> foldl op (op x start) xs
+
+
+> import Lists as L
+> L.foldl (::) [] [1, 2, 3]
+[3,2,1] : List number
+
+-- CREARE lista noua 
+initial: []
+1::[]
+2::[1]
+3::[2,1]
+[3,2,1] 
+
+> L.foldr (::) [] [1, 2, 3]
+[1,2,3] : List number
+
+-- CREARE LISTA NOUA
+initial: []
+3::[]
+2::[3]
+1::[2,3]
+[1,2,3] 
+
+
+> sum = L.foldl (+) 0
+<function> : List number -> number
+> sum [1, 2, 3]
+6 : number
+
+--CREARE (Fold Stanga-Primul el. incepe)
+initial: 0
+1+0=1
+2+1=3
+3+3=6
+
+
+Direct cu functia din Core: 
+https://package.elm-lang.org/packages/elm/core/1.0.5/Lists
+> List.foldr (::) [] [1, 2, 3] 
+> List.foldl (::) [] [1, 2, 3] 
+> List.foldl (+) 0 [1, 2, 3]
+> List.foldr (+) 0 [1, 2, 3]
+
+========
+ALL si ANY 
+verifica daca elementele TOATE (ALL) sau UNELE (ANY) verifica predicatul (Boolean:True)
+
+Lists.elm (all, any)
+all pred l =
+ case l of
+  [] -> True
+  x::xs -> if pred x then all pred xs else False
+  
+any pred l = 
+ case l of 
+  [] -> False
+  x::xs -> if pred x then True else any pred xs
+  
+> import Lists as L
+> L.all (\x -> x > 1) []
+True : Bool
+> L.any (\x -> x > 1) []
+False : Bool
+> L.all (\x -> x > 3) [4, 5, 6]
+True : Bool
+> L.any (\x -> x > 3) [1, 2, 3]
+False : Bool
+
+Direct cu functia din Core: 
+https://package.elm-lang.org/packages/elm/core/1.0.5/Lists
+> List.all (\x -> x > 3) [4, 5, 6]
+> List.any (\x -> x > 3) [4, 5, 6]
+
+=== SORTARE LISTE - Quicksort
+Lists.elm (partition, quicksort)
+
+partition pivot l = (filter (\x -> x < pivot) l, filter (\x -> x >= pivot) l)
+
+quicksort l =
+ case l of
+  [] -> []
+  x::xs ->
+   let
+    (less, greater) = partition x xs
+   in
+    (quicksort less) ++ [x] ++ (quicksort greater)
+
+-- Apel:
+
+-- 1<2
+> partition 2 [1,2,3,4,5,6,7]
+([1],[2,3,4,5,6,7]) : ( List number, List number )
+> partition 3 [1,2,3,4,5,6,7]
+([1,2],[3,4,5,6,7]): ( List number, List number )
+> partition 8 [1,2,3,4,5,6,7]
+([1,2,3,4,5,6,7],[]) : ( List number, List number )
+> quicksort [1,4,2]
+[1,2,4] : List number
+> quicksort ['a','e','b']
+['a','b','e'] : List Char
+> quicksort ["ab","ac","aaa"]
+["aaa","ab","ac"] : List String
+
+
+Direct cu functia din Core: utilizare Predicat
+https://package.elm-lang.org/packages/elm/core/1.0.5/Lists
+-- partition : (a -> Bool) -> List a -> ( List a, List a )
+> List.partition (\x -> x < 2) [1,2,3,4,5,6,7]
+([1],[2,3,4,5,6,7]) : ( List number, List number )
+
+============
+STRING =secventa de caractere Unicode
+String.toList  => Lista de Char 
+- se poate procesa ca orice lista ex. map , filter , foldl , foldr , all and any .
+
+-- Exemplu:
+> String.toList("aeb")
+['a','e','b'] : List Char
+> quicksort (String.toList "aeb")
+['a','b','e'] : List Char
+
+Direct cu functia din Core: utilizare Predicat
+https://package.elm-lang.org/packages/elm/core/1.0.5/Lists
+> List.sort (String.toList "aeb")
+['a','b','e'] : List Char
+
+================================
+
+Hints Probleme
+-Apel: functii predefinte liste:
+
+
+> List.length [1,2,3]
+3 : Int
+> List.append [1,2] [3]
+[1,2,3] : List number
+
+
+STRING
+https://package.elm-lang.org/packages/elm/core/1.0.5/String
+
+> String.toList "abc"
+['a','b','c'] : List Char
+
+> String.fromChar 'a'
+"a" : String
+
+> String.fromList ['a','b']
+"ab" : String
+
+
+
+
+Alte functii String:
+String.isEmpty "" == True
+String.isEmpty "the world" == False
+String.length "innumerable" == 11
+String.length "" == 0
+String.reverse "stressed" == "desserts"
+String.repeat 3 "ha" == "hahaha"
+String.replace "," "/" "a,b,c,d,e"           == "a/b/c/d/e"
+String.append "butter" "fly" == "butterfly"
+String.concat ["never","the","less"] == "nevertheless"
+String.split "," "cat,dog,cow"        == ["cat","dog","cow"]
+String.join "/" ["home","to","Desktop"] == "home/to/Desktop"
+String.words "How are \t you? \n Good?" == ["How","are","you?","Good?"]
+String.lines "How are you?\nGood?" == ["How are you?", "Good?"]
+String.slice  4  6 "Two on a plane!" == "on"
+String.left 2 "Test" == "Te"
+String.right 2 "Test" == "st"
+String.dropLeft 2 "Test One" == "st One"
+String.dropRight 2 "Test One" == "st One"
+String.contains "the" "theory" == True
+String.startsWith "the" "theory" == True
+String.endsWith "ory" "theory" == True
+String.indexes "i" "Mississippi"   == [1,4,7,10]
+String.toInt "123" == Just 123
+Maybe.withDefault 0 (String.toInt "42") == 42
+Maybe.withDefault 0 (String.toInt "ab") == 0
+String.fromInt 123 == "123"
+String.toFloat "123" == Just 123.0
+Maybe.withDefault 0 (String.toFloat "42.5") == 42.5
+String.fromFloat 123 == "123"
+String.fromChar 'a' == "a"
+
+-- cons, uncons
+String.cons 'T' "he truth is out there" == "The truth is out there"
+
+String.uncons "abc" == Just ('a',"bc")
+String.uncons ""    == Nothing
+
+
+String.toList "abc" == ['a','b','c']
+String.fromList ['a','b','c'] == "abc"
+
+String.toUpper "today" == "TODAY"
+String.toLower "TODAY" == "today"
+
+String.pad 5 ' ' "121" == " 121 "
+String.padLeft 5 '.' "121" == "..121"
+String.padRight 5 '.' "121" == "121.."
+
+String.trim "  hats  \n" == "hats"
+String.trimLeft "  hats  \n" == "hats  \n"
+String.trimRight "  hats  \n" == "  hats"
+
+String.map (\c -> if c == '/' then '.' else c) "a/b/c" == "a.b.c"
+
+-- Char.isDigit 
+String.filter Char.isDigit "R2-D2" == "22"
+
+String.foldl String.cons "" "time" == "emit"
+String.foldr String.cons "" "time" == "time"
+
+String.any Char.isDigit "90210" == True
+String.any Char.isDigit "R2-D2" == True
+String.all Char.isDigit"90210" == True
+String.all Char.isDigit "R2-D2" == False
+
+https://package.elm-lang.org/packages/elm/core/1.0.5/Char
+Functii Char:
+--  can use unicode escapes from \u{0000} to \u{10FFFF} to represent characters 
+-- ASCII 
+Char.isUpper 'Z' == True
+Char.isLower 'a' == True
+
+Char.isAlpha 'a' == True
+Char.isAlphaNum 'a' == True
+
+-- baza 10
+Char.isDigit '9' == True
+
+-- octal digits 01234567
+Char.isOctDigit '0' == True
+Char.isOctDigit '7' == True
+-- HEX digits baza 16
+Char.isHexDigit 'f'== True
+
+Char.toLower 'a'=='A'
+Char.toLower 'A'=='a'
+
+-- Unicode ASCII
+Char.toCode 'A' == 65
+Char.fromCode 65      == 'A'
+
+
+========
+TUPLE
+-- For complex data, use records: (3,4,5) as { x = 3, y = 4, z = 5 } or union types
+
+Tuple.pair 3 4 == (3, 4)
+
+zip xs ys =  List.map2 Tuple.pair xs ys
+zip [97, 98, 99]['a','b','c']
+[(97,'a'),(98,'b'),(99,'c')]
+
+Tuple.first ("john", "doe") == "john"
+Tuple.second ("john", "doe") == "doe"
+
+Tuple.mapFirst String.reverse ("sed", 16) == ("des", 16)
+Tuple.mapSecond sqrt ("sed", 16) == ("sed", 4)
+Tuple.mapBoth String.reverse sqrt  ("des", 16) == ("sed", 4)
+
+========
+LIST
+
+List.singleton 1234 == [1234]
+List.repeat 3 (0,0) == [(0,0),(0,0),(0,0)]
+List.range 3 6 == [3, 4, 5, 6]
+1 :: [2,3] == [1,2,3]
+List.map sqrt [1,4,9] == [1,2,3]
+List.indexedMap Tuple.pair ["Tom","Sue","Bob"] == [ (0,"Tom"), (1,"Sue"), (2,"Bob") ] 
+List.foldl (+)  0  [1,2,3] == 6
+List.foldr (+)  0  [1,2,3] == 6
+List.filter (\x -> x<4) [1,2,3,4,5,6] == [1,2,3]
+List.filterMap String.toInt ["3", "hi", "12", "4th", "May"] == [3,12]
+
+List.length [1,2,3] == 3
+List.reverse [1,2,3,4] == [4,3,2,1]
+List.member 4 [1,2,3,4] == True
+
+
+List.all (\x->x<3) [1,2] == True
+List.all (\x->x<3) [1,2,3] == False
+List.any (\x->x<3) [1,2,3] == True
+
+List.maximum [1,4,2] == Just 4
+List.minimum [3,2,1] == Just 1
+List.sum [1,2,3] == 6
+List.product [2,2,2] == 8
+
+List.append [1,1,2] [3,5,8] == [1,1,2,3,5,8]
+List.concat [[1,2],[3],[4,5]] == [1,2,3,4,5]
+
+> List.concatMap String.toList ["abc","dfgh"]
+['a','b','c','d','f','g','h']
+    : List Char
+
+List.intersperse "on" ["turtles","turtles","turtles"] == ["turtles","on","turtles","on","turtles"]
+
+map2 : (a -> b -> result) -> List a -> List b -> List result
+--Combine two lists with a function. If a list is longer, the extra elements are dropped.
+
+-- 7 dropped
+> List.map2 (+) [10,20,30] [4,5,6,7]
+[14,25,36] : List number
+
+-- 30 dropped
+> List.map2 Tuple.pair [10,20,30] [4,5]
+[(10,4),(20,5)] : List ( number, number1 )
+
+--Sort
+List.sort [3,1,5] == [1,3,5]
+List.sortBy String.length ["mouse","cat"] == ["cat","mouse"]
+
+List.isEmpty [] == True
+-- preferable to use a case to test this so you do not forget to handle the (x :: xs) case as well!
+
+- preferable to use a case to deconstruct a List because it gives you (x :: xs) and you can work with both subparts.
+> List.head ['1','2','3']
+Just '1' : Maybe Char
+
+List.head [] == Nothing
+
+List.tail [1,2,3] == Just [2,3]
+List.tail [] == Nothing
+
+List.take 2 [1,2,3,4] == [1,2]
+List.drop 2 [1,2,3,4] == [3,4]
+
+List.partition (\x -> x < 3) [0,1,2,3,4,5] == ([0,1,2], [3,4,5])
+
+List.unzip [(0, True), (17, False), (1337, True)] == ([0,17,1337], [True,False,True])
+
+https://package.elm-lang.org/packages/elm/core/1.0.5/Set
+===SET-liste cu elemente distincte=Multime
+
+> Set.empty
+Set.fromList [] : Set a
+
+> Set.singleton 6
+Set.fromList [6] : Set number
+> Set.singleton "a"
+Set.fromList ["a"] : Set String
+> Set.singleton 'a'
+Set.fromList ['a'] : Set Char
+
+> Set.insert 5  (Set.fromList [-2,-1,1,3])Set.fromList [-2,-1,1,3,5]
+    : Set number
+
+> Set.remove -2  (Set.fromList [-2,-1,1,3])
+Set.fromList [-1,1,3] : Set number
+
+> Set.isEmpty (Set.fromList [-2,-1,1,3])
+False : Bool
+> Set.isEmpty (Set.fromList [])
+True : Bool
+
+> Set.member -1  (Set.fromList [-2,-1,1,3])
+True : Bool
+> Set.size (Set.fromList [-2,-1,1,3])
+4 : Int
+
+-- union, intersection, diferenta a 2 multimi
+> Set.union (Set.fromList [1,2,3]) (Set.fromList [1,4,5])
+Set.fromList [1,2,3,4,5]
+    : Set number
+> Set.intersect (Set.fromList [1,2,3]) (Set.fromList [1,4,5])
+Set.fromList [1] : Set number
+> Set.diff (Set.fromList [1,2,3]) (Set.fromList [1,4,5])
+Set.fromList [2,3] : Set number
+
+-- conversie set, multime in Lista, sortata crescator
+> Set.toList (Set.singleton ['a'])
+[['a']] : List (List Char)
+
+-- Convert a list into a set, removing any duplicates.
+>Set.fromList [1,1,2,3,3,3]
+Set.fromList [1,2,3] : Set number
+
+>import Set exposing (Set)
+>numbers = Set.fromList [-2,-1,0,1,2]
+Set.fromList [-2,-1,0,1,2]
+    : Set number
+>positives = Set.filter (\x -> x > 0) numbers
+Set.fromList [1,2] : Set number
+> Set.filter (\x -> x>1) positives   
+Set.fromList [2] : Set number
+> Set.filter (\x -> x>1) (Set.fromList [-2,-1,0,1,2])
+Set.fromList [2] : Set number
+> Set.foldl (*) 1  (Set.fromList [-2,-1,1,3])
+6 : number
+> Set.foldr (+)0  (Set.fromList [-2,-1,1,3])
+1 : number
+> Set.map (\x -> x + 1) (Set.fromList [-2,-1,1,3])
+Set.fromList [-1,0,2,4]
+    : Set number
+
+===============Basics
+https://package.elm-lang.org/packages/elm/core/1.0.5/Basics
+
+Math
+type Int [-2^31,2^31 - 1]
+0xFF   -- 255 in hexadecimal
+0x000A --  10 in hexadecimal
+
+type Float
+0.1234
+6.022e23   -- == (6.022 * 10^23)
+6.022e+23  -- == (6.022 * 10^23)
+1.602e−19  -- == (1.602 * 10^-19)
+1e3        -- == (1 * 10^3) == 1000
+
+(+) (-) (*) (/) (//) (^)  Int
+10 / 4 == 2.5
+10 // 4 == 2
+3 // 4 similar to truncate (3 / 4).
+3^2 == 9
+
+> Basics.toFloat 5
+5 : Float
+> toFloat 5
+5 : Float
+
+-- Foat -> Int
+round 1.8 == 2
+floor 1.8 == 1
+ceiling 1.8 == 2
+truncate 1.8 == 1
+
+(==) (/=)
+(a /= b) is the same as (not (a == b))
+
+(<) (>) (<=) (>=) 
+max 42 12345678 == 12345678
+max "abc" "xyz" == "xyz"
+min 42 12345678 == 42
+min "abc" "xyz" == "abc"
+compare 3 4 == LT
+compare 4 4 == EQ
+compare 5 4 == GT
+type Order
+    = LT
+    | EQ
+    | GT
+type Bool
+    = True
+    | False
+not True == False
+not False == True
+True  && True  == True
+True  && False == False
+False && True  == False
+False && False == False
+True  || True  == True
+True  || False == True
+False || True  == True
+False || False == False
+xor True  True  == False
+xor True  False == True
+xor False True  == True
+xor False False == False
+
+Append Strings and Lists (++) 
+"hello" ++ "world" == "helloworld"
+[1,1,2] ++ [3,5,8] == [1,1,2,3,5,8]
+
+-- rest impartire
+modBy 2 3 == 1
+Our modBy function works in the typical mathematical way when you run into negative numbers:
+
+> List.map (modBy 4) [ -5, -4, -3, -2, -1,  0,  1,  2,  3,  4,  5 ]
+[3,0,1,2,3,0,1,2,3,0,1]
+    : List Int
+-- cat impartire
+> List.map (remainderBy 4) [ -5, -4, -3, -2, -1,  0,  1,  2,  3,  4,  5 ]
+
+negate -42 == 42
+abs -4   == 4
+-- interval  ex. [100,200]
+>  clamp 100 200 56
+100 : number
+>  clamp 100 200 300
+200 : number
+>  clamp 100 200 150
+150 : number
+
+sqrt 25 == 5
+
+logBase 10 100 == 2
+logBase 2 256 == 8
+
+> e
+2.718281828459045 : Float
+
+> pi
+3.141592653589793 : Float
+
+degrees 180 == 3.141592653589793
+radians pi == 3.141592653589793
+turns (1/2) == 3.141592653589793
+
+cos (degrees 60)     == 0.5000000000000001
+cos (pi/3)           == 0.5000000000000001
+sin (pi/6)           == 0.49999999999999994
+tan (pi/4)           == 0.9999999999999999
+acos (1/2) == 1.0471975511965979 -- 60° or pi/3 radians
+asin (1/2) == 0.5235987755982989 -- 30° or pi/6 radians
+atan (  1 /  1 ) ==  0.7853981633974483 --  45° or   pi/4 radians
+
+toPolar (3, 4) == ( 5, 0.9272952180016122)
+fromPolar (sqrt 2, degrees 45) == (1, 1)
+
+isNaN : Float -> Bool
+Determine whether a float is an undefined or unrepresentable number. NaN stands for not a number and it is a standardized part of floating point numbers.
+
+isNaN (0/0)     == True
+isNaN (sqrt -1) == True
+isNaN (1/0)     == False  -- infinity is a number
+isNaN 1         == False
+
+isInfinite : Float -> Bool
+Determine whether a float is positive or negative infinity.
+
+isInfinite (0/0)     == False
+isInfinite (sqrt -1) == False
+isInfinite (1/0)     == True
+isInfinite 1         == False
+Notice that NaN is not infinite! For float n to be finite implies that not (isInfinite n || isNaN n) evaluates to True.
+
+> identity 3
+3 : number
+
+> List.map (always 0) [1,2,3,4,5] == [0,0,0,0,0]
+True : Bool
+
+> List.map (\_ -> 0) [1,2,3,4,5] == [0,0,0,0,0]
+True : Bool
+
+f <| x is exactly the same as f x.
+x |> f is exactly the same as f x.
+- avoid parentheses ex. to apply a function to a case expression
+
+“pipe” operator: “pipelined” code: 
+-- BEFORE
+sanitize : String -> Maybe Int
+sanitize input = String.toInt (String.trim input)
+We can rewrite it like this:
+-- AFTER-Totally equivalent! 
+sanitize : String -> Maybe Int
+sanitize input =
+  input
+    |> String.trim
+    |> String.toInt
+    
+(g << f)  ==  (\x -> g (f x))
+
+\n -> not ((\ x -> x<3) (sqrt n))
+
+sqrt >> (\x -> x>3) >> not
+
+> (sqrt >> (\x -> x>3) >> not) 16
+False : Bool
+
+> (sqrt >> (\x -> x<3) >> not) 16
+True : Bool
+> (sqrt >> (\x -> x<3)) 16
+False : Bool
+
+type Never
+A value that can never happen- to restrict arguments to a function. 
+ex. API can only accept HTML without event handlers, so require Html Never and users can give Html msg and everything will go fine. Generally speaking, you do not want Never in your return types though.
+
+import Html exposing (..)
+embedHtml : Html Never -> Html msg
+embedHtml staticStuff =
+  div []
+    [ text "hello"
+    , Html.map never staticStuff
+    ]
+
