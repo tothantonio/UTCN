@@ -1,0 +1,95 @@
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
+---------------------------------------------------------------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2025.1 (win64) Build 6140274 Thu May 22 00:12:29 MDT 2025
+| Date         : Tue Oct  7 18:13:10 2025
+| Host         : ToniProBook running 64-bit major release  (build 9200)
+| Command      : report_control_sets -verbose -file top_control_sets_placed.rpt
+| Design       : top
+| Device       : xc7z020
+---------------------------------------------------------------------------------------------------------------------------------------------
+
+Control Set Information
+
+Table of Contents
+-----------------
+1. Summary
+2. Histogram
+3. Flip-Flop Distribution
+4. Detailed Control Set Information
+
+1. Summary
+----------
+
++----------------------------------------------------------+-------+
+|                          Status                          | Count |
++----------------------------------------------------------+-------+
+| Total control sets                                       |    17 |
+|    Minimum number of control sets                        |    17 |
+|    Addition due to synthesis replication                 |     0 |
+|    Addition due to physical synthesis replication        |     0 |
+| Unused register locations in slices containing registers |    82 |
++----------------------------------------------------------+-------+
+* Control sets can be merged at opt_design using control_set_merge or merge_equivalent_drivers
+** Run report_qor_suggestions for automated merging and remapping suggestions
+
+
+2. Histogram
+------------
+
++--------------------+-------+
+|       Fanout       | Count |
++--------------------+-------+
+| Total control sets |    17 |
+| >= 0 to < 4        |     8 |
+| >= 4 to < 6        |     1 |
+| >= 6 to < 8        |     4 |
+| >= 8 to < 10       |     0 |
+| >= 10 to < 12      |     1 |
+| >= 12 to < 14      |     0 |
+| >= 14 to < 16      |     1 |
+| >= 16              |     2 |
++--------------------+-------+
+* Control sets can be remapped at either synth_design or opt_design
+
+
+3. Flip-Flop Distribution
+-------------------------
+
++--------------+-----------------------+------------------------+-----------------+--------------+
+| Clock Enable | Synchronous Set/Reset | Asynchronous Set/Reset | Total Registers | Total Slices |
++--------------+-----------------------+------------------------+-----------------+--------------+
+| No           | No                    | No                     |              41 |           16 |
+| No           | No                    | Yes                    |               0 |            0 |
+| No           | Yes                   | No                     |              25 |            7 |
+| Yes          | No                    | No                     |              36 |           15 |
+| Yes          | No                    | Yes                    |               0 |            0 |
+| Yes          | Yes                   | No                     |              24 |            4 |
++--------------+-----------------------+------------------------+-----------------+--------------+
+
+
+4. Detailed Control Set Information
+-----------------------------------
+
++----------------+-----------------------+---------------------+------------------+----------------+--------------+
+|  Clock Signal  |     Enable Signal     |   Set/Reset Signal  | Slice Load Count | Bel Load Count | Bels / Slice |
++----------------+-----------------------+---------------------+------------------+----------------+--------------+
+|  clk_IBUF_BUFG | monopulse1/Q1_i_1_n_0 |                     |                1 |              1 |         1.00 |
+|  clk_IBUF_BUFG | inst_RFSM/p_0_in[1]   |                     |                1 |              1 |         1.00 |
+|  clk_IBUF_BUFG | inst_RFSM/p_0_in[0]   |                     |                1 |              1 |         1.00 |
+|  clk_IBUF_BUFG | inst_RFSM/p_0_in[4]   |                     |                1 |              1 |         1.00 |
+|  clk_IBUF_BUFG | inst_RFSM/p_0_in[2]   |                     |                1 |              1 |         1.00 |
+|  clk_IBUF_BUFG | inst_RFSM/p_0_in[3]   |                     |                1 |              1 |         1.00 |
+|  clk_IBUF_BUFG | inst_RFSM/p_0_in[5]   |                     |                1 |              1 |         1.00 |
+|  clk_IBUF_BUFG | inst_RFSM/p_0_in[6]   |                     |                1 |              1 |         1.00 |
+|  clk_IBUF_BUFG | inst_RFSM/baud_cnt0   |                     |                2 |              4 |         2.00 |
+|  clk_IBUF_BUFG | inst_RFSM/E[0]        |                     |                2 |              6 |         3.00 |
+|  clk_IBUF_BUFG | inst_RFSM/E[1]        |                     |                1 |              6 |         6.00 |
+|  clk_IBUF_BUFG | inst_RFSM/E[3]        |                     |                1 |              6 |         6.00 |
+|  clk_IBUF_BUFG | inst_RFSM/E[2]        |                     |                1 |              6 |         6.00 |
+|  clk_IBUF_BUFG |                       | baud_en_x16_i_1_n_0 |                3 |             11 |         3.67 |
+|  clk_IBUF_BUFG |                       | eqOp                |                4 |             14 |         3.50 |
+|  clk_IBUF_BUFG | tx_start              | tx_reg              |                4 |             24 |         6.00 |
+|  clk_IBUF_BUFG |                       |                     |               16 |             41 |         2.56 |
++----------------+-----------------------+---------------------+------------------+----------------+--------------+
+
+
