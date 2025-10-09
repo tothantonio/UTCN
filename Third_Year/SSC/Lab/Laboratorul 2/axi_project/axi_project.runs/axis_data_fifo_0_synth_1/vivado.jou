@@ -1,0 +1,24 @@
+#-----------------------------------------------------------
+# Vivado v2025.1 (64-bit)
+# SW Build 6140274 on Thu May 22 00:12:29 MDT 2025
+# IP Build 6138677 on Thu May 22 03:10:11 MDT 2025
+# SharedData Build 6139179 on Tue May 20 17:58:58 MDT 2025
+# Start of session at: Wed Oct  8 19:12:34 2025
+# Process ID         : 15776
+# Current directory  : D:/TUCN/UTCN/Third_Year/SSC/Lab/Laboratorul 2/axi_project/axi_project.runs/axis_data_fifo_0_synth_1
+# Command line       : vivado.exe -log axis_data_fifo_0.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source axis_data_fifo_0.tcl
+# Log file           : D:/TUCN/UTCN/Third_Year/SSC/Lab/Laboratorul 2/axi_project/axi_project.runs/axis_data_fifo_0_synth_1/axis_data_fifo_0.vds
+# Journal file       : D:/TUCN/UTCN/Third_Year/SSC/Lab/Laboratorul 2/axi_project/axi_project.runs/axis_data_fifo_0_synth_1\vivado.jou
+# Running On         : ToniProBook
+# Platform           : Windows Server 2016 or Windows 10
+# Operating System   : 26100
+# Processor Detail   : Intel(R) Core(TM) i7-8550U CPU @ 1.80GHz
+# CPU Frequency      : 1992 MHz
+# CPU Physical cores : 4
+# CPU Logical cores  : 8
+# Host memory        : 17065 MB
+# Swap memory        : 1073 MB
+# Total Virtual      : 18139 MB
+# Available Virtual  : 8516 MB
+#-----------------------------------------------------------
+source axis_data_fifo_0.tcl -notrace
