@@ -43,5 +43,52 @@ Question 2.7.1 *
 What is the cardinality of the Bool type?
 2
 
+Question 2.7.2 **
+How would you define Int as a sum type? Is the definition valid Elm syntax?
+sum type with 2^32 variants
+can not define in elm
+
+Question 2.7.3 ***
+What are the built-in types that have cardinality 1 and 0, respectively? Can you define
+such types (i.e. will the compiler allow it)? What is the use case for such types?
+Unit type - 1 -> no informations
+Void type - 0 -> imposibile cases
+
+2.8 Practice problems
+
+type Dice = ONE | TWO | THREE | FOUR | FIVE | SIX
+
+> type alias DicePair = (Dice, Dice)
+> DicePair
+
+> luckyRoll : DicePair -> String
+| luckyRoll (d1, d2) = 
+|   case(d1, d2) of
+|   (SIX, SIX) -> "Very Lucky"
+|   (SIX, _) -> "LUCKY"
+|   (_, SIX) -> "LUCKY"
+|   _ -> "Meh"
+|
+<function> : DicePair -> String
+> luckyRoll(SIX, SIX)
+"Very Lucky" : String
+> luckyRoll(SIX, FIVE)
+"LUCKY" : String
+> luckyRoll(FIVE, SIX)
+"LUCKY" : String
+> luckyRoll(FIVE, THREE)
+"Meh" : String
 
 
+> areaRec : ShapeRec -> Float
+| areaRec shape = 
+|   case shape of 
+|   CircleRec { radius } -> pi * radius * radius 
+|   RectangleRec { width, height } -> width * height
+|   TriangleRec { sideA, sideB, sideC } ->   
+|           let s = (sideA + sideB + sideC) / 2
+            in sqrt (s * (s - sideA) * (s - sideB) * (s - sideC))
+<function> : ShapeRec -> Float
+> areaRec (CircleRec {radius = 2})
+12.566370614359172 : Float
+> 

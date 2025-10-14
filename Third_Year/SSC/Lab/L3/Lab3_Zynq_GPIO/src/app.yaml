@@ -1,0 +1,4 @@
+domain_path: D:\TUCN\UTCN\Third_Year\SSC\Lab\L3\ZYNQ_GPIO_PS_LAB\export\ZYNQ_GPIO_PS_LAB\sw\standalone_ps7_cortexa9_0
+app_src_dir: D:\Xilinx\2025.1\Vitis\data\embeddedsw\lib\sw_apps\hello_world
+template: hello_world
+lang: c

@@ -1,0 +1,10 @@
+# compile vhdl design source files
+vhdl xil_defaultlib  \
+"../../../../axi_project.srcs/sources_1/new/MPG.vhd" \
+"../../../../axi_project.srcs/sources_1/new/axis_receiver.vhd" \
+"../../../../axi_project.srcs/sources_1/new/axis_transmitter.vhd" \
+"../../../../axi_project.srcs/sources_1/new/top.vhd" \
+"../../../../axi_project.srcs/sources_1/new/top_tb.vhd" \
+
+# Do not sort compile order
+nosort

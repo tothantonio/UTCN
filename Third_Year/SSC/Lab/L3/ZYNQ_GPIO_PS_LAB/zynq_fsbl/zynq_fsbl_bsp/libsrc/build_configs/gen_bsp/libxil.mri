@@ -1,0 +1,17 @@
+create libxil.a
+addlib D:/TUCN/UTCN/Third_Year/SSC/Lab/L3/ZYNQ_GPIO_PS_LAB/zynq_fsbl/zynq_fsbl_bsp/libsrc/build_configs/gen_bsp/libsrc/xadcps/src/libxadcps.a
+addlib D:/TUCN/UTCN/Third_Year/SSC/Lab/L3/ZYNQ_GPIO_PS_LAB/zynq_fsbl/zynq_fsbl_bsp/libsrc/build_configs/gen_bsp/libsrc/usbps/src/libusbps.a
+addlib D:/TUCN/UTCN/Third_Year/SSC/Lab/L3/ZYNQ_GPIO_PS_LAB/zynq_fsbl/zynq_fsbl_bsp/libsrc/build_configs/gen_bsp/libsrc/uartps/src/libuartps.a
+addlib D:/TUCN/UTCN/Third_Year/SSC/Lab/L3/ZYNQ_GPIO_PS_LAB/zynq_fsbl/zynq_fsbl_bsp/libsrc/build_configs/gen_bsp/libsrc/sdps/src/libsdps.a
+addlib D:/TUCN/UTCN/Third_Year/SSC/Lab/L3/ZYNQ_GPIO_PS_LAB/zynq_fsbl/zynq_fsbl_bsp/libsrc/build_configs/gen_bsp/libsrc/scuwdt/src/libscuwdt.a
+addlib D:/TUCN/UTCN/Third_Year/SSC/Lab/L3/ZYNQ_GPIO_PS_LAB/zynq_fsbl/zynq_fsbl_bsp/libsrc/build_configs/gen_bsp/libsrc/scutimer/src/libscutimer.a
+addlib D:/TUCN/UTCN/Third_Year/SSC/Lab/L3/ZYNQ_GPIO_PS_LAB/zynq_fsbl/zynq_fsbl_bsp/libsrc/build_configs/gen_bsp/libsrc/scugic/src/libscugic.a
+addlib D:/TUCN/UTCN/Third_Year/SSC/Lab/L3/ZYNQ_GPIO_PS_LAB/zynq_fsbl/zynq_fsbl_bsp/libsrc/build_configs/gen_bsp/libsrc/qspips/src/libqspips.a
+addlib D:/TUCN/UTCN/Third_Year/SSC/Lab/L3/ZYNQ_GPIO_PS_LAB/zynq_fsbl/zynq_fsbl_bsp/libsrc/build_configs/gen_bsp/libsrc/gpiops/src/libgpiops.a
+addlib D:/TUCN/UTCN/Third_Year/SSC/Lab/L3/ZYNQ_GPIO_PS_LAB/zynq_fsbl/zynq_fsbl_bsp/libsrc/build_configs/gen_bsp/libsrc/gpio/src/libgpio.a
+addlib D:/TUCN/UTCN/Third_Year/SSC/Lab/L3/ZYNQ_GPIO_PS_LAB/zynq_fsbl/zynq_fsbl_bsp/libsrc/build_configs/gen_bsp/libsrc/emacps/src/libemacps.a
+addlib D:/TUCN/UTCN/Third_Year/SSC/Lab/L3/ZYNQ_GPIO_PS_LAB/zynq_fsbl/zynq_fsbl_bsp/libsrc/build_configs/gen_bsp/libsrc/dmaps/src/libdmaps.a
+addlib D:/TUCN/UTCN/Third_Year/SSC/Lab/L3/ZYNQ_GPIO_PS_LAB/zynq_fsbl/zynq_fsbl_bsp/libsrc/build_configs/gen_bsp/libsrc/devcfg/src/libdevcfg.a
+addlib D:/TUCN/UTCN/Third_Year/SSC/Lab/L3/ZYNQ_GPIO_PS_LAB/zynq_fsbl/zynq_fsbl_bsp/libsrc/build_configs/gen_bsp/libsrc/coresightps_dcc/src/libcoresightps_dcc.a
+save
+end

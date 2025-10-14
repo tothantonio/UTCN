@@ -1,0 +1,12 @@
+[
+{
+  "directory": "D:/TUCN/UTCN/Third_Year/SSC/Lab/L3/Lab3_Zynq_GPIO/src/.compile_commands",
+  "command": "D:\\Xilinx\\2025.1\\Vitis\\gnu\\aarch32\\nt\\gcc-arm-none-eabi\\bin\\arm-none-eabi-gcc.exe -isystem D:/TUCN/UTCN/Third_Year/SSC/Lab/L3/ZYNQ_GPIO_PS_LAB/export/ZYNQ_GPIO_PS_LAB/sw/standalone_ps7_cortexa9_0/include -isystem D:/Xilinx/2025.1/gnu/aarch32/nt/gcc-arm-none-eabi/x86_64-oesdk-mingw32/usr/lib/arm-xilinx-eabi/gcc/arm-xilinx-eabi/13.3.0/include -isystem D:/Xilinx/2025.1/gnu/aarch32/nt/gcc-arm-none-eabi/x86_64-oesdk-mingw32/usr/lib/arm-xilinx-eabi/gcc/arm-xilinx-eabi/13.3.0/include-fixed -isystem D:/Xilinx/2025.1/Vitis/gnu/aarch32/nt/gcc-arm-none-eabi/aarch32-xilinx-eabi/usr/include  -DSDT -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard  -MMD -MP -specs=D:/TUCN/UTCN/Third_Year/SSC/Lab/L3/ZYNQ_GPIO_PS_LAB/export/ZYNQ_GPIO_PS_LAB/sw/standalone_ps7_cortexa9_0/Xilinx.spec -ID:/TUCN/UTCN/Third_Year/SSC/Lab/L3/ZYNQ_GPIO_PS_LAB/export/ZYNQ_GPIO_PS_LAB/sw/standalone_ps7_cortexa9_0/include -Wall -Wextra      -O0  -g3     -U__clang__ -o CMakeFiles\\Lab3_Zynq_GPIO.elf.dir\\platform.c.obj -c D:\\TUCN\\UTCN\\Third_Year\\SSC\\Lab\\L3\\Lab3_Zynq_GPIO\\src\\platform.c",
+  "file": "D:\\TUCN\\UTCN\\Third_Year\\SSC\\Lab\\L3\\Lab3_Zynq_GPIO\\src\\platform.c"
+},
+{
+  "directory": "D:/TUCN/UTCN/Third_Year/SSC/Lab/L3/Lab3_Zynq_GPIO/src/.compile_commands",
+  "command": "D:\\Xilinx\\2025.1\\Vitis\\gnu\\aarch32\\nt\\gcc-arm-none-eabi\\bin\\arm-none-eabi-gcc.exe -isystem D:/TUCN/UTCN/Third_Year/SSC/Lab/L3/ZYNQ_GPIO_PS_LAB/export/ZYNQ_GPIO_PS_LAB/sw/standalone_ps7_cortexa9_0/include -isystem D:/Xilinx/2025.1/gnu/aarch32/nt/gcc-arm-none-eabi/x86_64-oesdk-mingw32/usr/lib/arm-xilinx-eabi/gcc/arm-xilinx-eabi/13.3.0/include -isystem D:/Xilinx/2025.1/gnu/aarch32/nt/gcc-arm-none-eabi/x86_64-oesdk-mingw32/usr/lib/arm-xilinx-eabi/gcc/arm-xilinx-eabi/13.3.0/include-fixed -isystem D:/Xilinx/2025.1/Vitis/gnu/aarch32/nt/gcc-arm-none-eabi/aarch32-xilinx-eabi/usr/include  -DSDT -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard  -MMD -MP -specs=D:/TUCN/UTCN/Third_Year/SSC/Lab/L3/ZYNQ_GPIO_PS_LAB/export/ZYNQ_GPIO_PS_LAB/sw/standalone_ps7_cortexa9_0/Xilinx.spec -ID:/TUCN/UTCN/Third_Year/SSC/Lab/L3/ZYNQ_GPIO_PS_LAB/export/ZYNQ_GPIO_PS_LAB/sw/standalone_ps7_cortexa9_0/include -Wall -Wextra      -O0  -g3     -U__clang__ -o CMakeFiles\\Lab3_Zynq_GPIO.elf.dir\\helloworld.c.obj -c D:\\TUCN\\UTCN\\Third_Year\\SSC\\Lab\\L3\\Lab3_Zynq_GPIO\\src\\helloworld.c",
+  "file": "D:\\TUCN\\UTCN\\Third_Year\\SSC\\Lab\\L3\\Lab3_Zynq_GPIO\\src\\helloworld.c"
+}
+]

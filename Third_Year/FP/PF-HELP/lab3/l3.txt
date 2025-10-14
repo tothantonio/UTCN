@@ -1,0 +1,108 @@
+elm lab3
+
+What Java concept is the equivalent to type variables? What about C++?
+Generics
+
+Can we constrain type variables in Java or C++? If yes how?
+
+How is equality handled for the Float type? Try to evaluate in the REPL: (0/0) and
+then (0/0) == (0/0) . Does this cause a problem for reference equality?
+no
+> 0/0
+NaN : Float
+
+> (0/0) == (0/0)
+False : Bool
+
+billion dollars mistake in cs = null reference/null pointer
+
+> 1/0
+Infinity : Float
+
+> 1 // 0
+0 : Int
+
+> modBy 0 10 
+Error: Cannot perform mod 0. Division by zero error
+
+> import Shape exposing(..) 
+> safeHeron 1 1 1
+Just 0.4330127018922193 : Maybe Float
+
+> safeHeron -2 3 4 
+Nothing : Maybe Float
+
+
+Can we know at compile time if any given pointer is null or not in C?
+Are C++ references different?
+
+We cannont know if a C pointer is null or not at compile time.
+In C++ the references cannont be null.
+
+Do you know any language that has a compile time solution to the nullability problem
+built-in as language feature?
+C#, Rust
+
+
+> safeArea (Triangle 2 2 3)
+Ok 1.984313483298443 : Result String Float
+> safeArea (Triangle 2 2 10)
+Err ("Sides can't form a triangle") : Result String Float
+> safeArea (Rectangle 2 -10)
+Err ("Negative rectangle width or height")
+    : Result String Float
+> safeArea (Rectangle 2 10) 
+Ok 20 : Result String Float
+
+Discuss at least 2 advantages and disadvantages of each approach (string error, separate
+variant for each error). In which cases would you use one over the other?
+
+using string error is simpler but less specific
+using variant for each error is more structured and is more efficient
+
+> countFromTo  
+<function> : Int -> Int -> List Int
+> countFromTo a b = if a >= b then Nil else Cons a (countFromTo (a + 1) b)
+<function> : number -> number -> List number
+> countFromTo 1 5 
+Cons 1 (Cons 2 (Cons 3 (Cons 4 Nil)))
+    : List number
+> sumOfElements l =
+|   case l of
+|     Nil -> 0
+|     Cons x xs -> x + sumOfElements xs
+|
+<function> : List number -> number
+> sumOfElements (countFromTo 1 5)
+10 : number
+
+countFromTo from to = 
+|   if from >= to then
+|      []
+|   else
+|      from :: countFromTo (from + 1) to
+|
+<function> : number -> number -> List number
+> sumOfElements
+<function> : List number -> number
+> sumOfElements l =
+|   case l of
+|      [] -> 0
+|      x::xs -> x + sumOfElements xs
+|
+<function> : List number -> number
+
+Write a function len that returns that length of a list (i.e., the number of elements in
+it)
+
+> import Shape exposing(..)
+> len : List a -> Int
+| len l =
+|   case l of
+|     [] -> 0
+|     xs::x -> 1 + len xs
+
+> countFromTo 1 5
+[1,2,3,4] : List Int
+> len (countFromTo 1 5)
+4 : Int

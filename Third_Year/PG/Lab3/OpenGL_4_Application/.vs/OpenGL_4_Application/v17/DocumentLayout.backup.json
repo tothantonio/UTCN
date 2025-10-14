@@ -1,0 +1,37 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "D:\\TUCN\\UTCN\\Third_Year\\PG\\Lab3\\OpenGL_4_Application\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{A68047DD-CC37-4276-8750-1801C8106627}|OpenGL_4_Application\\OpenGL_4_Application.vcxproj|D:\\TUCN\\UTCN\\Third_Year\\PG\\Lab3\\OpenGL_4_Application\\OpenGL_4_Application\\main.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{A68047DD-CC37-4276-8750-1801C8106627}|OpenGL_4_Application\\OpenGL_4_Application.vcxproj|solutionrelative:OpenGL_4_Application\\main.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "main.cpp",
+              "DocumentMoniker": "D:\\TUCN\\UTCN\\Third_Year\\PG\\Lab3\\OpenGL_4_Application\\OpenGL_4_Application\\main.cpp",
+              "RelativeDocumentMoniker": "OpenGL_4_Application\\main.cpp",
+              "ToolTip": "D:\\TUCN\\UTCN\\Third_Year\\PG\\Lab3\\OpenGL_4_Application\\OpenGL_4_Application\\main.cpp",
+              "RelativeToolTip": "OpenGL_4_Application\\main.cpp",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAC0AAAAVAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2025-10-13T18:11:06.304Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

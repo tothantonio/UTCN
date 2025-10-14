@@ -82,7 +82,12 @@ end component;
   signal rst_pulse   : std_logic;  -- puls MPG pe reset 
   signal rst_n       : std_logic;  -- reset activ LOW 
   signal step_pulse  : std_logic;  -- TREADY un ciclu 
- 
+  
+  --------------------------------------------------------------------
+  -- Contor pachete complet transmise (TLAST detectat)
+  --------------------------------------------------------------------
+  signal package_counter : unsigned(3 downto 0) := (others => '0');
+   
 begin
   --------------------------------------------------------------------
   -- MPG pentru START (btn0)
@@ -90,7 +95,7 @@ begin
   mpg_start: MPG
     generic map (
     CLK_HZ      => 125_000_000,  -- ZYBO Z7
-    DEBOUNCE_MS => 10
+    DEBOUNCE_MS => 0 -- 10
   )
     port map(
       enable    => start_pulse,
@@ -103,7 +108,7 @@ begin
   mpg_reset: MPG
   generic map (
     CLK_HZ      => 125_000_000,  -- ZYBO Z7
-    DEBOUNCE_MS => 10
+    DEBOUNCE_MS => 0 -- 10
   )
     port map(
       enable    => rst_pulse,
@@ -118,7 +123,7 @@ begin
   mpg_step: MPG
    generic map (
     CLK_HZ      => 125_000_000,  -- ZYBO Z7
-    DEBOUNCE_MS => 10
+    DEBOUNCE_MS => 0 -- 10
   )
     port map(
       enable    => step_pulse,
@@ -170,6 +175,9 @@ begin
   m_tready <= step_pulse;
 
   u_rx: entity work.axis_receiver
+    generic map(
+        TIMEOUT_N => 50_000_000
+    )
     port map(
       clk            => clk,
       rst_n          => rst_n,
@@ -177,8 +185,10 @@ begin
       s_axis_tdata   => m_tdata,
       s_axis_tvalid  => m_tvalid,
       s_axis_tlast   => m_tlast,
+      raw_data       => sw(3),
       s_axis_tready  => open,         
-      leds           => leds_data
+      leds           => leds_data,
+      error_led      => led(3)
     );
 
   --------------------------------------------------------------------
@@ -203,8 +213,22 @@ begin
   end process;
 
   --------------------------------------------------------------------
+  -- Contor pachete: creste cand avem handshake complet cu TLAST = 1
+  --------------------------------------------------------------------
+  process(clk)
+  begin
+    if rising_edge(clk) then
+        if rst_n = '0' then
+            package_counter <= (others => '0');
+        else
+            if (s_tready = '1' and s_tvalid = '1' and s_tlast = '1') then
+                package_counter <= package_counter + 1;
+            end if;
+        end if;
+    end if;
+  end process;
  
-  led <= leds_level when sw(2)='1' else leds_data;
-  led <= ... when sw(3) = '1' else leds_data;
-
+  led <= leds_level when sw(2)='1' else 
+         std_logic_vector(package_counter) when sw(1) = '1' else
+         leds_data;
 end Behavioral;

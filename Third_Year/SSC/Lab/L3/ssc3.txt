@@ -1,0 +1,96 @@
+ssc lab 3
+
+ex2:
+Modificați aplicația astfel încât:
+dacă se apasă butonul 1, se aprind LED-urile 0 și 2, restul se sting;
+dacă se apasă butonul 2, se aprind LED-urile 1 și 3
+
+LED-urile sunt pe 4 biți (0000...1111).
+Aprinderea LED-urilor 0 și 2 → 0b0101 = 0x5.
+Aprinderea LED-urilor 1 și 3 → 0b1010 = 0xA.
+button_data are un bit activ pentru fiecare buton.
+
+while(1) {
+    button_data = XGpio_DiscreteRead(&input, 1);
+
+    switch(button_data) {
+        case 0b0001:  // butonul 0
+            XGpio_DiscreteWrite(&output, 1, 0x5); // LED 0 și 2
+            break;
+        case 0b0010:  // butonul 1
+            XGpio_DiscreteWrite(&output, 1, 0xA); // LED 1 și 3
+            break;
+        default:
+            XGpio_DiscreteWrite(&output, 1, 0x0); // toate stinse
+            break;
+    }
+
+    usleep(200000);
+}
+
+
+ex3:
+Dacă switch-ul 1 are valoarea ‘1’ logic, se aprind pe rând LED-urile 0–3, fiecare aprins 1 secundă.
+
+Citești switch_data.
+Dacă bitul 1 (al doilea) e 1, atunci faci un for care aprinde LED-urile secvențial.
+usleep(1000) = 1 secundă.
+
+while(1) {
+    switch_data = XGpio_DiscreteRead(&input, 2);
+
+    if (switch_data & 0b0010) { // dacă switch 1 e activ
+        for (int i = 0; i < 4; i++) {
+            XGpio_DiscreteWrite(&output, 1, 1 << i);
+            usleep(1000);
+            XGpio_DiscreteWrite(&output, 1, 0x0);
+        }
+    } else {
+        XGpio_DiscreteWrite(&output, 1, 0x0);
+    }
+
+    usleep(1000);
+}
+
+
+ex4:
+Creează un meniu cu 6 opțiuni afișat la consolă.
+Folosește butoanele pentru a naviga între opțiuni.
+În fața opțiunii curente pui „>” și arăți numărul opțiunii (1–6) pe LED-uri în binar.
+
+Butonul 0 = “sus”, Butonul 1 = “jos”.
+current_option se modifică între 1–6.
+LED-urile afișează valoarea binară a current_option.
+Se printează meniul la fiecare schimbare.
+
+int current_option = 1;
+int prev_option = 0;
+
+void print_menu(int option) {
+    print("\033[2J"); // șterge consola
+    print("=== MENIU ===\r\n");
+    for (int i = 1; i <= 6; i++) {
+        if (i == option)
+            xil_printf("> Optiunea %d\r\n", i);
+        else
+            xil_printf("  Optiunea %d\r\n", i);
+    }
+}
+
+while(1) {
+    button_data = XGpio_DiscreteRead(&input, 1);
+
+    if (button_data & 0b0001) { // buton sus
+        if (current_option > 1) current_option--;
+    } else if (button_data & 0b0010) { // buton jos
+        if (current_option < 6) current_option++;
+    }
+
+    if (current_option != prev_option) {
+        print_menu(current_option);
+        XGpio_DiscreteWrite(&output, 1, current_option);
+        prev_option = current_option;
+    }
+
+    usleep(200000);
+}

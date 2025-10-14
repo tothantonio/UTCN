@@ -1,0 +1,3 @@
+D:/TUCN/UTCN/Third_Year/SSC/Lab/L3/ZYNQ_GPIO_PS_LAB/zynq_fsbl/build/CMakeFiles/fsbl.elf.dir
+D:/TUCN/UTCN/Third_Year/SSC/Lab/L3/ZYNQ_GPIO_PS_LAB/zynq_fsbl/build/CMakeFiles/edit_cache.dir
+D:/TUCN/UTCN/Third_Year/SSC/Lab/L3/ZYNQ_GPIO_PS_LAB/zynq_fsbl/build/CMakeFiles/rebuild_cache.dir

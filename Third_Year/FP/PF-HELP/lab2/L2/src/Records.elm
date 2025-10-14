@@ -1,3 +1,6 @@
+
 module Records exposing (..)
 
-x = 42
+type alias User =
+    { firstName : String, lastName : String }
+
