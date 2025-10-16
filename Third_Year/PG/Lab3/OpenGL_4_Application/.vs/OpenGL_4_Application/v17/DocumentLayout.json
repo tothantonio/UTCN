@@ -5,6 +5,18 @@
     {
       "AbsoluteMoniker": "D:0:0:{A68047DD-CC37-4276-8750-1801C8106627}|OpenGL_4_Application\\OpenGL_4_Application.vcxproj|D:\\TUCN\\UTCN\\Third_Year\\PG\\Lab3\\OpenGL_4_Application\\OpenGL_4_Application\\main.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{A68047DD-CC37-4276-8750-1801C8106627}|OpenGL_4_Application\\OpenGL_4_Application.vcxproj|solutionrelative:OpenGL_4_Application\\main.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A68047DD-CC37-4276-8750-1801C8106627}|OpenGL_4_Application\\OpenGL_4_Application.vcxproj|D:\\TUCN\\UTCN\\Third_Year\\PG\\Lab3\\OpenGL_4_Application\\OpenGL_4_Application\\shaders\\shader.frag||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "RelativeMoniker": "D:0:0:{A68047DD-CC37-4276-8750-1801C8106627}|OpenGL_4_Application\\OpenGL_4_Application.vcxproj|solutionrelative:OpenGL_4_Application\\shaders\\shader.frag||{8B382828-6202-11D1-8870-0000F87579D2}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A68047DD-CC37-4276-8750-1801C8106627}|OpenGL_4_Application\\OpenGL_4_Application.vcxproj|D:\\TUCN\\UTCN\\Third_Year\\PG\\Lab3\\OpenGL_4_Application\\OpenGL_4_Application\\shaders\\shader2.frag||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "RelativeMoniker": "D:0:0:{A68047DD-CC37-4276-8750-1801C8106627}|OpenGL_4_Application\\OpenGL_4_Application.vcxproj|solutionrelative:OpenGL_4_Application\\shaders\\shader2.frag||{8B382828-6202-11D1-8870-0000F87579D2}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A68047DD-CC37-4276-8750-1801C8106627}|OpenGL_4_Application\\OpenGL_4_Application.vcxproj|D:\\TUCN\\UTCN\\Third_Year\\PG\\Lab3\\OpenGL_4_Application\\OpenGL_4_Application\\shaders\\shader.vert||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "RelativeMoniker": "D:0:0:{A68047DD-CC37-4276-8750-1801C8106627}|OpenGL_4_Application\\OpenGL_4_Application.vcxproj|solutionrelative:OpenGL_4_Application\\shaders\\shader.vert||{8B382828-6202-11D1-8870-0000F87579D2}"
     }
   ],
   "DocumentGroupContainers": [
@@ -14,8 +26,46 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 3,
           "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "shader2.frag",
+              "DocumentMoniker": "D:\\TUCN\\UTCN\\Third_Year\\PG\\Lab3\\OpenGL_4_Application\\OpenGL_4_Application\\shaders\\shader2.frag",
+              "RelativeDocumentMoniker": "OpenGL_4_Application\\shaders\\shader2.frag",
+              "ToolTip": "D:\\TUCN\\UTCN\\Third_Year\\PG\\Lab3\\OpenGL_4_Application\\OpenGL_4_Application\\shaders\\shader2.frag",
+              "RelativeToolTip": "OpenGL_4_Application\\shaders\\shader2.frag",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAAgAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
+              "WhenOpened": "2025-10-15T12:54:00.468Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "shader.vert",
+              "DocumentMoniker": "D:\\TUCN\\UTCN\\Third_Year\\PG\\Lab3\\OpenGL_4_Application\\OpenGL_4_Application\\shaders\\shader.vert",
+              "RelativeDocumentMoniker": "OpenGL_4_Application\\shaders\\shader.vert",
+              "ToolTip": "D:\\TUCN\\UTCN\\Third_Year\\PG\\Lab3\\OpenGL_4_Application\\OpenGL_4_Application\\shaders\\shader.vert",
+              "RelativeToolTip": "OpenGL_4_Application\\shaders\\shader.vert",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
+              "WhenOpened": "2025-10-15T12:47:18.072Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "shader.frag",
+              "DocumentMoniker": "D:\\TUCN\\UTCN\\Third_Year\\PG\\Lab3\\OpenGL_4_Application\\OpenGL_4_Application\\shaders\\shader.frag",
+              "RelativeDocumentMoniker": "OpenGL_4_Application\\shaders\\shader.frag",
+              "ToolTip": "D:\\TUCN\\UTCN\\Third_Year\\PG\\Lab3\\OpenGL_4_Application\\OpenGL_4_Application\\shaders\\shader.frag",
+              "RelativeToolTip": "OpenGL_4_Application\\shaders\\shader.frag",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAAgAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
+              "WhenOpened": "2025-10-15T12:47:20.543Z",
+              "EditorCaption": ""
+            },
             {
               "$type": "Document",
               "DocumentIndex": 0,
@@ -24,7 +74,7 @@
               "RelativeDocumentMoniker": "OpenGL_4_Application\\main.cpp",
               "ToolTip": "D:\\TUCN\\UTCN\\Third_Year\\PG\\Lab3\\OpenGL_4_Application\\OpenGL_4_Application\\main.cpp",
               "RelativeToolTip": "OpenGL_4_Application\\main.cpp",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABcAAAAYAAAAAAAAAA==",
+              "ViewState": "AgIAAJUAAAAAAAAAAAAAAKoAAAAlAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
               "WhenOpened": "2025-10-13T18:11:06.304Z",
               "EditorCaption": ""

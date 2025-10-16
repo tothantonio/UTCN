@@ -27,7 +27,7 @@ port(
     error_led      : out std_logic;
     
     -- led de eroare (paritate)
-    parity_led     : out std_logic
+    parity_led     : out std_logic  
   );
 end axis_receiver;
 
@@ -43,6 +43,7 @@ begin
   s_axis_tready <= ready_en;
   
   process(clk)
+  variable parity_bit : std_logic;
   begin
     if rising_edge(clk) then
       if rst_n = '0' then
@@ -50,6 +51,7 @@ begin
         
         timeout_cnt <= (others => '0');
         error_flag <= '0';
+        parity_error <= '0'; 
       else
         -- crestem contotul la fiecare ciclu de ceas
         if timeout_cnt < to_unsigned(TIMEOUT_N, timeout_cnt'length) then
@@ -66,6 +68,14 @@ begin
             timeout_cnt <= (others => '0');
             error_flag <= '0';
             
+            parity_bit := s_axis_tdata(0) xor s_axis_tdata(1) xor s_axis_tdata(2) xor s_axis_tdata(3);
+            
+            if parity_bit /= s_axis_tdata(4) then
+                parity_error <= '1';
+            else
+                parity_error <= '0';
+            end if;
+            
             if raw_data = '1' then
                 leds_r <= s_axis_tdata(3 downto 0);
             else
@@ -79,4 +89,5 @@ begin
 
   leds <= leds_r;
   error_led <= error_flag;
+  parity_led <= parity_error;
 end Behavioral;

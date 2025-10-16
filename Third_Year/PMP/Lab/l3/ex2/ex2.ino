@@ -2,13 +2,13 @@
 LiquidCrystal lcd(7, 6, 5, 4, 3, 2);
 // Masca pentru primul caracter, fiecare linie de biţi reprezintă o linie a caracterului
 byte happy[8] = {
-B00000,
-B11011,
-B11011,
-B00000,
-B00000,
-B10001,
+B11111,
 B01110,
+B00100,
+B00100,
+B00100,
+B01110,
+B11111,
 };
 // Masca pentru al doilea caracter
 byte sad[8] = {

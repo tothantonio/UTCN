@@ -26,7 +26,7 @@ architecture Behavioral of top is
   );
   end component;
 
-  -- AXI4-Stream Data FIFO (single clock, TLAST=Yes, write data count/prog_full active)
+  -- AXI4-Stream Data FIFO (single clock, TLA  ST=Yes, write data count/prog_full active)
 component axis_data_fifo_0 is
   port (
     s_axis_aresetn       : in  std_logic;
@@ -188,7 +188,8 @@ begin
       raw_data       => sw(3),
       s_axis_tready  => open,         
       leds           => leds_data,
-      error_led      => led(3)
+      error_led      => led(3),
+      parity_led     => led(2)
     );
 
   --------------------------------------------------------------------

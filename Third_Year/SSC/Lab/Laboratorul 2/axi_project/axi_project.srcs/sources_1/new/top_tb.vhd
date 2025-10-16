@@ -12,6 +12,8 @@ architecture sim of top_tb is
     signal led_tb : std_logic_vector(3 downto 0);
 
     constant CLK_PERIOD : time := 8 ns;
+    
+    signal force_error : std_logic := '0';
 
 begin
     DUT: entity work.top
@@ -47,7 +49,6 @@ begin
             btn_tb(0) <= '0';
             wait for CLK_PERIOD * 2;
 
-            -- Pas cu pas (TREADY) — 6 handshake-uri
             for step_idx in 0 to 5 loop
                 btn_tb(2) <= '1';
                 wait for CLK_PERIOD;
@@ -58,15 +59,15 @@ begin
             wait for 50 ns;  
         end loop;
 
-        sw_tb(3) <= '1';  -- afisează raw data
+        sw_tb(3) <= '1';  
         wait for CLK_PERIOD * 50;
 
         sw_tb(3) <= '0';
-        sw_tb(2) <= '1';  -- afisează bargraph FIFO
+        sw_tb(2) <= '1';  
         wait for CLK_PERIOD * 50;
 
         sw_tb(2) <= '0';
-        sw_tb(1) <= '1';  -- afisează package counter
+        sw_tb(1) <= '1';  
         wait for CLK_PERIOD * 50;
 
         wait;

@@ -13,7 +13,7 @@ lcd.begin(16, 2);
 lcd.print("Incepe experimentul");
 delay(1000);//facem o scurta pauza pentru a vizualiza mesajul de pe ecran
 //setam pinul 21 ca si pin de intrare; pinul pe care se afla intreruperea INT0
-pinMode(21 ,INPUT);
+pinMode(21 ,INPUT_PULLUP);
 //setam pinul 20 ca si pin de intrare; pinul pe care se afla intreruperea INT1
 pinMode(20, INPUT);
 pinMode(13, OUTPUT); //setam pinul 13 ca si iesire

@@ -34,13 +34,13 @@ architecture rtl of axis_transmitter is
   signal tvalid_r : std_logic := '0';
   signal tlast_r  : std_logic := '0';
   
-  signal parity_bit : std_logic;
-begin
+  begin
   m_axis_tdata  <= tdata_r;
   m_axis_tvalid <= tvalid_r;
   m_axis_tlast  <= tlast_r;
 
   process(clk)
+  variable parity_bit : std_logic;
   begin
     if rising_edge(clk) then
       if rst_n = '0' then
@@ -53,9 +53,9 @@ begin
         -- PORNIRE: la fiecare START, daca nu avem un beat în asteptare,
         -- incarcam UN singur beat si setam TVALID=1, TLAST=1
         if (start = '1') and (tvalid_r = '0') then
-          parity_bit <= MEM_ROM(idx)(0) xor MEM_ROM(idx)(1) xor MEM_ROM(idx)(2) xor MEM_ROM(idx)(3);
+          parity_bit := MEM_ROM(idx)(0) xor MEM_ROM(idx)(1) xor MEM_ROM(idx)(2) xor MEM_ROM(idx)(3);
           
-          tdata_r  <= (7 downto 5 => '0') & parity_bit & MEM_ROM(idx);
+          tdata_r  <= "000" & parity_bit & MEM_ROM(idx);
           tvalid_r <= '1';
           tlast_r  <= '1';            -- pachet de 1 beat
         end if;

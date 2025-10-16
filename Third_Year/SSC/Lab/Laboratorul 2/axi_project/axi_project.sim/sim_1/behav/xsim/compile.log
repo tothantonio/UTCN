@@ -8,5 +8,14 @@ INFO: [VRFC 10-311] analyzing module axis_infrastructure_v1_1_1_clock_synchroniz
 INFO: [VRFC 10-311] analyzing module axis_infrastructure_v1_1_1_cdc_handshake
 INFO: [VRFC 10-2263] Analyzing Verilog file "D:/TUCN/UTCN/Third_Year/SSC/Lab/Laboratorul 2/axi_project/axi_project.ip_user_files/ipstatic/hdl/axis_data_fifo_v2_0_vl_rfs.v" into library axis_data_fifo_v2_0_17
 INFO: [VRFC 10-311] analyzing module axis_data_fifo_v2_0_17_top
+INFO: [VRFC 10-163] Analyzing VHDL file "D:/TUCN/UTCN/Third_Year/SSC/Lab/Laboratorul 2/axi_project/axi_project.srcs/sources_1/new/top.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'top'
 INFO: [VRFC 10-163] Analyzing VHDL file "D:/TUCN/UTCN/Third_Year/SSC/Lab/Laboratorul 2/axi_project/axi_project.srcs/sources_1/new/top_tb.vhd" into library xil_defaultlib
 INFO: [VRFC 10-3107] analyzing entity 'top_tb'
+ERROR: [VRFC 10-4982] syntax error near 'DUT' [D:/TUCN/UTCN/Third_Year/SSC/Lab/Laboratorul 2/axi_project/axi_project.srcs/sources_1/new/top_tb.vhd:71]
+ERROR: [VRFC 10-874] illegal selected name prefix [D:/TUCN/UTCN/Third_Year/SSC/Lab/Laboratorul 2/axi_project/axi_project.srcs/sources_1/new/top_tb.vhd:71]
+ERROR: [VRFC 10-2965] 'dut' is not a signal [D:/TUCN/UTCN/Third_Year/SSC/Lab/Laboratorul 2/axi_project/axi_project.srcs/sources_1/new/top_tb.vhd:71]
+ERROR: [VRFC 10-4982] syntax error near 'DUT' [D:/TUCN/UTCN/Third_Year/SSC/Lab/Laboratorul 2/axi_project/axi_project.srcs/sources_1/new/top_tb.vhd:73]
+ERROR: [VRFC 10-874] illegal selected name prefix [D:/TUCN/UTCN/Third_Year/SSC/Lab/Laboratorul 2/axi_project/axi_project.srcs/sources_1/new/top_tb.vhd:73]
+ERROR: [VRFC 10-9458] unit 'sim' is ignored due to previous errors [D:/TUCN/UTCN/Third_Year/SSC/Lab/Laboratorul 2/axi_project/axi_project.srcs/sources_1/new/top_tb.vhd:7]
+INFO: [VRFC 10-8704] VHDL file 'D:/TUCN/UTCN/Third_Year/SSC/Lab/Laboratorul 2/axi_project/axi_project.srcs/sources_1/new/top_tb.vhd' is ignored due to errors
