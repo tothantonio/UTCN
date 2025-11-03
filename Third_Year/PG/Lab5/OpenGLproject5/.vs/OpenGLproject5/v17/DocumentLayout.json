@@ -1,0 +1,122 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "D:\\TUCN\\UTCN\\Third_Year\\PG\\Lab5\\OpenGLproject5\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{0A286E7A-9E94-4490-A17B-1FA603CCE504}|OpenGLproject5\\OpenGLproject5.vcxproj|D:\\TUCN\\UTCN\\Third_Year\\PG\\Lab5\\OpenGLproject5\\OpenGLproject5\\main.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{0A286E7A-9E94-4490-A17B-1FA603CCE504}|OpenGLproject5\\OpenGLproject5.vcxproj|solutionrelative:OpenGLproject5\\main.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0A286E7A-9E94-4490-A17B-1FA603CCE504}|OpenGLproject5\\OpenGLproject5.vcxproj|D:\\TUCN\\UTCN\\Third_Year\\PG\\Lab5\\OpenGLproject5\\OpenGLproject5\\Camera.hpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{0A286E7A-9E94-4490-A17B-1FA603CCE504}|OpenGLproject5\\OpenGLproject5.vcxproj|solutionrelative:OpenGLproject5\\Camera.hpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0A286E7A-9E94-4490-A17B-1FA603CCE504}|OpenGLproject5\\OpenGLproject5.vcxproj|D:\\TUCN\\UTCN\\Third_Year\\PG\\Lab5\\OpenGLproject5\\OpenGLproject5\\shaders\\shaderStart.vert||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "RelativeMoniker": "D:0:0:{0A286E7A-9E94-4490-A17B-1FA603CCE504}|OpenGLproject5\\OpenGLproject5.vcxproj|solutionrelative:OpenGLproject5\\shaders\\shaderStart.vert||{8B382828-6202-11D1-8870-0000F87579D2}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0A286E7A-9E94-4490-A17B-1FA603CCE504}|OpenGLproject5\\OpenGLproject5.vcxproj|D:\\TUCN\\UTCN\\Third_Year\\PG\\Lab5\\OpenGLproject5\\OpenGLproject5\\shaders\\shaderStart.frag||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "RelativeMoniker": "D:0:0:{0A286E7A-9E94-4490-A17B-1FA603CCE504}|OpenGLproject5\\OpenGLproject5.vcxproj|solutionrelative:OpenGLproject5\\shaders\\shaderStart.frag||{8B382828-6202-11D1-8870-0000F87579D2}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0A286E7A-9E94-4490-A17B-1FA603CCE504}|OpenGLproject5\\OpenGLproject5.vcxproj|D:\\TUCN\\UTCN\\Third_Year\\PG\\Lab5\\OpenGLproject5\\OpenGLproject5\\Shader.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{0A286E7A-9E94-4490-A17B-1FA603CCE504}|OpenGLproject5\\OpenGLproject5.vcxproj|solutionrelative:OpenGLproject5\\Shader.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0A286E7A-9E94-4490-A17B-1FA603CCE504}|OpenGLproject5\\OpenGLproject5.vcxproj|D:\\TUCN\\UTCN\\Third_Year\\PG\\Lab5\\OpenGLproject5\\OpenGLproject5\\Camera.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{0A286E7A-9E94-4490-A17B-1FA603CCE504}|OpenGLproject5\\OpenGLproject5.vcxproj|solutionrelative:OpenGLproject5\\Camera.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 5,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "Shader.cpp",
+              "DocumentMoniker": "D:\\TUCN\\UTCN\\Third_Year\\PG\\Lab5\\OpenGLproject5\\OpenGLproject5\\Shader.cpp",
+              "RelativeDocumentMoniker": "OpenGLproject5\\Shader.cpp",
+              "ToolTip": "D:\\TUCN\\UTCN\\Third_Year\\PG\\Lab5\\OpenGLproject5\\OpenGLproject5\\Shader.cpp",
+              "RelativeToolTip": "OpenGLproject5\\Shader.cpp",
+              "ViewState": "AgIAAEcAAAAAAAAAAAAAwGMAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2025-10-30T08:16:44.354Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "shaderStart.frag",
+              "DocumentMoniker": "D:\\TUCN\\UTCN\\Third_Year\\PG\\Lab5\\OpenGLproject5\\OpenGLproject5\\shaders\\shaderStart.frag",
+              "RelativeDocumentMoniker": "OpenGLproject5\\shaders\\shaderStart.frag",
+              "ToolTip": "D:\\TUCN\\UTCN\\Third_Year\\PG\\Lab5\\OpenGLproject5\\OpenGLproject5\\shaders\\shaderStart.frag",
+              "RelativeToolTip": "OpenGLproject5\\shaders\\shaderStart.frag",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
+              "WhenOpened": "2025-10-30T08:16:39.342Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Camera.hpp",
+              "DocumentMoniker": "D:\\TUCN\\UTCN\\Third_Year\\PG\\Lab5\\OpenGLproject5\\OpenGLproject5\\Camera.hpp",
+              "RelativeDocumentMoniker": "OpenGLproject5\\Camera.hpp",
+              "ToolTip": "D:\\TUCN\\UTCN\\Third_Year\\PG\\Lab5\\OpenGLproject5\\OpenGLproject5\\Camera.hpp",
+              "RelativeToolTip": "OpenGLproject5\\Camera.hpp",
+              "ViewState": "AgIAAAcAAAAAAAAAAAAAwBoAAAAfAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2025-10-29T13:49:12.274Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "Camera.cpp",
+              "DocumentMoniker": "D:\\TUCN\\UTCN\\Third_Year\\PG\\Lab5\\OpenGLproject5\\OpenGLproject5\\Camera.cpp",
+              "RelativeDocumentMoniker": "OpenGLproject5\\Camera.cpp",
+              "ToolTip": "D:\\TUCN\\UTCN\\Third_Year\\PG\\Lab5\\OpenGLproject5\\OpenGLproject5\\Camera.cpp",
+              "RelativeToolTip": "OpenGLproject5\\Camera.cpp",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2025-10-29T13:48:55.912Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "shaderStart.vert",
+              "DocumentMoniker": "D:\\TUCN\\UTCN\\Third_Year\\PG\\Lab5\\OpenGLproject5\\OpenGLproject5\\shaders\\shaderStart.vert",
+              "RelativeDocumentMoniker": "OpenGLproject5\\shaders\\shaderStart.vert",
+              "ToolTip": "D:\\TUCN\\UTCN\\Third_Year\\PG\\Lab5\\OpenGLproject5\\OpenGLproject5\\shaders\\shaderStart.vert",
+              "RelativeToolTip": "OpenGLproject5\\shaders\\shaderStart.vert",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
+              "WhenOpened": "2025-10-29T12:43:10.483Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "main.cpp",
+              "DocumentMoniker": "D:\\TUCN\\UTCN\\Third_Year\\PG\\Lab5\\OpenGLproject5\\OpenGLproject5\\main.cpp",
+              "RelativeDocumentMoniker": "OpenGLproject5\\main.cpp",
+              "ToolTip": "D:\\TUCN\\UTCN\\Third_Year\\PG\\Lab5\\OpenGLproject5\\OpenGLproject5\\main.cpp",
+              "RelativeToolTip": "OpenGLproject5\\main.cpp",
+              "ViewState": "AgIAAL8AAAAAAAAAAAAAAM4AAAA7AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2025-10-29T12:12:15.893Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

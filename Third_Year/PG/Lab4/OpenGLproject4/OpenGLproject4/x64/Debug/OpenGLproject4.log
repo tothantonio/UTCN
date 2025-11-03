@@ -1,0 +1,8 @@
+﻿  main.cpp
+D:\TUCN\UTCN\Third_Year\PG\Lab4\OpenGLproject4\OpenGLproject4\main.cpp(142,28): warning C4305: 'argument': truncation from 'double' to 'GLclampf'
+D:\TUCN\UTCN\Third_Year\PG\Lab4\OpenGLproject4\OpenGLproject4\main.cpp(142,23): warning C4305: 'argument': truncation from 'double' to 'GLclampf'
+D:\TUCN\UTCN\Third_Year\PG\Lab4\OpenGLproject4\OpenGLproject4\main.cpp(142,18): warning C4305: 'argument': truncation from 'double' to 'GLclampf'
+glew32s.lib(glew.obj) : warning LNK4099: PDB 'vc120.pdb' was not found with 'glew32s.lib(glew.obj)' or at 'D:\TUCN\UTCN\Third_Year\PG\Lab4\OpenGLproject4\x64\Debug\vc120.pdb'; linking object as if no debug info
+LINK : warning LNK4098: defaultlib 'MSVCRT' conflicts with use of other libs; use /NODEFAULTLIB:library
+LINK : warning LNK4098: defaultlib 'LIBCMT' conflicts with use of other libs; use /NODEFAULTLIB:library
+  OpenGLproject4.vcxproj -> D:\TUCN\UTCN\Third_Year\PG\Lab4\OpenGLproject4\x64\Debug\OpenGLproject4.exe
