@@ -1,4 +1,5 @@
 module Shape exposing (..)
+import List exposing (sum)
 
 
 type Shape
@@ -111,3 +112,22 @@ safeHeronEnum a b c =
     Err ImpossibleTriangle
   else Ok (heron a b c)
 
+cmpShapes : Shape -> Shape -> Result String Order
+cmpShapes s1 s2 =
+  case (safeArea s1, safeArea s2) of
+      (Ok area1, Ok area2) -> Ok (compare area1 area2)
+      (Err msg, _) -> Err ("Invalid input for right shape: " ++ msg) 
+      (_, Err msg) -> Err ("Invalid input for left shape: " ++ msg)
+
+totalArea : List.List Shape -> Result (Int, InvalidShapeError) Float
+totalArea shapes = 
+  let
+    helper shapeList i sum = 
+      case shapeList of
+        [] -> Ok sum
+        x::xs -> 
+          case safeAreaEnum x of
+              Err error -> Err (i, error)
+              Ok area -> helper xs (i + 1) (sum + area)
+  in
+  helper shapes 0 0

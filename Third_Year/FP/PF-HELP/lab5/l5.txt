@@ -1,0 +1,40 @@
+Implement the all and any functions by using a pipeline with map then foldl
+
+all: (a->Bool) -> List a -> Bool
+all expr list = 
+  list
+    |> map expr
+    |> foldl (&&) True
+
+> import AdvancedLists exposing(..)
+> all (\x -> x > 0) [-1, 2, 3]
+False : Bool
+> all (\x -> x > 0) [1, 2, 3] 
+True : Bool
+
+any: (a->Bool) -> List a -> Bool
+any expr list = 
+  list
+    |> map expr
+    |> foldl (||) False
+
+> any (\x -> x > 0) [-1, -2, -1]
+False : Bool
+> any (\x -> x > 0) [-1, -2, 1] 
+True : Bool
+
+5.1.2
+Trace the evaluation of applyTwice (inc >> triple) 1 , showing each evaluation step.
+applyTwice (inc >> triple) 1
+= ((inc >> triple) >> (inc >> triple)) 1
+= (inc >> triple )(3 * (1 + 1)) = triple(inc(6)) = 21
+
+5.5.1
+map2 : (a -> b -> c) -> Maybe a -> Maybe b -> Maybe c
+map2 f ma mb = 
+  case ma of
+    Just a ->
+      case mb of
+        Just b -> Just (f a b)
+        Nothing -> Nothing
+    Nothing -> Nothing

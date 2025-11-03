@@ -1,0 +1,38 @@
+> import Date
+> daysInMonth
+-- NAMING ERROR ----------------------------------------------------------- REPL
+
+I cannot find a `daysInMonth` variable:
+
+4|   daysInMonth
+     ^^^^^^^^^^^
+These names seem close though:
+
+    Date.daysInMonth
+    Basics.not
+    asin
+    isInfinite
+
+Hint: Read <https://elm-lang.org/0.19.1/imports> to see how `import`
+declarations work in Elm.
+
+>
+
+> Date.daysInMonth
+<function> : Date.Month -> Int
+> import Date as D
+> D.daysInMonth
+<function> : D.Month -> Int
+
+> applyTwice f x = f (f x)
+<function> : (a -> a) -> a -> a
+
+> let f x = x + 1 in (applyTwice f 1) 
+3 : number
+
+> (\x -> \y -> \z -> x + y + z) 1 2 3
+6 : number
+
+> import Lists as L
+> L.takeWhile (\x -> x < 3) [1,2,3,4,1,2]
+[1,2] : List number
