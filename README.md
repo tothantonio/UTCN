@@ -33,3 +33,12 @@
   * [System Theory](Second_Year/II/ST)
   * [Computer Architecture](Second_Year/II/CA)
   * [Fundamental Programming](Second_Year/II/PT)
+
+  ### 5️⃣Semester
+  
+  * [Software Engineering](Third_Year/I/IS)
+  * [Artificial Intelligence](Third_Year/I/AI)
+  * [Structure of Computer Systems](Third_Year/I/SSC)
+  * [Functional Programming](Third_Year/I/FP)
+  * [Graphical Processing](Third_Year/I/PG)
+  * [Design with Microprocessors](Third_Year/I/PMP)
