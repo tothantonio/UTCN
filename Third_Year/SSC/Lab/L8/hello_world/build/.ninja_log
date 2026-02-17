@@ -1,0 +1,4 @@
+# ninja log v5
+22	318	7875068772748873	CMakeFiles/hello_world.elf.dir/platform.c.obj	2db880894656c6f2
+4	655	7875068776116409	CMakeFiles/hello_world.elf.dir/helloworld.c.obj	86edcba28064f2
+655	1177	7875068780079049	hello_world.elf	b52c1240d0bc594d

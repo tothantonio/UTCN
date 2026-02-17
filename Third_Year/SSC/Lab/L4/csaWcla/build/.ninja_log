@@ -1,0 +1,4 @@
+# ninja log v5
+14	195	7833619636842350	CMakeFiles/csaWcla.elf.dir/platform.c.obj	ce9e9836b105192c
+2	272	7833619637605892	CMakeFiles/csaWcla.elf.dir/helloworld.c.obj	85b6ce3eb84172bc
+272	718	7833619640559726	csaWcla.elf	376d6aa6ebb43af3

@@ -1,0 +1,658 @@
+[
+  {
+    "uri": "file:///d%3A/TUCN/UTCN/Third_Year/SSC/Lab/Lab9/hello_world/src/helloworld.c",
+    "owner": "_generated_diagnostic_collection_name_#be18943f-6bc1-451a-80e3-0140a0ffb7d1",
+    "data": [
+      {
+        "code": "pp_file_not_found",
+        "severity": 1,
+        "range": {
+          "start": {
+            "line": 14,
+            "character": 9
+          },
+          "end": {
+            "line": 14,
+            "character": 10
+          }
+        },
+        "message": "In included file: 'windows.h' file not found",
+        "source": "clang",
+        "relatedInformation": [
+          {
+            "message": "Error occurred here",
+            "location": {
+              "uri": "file:///d%3A/TUCN/UTCN/Third_Year/SSC/Lab/Lab9/platform/export/platform/sw/standalone_ps7_cortexa9_0/include/ff.h",
+              "range": {
+                "start": {
+                  "line": 42,
+                  "character": 9
+                },
+                "end": {
+                  "line": 42,
+                  "character": 20
+                }
+              }
+            }
+          }
+        ]
+      },
+      {
+        "code": "undeclared_var_use",
+        "severity": 1,
+        "range": {
+          "start": {
+            "line": 123,
+            "character": 4
+          },
+          "end": {
+            "line": 123,
+            "character": 8
+          }
+        },
+        "message": "Use of undeclared identifier 'UINT'",
+        "source": "clang",
+        "relatedInformation": []
+      },
+      {
+        "code": "undeclared_var_use_suggest",
+        "severity": 1,
+        "range": {
+          "start": {
+            "line": 141,
+            "character": 48
+          },
+          "end": {
+            "line": 141,
+            "character": 52
+          }
+        },
+        "message": "Use of undeclared identifier 'read'; did you mean 'fread'? (fix available)",
+        "source": "clang",
+        "relatedInformation": [
+          {
+            "message": "'fread' declared here",
+            "location": {
+              "uri": "file:///d%3A/Xilinx/2025.1/gnu/aarch32/nt/gcc-arm-none-eabi/aarch32-xilinx-eabi/usr/include/stdio.h",
+              "range": {
+                "start": {
+                  "line": 228,
+                  "character": 7
+                },
+                "end": {
+                  "line": 228,
+                  "character": 12
+                }
+              }
+            }
+          }
+        ]
+      },
+      {
+        "code": "undeclared_var_use_suggest",
+        "severity": 1,
+        "range": {
+          "start": {
+            "line": 142,
+            "character": 24
+          },
+          "end": {
+            "line": 142,
+            "character": 28
+          }
+        },
+        "message": "Use of undeclared identifier 'read'; did you mean 'fread'? (fix available)",
+        "source": "clang",
+        "relatedInformation": [
+          {
+            "message": "'fread' declared here",
+            "location": {
+              "uri": "file:///d%3A/Xilinx/2025.1/gnu/aarch32/nt/gcc-arm-none-eabi/aarch32-xilinx-eabi/usr/include/stdio.h",
+              "range": {
+                "start": {
+                  "line": 228,
+                  "character": 7
+                },
+                "end": {
+                  "line": 228,
+                  "character": 12
+                }
+              }
+            }
+          }
+        ]
+      },
+      {
+        "code": "undeclared_var_use_suggest",
+        "severity": 1,
+        "range": {
+          "start": {
+            "line": 143,
+            "character": 65
+          },
+          "end": {
+            "line": 143,
+            "character": 69
+          }
+        },
+        "message": "Use of undeclared identifier 'read'; did you mean 'fread'? (fix available)",
+        "source": "clang",
+        "relatedInformation": [
+          {
+            "message": "'fread' declared here",
+            "location": {
+              "uri": "file:///d%3A/Xilinx/2025.1/gnu/aarch32/nt/gcc-arm-none-eabi/aarch32-xilinx-eabi/usr/include/stdio.h",
+              "range": {
+                "start": {
+                  "line": 228,
+                  "character": 7
+                },
+                "end": {
+                  "line": 228,
+                  "character": 12
+                }
+              }
+            }
+          }
+        ]
+      },
+      {
+        "code": "undeclared_var_use_suggest",
+        "severity": 1,
+        "range": {
+          "start": {
+            "line": 197,
+            "character": 58
+          },
+          "end": {
+            "line": 197,
+            "character": 62
+          }
+        },
+        "message": "Use of undeclared identifier 'read'; did you mean 'fread'? (fix available)",
+        "source": "clang",
+        "relatedInformation": [
+          {
+            "message": "'fread' declared here",
+            "location": {
+              "uri": "file:///d%3A/Xilinx/2025.1/gnu/aarch32/nt/gcc-arm-none-eabi/aarch32-xilinx-eabi/usr/include/stdio.h",
+              "range": {
+                "start": {
+                  "line": 228,
+                  "character": 7
+                },
+                "end": {
+                  "line": 228,
+                  "character": 12
+                }
+              }
+            }
+          }
+        ]
+      },
+      {
+        "code": "undeclared_var_use_suggest",
+        "severity": 1,
+        "range": {
+          "start": {
+            "line": 198,
+            "character": 28
+          },
+          "end": {
+            "line": 198,
+            "character": 32
+          }
+        },
+        "message": "Use of undeclared identifier 'read'; did you mean 'fread'? (fix available)",
+        "source": "clang",
+        "relatedInformation": [
+          {
+            "message": "'fread' declared here",
+            "location": {
+              "uri": "file:///d%3A/Xilinx/2025.1/gnu/aarch32/nt/gcc-arm-none-eabi/aarch32-xilinx-eabi/usr/include/stdio.h",
+              "range": {
+                "start": {
+                  "line": 228,
+                  "character": 7
+                },
+                "end": {
+                  "line": 228,
+                  "character": 12
+                }
+              }
+            }
+          }
+        ]
+      },
+      {
+        "code": "undeclared_var_use_suggest",
+        "severity": 1,
+        "range": {
+          "start": {
+            "line": 255,
+            "character": 50
+          },
+          "end": {
+            "line": 255,
+            "character": 54
+          }
+        },
+        "message": "Use of undeclared identifier 'read'; did you mean 'fread'? (fix available)",
+        "source": "clang",
+        "relatedInformation": [
+          {
+            "message": "'fread' declared here",
+            "location": {
+              "uri": "file:///d%3A/Xilinx/2025.1/gnu/aarch32/nt/gcc-arm-none-eabi/aarch32-xilinx-eabi/usr/include/stdio.h",
+              "range": {
+                "start": {
+                  "line": 228,
+                  "character": 7
+                },
+                "end": {
+                  "line": 228,
+                  "character": 12
+                }
+              }
+            }
+          }
+        ]
+      },
+      {
+        "code": "undeclared_var_use_suggest",
+        "severity": 1,
+        "range": {
+          "start": {
+            "line": 255,
+            "character": 68
+          },
+          "end": {
+            "line": 255,
+            "character": 72
+          }
+        },
+        "message": "Use of undeclared identifier 'read'; did you mean 'fread'? (fix available)",
+        "source": "clang",
+        "relatedInformation": [
+          {
+            "message": "'fread' declared here",
+            "location": {
+              "uri": "file:///d%3A/Xilinx/2025.1/gnu/aarch32/nt/gcc-arm-none-eabi/aarch32-xilinx-eabi/usr/include/stdio.h",
+              "range": {
+                "start": {
+                  "line": 228,
+                  "character": 7
+                },
+                "end": {
+                  "line": 228,
+                  "character": 12
+                }
+              }
+            }
+          }
+        ]
+      },
+      {
+        "code": "undeclared_var_use_suggest",
+        "severity": 1,
+        "range": {
+          "start": {
+            "line": 298,
+            "character": 50
+          },
+          "end": {
+            "line": 298,
+            "character": 54
+          }
+        },
+        "message": "Use of undeclared identifier 'read'; did you mean 'fread'? (fix available)",
+        "source": "clang",
+        "relatedInformation": [
+          {
+            "message": "'fread' declared here",
+            "location": {
+              "uri": "file:///d%3A/Xilinx/2025.1/gnu/aarch32/nt/gcc-arm-none-eabi/aarch32-xilinx-eabi/usr/include/stdio.h",
+              "range": {
+                "start": {
+                  "line": 228,
+                  "character": 7
+                },
+                "end": {
+                  "line": 228,
+                  "character": 12
+                }
+              }
+            }
+          }
+        ]
+      },
+      {
+        "code": "undeclared_var_use_suggest",
+        "severity": 1,
+        "range": {
+          "start": {
+            "line": 298,
+            "character": 68
+          },
+          "end": {
+            "line": 298,
+            "character": 72
+          }
+        },
+        "message": "Use of undeclared identifier 'read'; did you mean 'fread'? (fix available)",
+        "source": "clang",
+        "relatedInformation": [
+          {
+            "message": "'fread' declared here",
+            "location": {
+              "uri": "file:///d%3A/Xilinx/2025.1/gnu/aarch32/nt/gcc-arm-none-eabi/aarch32-xilinx-eabi/usr/include/stdio.h",
+              "range": {
+                "start": {
+                  "line": 228,
+                  "character": 7
+                },
+                "end": {
+                  "line": 228,
+                  "character": 12
+                }
+              }
+            }
+          }
+        ]
+      },
+      {
+        "code": "unknown_typename_suggest",
+        "severity": 1,
+        "range": {
+          "start": {
+            "line": 422,
+            "character": 0
+          },
+          "end": {
+            "line": 422,
+            "character": 10
+          }
+        },
+        "message": "Unknown type name 'uint8x16_t'; did you mean 'uint16_t'? (fix available)",
+        "source": "clang",
+        "relatedInformation": [
+          {
+            "message": "'uint16_t' declared here",
+            "location": {
+              "uri": "file:///d%3A/Xilinx/2025.1/gnu/aarch32/nt/gcc-arm-none-eabi/aarch32-xilinx-eabi/usr/include/sys/_stdint.h",
+              "range": {
+                "start": {
+                  "line": 35,
+                  "character": 19
+                },
+                "end": {
+                  "line": 35,
+                  "character": 27
+                }
+              }
+            }
+          }
+        ]
+      },
+      {
+        "code": "-Wimplicit-function-declaration",
+        "severity": 2,
+        "range": {
+          "start": {
+            "line": 422,
+            "character": 21
+          },
+          "end": {
+            "line": 422,
+            "character": 31
+          }
+        },
+        "message": "Implicit declaration of function 'vdupq_n_u8' is invalid in C99",
+        "source": "clang",
+        "relatedInformation": []
+      },
+      {
+        "code": "unknown_typename_suggest",
+        "severity": 1,
+        "range": {
+          "start": {
+            "line": 425,
+            "character": 0
+          },
+          "end": {
+            "line": 425,
+            "character": 10
+          }
+        },
+        "message": "Unknown type name 'uint8x16_t'; did you mean 'uint16_t'? (fix available)",
+        "source": "clang",
+        "relatedInformation": [
+          {
+            "message": "'uint16_t' declared here",
+            "location": {
+              "uri": "file:///d%3A/Xilinx/2025.1/gnu/aarch32/nt/gcc-arm-none-eabi/aarch32-xilinx-eabi/usr/include/sys/_stdint.h",
+              "range": {
+                "start": {
+                  "line": 35,
+                  "character": 19
+                },
+                "end": {
+                  "line": 35,
+                  "character": 27
+                }
+              }
+            }
+          }
+        ]
+      },
+      {
+        "code": "-Wimplicit-function-declaration",
+        "severity": 2,
+        "range": {
+          "start": {
+            "line": 425,
+            "character": 15
+          },
+          "end": {
+            "line": 425,
+            "character": 23
+          }
+        },
+        "message": "Implicit declaration of function 'vld1q_u8' is invalid in C99",
+        "source": "clang",
+        "relatedInformation": []
+      },
+      {
+        "code": "unknown_typename_suggest",
+        "severity": 1,
+        "range": {
+          "start": {
+            "line": 427,
+            "character": 0
+          },
+          "end": {
+            "line": 427,
+            "character": 10
+          }
+        },
+        "message": "Unknown type name 'uint8x16_t'; did you mean 'uint16_t'? (fix available)",
+        "source": "clang",
+        "relatedInformation": [
+          {
+            "message": "'uint16_t' declared here",
+            "location": {
+              "uri": "file:///d%3A/Xilinx/2025.1/gnu/aarch32/nt/gcc-arm-none-eabi/aarch32-xilinx-eabi/usr/include/sys/_stdint.h",
+              "range": {
+                "start": {
+                  "line": 35,
+                  "character": 19
+                },
+                "end": {
+                  "line": 35,
+                  "character": 27
+                }
+              }
+            }
+          }
+        ]
+      },
+      {
+        "code": "-Wimplicit-function-declaration",
+        "severity": 2,
+        "range": {
+          "start": {
+            "line": 427,
+            "character": 18
+          },
+          "end": {
+            "line": 427,
+            "character": 27
+          }
+        },
+        "message": "Implicit declaration of function 'vqaddq_u8' is invalid in C99 (fix available)",
+        "source": "clang",
+        "relatedInformation": [
+          {
+            "message": "Did you mean 'vld1q_u8'?",
+            "location": {
+              "uri": "file:///d%3A/TUCN/UTCN/Third_Year/SSC/Lab/Lab9/hello_world/src/helloworld.c",
+              "range": {
+                "start": {
+                  "line": 427,
+                  "character": 18
+                },
+                "end": {
+                  "line": 427,
+                  "character": 27
+                }
+              }
+            }
+          }
+        ]
+      },
+      {
+        "code": "-Wimplicit-function-declaration",
+        "severity": 2,
+        "range": {
+          "start": {
+            "line": 428,
+            "character": 0
+          },
+          "end": {
+            "line": 428,
+            "character": 8
+          }
+        },
+        "message": "Implicit declaration of function 'vst1q_u8' is invalid in C99 (fix available)",
+        "source": "clang",
+        "relatedInformation": [
+          {
+            "message": "Did you mean 'vld1q_u8'?",
+            "location": {
+              "uri": "file:///d%3A/TUCN/UTCN/Third_Year/SSC/Lab/Lab9/hello_world/src/helloworld.c",
+              "range": {
+                "start": {
+                  "line": 428,
+                  "character": 0
+                },
+                "end": {
+                  "line": 428,
+                  "character": 8
+                }
+              }
+            }
+          }
+        ]
+      },
+      {
+        "code": "unknown_typename_suggest",
+        "severity": 1,
+        "range": {
+          "start": {
+            "line": 451,
+            "character": 6
+          },
+          "end": {
+            "line": 451,
+            "character": 16
+          }
+        },
+        "message": "Unknown type name 'uint8x16_t'; did you mean 'uint16_t'? (fix available)",
+        "source": "clang",
+        "relatedInformation": [
+          {
+            "message": "'uint16_t' declared here",
+            "location": {
+              "uri": "file:///d%3A/Xilinx/2025.1/gnu/aarch32/nt/gcc-arm-none-eabi/aarch32-xilinx-eabi/usr/include/sys/_stdint.h",
+              "range": {
+                "start": {
+                  "line": 35,
+                  "character": 19
+                },
+                "end": {
+                  "line": 35,
+                  "character": 27
+                }
+              }
+            }
+          }
+        ]
+      },
+      {
+        "code": "-Wimplicit-function-declaration",
+        "severity": 2,
+        "range": {
+          "start": {
+            "line": 451,
+            "character": 27
+          },
+          "end": {
+            "line": 451,
+            "character": 37
+          }
+        },
+        "message": "Implicit declaration of function 'vdupq_n_u8' is invalid in C99",
+        "source": "clang",
+        "relatedInformation": []
+      },
+      {
+        "code": "fatal_too_many_errors",
+        "severity": 1,
+        "range": {
+          "start": {
+            "line": 0,
+            "character": 0
+          },
+          "end": {
+            "line": 0,
+            "character": 0
+          }
+        },
+        "message": "Too many errors emitted, stopping now",
+        "source": "clang",
+        "relatedInformation": []
+      }
+    ]
+  },
+  {
+    "uri": "file:///errors_without_file",
+    "owner": "hello_world::build",
+    "data": [
+      {
+        "message": "[ERROR] hello_world build failed. ",
+        "range": {
+          "start": {
+            "line": 0,
+            "character": 0
+          },
+          "end": {
+            "line": 0,
+            "character": 0
+          }
+        },
+        "severity": 1,
+        "source": "hello_world::build"
+      }
+    ]
+  }
+]

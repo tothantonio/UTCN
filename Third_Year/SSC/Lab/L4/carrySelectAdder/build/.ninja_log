@@ -1,0 +1,7 @@
+# ninja log v5
+12	177	7833428918411367	CMakeFiles/carrySelectAdder.elf.dir/platform.c.obj	e10f61bd8cf9b6ac
+2	178	7833428918411367	CMakeFiles/carrySelectAdder.elf.dir/helloworld.c.obj	ad317fcbfe862fc8
+179	458	7833428920296514	carrySelectAdder.elf	c5c6057748b7a44e
+14	212	7833583035308055	CMakeFiles/carrySelectAdder.elf.dir/platform.c.obj	e10f61bd8cf9b6ac
+5	286	7833583036009576	CMakeFiles/carrySelectAdder.elf.dir/helloworld.c.obj	ad317fcbfe862fc8
+287	746	7833583039643126	carrySelectAdder.elf	c5c6057748b7a44e

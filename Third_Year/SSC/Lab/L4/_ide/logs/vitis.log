@@ -1,0 +1,695 @@
+16:41:53 INFO  : updated workspace path: D:\TUCN\UTCN\Third_Year\SSC\Lab\L4
+16:41:53 INFO  : cmd.exe, /C, empyro.bat repo -st   D:\Xilinx\2025.1\Vitis\data\embeddedsw
+16:41:53 INFO  : Platform Lab4_Zybo_CLA creation started.
+16:41:53 INFO  : Using sdt generation script from D:\Xilinx\2025.1\Vitis\vitis-server\scripts\platformutil.tcl
+16:41:53 INFO  : cmd.exe, /C, sdtgen.bat D:\Xilinx\2025.1\Vitis\vitis-server\scripts\platformutil.tcl D:\TUCN\UTCN\Third_Year\SSC\Lab\L4\Zybo_CLA\design_1_wrapper.xsa D:\TUCN\UTCN\Third_Year\SSC\Lab\L4\Lab4_Zybo_CLA\hw\sdt
+16:41:55 INFO  : [INFO]: Initializing repositories
+16:41:55 INFO  : [INFO]: Successfully set the EmbeddedSW path, refer .repo.yaml for more details.
+16:41:55 INFO  : Successfully created repository data at D:\TUCN\UTCN\Third_Year\SSC\Lab\L4/_ide\.wsdata
+16:41:55 INFO  : cmd.exe, /C, empyro.bat get_template_data -d C:\Users\totha\AppData\Local\Temp\rigel_lopper_totha1760132289001957591 -r D:\TUCN\UTCN\Third_Year\SSC\Lab\L4\_ide\.wsdata\.repo.yaml
+16:41:56 INFO  : Embedded Template List generated successfully
+16:42:00 INFO  : -xsa D:\TUCN\UTCN\Third_Year\SSC\Lab\L4\Zybo_CLA\design_1_wrapper.xsa
+16:42:00 INFO  : -dir D:\TUCN\UTCN\Third_Year\SSC\Lab\L4\Lab4_Zybo_CLA\hw\sdt
+16:42:00 INFO  : -board_dts 
+16:42:00 INFO  : -include_dts 
+16:42:00 INFO  : -repo D:/Xilinx/2025.1/Vitis/data/system-device-tree-xlnx
+16:42:00 INFO  : -zocl disable
+16:42:00 INFO  : INFO: [Hsi 55-2053] elapsed time for repository (D:/Xilinx/2025.1/Vitis/data/embeddedsw) loading 0 seconds
+16:42:00 INFO  : SDT generated successfully
+16:42:00 INFO  : Lopper command for cpu List generation: lopper.bat --enhanced --werror -f -O D:\TUCN\UTCN\Third_Year\SSC\Lab\L4\.rigel_lopper -i lop-cpu-oslist.dts D:\TUCN\UTCN\Third_Year\SSC\Lab\L4\Lab4_Zybo_CLA\hw\sdt\system-top.dts
+16:42:00 INFO  : cmd.exe, /C, lopper.bat --enhanced --werror -f -O D:\TUCN\UTCN\Third_Year\SSC\Lab\L4\.rigel_lopper -i lop-cpu-oslist.dts D:\TUCN\UTCN\Third_Year\SSC\Lab\L4\Lab4_Zybo_CLA\hw\sdt\system-top.dts
+16:42:01 INFO  : CPU List generated successfully
+16:42:01 INFO  : SDT generated successfully.
+16:42:01 INFO  : created .gitignore file for the project D:\TUCN\UTCN\Third_Year\SSC\Lab\L4\Lab4_Zybo_CLA
+16:42:01 INFO  : ZYNQ: Using the QEMU args from install at  : D:\Xilinx\2025.1\Vitis\data\emulation\platforms\zynq\sw\a9_linux\qemu\qemu_args.txt
+16:42:01 INFO  : ZYNQ: Using the QEMU args from install at  : D:\Xilinx\2025.1\Vitis\data\emulation\platforms\zynq\sw\a9_standalone\qemu\qemu_args.txt
+16:42:01 INFO  : ZYNQ: Using the QEMU args from install at  : D:\Xilinx\2025.1\Vitis\data\emulation\platforms\zynq\sw\a9_standalone\qemu\qemu_args.txt
+16:42:01 INFO  : lopper command to generate BSP :empyro.bat create_bsp -w D:\TUCN\UTCN\Third_Year\SSC\Lab\L4\Lab4_Zybo_CLA\zynq_fsbl\zynq_fsbl_bsp -p ps7_cortexa9_0 -o standalone -s D:\TUCN\UTCN\Third_Year\SSC\Lab\L4\Lab4_Zybo_CLA\hw\sdt\system-top.dts -t zynq_fsbl -r D:\TUCN\UTCN\Third_Year\SSC\Lab\L4\_ide\.wsdata\.repo.yaml
+16:42:01 INFO  : lopper command to generate BSP :empyro.bat create_bsp -w D:\TUCN\UTCN\Third_Year\SSC\Lab\L4\Lab4_Zybo_CLA\ps7_cortexa9_0\standalone_ps7_cortexa9_0\bsp -p ps7_cortexa9_0 -o standalone -s D:\TUCN\UTCN\Third_Year\SSC\Lab\L4\Lab4_Zybo_CLA\hw\sdt\system-top.dts -t empty_application -r D:\TUCN\UTCN\Third_Year\SSC\Lab\L4\_ide\.wsdata\.repo.yaml
+16:42:01 INFO  : cmd.exe, /C, empyro.bat create_bsp -w D:\TUCN\UTCN\Third_Year\SSC\Lab\L4\Lab4_Zybo_CLA\zynq_fsbl\zynq_fsbl_bsp -p ps7_cortexa9_0 -o standalone -s D:\TUCN\UTCN\Third_Year\SSC\Lab\L4\Lab4_Zybo_CLA\hw\sdt\system-top.dts -t zynq_fsbl -r D:\TUCN\UTCN\Third_Year\SSC\Lab\L4\_ide\.wsdata\.repo.yaml
+16:42:01 INFO  : cmd.exe, /C, empyro.bat create_bsp -w D:\TUCN\UTCN\Third_Year\SSC\Lab\L4\Lab4_Zybo_CLA\ps7_cortexa9_0\standalone_ps7_cortexa9_0\bsp -p ps7_cortexa9_0 -o standalone -s D:\TUCN\UTCN\Third_Year\SSC\Lab\L4\Lab4_Zybo_CLA\hw\sdt\system-top.dts -t empty_application -r D:\TUCN\UTCN\Third_Year\SSC\Lab\L4\_ide\.wsdata\.repo.yaml
+16:42:28 INFO  : [INFO]: Starting domain creation
+16:42:28 INFO  : [INFO]: Generating Domain-specific DTS for ps7_cortexa9_0
+16:42:28 INFO  : [INFO]: Generating required metadata from domain specific DT
+16:42:28 INFO  : [INFO]: Successfully created Domain at D:\TUCN\UTCN\Third_Year\SSC\Lab\L4\Lab4_Zybo_CLA\ps7_cortexa9_0\standalone_ps7_cortexa9_0\bsp
+16:42:28 INFO  : Successfully Generated Domain D:\TUCN\UTCN\Third_Year\SSC\Lab\L4\Lab4_Zybo_CLA\ps7_cortexa9_0\standalone_ps7_cortexa9_0\bsp
+16:42:28 INFO  : Domain standalone_ps7_cortexa9_0 added successfully.
+16:42:28 INFO  : [INFO]: Starting domain creation
+16:42:28 INFO  : [INFO]: Generating Domain-specific DTS for ps7_cortexa9_0
+16:42:28 INFO  : [INFO]: Generating required metadata from domain specific DT
+16:42:28 INFO  : [INFO]: Successfully created Domain at D:\TUCN\UTCN\Third_Year\SSC\Lab\L4\Lab4_Zybo_CLA\zynq_fsbl\zynq_fsbl_bsp
+16:42:28 INFO  : Successfully Generated Domain D:\TUCN\UTCN\Third_Year\SSC\Lab\L4\Lab4_Zybo_CLA\zynq_fsbl\zynq_fsbl_bsp
+16:42:28 INFO  : lopper command to create baremetal application :empyro.bat create_app --src_dir D:\TUCN\UTCN\Third_Year\SSC\Lab\L4\Lab4_Zybo_CLA\zynq_fsbl -t zynq_fsbl -d D:\TUCN\UTCN\Third_Year\SSC\Lab\L4\Lab4_Zybo_CLA\zynq_fsbl\zynq_fsbl_bsp -n fsbl -r D:\TUCN\UTCN\Third_Year\SSC\Lab\L4\_ide\.wsdata\.repo.yaml
+16:42:28 INFO  : cmd.exe, /C, empyro.bat validate_bsp -t zynq_fsbl -d D:\TUCN\UTCN\Third_Year\SSC\Lab\L4\Lab4_Zybo_CLA\zynq_fsbl\zynq_fsbl_bsp -r D:\TUCN\UTCN\Third_Year\SSC\Lab\L4\_ide\.wsdata\.repo.yaml
+16:42:31 INFO  : Successfully validated template zynq_fsbl
+16:42:31 INFO  : cmd.exe, /C, empyro.bat create_app --src_dir D:\TUCN\UTCN\Third_Year\SSC\Lab\L4\Lab4_Zybo_CLA\zynq_fsbl -t zynq_fsbl -d D:\TUCN\UTCN\Third_Year\SSC\Lab\L4\Lab4_Zybo_CLA\zynq_fsbl\zynq_fsbl_bsp -n fsbl -r D:\TUCN\UTCN\Third_Year\SSC\Lab\L4\_ide\.wsdata\.repo.yaml
+16:42:36 INFO  : [INFO]: Generating Linker script for zynq_fsbl
+16:42:36 INFO  : [INFO]: Successfully Created Application sources at D:/TUCN/UTCN/Third_Year/SSC/Lab/L4/Lab4_Zybo_CLA/zynq_fsbl
+16:42:36 INFO  : Successfully created Application D:\TUCN\UTCN\Third_Year\SSC\Lab\L4\Lab4_Zybo_CLA\zynq_fsbl
+16:42:36 INFO  : Platform FSBL Boot domain added successfully.
+16:42:36 INFO  : Platform creation finished successfully.
+16:42:36 INFO  : Platform Quick Build initiated.
+16:42:36 INFO  : Generating Export directory
+16:42:36 INFO  : Generated platform metadata for creating application(s) based on platform Lab4_Zybo_CLA.
+16:42:42 INFO  : BSP build will be initiated for Domain zynq_fsbl
+16:42:42 INFO  : BSP build will be initiated for Domain standalone_ps7_cortexa9_0
+16:42:42 INFO  : Generating BSP for the domain D:\TUCN\UTCN\Third_Year\SSC\Lab\L4\Lab4_Zybo_CLA\ps7_cortexa9_0\standalone_ps7_cortexa9_0\bsp
+16:42:42 INFO  : Generating BSP for the domain D:\TUCN\UTCN\Third_Year\SSC\Lab\L4\Lab4_Zybo_CLA\zynq_fsbl\zynq_fsbl_bsp
+16:42:42 INFO  : lopper command to reconfigure BSP :empyro.bat reconfig_bsp -d D:\TUCN\UTCN\Third_Year\SSC\Lab\L4\Lab4_Zybo_CLA\zynq_fsbl\zynq_fsbl_bsp
+16:42:42 INFO  : lopper command to reconfigure BSP :empyro.bat reconfig_bsp -d D:\TUCN\UTCN\Third_Year\SSC\Lab\L4\Lab4_Zybo_CLA\ps7_cortexa9_0\standalone_ps7_cortexa9_0\bsp
+16:42:42 INFO  : cmd.exe, /C, empyro.bat reconfig_bsp -d D:\TUCN\UTCN\Third_Year\SSC\Lab\L4\Lab4_Zybo_CLA\zynq_fsbl\zynq_fsbl_bsp
+16:42:42 INFO  : cmd.exe, /C, empyro.bat reconfig_bsp -d D:\TUCN\UTCN\Third_Year\SSC\Lab\L4\Lab4_Zybo_CLA\ps7_cortexa9_0\standalone_ps7_cortexa9_0\bsp
+16:42:43 INFO  : Domain reconfigured successfully
+16:42:43 INFO  : Generating BSP for the domain D:\TUCN\UTCN\Third_Year\SSC\Lab\L4\Lab4_Zybo_CLA\ps7_cortexa9_0\standalone_ps7_cortexa9_0\bsp
+16:42:43 INFO  : lopper command to build BSP :empyro.bat build_bsp -d D:\TUCN\UTCN\Third_Year\SSC\Lab\L4\Lab4_Zybo_CLA\ps7_cortexa9_0\standalone_ps7_cortexa9_0\bsp
+16:42:43 INFO  : cmd.exe, /C, empyro.bat build_bsp -d D:\TUCN\UTCN\Third_Year\SSC\Lab\L4\Lab4_Zybo_CLA\ps7_cortexa9_0\standalone_ps7_cortexa9_0\bsp
+16:42:43 INFO  : Domain reconfigured successfully
+16:42:43 INFO  : Generating BSP for the domain D:\TUCN\UTCN\Third_Year\SSC\Lab\L4\Lab4_Zybo_CLA\zynq_fsbl\zynq_fsbl_bsp
+16:42:43 INFO  : lopper command to build BSP :empyro.bat build_bsp -d D:\TUCN\UTCN\Third_Year\SSC\Lab\L4\Lab4_Zybo_CLA\zynq_fsbl\zynq_fsbl_bsp
+16:42:43 INFO  : cmd.exe, /C, empyro.bat build_bsp -d D:\TUCN\UTCN\Third_Year\SSC\Lab\L4\Lab4_Zybo_CLA\zynq_fsbl\zynq_fsbl_bsp
+16:43:07 INFO  : Domain build successfully
+16:43:09 INFO  : Domain build successfully
+16:43:09 INFO  : Generating Boot ELFs
+16:43:09 INFO  : lopper command to retarget baremetal application :empyro.bat retarget_app -s D:\TUCN\UTCN\Third_Year\SSC\Lab\L4\Lab4_Zybo_CLA\zynq_fsbl -d D:\TUCN\UTCN\Third_Year\SSC\Lab\L4\Lab4_Zybo_CLA\zynq_fsbl\zynq_fsbl_bsp -b D:\TUCN\UTCN\Third_Year\SSC\Lab\L4\Lab4_Zybo_CLA\zynq_fsbl\build
+16:43:09 INFO  : cmd.exe, /C, empyro.bat retarget_app -s D:\TUCN\UTCN\Third_Year\SSC\Lab\L4\Lab4_Zybo_CLA\zynq_fsbl -d D:\TUCN\UTCN\Third_Year\SSC\Lab\L4\Lab4_Zybo_CLA\zynq_fsbl\zynq_fsbl_bsp -b D:\TUCN\UTCN\Third_Year\SSC\Lab\L4\Lab4_Zybo_CLA\zynq_fsbl\build
+16:43:09 INFO  : [INFO]: Retargeting app
+16:43:09 INFO  : [INFO]: Updating link libraries based on new domain
+16:43:09 INFO  : Successfully retargeted Application D:\TUCN\UTCN\Third_Year\SSC\Lab\L4\Lab4_Zybo_CLA\zynq_fsbl
+16:43:09 INFO  : lopper command to build baremetal application :empyro.bat build_app --src_dir D:\TUCN\UTCN\Third_Year\SSC\Lab\L4\Lab4_Zybo_CLA\zynq_fsbl --build_dir D:\TUCN\UTCN\Third_Year\SSC\Lab\L4\Lab4_Zybo_CLA\zynq_fsbl\build
+16:43:09 INFO  : cmd.exe, /C, empyro.bat build_app --src_dir D:\TUCN\UTCN\Third_Year\SSC\Lab\L4\Lab4_Zybo_CLA\zynq_fsbl --build_dir D:\TUCN\UTCN\Third_Year\SSC\Lab\L4\Lab4_Zybo_CLA\zynq_fsbl\build
+16:43:15 INFO  : Successfully building the baremetal applicationD:\TUCN\UTCN\Third_Year\SSC\Lab\L4\Lab4_Zybo_CLA\zynq_fsbl\build
+16:43:15 INFO  : Generating Export directory
+16:43:15 INFO  : Platform Build Finished successfully.
+16:44:38 INFO  : cmd.exe, /C, empyro.bat validate_bsp -t hello_world -d D:\TUCN\UTCN\Third_Year\SSC\Lab\L4\Lab4_Zybo_CLA\export\Lab4_Zybo_CLA\sw\standalone_ps7_cortexa9_0 -r D:\TUCN\UTCN\Third_Year\SSC\Lab\L4\_ide\.wsdata\.repo.yaml
+16:44:41 INFO  : Successfully validated template hello_world
+16:44:52 INFO  : lopper command to create baremetal application :empyro.bat create_app --src_dir D:\TUCN\UTCN\Third_Year\SSC\Lab\L4\hello_world\src -t hello_world -d D:\TUCN\UTCN\Third_Year\SSC\Lab\L4\Lab4_Zybo_CLA\export\Lab4_Zybo_CLA\sw\standalone_ps7_cortexa9_0 -n hello_world -r D:\TUCN\UTCN\Third_Year\SSC\Lab\L4\_ide\.wsdata\.repo.yaml
+16:44:52 INFO  : cmd.exe, /C, empyro.bat validate_bsp -t hello_world -d D:\TUCN\UTCN\Third_Year\SSC\Lab\L4\Lab4_Zybo_CLA\export\Lab4_Zybo_CLA\sw\standalone_ps7_cortexa9_0 -r D:\TUCN\UTCN\Third_Year\SSC\Lab\L4\_ide\.wsdata\.repo.yaml
+16:44:54 INFO  : Successfully validated template hello_world
+16:44:54 INFO  : cmd.exe, /C, empyro.bat create_app --src_dir D:\TUCN\UTCN\Third_Year\SSC\Lab\L4\hello_world\src -t hello_world -d D:\TUCN\UTCN\Third_Year\SSC\Lab\L4\Lab4_Zybo_CLA\export\Lab4_Zybo_CLA\sw\standalone_ps7_cortexa9_0 -n hello_world -r D:\TUCN\UTCN\Third_Year\SSC\Lab\L4\_ide\.wsdata\.repo.yaml
+16:45:00 INFO  : [INFO]: Generating Hardware Metadata for hello_world
+16:45:00 INFO  : [INFO]: Generating Linker script for hello_world
+16:45:00 INFO  : [INFO]: Successfully Created Application sources at D:/TUCN/UTCN/Third_Year/SSC/Lab/L4/hello_world/src
+16:45:00 INFO  : Successfully created Application D:\TUCN\UTCN\Third_Year\SSC\Lab\L4\hello_world\src
+16:45:00 INFO  : created .gitignore file for the project D:\TUCN\UTCN\Third_Year\SSC\Lab\L4\hello_world
+16:45:00 INFO  : The hardware specification used by project 'D:\TUCN\UTCN\Third_Year\SSC\Lab\L4\hello_world' is out of sync with the platform. Resource files extracted from the hardware specification will be updated.
+16:45:00 INFO  : The updated bitstream files are copied from platform to folder 'D:\TUCN\UTCN\Third_Year\SSC\Lab\L4\hello_world\_ide\bitstream' in project 'D:\TUCN\UTCN\Third_Year\SSC\Lab\L4\hello_world'.
+16:45:00 INFO  : The updated ps init files are copied from platform to folder 'D:\TUCN\UTCN\Third_Year\SSC\Lab\L4\hello_world\_ide\psinit' in project 'D:\TUCN\UTCN\Third_Year\SSC\Lab\L4\hello_world'.
+16:46:10 INFO  : BSP build will be initiated for Domain standalone_ps7_cortexa9_0
+16:46:10 INFO  : BSP build will be initiated for Domain zynq_fsbl
+16:46:10 INFO  : Generating BSP for the domain D:\TUCN\UTCN\Third_Year\SSC\Lab\L4\Lab4_Zybo_CLA\zynq_fsbl\zynq_fsbl_bsp
+16:46:10 INFO  : Generating BSP for the domain D:\TUCN\UTCN\Third_Year\SSC\Lab\L4\Lab4_Zybo_CLA\ps7_cortexa9_0\standalone_ps7_cortexa9_0\bsp
+16:46:10 INFO  : lopper command to reconfigure BSP :empyro.bat reconfig_bsp -d D:\TUCN\UTCN\Third_Year\SSC\Lab\L4\Lab4_Zybo_CLA\ps7_cortexa9_0\standalone_ps7_cortexa9_0\bsp
+16:46:10 INFO  : lopper command to reconfigure BSP :empyro.bat reconfig_bsp -d D:\TUCN\UTCN\Third_Year\SSC\Lab\L4\Lab4_Zybo_CLA\zynq_fsbl\zynq_fsbl_bsp
+16:46:10 INFO  : cmd.exe, /C, empyro.bat reconfig_bsp -d D:\TUCN\UTCN\Third_Year\SSC\Lab\L4\Lab4_Zybo_CLA\ps7_cortexa9_0\standalone_ps7_cortexa9_0\bsp
+16:46:10 INFO  : cmd.exe, /C, empyro.bat reconfig_bsp -d D:\TUCN\UTCN\Third_Year\SSC\Lab\L4\Lab4_Zybo_CLA\zynq_fsbl\zynq_fsbl_bsp
+16:46:11 INFO  : Domain reconfigured successfully
+16:46:11 INFO  : Generating BSP for the domain D:\TUCN\UTCN\Third_Year\SSC\Lab\L4\Lab4_Zybo_CLA\ps7_cortexa9_0\standalone_ps7_cortexa9_0\bsp
+16:46:11 INFO  : lopper command to build BSP :empyro.bat build_bsp -d D:\TUCN\UTCN\Third_Year\SSC\Lab\L4\Lab4_Zybo_CLA\ps7_cortexa9_0\standalone_ps7_cortexa9_0\bsp
+16:46:11 INFO  : cmd.exe, /C, empyro.bat build_bsp -d D:\TUCN\UTCN\Third_Year\SSC\Lab\L4\Lab4_Zybo_CLA\ps7_cortexa9_0\standalone_ps7_cortexa9_0\bsp
+16:46:11 INFO  : Domain reconfigured successfully
+16:46:11 INFO  : Generating BSP for the domain D:\TUCN\UTCN\Third_Year\SSC\Lab\L4\Lab4_Zybo_CLA\zynq_fsbl\zynq_fsbl_bsp
+16:46:11 INFO  : lopper command to build BSP :empyro.bat build_bsp -d D:\TUCN\UTCN\Third_Year\SSC\Lab\L4\Lab4_Zybo_CLA\zynq_fsbl\zynq_fsbl_bsp
+16:46:11 INFO  : cmd.exe, /C, empyro.bat build_bsp -d D:\TUCN\UTCN\Third_Year\SSC\Lab\L4\Lab4_Zybo_CLA\zynq_fsbl\zynq_fsbl_bsp
+16:46:12 INFO  : Domain build successfully
+16:46:12 INFO  : Domain build successfully
+16:46:12 INFO  : Generating Boot ELFs
+16:46:12 INFO  : lopper command to retarget baremetal application :empyro.bat retarget_app -s D:\TUCN\UTCN\Third_Year\SSC\Lab\L4\Lab4_Zybo_CLA\zynq_fsbl -d D:\TUCN\UTCN\Third_Year\SSC\Lab\L4\Lab4_Zybo_CLA\zynq_fsbl\zynq_fsbl_bsp -b D:\TUCN\UTCN\Third_Year\SSC\Lab\L4\Lab4_Zybo_CLA\zynq_fsbl\build
+16:46:12 INFO  : cmd.exe, /C, empyro.bat retarget_app -s D:\TUCN\UTCN\Third_Year\SSC\Lab\L4\Lab4_Zybo_CLA\zynq_fsbl -d D:\TUCN\UTCN\Third_Year\SSC\Lab\L4\Lab4_Zybo_CLA\zynq_fsbl\zynq_fsbl_bsp -b D:\TUCN\UTCN\Third_Year\SSC\Lab\L4\Lab4_Zybo_CLA\zynq_fsbl\build
+16:46:13 INFO  : [INFO]: Retargeting app
+16:46:13 INFO  : [INFO]: Updating link libraries based on new domain
+16:46:13 INFO  : Successfully retargeted Application D:\TUCN\UTCN\Third_Year\SSC\Lab\L4\Lab4_Zybo_CLA\zynq_fsbl
+16:46:13 INFO  : lopper command to build baremetal application :empyro.bat build_app --src_dir D:\TUCN\UTCN\Third_Year\SSC\Lab\L4\Lab4_Zybo_CLA\zynq_fsbl --build_dir D:\TUCN\UTCN\Third_Year\SSC\Lab\L4\Lab4_Zybo_CLA\zynq_fsbl\build
+16:46:13 INFO  : cmd.exe, /C, empyro.bat build_app --src_dir D:\TUCN\UTCN\Third_Year\SSC\Lab\L4\Lab4_Zybo_CLA\zynq_fsbl --build_dir D:\TUCN\UTCN\Third_Year\SSC\Lab\L4\Lab4_Zybo_CLA\zynq_fsbl\build
+16:46:15 INFO  : Successfully building the baremetal applicationD:\TUCN\UTCN\Third_Year\SSC\Lab\L4\Lab4_Zybo_CLA\zynq_fsbl\build
+16:46:15 INFO  : Generating Export directory
+16:46:15 INFO  : Platform Build Finished successfully.
+16:46:15 INFO  : lopper command to retarget baremetal application :empyro.bat retarget_app -s d:\TUCN\UTCN\Third_Year\SSC\Lab\L4\hello_world\src -d D:\TUCN\UTCN\Third_Year\SSC\Lab\L4\Lab4_Zybo_CLA\export\Lab4_Zybo_CLA\sw\standalone_ps7_cortexa9_0 -b d:\TUCN\UTCN\Third_Year\SSC\Lab\L4\hello_world\build
+16:46:15 INFO  : cmd.exe, /C, empyro.bat retarget_app -s d:\TUCN\UTCN\Third_Year\SSC\Lab\L4\hello_world\src -d D:\TUCN\UTCN\Third_Year\SSC\Lab\L4\Lab4_Zybo_CLA\export\Lab4_Zybo_CLA\sw\standalone_ps7_cortexa9_0 -b d:\TUCN\UTCN\Third_Year\SSC\Lab\L4\hello_world\build
+16:46:16 INFO  : [INFO]: Retargeting app
+16:46:16 INFO  : [INFO]: Updating link libraries based on new domain
+16:46:16 INFO  : Successfully retargeted Application d:\TUCN\UTCN\Third_Year\SSC\Lab\L4\hello_world\src
+16:46:16 INFO  : cmd.exe, /C, empyro.bat build_app -s d:\TUCN\UTCN\Third_Year\SSC\Lab\L4\hello_world\src -b d:\TUCN\UTCN\Third_Year\SSC\Lab\L4\hello_world\build
+16:46:36 INFO  : connection terminated
+16:46:36 INFO  : connection terminated
+16:46:36 INFO  : scheduling shutdown timer for 2 seconds ...
+16:46:38 INFO  : Terminating Vitis C++ Server
+16:46:38 INFO  : Vitis C++ Server terminated
+18:46:55 INFO  : updated workspace path: D:\TUCN\UTCN\Third_Year\SSC\Lab\L4
+18:46:56 INFO  : Embedded Template List generated successfully
+18:46:56 INFO  : cmd.exe, /C, empyro.bat get_template_data -d C:\Users\totha\AppData\Local\Temp\rigel_lopper_totha17512460542669370706 -r D:\TUCN\UTCN\Third_Year\SSC\Lab\L4\_ide\.wsdata\.repo.yaml
+18:46:57 INFO  : Embedded Template List generated successfully
+19:04:21 INFO  : cmd.exe, /C, empyro.bat get_template_data -d C:\Users\totha\AppData\Local\Temp\rigel_lopper_totha3979375419602684500 -r D:\TUCN\UTCN\Third_Year\SSC\Lab\L4\_ide\.wsdata\.repo.yaml
+19:04:21 INFO  : created .gitignore file for the project D:\TUCN\UTCN\Third_Year\SSC\Lab\L3
+19:31:26 INFO  : updated workspace path: D:\TUCN\UTCN\Third_Year\SSC\Lab\L4
+19:31:27 INFO  : Embedded Template List generated successfully
+19:31:27 INFO  : cmd.exe, /C, empyro.bat get_template_data -d C:\Users\totha\AppData\Local\Temp\rigel_lopper_totha18091202380420782533 -r D:\TUCN\UTCN\Third_Year\SSC\Lab\L4\_ide\.wsdata\.repo.yaml
+19:31:27 INFO  : Embedded Template List generated successfully
+19:32:14 INFO  : connect -url tcp:127.0.0.1:3121
+19:32:17 INFO  : bpremove -all
+19:32:17 INFO  : Context for 'APU' is selected.
+19:32:17 INFO  : System reset is completed.
+19:32:20 INFO  : 'after 3000' command is executed.
+19:32:21 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zybo Z7 210351B807C0A" && level==0 && jtag_device_ctx=="jsn-Zybo Z7-210351B807C0A-13722093-0"}' command is executed.
+19:32:22 INFO  : Device configured successfully with "D:/TUCN/UTCN/Third_Year/SSC/Lab/L4/hello_world/_ide/bitstream/design_1_wrapper.bit"
+19:32:22 INFO  : targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent Zybo Z7 210351B807C0A" && jtag_device_ctx=="jsn-Zybo Z7-210351B807C0A-4ba00477-0"}
+19:32:22 INFO  : loadhw -hw D:/TUCN/UTCN/Third_Year/SSC/Lab/L4/Lab4_Zybo_CLA/export/Lab4_Zybo_CLA/hw/design_1_wrapper.xsa -mem-ranges [list {0x40000000 0xbfffffff}]
+19:32:22 INFO  : configparams force-mem-access 1
+19:32:22 INFO  : targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent Zybo Z7 210351B807C0A" && jtag_device_ctx=="jsn-Zybo Z7-210351B807C0A-4ba00477-0"}
+19:32:22 INFO  : source D:/TUCN/UTCN/Third_Year/SSC/Lab/L4/hello_world/_ide/psinit/ps7_init.tcl
+19:32:23 INFO  : ps7_init
+19:32:23 INFO  : ps7_post_config
+19:32:23 INFO  : targets -set -nocase -filter {name =~ "*A9*#0" && jtag_cable_name =~ "Digilent Zybo Z7 210351B807C0A" && jtag_device_ctx=="jsn-Zybo Z7-210351B807C0A-4ba00477-0"}
+19:32:23 INFO  : rst -processor
+19:32:24 INFO  : dow D:/TUCN/UTCN/Third_Year/SSC/Lab/L4/hello_world/build/hello_world.elf
+19:32:24 INFO  : con
+19:32:24 INFO  : configparams force-mem-access 0
+19:32:25 INFO  : Testing the connection for 127.0.0.1
+19:33:52 INFO  : disconnect
+19:34:02 INFO  : connect -url tcp:127.0.0.1:3121
+19:34:02 INFO  : bpremove -all
+19:34:02 INFO  : Context for 'APU' is selected.
+19:34:02 INFO  : System reset is completed.
+19:34:05 INFO  : 'after 3000' command is executed.
+19:34:05 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zybo Z7 210351B807C0A" && level==0 && jtag_device_ctx=="jsn-Zybo Z7-210351B807C0A-13722093-0"}' command is executed.
+19:34:06 INFO  : Device configured successfully with "D:/TUCN/UTCN/Third_Year/SSC/Lab/L4/hello_world/_ide/bitstream/design_1_wrapper.bit"
+19:34:07 INFO  : targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent Zybo Z7 210351B807C0A" && jtag_device_ctx=="jsn-Zybo Z7-210351B807C0A-4ba00477-0"}
+19:34:09 INFO  : loadhw -hw D:/TUCN/UTCN/Third_Year/SSC/Lab/L4/Lab4_Zybo_CLA/export/Lab4_Zybo_CLA/hw/design_1_wrapper.xsa -mem-ranges [list {0x40000000 0xbfffffff}]
+19:34:09 INFO  : configparams force-mem-access 1
+19:34:09 INFO  : targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent Zybo Z7 210351B807C0A" && jtag_device_ctx=="jsn-Zybo Z7-210351B807C0A-4ba00477-0"}
+19:34:09 INFO  : source D:/TUCN/UTCN/Third_Year/SSC/Lab/L4/hello_world/_ide/psinit/ps7_init.tcl
+19:34:09 INFO  : ps7_init
+19:34:09 INFO  : ps7_post_config
+19:34:09 INFO  : targets -set -nocase -filter {name =~ "*A9*#0" && jtag_cable_name =~ "Digilent Zybo Z7 210351B807C0A" && jtag_device_ctx=="jsn-Zybo Z7-210351B807C0A-4ba00477-0"}
+19:34:09 INFO  : rst -processor
+19:34:10 INFO  : dow D:/TUCN/UTCN/Third_Year/SSC/Lab/L4/hello_world/build/hello_world.elf
+19:34:10 INFO  : con
+19:34:10 INFO  : configparams force-mem-access 0
+19:34:11 INFO  : Testing the connection for 127.0.0.1
+19:40:14 INFO  : disconnect
+19:45:47 INFO  : connection terminated
+19:45:47 INFO  : connection terminated
+19:45:47 INFO  : scheduling shutdown timer for 2 seconds ...
+19:45:49 INFO  : Terminating Vitis C++ Server
+19:45:49 INFO  : Vitis C++ Server terminated
+10:17:52 INFO  : updated workspace path: D:\TUCN\UTCN\Third_Year\SSC\Lab\L4
+10:17:52 INFO  : created .gitignore file for the project D:\TUCN\UTCN\Third_Year\SSC\Lab\L4
+10:17:53 INFO  : Platform CSA creation started.
+10:17:53 INFO  : Using sdt generation script from D:\Xilinx\2025.1\Vitis\vitis-server\scripts\platformutil.tcl
+10:17:53 INFO  : cmd.exe, /C, sdtgen.bat D:\Xilinx\2025.1\Vitis\vitis-server\scripts\platformutil.tcl D:\TUCN\UTCN\Third_Year\SSC\Lab\L4\Zybo_CLA\design_2_wrapper.xsa D:\TUCN\UTCN\Third_Year\SSC\Lab\L4\CSA\hw\sdt
+10:17:55 INFO  : [INFO]: Initializing repositories
+10:17:55 INFO  : [INFO]: Successfully set the EmbeddedSW path, refer .repo.yaml for more details.
+10:17:55 INFO  : Successfully created repository data at C:\Users\totha\AppData\Local\Temp\rigel_lopper_totha15410306479849426070
+10:17:55 INFO  : cmd.exe, /C, empyro.bat get_template_data -d C:\Users\totha\AppData\Local\Temp\rigel_lopper_totha10002038753086866021 -r C:\Users\totha\AppData\Local\Temp\rigel_lopper_totha15410306479849426070\.repo.yaml
+10:17:58 INFO  : Embedded Template List generated successfully
+10:17:58 INFO  : cmd.exe, /C, empyro.bat get_template_data -d C:\Users\totha\AppData\Local\Temp\rigel_lopper_totha16551544278294517913 -r D:\TUCN\UTCN\Third_Year\SSC\Lab\L4\_ide\.wsdata\.repo.yaml
+10:17:59 INFO  : Embedded Template List generated successfully
+10:18:04 INFO  : -xsa D:\TUCN\UTCN\Third_Year\SSC\Lab\L4\Zybo_CLA\design_2_wrapper.xsa
+10:18:04 INFO  : -dir D:\TUCN\UTCN\Third_Year\SSC\Lab\L4\CSA\hw\sdt
+10:18:04 INFO  : -board_dts 
+10:18:04 INFO  : -include_dts 
+10:18:04 INFO  : -repo D:/Xilinx/2025.1/Vitis/data/system-device-tree-xlnx
+10:18:04 INFO  : -zocl disable
+10:18:04 INFO  : INFO: [Hsi 55-2053] elapsed time for repository (D:/Xilinx/2025.1/Vitis/data/embeddedsw) loading 1 seconds
+10:18:04 INFO  : hsi::open_hw_design: Time (s): cpu = 00:00:04 ; elapsed = 00:00:05 . Memory (MB): peak = 135.547 ; gain = 75.793
+10:18:04 INFO  : SDT generated successfully
+10:18:04 INFO  : Lopper command for cpu List generation: lopper.bat --enhanced --werror -f -O D:\TUCN\UTCN\Third_Year\SSC\Lab\L4\.rigel_lopper -i lop-cpu-oslist.dts D:\TUCN\UTCN\Third_Year\SSC\Lab\L4\CSA\hw\sdt\system-top.dts
+10:18:04 INFO  : cmd.exe, /C, lopper.bat --enhanced --werror -f -O D:\TUCN\UTCN\Third_Year\SSC\Lab\L4\.rigel_lopper -i lop-cpu-oslist.dts D:\TUCN\UTCN\Third_Year\SSC\Lab\L4\CSA\hw\sdt\system-top.dts
+10:18:06 INFO  : CPU List generated successfully
+10:18:06 INFO  : SDT generated successfully.
+10:18:06 INFO  : created .gitignore file for the project D:\TUCN\UTCN\Third_Year\SSC\Lab\L4\CSA
+10:18:06 INFO  : ZYNQ: Using the QEMU args from install at  : D:\Xilinx\2025.1\Vitis\data\emulation\platforms\zynq\sw\a9_linux\qemu\qemu_args.txt
+10:18:06 INFO  : ZYNQ: Using the QEMU args from install at  : D:\Xilinx\2025.1\Vitis\data\emulation\platforms\zynq\sw\a9_standalone\qemu\qemu_args.txt
+10:18:06 INFO  : ZYNQ: Using the QEMU args from install at  : D:\Xilinx\2025.1\Vitis\data\emulation\platforms\zynq\sw\a9_standalone\qemu\qemu_args.txt
+10:18:06 INFO  : lopper command to generate BSP :empyro.bat create_bsp -w D:\TUCN\UTCN\Third_Year\SSC\Lab\L4\CSA\zynq_fsbl\zynq_fsbl_bsp -p ps7_cortexa9_0 -o standalone -s D:\TUCN\UTCN\Third_Year\SSC\Lab\L4\CSA\hw\sdt\system-top.dts -t zynq_fsbl -r D:\TUCN\UTCN\Third_Year\SSC\Lab\L4\_ide\.wsdata\.repo.yaml
+10:18:06 INFO  : cmd.exe, /C, empyro.bat create_bsp -w D:\TUCN\UTCN\Third_Year\SSC\Lab\L4\CSA\zynq_fsbl\zynq_fsbl_bsp -p ps7_cortexa9_0 -o standalone -s D:\TUCN\UTCN\Third_Year\SSC\Lab\L4\CSA\hw\sdt\system-top.dts -t zynq_fsbl -r D:\TUCN\UTCN\Third_Year\SSC\Lab\L4\_ide\.wsdata\.repo.yaml
+10:18:06 INFO  : lopper command to generate BSP :empyro.bat create_bsp -w D:\TUCN\UTCN\Third_Year\SSC\Lab\L4\CSA\ps7_cortexa9_0\standalone_ps7_cortexa9_0\bsp -p ps7_cortexa9_0 -o standalone -s D:\TUCN\UTCN\Third_Year\SSC\Lab\L4\CSA\hw\sdt\system-top.dts -t empty_application -r D:\TUCN\UTCN\Third_Year\SSC\Lab\L4\_ide\.wsdata\.repo.yaml
+10:18:06 INFO  : cmd.exe, /C, empyro.bat create_bsp -w D:\TUCN\UTCN\Third_Year\SSC\Lab\L4\CSA\ps7_cortexa9_0\standalone_ps7_cortexa9_0\bsp -p ps7_cortexa9_0 -o standalone -s D:\TUCN\UTCN\Third_Year\SSC\Lab\L4\CSA\hw\sdt\system-top.dts -t empty_application -r D:\TUCN\UTCN\Third_Year\SSC\Lab\L4\_ide\.wsdata\.repo.yaml
+10:18:33 INFO  : [INFO]: Starting domain creation
+10:18:33 INFO  : [INFO]: Generating Domain-specific DTS for ps7_cortexa9_0
+10:18:33 INFO  : [INFO]: Generating required metadata from domain specific DT
+10:18:33 INFO  : [INFO]: Successfully created Domain at D:\TUCN\UTCN\Third_Year\SSC\Lab\L4\CSA\ps7_cortexa9_0\standalone_ps7_cortexa9_0\bsp
+10:18:33 INFO  : Successfully Generated Domain D:\TUCN\UTCN\Third_Year\SSC\Lab\L4\CSA\ps7_cortexa9_0\standalone_ps7_cortexa9_0\bsp
+10:18:33 INFO  : Domain standalone_ps7_cortexa9_0 added successfully.
+10:18:34 INFO  : [INFO]: Starting domain creation
+10:18:34 INFO  : [INFO]: Generating Domain-specific DTS for ps7_cortexa9_0
+10:18:34 INFO  : [INFO]: Generating required metadata from domain specific DT
+10:18:34 INFO  : [INFO]: Successfully created Domain at D:\TUCN\UTCN\Third_Year\SSC\Lab\L4\CSA\zynq_fsbl\zynq_fsbl_bsp
+10:18:34 INFO  : Successfully Generated Domain D:\TUCN\UTCN\Third_Year\SSC\Lab\L4\CSA\zynq_fsbl\zynq_fsbl_bsp
+10:18:34 INFO  : lopper command to create baremetal application :empyro.bat create_app --src_dir D:\TUCN\UTCN\Third_Year\SSC\Lab\L4\CSA\zynq_fsbl -t zynq_fsbl -d D:\TUCN\UTCN\Third_Year\SSC\Lab\L4\CSA\zynq_fsbl\zynq_fsbl_bsp -n fsbl -r D:\TUCN\UTCN\Third_Year\SSC\Lab\L4\_ide\.wsdata\.repo.yaml
+10:18:34 INFO  : cmd.exe, /C, empyro.bat validate_bsp -t zynq_fsbl -d D:\TUCN\UTCN\Third_Year\SSC\Lab\L4\CSA\zynq_fsbl\zynq_fsbl_bsp -r D:\TUCN\UTCN\Third_Year\SSC\Lab\L4\_ide\.wsdata\.repo.yaml
+10:18:37 INFO  : Successfully validated template zynq_fsbl
+10:18:37 INFO  : cmd.exe, /C, empyro.bat create_app --src_dir D:\TUCN\UTCN\Third_Year\SSC\Lab\L4\CSA\zynq_fsbl -t zynq_fsbl -d D:\TUCN\UTCN\Third_Year\SSC\Lab\L4\CSA\zynq_fsbl\zynq_fsbl_bsp -n fsbl -r D:\TUCN\UTCN\Third_Year\SSC\Lab\L4\_ide\.wsdata\.repo.yaml
+10:18:42 INFO  : [INFO]: Generating Linker script for zynq_fsbl
+10:18:42 INFO  : [INFO]: Successfully Created Application sources at D:/TUCN/UTCN/Third_Year/SSC/Lab/L4/CSA/zynq_fsbl
+10:18:42 INFO  : Successfully created Application D:\TUCN\UTCN\Third_Year\SSC\Lab\L4\CSA\zynq_fsbl
+10:18:42 INFO  : Platform FSBL Boot domain added successfully.
+10:18:42 INFO  : Platform creation finished successfully.
+10:18:42 INFO  : Platform Quick Build initiated.
+10:18:42 INFO  : Generating Export directory
+10:18:43 INFO  : Generated platform metadata for creating application(s) based on platform CSA.
+10:18:50 INFO  : BSP build will be initiated for Domain zynq_fsbl
+10:18:50 INFO  : BSP build will be initiated for Domain standalone_ps7_cortexa9_0
+10:18:50 INFO  : Generating BSP for the domain D:\TUCN\UTCN\Third_Year\SSC\Lab\L4\CSA\ps7_cortexa9_0\standalone_ps7_cortexa9_0\bsp
+10:18:50 INFO  : Generating BSP for the domain D:\TUCN\UTCN\Third_Year\SSC\Lab\L4\CSA\zynq_fsbl\zynq_fsbl_bsp
+10:18:50 INFO  : lopper command to reconfigure BSP :empyro.bat reconfig_bsp -d D:\TUCN\UTCN\Third_Year\SSC\Lab\L4\CSA\zynq_fsbl\zynq_fsbl_bsp
+10:18:50 INFO  : lopper command to reconfigure BSP :empyro.bat reconfig_bsp -d D:\TUCN\UTCN\Third_Year\SSC\Lab\L4\CSA\ps7_cortexa9_0\standalone_ps7_cortexa9_0\bsp
+10:18:50 INFO  : cmd.exe, /C, empyro.bat reconfig_bsp -d D:\TUCN\UTCN\Third_Year\SSC\Lab\L4\CSA\zynq_fsbl\zynq_fsbl_bsp
+10:18:50 INFO  : cmd.exe, /C, empyro.bat reconfig_bsp -d D:\TUCN\UTCN\Third_Year\SSC\Lab\L4\CSA\ps7_cortexa9_0\standalone_ps7_cortexa9_0\bsp
+10:18:51 INFO  : Domain reconfigured successfully
+10:18:51 INFO  : Generating BSP for the domain D:\TUCN\UTCN\Third_Year\SSC\Lab\L4\CSA\ps7_cortexa9_0\standalone_ps7_cortexa9_0\bsp
+10:18:51 INFO  : lopper command to build BSP :empyro.bat build_bsp -d D:\TUCN\UTCN\Third_Year\SSC\Lab\L4\CSA\ps7_cortexa9_0\standalone_ps7_cortexa9_0\bsp
+10:18:51 INFO  : cmd.exe, /C, empyro.bat build_bsp -d D:\TUCN\UTCN\Third_Year\SSC\Lab\L4\CSA\ps7_cortexa9_0\standalone_ps7_cortexa9_0\bsp
+10:18:51 INFO  : Domain reconfigured successfully
+10:18:51 INFO  : Generating BSP for the domain D:\TUCN\UTCN\Third_Year\SSC\Lab\L4\CSA\zynq_fsbl\zynq_fsbl_bsp
+10:18:51 INFO  : lopper command to build BSP :empyro.bat build_bsp -d D:\TUCN\UTCN\Third_Year\SSC\Lab\L4\CSA\zynq_fsbl\zynq_fsbl_bsp
+10:18:51 INFO  : cmd.exe, /C, empyro.bat build_bsp -d D:\TUCN\UTCN\Third_Year\SSC\Lab\L4\CSA\zynq_fsbl\zynq_fsbl_bsp
+10:19:19 INFO  : Domain build successfully
+10:19:20 INFO  : Domain build successfully
+10:19:20 INFO  : Generating Boot ELFs
+10:19:20 INFO  : lopper command to retarget baremetal application :empyro.bat retarget_app -s D:\TUCN\UTCN\Third_Year\SSC\Lab\L4\CSA\zynq_fsbl -d D:\TUCN\UTCN\Third_Year\SSC\Lab\L4\CSA\zynq_fsbl\zynq_fsbl_bsp -b D:\TUCN\UTCN\Third_Year\SSC\Lab\L4\CSA\zynq_fsbl\build
+10:19:20 INFO  : cmd.exe, /C, empyro.bat retarget_app -s D:\TUCN\UTCN\Third_Year\SSC\Lab\L4\CSA\zynq_fsbl -d D:\TUCN\UTCN\Third_Year\SSC\Lab\L4\CSA\zynq_fsbl\zynq_fsbl_bsp -b D:\TUCN\UTCN\Third_Year\SSC\Lab\L4\CSA\zynq_fsbl\build
+10:19:21 INFO  : [INFO]: Retargeting app
+10:19:21 INFO  : [INFO]: Updating link libraries based on new domain
+10:19:21 INFO  : Successfully retargeted Application D:\TUCN\UTCN\Third_Year\SSC\Lab\L4\CSA\zynq_fsbl
+10:19:21 INFO  : lopper command to build baremetal application :empyro.bat build_app --src_dir D:\TUCN\UTCN\Third_Year\SSC\Lab\L4\CSA\zynq_fsbl --build_dir D:\TUCN\UTCN\Third_Year\SSC\Lab\L4\CSA\zynq_fsbl\build
+10:19:21 INFO  : cmd.exe, /C, empyro.bat build_app --src_dir D:\TUCN\UTCN\Third_Year\SSC\Lab\L4\CSA\zynq_fsbl --build_dir D:\TUCN\UTCN\Third_Year\SSC\Lab\L4\CSA\zynq_fsbl\build
+10:19:27 INFO  : Successfully building the baremetal applicationD:\TUCN\UTCN\Third_Year\SSC\Lab\L4\CSA\zynq_fsbl\build
+10:19:27 INFO  : Generating Export directory
+10:19:27 INFO  : Platform Build Finished successfully.
+10:20:44 INFO  : cmd.exe, /C, empyro.bat validate_bsp -t hello_world -d D:\TUCN\UTCN\Third_Year\SSC\Lab\L4\CSA\export\CSA\sw\standalone_ps7_cortexa9_0 -r D:\TUCN\UTCN\Third_Year\SSC\Lab\L4\_ide\.wsdata\.repo.yaml
+10:20:47 INFO  : Successfully validated template hello_world
+10:21:00 INFO  : lopper command to create baremetal application :empyro.bat create_app --src_dir D:\TUCN\UTCN\Third_Year\SSC\Lab\L4\carrySelectAdder\src -t hello_world -d D:\TUCN\UTCN\Third_Year\SSC\Lab\L4\CSA\export\CSA\sw\standalone_ps7_cortexa9_0 -n carrySelectAdder -r D:\TUCN\UTCN\Third_Year\SSC\Lab\L4\_ide\.wsdata\.repo.yaml
+10:21:00 INFO  : cmd.exe, /C, empyro.bat validate_bsp -t hello_world -d D:\TUCN\UTCN\Third_Year\SSC\Lab\L4\CSA\export\CSA\sw\standalone_ps7_cortexa9_0 -r D:\TUCN\UTCN\Third_Year\SSC\Lab\L4\_ide\.wsdata\.repo.yaml
+10:21:02 INFO  : Successfully validated template hello_world
+10:21:02 INFO  : cmd.exe, /C, empyro.bat create_app --src_dir D:\TUCN\UTCN\Third_Year\SSC\Lab\L4\carrySelectAdder\src -t hello_world -d D:\TUCN\UTCN\Third_Year\SSC\Lab\L4\CSA\export\CSA\sw\standalone_ps7_cortexa9_0 -n carrySelectAdder -r D:\TUCN\UTCN\Third_Year\SSC\Lab\L4\_ide\.wsdata\.repo.yaml
+10:21:08 INFO  : [INFO]: Generating Hardware Metadata for hello_world
+10:21:08 INFO  : [INFO]: Generating Linker script for hello_world
+10:21:08 INFO  : [INFO]: Successfully Created Application sources at D:/TUCN/UTCN/Third_Year/SSC/Lab/L4/carrySelectAdder/src
+10:21:08 INFO  : Successfully created Application D:\TUCN\UTCN\Third_Year\SSC\Lab\L4\carrySelectAdder\src
+10:21:08 INFO  : The hardware specification used by project 'D:\TUCN\UTCN\Third_Year\SSC\Lab\L4\carrySelectAdder' is out of sync with the platform. Resource files extracted from the hardware specification will be updated.
+10:21:08 INFO  : The updated bitstream files are copied from platform to folder 'D:\TUCN\UTCN\Third_Year\SSC\Lab\L4\carrySelectAdder\_ide\bitstream' in project 'D:\TUCN\UTCN\Third_Year\SSC\Lab\L4\carrySelectAdder'.
+10:21:08 INFO  : The updated ps init files are copied from platform to folder 'D:\TUCN\UTCN\Third_Year\SSC\Lab\L4\carrySelectAdder\_ide\psinit' in project 'D:\TUCN\UTCN\Third_Year\SSC\Lab\L4\carrySelectAdder'.
+10:21:08 INFO  : created .gitignore file for the project D:\TUCN\UTCN\Third_Year\SSC\Lab\L4\carrySelectAdder
+10:21:22 INFO  : BSP build will be initiated for Domain zynq_fsbl
+10:21:22 INFO  : BSP build will be initiated for Domain standalone_ps7_cortexa9_0
+10:21:22 INFO  : Generating BSP for the domain D:\TUCN\UTCN\Third_Year\SSC\Lab\L4\CSA\zynq_fsbl\zynq_fsbl_bsp
+10:21:22 INFO  : Generating BSP for the domain D:\TUCN\UTCN\Third_Year\SSC\Lab\L4\CSA\ps7_cortexa9_0\standalone_ps7_cortexa9_0\bsp
+10:21:22 INFO  : lopper command to reconfigure BSP :empyro.bat reconfig_bsp -d D:\TUCN\UTCN\Third_Year\SSC\Lab\L4\CSA\ps7_cortexa9_0\standalone_ps7_cortexa9_0\bsp
+10:21:22 INFO  : lopper command to reconfigure BSP :empyro.bat reconfig_bsp -d D:\TUCN\UTCN\Third_Year\SSC\Lab\L4\CSA\zynq_fsbl\zynq_fsbl_bsp
+10:21:22 INFO  : cmd.exe, /C, empyro.bat reconfig_bsp -d D:\TUCN\UTCN\Third_Year\SSC\Lab\L4\CSA\ps7_cortexa9_0\standalone_ps7_cortexa9_0\bsp
+10:21:22 INFO  : cmd.exe, /C, empyro.bat reconfig_bsp -d D:\TUCN\UTCN\Third_Year\SSC\Lab\L4\CSA\zynq_fsbl\zynq_fsbl_bsp
+10:21:22 INFO  : Domain reconfigured successfully
+10:21:22 INFO  : Generating BSP for the domain D:\TUCN\UTCN\Third_Year\SSC\Lab\L4\CSA\ps7_cortexa9_0\standalone_ps7_cortexa9_0\bsp
+10:21:22 INFO  : lopper command to build BSP :empyro.bat build_bsp -d D:\TUCN\UTCN\Third_Year\SSC\Lab\L4\CSA\ps7_cortexa9_0\standalone_ps7_cortexa9_0\bsp
+10:21:22 INFO  : cmd.exe, /C, empyro.bat build_bsp -d D:\TUCN\UTCN\Third_Year\SSC\Lab\L4\CSA\ps7_cortexa9_0\standalone_ps7_cortexa9_0\bsp
+10:21:23 INFO  : Domain reconfigured successfully
+10:21:23 INFO  : Generating BSP for the domain D:\TUCN\UTCN\Third_Year\SSC\Lab\L4\CSA\zynq_fsbl\zynq_fsbl_bsp
+10:21:23 INFO  : lopper command to build BSP :empyro.bat build_bsp -d D:\TUCN\UTCN\Third_Year\SSC\Lab\L4\CSA\zynq_fsbl\zynq_fsbl_bsp
+10:21:23 INFO  : cmd.exe, /C, empyro.bat build_bsp -d D:\TUCN\UTCN\Third_Year\SSC\Lab\L4\CSA\zynq_fsbl\zynq_fsbl_bsp
+10:21:24 INFO  : Domain build successfully
+10:21:24 INFO  : Domain build successfully
+10:21:24 INFO  : Generating Boot ELFs
+10:21:24 INFO  : lopper command to retarget baremetal application :empyro.bat retarget_app -s D:\TUCN\UTCN\Third_Year\SSC\Lab\L4\CSA\zynq_fsbl -d D:\TUCN\UTCN\Third_Year\SSC\Lab\L4\CSA\zynq_fsbl\zynq_fsbl_bsp -b D:\TUCN\UTCN\Third_Year\SSC\Lab\L4\CSA\zynq_fsbl\build
+10:21:24 INFO  : cmd.exe, /C, empyro.bat retarget_app -s D:\TUCN\UTCN\Third_Year\SSC\Lab\L4\CSA\zynq_fsbl -d D:\TUCN\UTCN\Third_Year\SSC\Lab\L4\CSA\zynq_fsbl\zynq_fsbl_bsp -b D:\TUCN\UTCN\Third_Year\SSC\Lab\L4\CSA\zynq_fsbl\build
+10:21:25 INFO  : [INFO]: Retargeting app
+10:21:25 INFO  : [INFO]: Updating link libraries based on new domain
+10:21:25 INFO  : Successfully retargeted Application D:\TUCN\UTCN\Third_Year\SSC\Lab\L4\CSA\zynq_fsbl
+10:21:25 INFO  : lopper command to build baremetal application :empyro.bat build_app --src_dir D:\TUCN\UTCN\Third_Year\SSC\Lab\L4\CSA\zynq_fsbl --build_dir D:\TUCN\UTCN\Third_Year\SSC\Lab\L4\CSA\zynq_fsbl\build
+10:21:25 INFO  : cmd.exe, /C, empyro.bat build_app --src_dir D:\TUCN\UTCN\Third_Year\SSC\Lab\L4\CSA\zynq_fsbl --build_dir D:\TUCN\UTCN\Third_Year\SSC\Lab\L4\CSA\zynq_fsbl\build
+10:21:27 INFO  : Successfully building the baremetal applicationD:\TUCN\UTCN\Third_Year\SSC\Lab\L4\CSA\zynq_fsbl\build
+10:21:27 INFO  : Generating Export directory
+10:21:27 INFO  : Platform Build Finished successfully.
+10:21:27 INFO  : lopper command to retarget baremetal application :empyro.bat retarget_app -s d:\TUCN\UTCN\Third_Year\SSC\Lab\L4\carrySelectAdder\src -d D:\TUCN\UTCN\Third_Year\SSC\Lab\L4\CSA\export\CSA\sw\standalone_ps7_cortexa9_0 -b d:\TUCN\UTCN\Third_Year\SSC\Lab\L4\carrySelectAdder\build
+10:21:27 INFO  : cmd.exe, /C, empyro.bat retarget_app -s d:\TUCN\UTCN\Third_Year\SSC\Lab\L4\carrySelectAdder\src -d D:\TUCN\UTCN\Third_Year\SSC\Lab\L4\CSA\export\CSA\sw\standalone_ps7_cortexa9_0 -b d:\TUCN\UTCN\Third_Year\SSC\Lab\L4\carrySelectAdder\build
+10:21:28 INFO  : [INFO]: Retargeting app
+10:21:28 INFO  : [INFO]: Updating link libraries based on new domain
+10:21:28 INFO  : Successfully retargeted Application d:\TUCN\UTCN\Third_Year\SSC\Lab\L4\carrySelectAdder\src
+10:21:28 INFO  : cmd.exe, /C, empyro.bat build_app -s d:\TUCN\UTCN\Third_Year\SSC\Lab\L4\carrySelectAdder\src -b d:\TUCN\UTCN\Third_Year\SSC\Lab\L4\carrySelectAdder\build
+14:38:15 INFO  : BSP build will be initiated for Domain zynq_fsbl
+14:38:15 INFO  : BSP build will be initiated for Domain standalone_ps7_cortexa9_0
+14:38:15 INFO  : Generating BSP for the domain D:\TUCN\UTCN\Third_Year\SSC\Lab\L4\CSA\zynq_fsbl\zynq_fsbl_bsp
+14:38:15 INFO  : Generating BSP for the domain D:\TUCN\UTCN\Third_Year\SSC\Lab\L4\CSA\ps7_cortexa9_0\standalone_ps7_cortexa9_0\bsp
+14:38:15 INFO  : lopper command to reconfigure BSP :empyro.bat reconfig_bsp -d D:\TUCN\UTCN\Third_Year\SSC\Lab\L4\CSA\zynq_fsbl\zynq_fsbl_bsp
+14:38:15 INFO  : lopper command to reconfigure BSP :empyro.bat reconfig_bsp -d D:\TUCN\UTCN\Third_Year\SSC\Lab\L4\CSA\ps7_cortexa9_0\standalone_ps7_cortexa9_0\bsp
+14:38:15 INFO  : cmd.exe, /C, empyro.bat reconfig_bsp -d D:\TUCN\UTCN\Third_Year\SSC\Lab\L4\CSA\ps7_cortexa9_0\standalone_ps7_cortexa9_0\bsp
+14:38:15 INFO  : cmd.exe, /C, empyro.bat reconfig_bsp -d D:\TUCN\UTCN\Third_Year\SSC\Lab\L4\CSA\zynq_fsbl\zynq_fsbl_bsp
+14:38:16 INFO  : Domain reconfigured successfully
+14:38:16 INFO  : Generating BSP for the domain D:\TUCN\UTCN\Third_Year\SSC\Lab\L4\CSA\ps7_cortexa9_0\standalone_ps7_cortexa9_0\bsp
+14:38:16 INFO  : lopper command to build BSP :empyro.bat build_bsp -d D:\TUCN\UTCN\Third_Year\SSC\Lab\L4\CSA\ps7_cortexa9_0\standalone_ps7_cortexa9_0\bsp
+14:38:16 INFO  : cmd.exe, /C, empyro.bat build_bsp -d D:\TUCN\UTCN\Third_Year\SSC\Lab\L4\CSA\ps7_cortexa9_0\standalone_ps7_cortexa9_0\bsp
+14:38:16 INFO  : Domain reconfigured successfully
+14:38:16 INFO  : Generating BSP for the domain D:\TUCN\UTCN\Third_Year\SSC\Lab\L4\CSA\zynq_fsbl\zynq_fsbl_bsp
+14:38:16 INFO  : lopper command to build BSP :empyro.bat build_bsp -d D:\TUCN\UTCN\Third_Year\SSC\Lab\L4\CSA\zynq_fsbl\zynq_fsbl_bsp
+14:38:16 INFO  : cmd.exe, /C, empyro.bat build_bsp -d D:\TUCN\UTCN\Third_Year\SSC\Lab\L4\CSA\zynq_fsbl\zynq_fsbl_bsp
+14:38:17 INFO  : Domain build successfully
+14:38:17 INFO  : Domain build successfully
+14:38:17 INFO  : Generating Boot ELFs
+14:38:17 INFO  : lopper command to retarget baremetal application :empyro.bat retarget_app -s D:\TUCN\UTCN\Third_Year\SSC\Lab\L4\CSA\zynq_fsbl -d D:\TUCN\UTCN\Third_Year\SSC\Lab\L4\CSA\zynq_fsbl\zynq_fsbl_bsp -b D:\TUCN\UTCN\Third_Year\SSC\Lab\L4\CSA\zynq_fsbl\build
+14:38:17 INFO  : cmd.exe, /C, empyro.bat retarget_app -s D:\TUCN\UTCN\Third_Year\SSC\Lab\L4\CSA\zynq_fsbl -d D:\TUCN\UTCN\Third_Year\SSC\Lab\L4\CSA\zynq_fsbl\zynq_fsbl_bsp -b D:\TUCN\UTCN\Third_Year\SSC\Lab\L4\CSA\zynq_fsbl\build
+14:38:18 INFO  : [INFO]: Retargeting app
+14:38:18 INFO  : [INFO]: Updating link libraries based on new domain
+14:38:18 INFO  : Successfully retargeted Application D:\TUCN\UTCN\Third_Year\SSC\Lab\L4\CSA\zynq_fsbl
+14:38:18 INFO  : lopper command to build baremetal application :empyro.bat build_app --src_dir D:\TUCN\UTCN\Third_Year\SSC\Lab\L4\CSA\zynq_fsbl --build_dir D:\TUCN\UTCN\Third_Year\SSC\Lab\L4\CSA\zynq_fsbl\build
+14:38:18 INFO  : cmd.exe, /C, empyro.bat build_app --src_dir D:\TUCN\UTCN\Third_Year\SSC\Lab\L4\CSA\zynq_fsbl --build_dir D:\TUCN\UTCN\Third_Year\SSC\Lab\L4\CSA\zynq_fsbl\build
+14:38:21 INFO  : Successfully building the baremetal applicationD:\TUCN\UTCN\Third_Year\SSC\Lab\L4\CSA\zynq_fsbl\build
+14:38:21 INFO  : Generating Export directory
+14:38:21 INFO  : Platform Build Finished successfully.
+14:38:21 INFO  : lopper command to retarget baremetal application :empyro.bat retarget_app -s d:\TUCN\UTCN\Third_Year\SSC\Lab\L4\carrySelectAdder\src -d D:\TUCN\UTCN\Third_Year\SSC\Lab\L4\CSA\export\CSA\sw\standalone_ps7_cortexa9_0 -b d:\TUCN\UTCN\Third_Year\SSC\Lab\L4\carrySelectAdder\build
+14:38:21 INFO  : cmd.exe, /C, empyro.bat retarget_app -s d:\TUCN\UTCN\Third_Year\SSC\Lab\L4\carrySelectAdder\src -d D:\TUCN\UTCN\Third_Year\SSC\Lab\L4\CSA\export\CSA\sw\standalone_ps7_cortexa9_0 -b d:\TUCN\UTCN\Third_Year\SSC\Lab\L4\carrySelectAdder\build
+14:38:22 INFO  : [INFO]: Retargeting app
+14:38:22 INFO  : [INFO]: Updating link libraries based on new domain
+14:38:22 INFO  : Successfully retargeted Application d:\TUCN\UTCN\Third_Year\SSC\Lab\L4\carrySelectAdder\src
+14:38:22 INFO  : cmd.exe, /C, empyro.bat build_app -s d:\TUCN\UTCN\Third_Year\SSC\Lab\L4\carrySelectAdder\src -b d:\TUCN\UTCN\Third_Year\SSC\Lab\L4\carrySelectAdder\build
+15:35:19 INFO  : Using sdt generation script from D:\Xilinx\2025.1\Vitis\vitis-server\scripts\platformutil.tcl
+15:35:19 INFO  : cmd.exe, /C, sdtgen.bat D:\Xilinx\2025.1\Vitis\vitis-server\scripts\platformutil.tcl D:\TUCN\UTCN\Third_Year\SSC\Lab\L4\Zybo_CLA\design_3_wrapper.xsa D:\TUCN\UTCN\Third_Year\SSC\Lab\L4\.rigel_lopper_temp_platform\design_3_wrapper\hw\sdt
+15:35:29 INFO  : -xsa D:\TUCN\UTCN\Third_Year\SSC\Lab\L4\Zybo_CLA\design_3_wrapper.xsa
+15:35:29 INFO  : -dir D:\TUCN\UTCN\Third_Year\SSC\Lab\L4\.rigel_lopper_temp_platform\design_3_wrapper\hw\sdt
+15:35:29 INFO  : -board_dts 
+15:35:29 INFO  : -include_dts 
+15:35:29 INFO  : -repo D:/Xilinx/2025.1/Vitis/data/system-device-tree-xlnx
+15:35:29 INFO  : -zocl disable
+15:35:29 INFO  : INFO: [Hsi 55-2053] elapsed time for repository (D:/Xilinx/2025.1/Vitis/data/embeddedsw) loading 0 seconds
+15:35:29 INFO  : SDT generated successfully
+15:35:29 INFO  : Lopper command for cpu List generation: lopper.bat --enhanced --werror -f -O D:\TUCN\UTCN\Third_Year\SSC\Lab\L4\.rigel_lopper -i lop-cpu-oslist.dts D:\TUCN\UTCN\Third_Year\SSC\Lab\L4\.rigel_lopper_temp_platform\design_3_wrapper\hw\sdt\system-top.dts
+15:35:29 INFO  : cmd.exe, /C, lopper.bat --enhanced --werror -f -O D:\TUCN\UTCN\Third_Year\SSC\Lab\L4\.rigel_lopper -i lop-cpu-oslist.dts D:\TUCN\UTCN\Third_Year\SSC\Lab\L4\.rigel_lopper_temp_platform\design_3_wrapper\hw\sdt\system-top.dts
+15:35:32 INFO  : CPU List generated successfully
+15:35:36 INFO  : Platform CSAWithCLA creation started.
+15:35:36 INFO  : Lopper command for cpu List generation: lopper.bat --enhanced --werror -f -O D:\TUCN\UTCN\Third_Year\SSC\Lab\L4\.rigel_lopper -i lop-cpu-oslist.dts D:\TUCN\UTCN\Third_Year\SSC\Lab\L4\CSAWithCLA\hw\sdt\system-top.dts
+15:35:36 INFO  : cmd.exe, /C, lopper.bat --enhanced --werror -f -O D:\TUCN\UTCN\Third_Year\SSC\Lab\L4\.rigel_lopper -i lop-cpu-oslist.dts D:\TUCN\UTCN\Third_Year\SSC\Lab\L4\CSAWithCLA\hw\sdt\system-top.dts
+15:35:38 INFO  : CPU List generated successfully
+15:35:38 INFO  : SDT generated successfully.
+15:35:38 INFO  : created .gitignore file for the project D:\TUCN\UTCN\Third_Year\SSC\Lab\L4\CSAWithCLA
+15:35:38 INFO  : ZYNQ: Using the QEMU args from install at  : D:\Xilinx\2025.1\Vitis\data\emulation\platforms\zynq\sw\a9_linux\qemu\qemu_args.txt
+15:35:38 INFO  : ZYNQ: Using the QEMU args from install at  : D:\Xilinx\2025.1\Vitis\data\emulation\platforms\zynq\sw\a9_standalone\qemu\qemu_args.txt
+15:35:38 INFO  : ZYNQ: Using the QEMU args from install at  : D:\Xilinx\2025.1\Vitis\data\emulation\platforms\zynq\sw\a9_standalone\qemu\qemu_args.txt
+15:35:38 INFO  : lopper command to generate BSP :empyro.bat create_bsp -w D:\TUCN\UTCN\Third_Year\SSC\Lab\L4\CSAWithCLA\ps7_cortexa9_0\standalone_ps7_cortexa9_0\bsp -p ps7_cortexa9_0 -o standalone -s D:\TUCN\UTCN\Third_Year\SSC\Lab\L4\CSAWithCLA\hw\sdt\system-top.dts -t empty_application -r D:\TUCN\UTCN\Third_Year\SSC\Lab\L4\_ide\.wsdata\.repo.yaml
+15:35:38 INFO  : cmd.exe, /C, empyro.bat create_bsp -w D:\TUCN\UTCN\Third_Year\SSC\Lab\L4\CSAWithCLA\ps7_cortexa9_0\standalone_ps7_cortexa9_0\bsp -p ps7_cortexa9_0 -o standalone -s D:\TUCN\UTCN\Third_Year\SSC\Lab\L4\CSAWithCLA\hw\sdt\system-top.dts -t empty_application -r D:\TUCN\UTCN\Third_Year\SSC\Lab\L4\_ide\.wsdata\.repo.yaml
+15:35:38 INFO  : lopper command to generate BSP :empyro.bat create_bsp -w D:\TUCN\UTCN\Third_Year\SSC\Lab\L4\CSAWithCLA\zynq_fsbl\zynq_fsbl_bsp -p ps7_cortexa9_0 -o standalone -s D:\TUCN\UTCN\Third_Year\SSC\Lab\L4\CSAWithCLA\hw\sdt\system-top.dts -t zynq_fsbl -r D:\TUCN\UTCN\Third_Year\SSC\Lab\L4\_ide\.wsdata\.repo.yaml
+15:35:38 INFO  : cmd.exe, /C, empyro.bat create_bsp -w D:\TUCN\UTCN\Third_Year\SSC\Lab\L4\CSAWithCLA\zynq_fsbl\zynq_fsbl_bsp -p ps7_cortexa9_0 -o standalone -s D:\TUCN\UTCN\Third_Year\SSC\Lab\L4\CSAWithCLA\hw\sdt\system-top.dts -t zynq_fsbl -r D:\TUCN\UTCN\Third_Year\SSC\Lab\L4\_ide\.wsdata\.repo.yaml
+15:36:01 INFO  : [INFO]: Starting domain creation
+15:36:01 INFO  : [INFO]: Generating Domain-specific DTS for ps7_cortexa9_0
+15:36:01 INFO  : [INFO]: Generating required metadata from domain specific DT
+15:36:01 INFO  : [INFO]: Successfully created Domain at D:\TUCN\UTCN\Third_Year\SSC\Lab\L4\CSAWithCLA\ps7_cortexa9_0\standalone_ps7_cortexa9_0\bsp
+15:36:01 INFO  : Successfully Generated Domain D:\TUCN\UTCN\Third_Year\SSC\Lab\L4\CSAWithCLA\ps7_cortexa9_0\standalone_ps7_cortexa9_0\bsp
+15:36:01 INFO  : Domain standalone_ps7_cortexa9_0 added successfully.
+15:36:02 INFO  : [INFO]: Starting domain creation
+15:36:02 INFO  : [INFO]: Generating Domain-specific DTS for ps7_cortexa9_0
+15:36:02 INFO  : [INFO]: Generating required metadata from domain specific DT
+15:36:02 INFO  : [INFO]: Successfully created Domain at D:\TUCN\UTCN\Third_Year\SSC\Lab\L4\CSAWithCLA\zynq_fsbl\zynq_fsbl_bsp
+15:36:02 INFO  : Successfully Generated Domain D:\TUCN\UTCN\Third_Year\SSC\Lab\L4\CSAWithCLA\zynq_fsbl\zynq_fsbl_bsp
+15:36:02 INFO  : lopper command to create baremetal application :empyro.bat create_app --src_dir D:\TUCN\UTCN\Third_Year\SSC\Lab\L4\CSAWithCLA\zynq_fsbl -t zynq_fsbl -d D:\TUCN\UTCN\Third_Year\SSC\Lab\L4\CSAWithCLA\zynq_fsbl\zynq_fsbl_bsp -n fsbl -r D:\TUCN\UTCN\Third_Year\SSC\Lab\L4\_ide\.wsdata\.repo.yaml
+15:36:02 INFO  : cmd.exe, /C, empyro.bat validate_bsp -t zynq_fsbl -d D:\TUCN\UTCN\Third_Year\SSC\Lab\L4\CSAWithCLA\zynq_fsbl\zynq_fsbl_bsp -r D:\TUCN\UTCN\Third_Year\SSC\Lab\L4\_ide\.wsdata\.repo.yaml
+15:36:06 INFO  : Successfully validated template zynq_fsbl
+15:36:06 INFO  : cmd.exe, /C, empyro.bat create_app --src_dir D:\TUCN\UTCN\Third_Year\SSC\Lab\L4\CSAWithCLA\zynq_fsbl -t zynq_fsbl -d D:\TUCN\UTCN\Third_Year\SSC\Lab\L4\CSAWithCLA\zynq_fsbl\zynq_fsbl_bsp -n fsbl -r D:\TUCN\UTCN\Third_Year\SSC\Lab\L4\_ide\.wsdata\.repo.yaml
+15:36:11 INFO  : [INFO]: Generating Linker script for zynq_fsbl
+15:36:11 INFO  : [INFO]: Successfully Created Application sources at D:/TUCN/UTCN/Third_Year/SSC/Lab/L4/CSAWithCLA/zynq_fsbl
+15:36:11 INFO  : Successfully created Application D:\TUCN\UTCN\Third_Year\SSC\Lab\L4\CSAWithCLA\zynq_fsbl
+15:36:11 INFO  : Platform FSBL Boot domain added successfully.
+15:36:11 INFO  : Platform creation finished successfully.
+15:36:11 INFO  : Platform Quick Build initiated.
+15:36:11 INFO  : Generating Export directory
+15:36:11 INFO  : Generated platform metadata for creating application(s) based on platform CSAWithCLA.
+15:36:46 INFO  : cmd.exe, /C, empyro.bat validate_bsp -t hello_world -d D:\TUCN\UTCN\Third_Year\SSC\Lab\L4\CSAWithCLA\export\CSAWithCLA\sw\standalone_ps7_cortexa9_0 -r D:\TUCN\UTCN\Third_Year\SSC\Lab\L4\_ide\.wsdata\.repo.yaml
+15:36:50 INFO  : Successfully validated template hello_world
+15:37:10 INFO  : cmd.exe, /C, empyro.bat validate_bsp -t hello_world -d D:\TUCN\UTCN\Third_Year\SSC\Lab\L4\CSA\export\CSA\sw\standalone_ps7_cortexa9_0 -r D:\TUCN\UTCN\Third_Year\SSC\Lab\L4\_ide\.wsdata\.repo.yaml
+15:37:14 INFO  : Successfully validated template hello_world
+15:37:35 INFO  : lopper command to create baremetal application :empyro.bat create_app --src_dir D:\TUCN\UTCN\Third_Year\SSC\Lab\L4\csaWcla\src -t hello_world -d D:\TUCN\UTCN\Third_Year\SSC\Lab\L4\CSAWithCLA\export\CSAWithCLA\sw\standalone_ps7_cortexa9_0 -n csaWcla -r D:\TUCN\UTCN\Third_Year\SSC\Lab\L4\_ide\.wsdata\.repo.yaml
+15:37:35 INFO  : cmd.exe, /C, empyro.bat validate_bsp -t hello_world -d D:\TUCN\UTCN\Third_Year\SSC\Lab\L4\CSAWithCLA\export\CSAWithCLA\sw\standalone_ps7_cortexa9_0 -r D:\TUCN\UTCN\Third_Year\SSC\Lab\L4\_ide\.wsdata\.repo.yaml
+15:37:37 INFO  : Successfully validated template hello_world
+15:37:37 INFO  : cmd.exe, /C, empyro.bat create_app --src_dir D:\TUCN\UTCN\Third_Year\SSC\Lab\L4\csaWcla\src -t hello_world -d D:\TUCN\UTCN\Third_Year\SSC\Lab\L4\CSAWithCLA\export\CSAWithCLA\sw\standalone_ps7_cortexa9_0 -n csaWcla -r D:\TUCN\UTCN\Third_Year\SSC\Lab\L4\_ide\.wsdata\.repo.yaml
+15:37:43 INFO  : [INFO]: Generating Hardware Metadata for hello_world
+15:37:43 INFO  : [INFO]: Generating Linker script for hello_world
+15:37:43 INFO  : [INFO]: Successfully Created Application sources at D:/TUCN/UTCN/Third_Year/SSC/Lab/L4/csaWcla/src
+15:37:43 INFO  : Successfully created Application D:\TUCN\UTCN\Third_Year\SSC\Lab\L4\csaWcla\src
+15:37:43 INFO  : The hardware specification used by project 'D:\TUCN\UTCN\Third_Year\SSC\Lab\L4\csaWcla' is out of sync with the platform. Resource files extracted from the hardware specification will be updated.
+15:37:43 INFO  : The updated bitstream files are copied from platform to folder 'D:\TUCN\UTCN\Third_Year\SSC\Lab\L4\csaWcla\_ide\bitstream' in project 'D:\TUCN\UTCN\Third_Year\SSC\Lab\L4\csaWcla'.
+15:37:43 INFO  : The updated ps init files are copied from platform to folder 'D:\TUCN\UTCN\Third_Year\SSC\Lab\L4\csaWcla\_ide\psinit' in project 'D:\TUCN\UTCN\Third_Year\SSC\Lab\L4\csaWcla'.
+15:37:43 INFO  : created .gitignore file for the project D:\TUCN\UTCN\Third_Year\SSC\Lab\L4\csaWcla
+15:38:41 INFO  : BSP build will be initiated for Domain zynq_fsbl
+15:38:41 INFO  : BSP build will be initiated for Domain standalone_ps7_cortexa9_0
+15:38:41 INFO  : Generating BSP for the domain D:\TUCN\UTCN\Third_Year\SSC\Lab\L4\CSAWithCLA\zynq_fsbl\zynq_fsbl_bsp
+15:38:41 INFO  : Generating BSP for the domain D:\TUCN\UTCN\Third_Year\SSC\Lab\L4\CSAWithCLA\ps7_cortexa9_0\standalone_ps7_cortexa9_0\bsp
+15:38:41 INFO  : lopper command to reconfigure BSP :empyro.bat reconfig_bsp -d D:\TUCN\UTCN\Third_Year\SSC\Lab\L4\CSAWithCLA\zynq_fsbl\zynq_fsbl_bsp
+15:38:41 INFO  : lopper command to reconfigure BSP :empyro.bat reconfig_bsp -d D:\TUCN\UTCN\Third_Year\SSC\Lab\L4\CSAWithCLA\ps7_cortexa9_0\standalone_ps7_cortexa9_0\bsp
+15:38:41 INFO  : cmd.exe, /C, empyro.bat reconfig_bsp -d D:\TUCN\UTCN\Third_Year\SSC\Lab\L4\CSAWithCLA\ps7_cortexa9_0\standalone_ps7_cortexa9_0\bsp
+15:38:41 INFO  : cmd.exe, /C, empyro.bat reconfig_bsp -d D:\TUCN\UTCN\Third_Year\SSC\Lab\L4\CSAWithCLA\zynq_fsbl\zynq_fsbl_bsp
+15:38:42 INFO  : Domain reconfigured successfully
+15:38:42 INFO  : Generating BSP for the domain D:\TUCN\UTCN\Third_Year\SSC\Lab\L4\CSAWithCLA\ps7_cortexa9_0\standalone_ps7_cortexa9_0\bsp
+15:38:42 INFO  : lopper command to build BSP :empyro.bat build_bsp -d D:\TUCN\UTCN\Third_Year\SSC\Lab\L4\CSAWithCLA\ps7_cortexa9_0\standalone_ps7_cortexa9_0\bsp
+15:38:42 INFO  : cmd.exe, /C, empyro.bat build_bsp -d D:\TUCN\UTCN\Third_Year\SSC\Lab\L4\CSAWithCLA\ps7_cortexa9_0\standalone_ps7_cortexa9_0\bsp
+15:38:42 INFO  : Domain reconfigured successfully
+15:38:42 INFO  : Generating BSP for the domain D:\TUCN\UTCN\Third_Year\SSC\Lab\L4\CSAWithCLA\zynq_fsbl\zynq_fsbl_bsp
+15:38:42 INFO  : lopper command to build BSP :empyro.bat build_bsp -d D:\TUCN\UTCN\Third_Year\SSC\Lab\L4\CSAWithCLA\zynq_fsbl\zynq_fsbl_bsp
+15:38:42 INFO  : cmd.exe, /C, empyro.bat build_bsp -d D:\TUCN\UTCN\Third_Year\SSC\Lab\L4\CSAWithCLA\zynq_fsbl\zynq_fsbl_bsp
+15:39:08 INFO  : Domain build successfully
+15:39:10 INFO  : Domain build successfully
+15:39:10 INFO  : Generating Boot ELFs
+15:39:10 INFO  : lopper command to retarget baremetal application :empyro.bat retarget_app -s D:\TUCN\UTCN\Third_Year\SSC\Lab\L4\CSAWithCLA\zynq_fsbl -d D:\TUCN\UTCN\Third_Year\SSC\Lab\L4\CSAWithCLA\zynq_fsbl\zynq_fsbl_bsp -b D:\TUCN\UTCN\Third_Year\SSC\Lab\L4\CSAWithCLA\zynq_fsbl\build
+15:39:10 INFO  : cmd.exe, /C, empyro.bat retarget_app -s D:\TUCN\UTCN\Third_Year\SSC\Lab\L4\CSAWithCLA\zynq_fsbl -d D:\TUCN\UTCN\Third_Year\SSC\Lab\L4\CSAWithCLA\zynq_fsbl\zynq_fsbl_bsp -b D:\TUCN\UTCN\Third_Year\SSC\Lab\L4\CSAWithCLA\zynq_fsbl\build
+15:39:11 INFO  : [INFO]: Retargeting app
+15:39:11 INFO  : [INFO]: Updating link libraries based on new domain
+15:39:11 INFO  : Successfully retargeted Application D:\TUCN\UTCN\Third_Year\SSC\Lab\L4\CSAWithCLA\zynq_fsbl
+15:39:11 INFO  : lopper command to build baremetal application :empyro.bat build_app --src_dir D:\TUCN\UTCN\Third_Year\SSC\Lab\L4\CSAWithCLA\zynq_fsbl --build_dir D:\TUCN\UTCN\Third_Year\SSC\Lab\L4\CSAWithCLA\zynq_fsbl\build
+15:39:11 INFO  : cmd.exe, /C, empyro.bat build_app --src_dir D:\TUCN\UTCN\Third_Year\SSC\Lab\L4\CSAWithCLA\zynq_fsbl --build_dir D:\TUCN\UTCN\Third_Year\SSC\Lab\L4\CSAWithCLA\zynq_fsbl\build
+15:39:18 INFO  : Successfully building the baremetal applicationD:\TUCN\UTCN\Third_Year\SSC\Lab\L4\CSAWithCLA\zynq_fsbl\build
+15:39:18 INFO  : Generating Export directory
+15:39:18 INFO  : Platform Build Finished successfully.
+15:39:18 INFO  : lopper command to retarget baremetal application :empyro.bat retarget_app -s d:\TUCN\UTCN\Third_Year\SSC\Lab\L4\csaWcla\src -d D:\TUCN\UTCN\Third_Year\SSC\Lab\L4\CSAWithCLA\export\CSAWithCLA\sw\standalone_ps7_cortexa9_0 -b d:\TUCN\UTCN\Third_Year\SSC\Lab\L4\csaWcla\build
+15:39:18 INFO  : cmd.exe, /C, empyro.bat retarget_app -s d:\TUCN\UTCN\Third_Year\SSC\Lab\L4\csaWcla\src -d D:\TUCN\UTCN\Third_Year\SSC\Lab\L4\CSAWithCLA\export\CSAWithCLA\sw\standalone_ps7_cortexa9_0 -b d:\TUCN\UTCN\Third_Year\SSC\Lab\L4\csaWcla\build
+15:39:19 INFO  : [INFO]: Retargeting app
+15:39:19 INFO  : [INFO]: Updating link libraries based on new domain
+15:39:19 INFO  : Successfully retargeted Application d:\TUCN\UTCN\Third_Year\SSC\Lab\L4\csaWcla\src
+15:39:19 INFO  : cmd.exe, /C, empyro.bat build_app -s d:\TUCN\UTCN\Third_Year\SSC\Lab\L4\csaWcla\src -b d:\TUCN\UTCN\Third_Year\SSC\Lab\L4\csaWcla\build
+16:33:37 INFO  : Using sdt generation script from D:\Xilinx\2025.1\Vitis\vitis-server\scripts\platformutil.tcl
+16:33:37 INFO  : cmd.exe, /C, sdtgen.bat D:\Xilinx\2025.1\Vitis\vitis-server\scripts\platformutil.tcl D:\TUCN\UTCN\Third_Year\SSC\Lab\L5\Multiply_Lab5\design_1_wrapper.xsa D:\TUCN\UTCN\Third_Year\SSC\Lab\L4\.rigel_lopper_temp_platform\design_1_wrapper\hw\sdt
+16:33:46 INFO  : -xsa D:\TUCN\UTCN\Third_Year\SSC\Lab\L5\Multiply_Lab5\design_1_wrapper.xsa
+16:33:46 INFO  : -dir D:\TUCN\UTCN\Third_Year\SSC\Lab\L4\.rigel_lopper_temp_platform\design_1_wrapper\hw\sdt
+16:33:46 INFO  : -board_dts 
+16:33:46 INFO  : -include_dts 
+16:33:46 INFO  : -repo D:/Xilinx/2025.1/Vitis/data/system-device-tree-xlnx
+16:33:46 INFO  : -zocl disable
+16:33:46 INFO  : INFO: [Hsi 55-2053] elapsed time for repository (D:/Xilinx/2025.1/Vitis/data/embeddedsw) loading 1 seconds
+16:33:46 INFO  : SDT generated successfully
+16:33:46 INFO  : Lopper command for cpu List generation: lopper.bat --enhanced --werror -f -O D:\TUCN\UTCN\Third_Year\SSC\Lab\L4\.rigel_lopper -i lop-cpu-oslist.dts D:\TUCN\UTCN\Third_Year\SSC\Lab\L4\.rigel_lopper_temp_platform\design_1_wrapper\hw\sdt\system-top.dts
+16:33:46 INFO  : cmd.exe, /C, lopper.bat --enhanced --werror -f -O D:\TUCN\UTCN\Third_Year\SSC\Lab\L4\.rigel_lopper -i lop-cpu-oslist.dts D:\TUCN\UTCN\Third_Year\SSC\Lab\L4\.rigel_lopper_temp_platform\design_1_wrapper\hw\sdt\system-top.dts
+16:33:47 INFO  : CPU List generated successfully
+16:33:55 INFO  : cmd.exe, /C, empyro.bat get_template_data -d C:\Users\totha\AppData\Local\Temp\rigel_lopper_totha4513578668823058532 -r D:\TUCN\UTCN\Third_Year\SSC\Lab\L4\_ide\.wsdata\.repo.yaml
+16:33:56 INFO  : Embedded Template List generated successfully
+16:34:11 INFO  : cmd.exe, /C, empyro.bat get_template_data -d C:\Users\totha\AppData\Local\Temp\rigel_lopper_totha13587655150578253831 -r D:\TUCN\UTCN\Third_Year\SSC\Lab\L4\_ide\.wsdata\.repo.yaml
+16:34:12 INFO  : Embedded Template List generated successfully
+16:34:12 INFO  : cmd.exe, /C, empyro.bat repo -st  D:\Xilinx\2025.1\Vitis\data\embeddedsw
+16:34:18 INFO  : [INFO]: Initializing repositories
+16:34:18 INFO  : [INFO]: Successfully set the EmbeddedSW path, refer .repo.yaml for more details.
+16:34:18 INFO  : Successfully created repository data at C:\Users\totha\AppData\Local\Temp\rigel_lopper_totha5368676467469179614
+16:34:18 INFO  : cmd.exe, /C, empyro.bat get_template_data -d C:\Users\totha\AppData\Local\Temp\rigel_lopper_totha8001160805754241412 -r C:\Users\totha\AppData\Local\Temp\rigel_lopper_totha5368676467469179614\.repo.yaml
+16:34:19 INFO  : Embedded Template List generated successfully
+16:34:19 INFO  : cmd.exe, /C, empyro.bat repo -st  D:\Xilinx\2025.1\Vitis\data\embeddedsw
+17:47:23 INFO  : updated workspace path: D:\TUCN\UTCN\Third_Year\SSC\Lab\L4
+17:47:28 INFO  : [INFO]: Initializing repositories
+17:47:28 INFO  : [INFO]: Successfully set the EmbeddedSW path, refer .repo.yaml for more details.
+17:47:28 INFO  : Successfully created repository data at C:\Users\totha\AppData\Local\Temp\rigel_lopper_totha11023869829324175127
+17:47:28 INFO  : cmd.exe, /C, empyro.bat get_template_data -d C:\Users\totha\AppData\Local\Temp\rigel_lopper_totha12517903379180009556 -r C:\Users\totha\AppData\Local\Temp\rigel_lopper_totha11023869829324175127\.repo.yaml
+17:47:31 INFO  : Embedded Template List generated successfully
+17:47:37 INFO  : cmd.exe, /C, empyro.bat get_template_data -d C:\Users\totha\AppData\Local\Temp\rigel_lopper_totha7788735100405850380 -r D:\TUCN\UTCN\Third_Year\SSC\Lab\L4\_ide\.wsdata\.repo.yaml
+17:47:38 INFO  : Embedded Template List generated successfully
+17:49:22 INFO  : XSDB server has started successfully from frontend.
+17:49:22 INFO  : It has taken  4secs.
+17:49:23 INFO  : Connection to XSDB Server established.
+17:49:23 INFO  : It has taken  1secs.
+17:49:23 INFO  : Done
+17:49:26 INFO  : connect -url tcp:127.0.0.1:3121
+17:49:35 INFO  : bpremove -all
+17:49:35 INFO  : Context for 'APU' is selected.
+17:49:35 INFO  : System reset is completed.
+17:49:38 INFO  : 'after 3000' command is executed.
+17:49:38 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zybo Z7 210351B803A7A" && level==0 && jtag_device_ctx=="jsn-Zybo Z7-210351B803A7A-13722093-0"}' command is executed.
+17:49:39 INFO  : Device configured successfully with "D:/TUCN/UTCN/Third_Year/SSC/Lab/L4/carrySelectAdder/_ide/bitstream/design_2_wrapper.bit"
+17:49:40 INFO  : targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent Zybo Z7 210351B803A7A" && jtag_device_ctx=="jsn-Zybo Z7-210351B803A7A-4ba00477-0"}
+17:49:40 INFO  : loadhw -hw D:/TUCN/UTCN/Third_Year/SSC/Lab/L4/CSA/export/CSA/hw/design_2_wrapper.xsa -mem-ranges [list {0x40000000 0xbfffffff}]
+17:49:40 INFO  : configparams force-mem-access 1
+17:49:40 INFO  : targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent Zybo Z7 210351B803A7A" && jtag_device_ctx=="jsn-Zybo Z7-210351B803A7A-4ba00477-0"}
+17:49:40 INFO  : source D:/TUCN/UTCN/Third_Year/SSC/Lab/L4/carrySelectAdder/_ide/psinit/ps7_init.tcl
+17:49:40 INFO  : ps7_init
+17:49:40 INFO  : ps7_post_config
+17:49:40 INFO  : targets -set -nocase -filter {name =~ "*A9*#0" && jtag_cable_name =~ "Digilent Zybo Z7 210351B803A7A" && jtag_device_ctx=="jsn-Zybo Z7-210351B803A7A-4ba00477-0"}
+17:49:40 INFO  : rst -processor
+17:49:41 INFO  : dow D:/TUCN/UTCN/Third_Year/SSC/Lab/L4/carrySelectAdder/build/carrySelectAdder.elf
+17:49:41 INFO  : con
+17:49:41 INFO  : configparams force-mem-access 0
+17:49:42 INFO  : Testing the connection for 127.0.0.1
+17:54:28 INFO  : connect -url tcp:127.0.0.1:3121
+17:54:30 INFO  : bpremove -all
+17:54:30 INFO  : Context for 'APU' is selected.
+17:54:30 INFO  : System reset is completed.
+17:54:33 INFO  : 'after 3000' command is executed.
+17:54:34 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zybo Z7 210351B803A7A" && level==0 && jtag_device_ctx=="jsn-Zybo Z7-210351B803A7A-13722093-0"}' command is executed.
+17:54:35 INFO  : Device configured successfully with "D:/TUCN/UTCN/Third_Year/SSC/Lab/L4/csaWcla/_ide/bitstream/design_3_wrapper.bit"
+17:54:35 INFO  : targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent Zybo Z7 210351B803A7A" && jtag_device_ctx=="jsn-Zybo Z7-210351B803A7A-4ba00477-0"}
+17:54:35 INFO  : loadhw -hw D:/TUCN/UTCN/Third_Year/SSC/Lab/L4/CSAWithCLA/export/CSAWithCLA/hw/design_3_wrapper.xsa -mem-ranges [list {0x40000000 0xbfffffff}]
+17:54:35 INFO  : configparams force-mem-access 1
+17:54:35 INFO  : targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent Zybo Z7 210351B803A7A" && jtag_device_ctx=="jsn-Zybo Z7-210351B803A7A-4ba00477-0"}
+17:54:35 INFO  : source D:/TUCN/UTCN/Third_Year/SSC/Lab/L4/csaWcla/_ide/psinit/ps7_init.tcl
+17:54:36 INFO  : ps7_init
+17:54:36 INFO  : ps7_post_config
+17:54:36 INFO  : targets -set -nocase -filter {name =~ "*A9*#0" && jtag_cable_name =~ "Digilent Zybo Z7 210351B803A7A" && jtag_device_ctx=="jsn-Zybo Z7-210351B803A7A-4ba00477-0"}
+17:54:36 INFO  : rst -processor
+17:54:36 INFO  : dow D:/TUCN/UTCN/Third_Year/SSC/Lab/L4/csaWcla/build/csaWcla.elf
+17:54:36 INFO  : con
+17:54:36 INFO  : configparams force-mem-access 0
+17:54:37 INFO  : Testing the connection for 127.0.0.1
+17:58:01 INFO  : disconnect
+17:58:05 ERROR : no channel specified
+17:58:05 ERROR : Error in handling the notification no channel specified
+17:58:10 INFO  : connect -url tcp:127.0.0.1:3121
+17:58:10 INFO  : bpremove -all
+17:58:11 INFO  : Context for 'APU' is selected.
+17:58:11 INFO  : System reset is completed.
+17:58:14 INFO  : 'after 3000' command is executed.
+17:58:14 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zybo Z7 210351B803A7A" && level==0 && jtag_device_ctx=="jsn-Zybo Z7-210351B803A7A-13722093-0"}' command is executed.
+17:58:15 INFO  : Device configured successfully with "D:/TUCN/UTCN/Third_Year/SSC/Lab/L4/csaWcla/_ide/bitstream/design_3_wrapper.bit"
+17:58:15 INFO  : targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent Zybo Z7 210351B803A7A" && jtag_device_ctx=="jsn-Zybo Z7-210351B803A7A-4ba00477-0"}
+17:58:19 INFO  : loadhw -hw D:/TUCN/UTCN/Third_Year/SSC/Lab/L4/CSAWithCLA/export/CSAWithCLA/hw/design_3_wrapper.xsa -mem-ranges [list {0x40000000 0xbfffffff}]
+17:58:19 INFO  : configparams force-mem-access 1
+17:58:19 INFO  : targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent Zybo Z7 210351B803A7A" && jtag_device_ctx=="jsn-Zybo Z7-210351B803A7A-4ba00477-0"}
+17:58:19 INFO  : source D:/TUCN/UTCN/Third_Year/SSC/Lab/L4/csaWcla/_ide/psinit/ps7_init.tcl
+17:58:19 INFO  : ps7_init
+17:58:19 INFO  : ps7_post_config
+17:58:20 INFO  : targets -set -nocase -filter {name =~ "*A9*#0" && jtag_cable_name =~ "Digilent Zybo Z7 210351B803A7A" && jtag_device_ctx=="jsn-Zybo Z7-210351B803A7A-4ba00477-0"}
+17:58:20 INFO  : rst -processor
+17:58:20 INFO  : dow D:/TUCN/UTCN/Third_Year/SSC/Lab/L4/csaWcla/build/csaWcla.elf
+17:58:20 INFO  : con
+17:58:20 INFO  : configparams force-mem-access 0
+17:58:21 INFO  : Testing the connection for 127.0.0.1
+18:01:59 INFO  : disconnect
+18:02:29 INFO  : connect -url tcp:127.0.0.1:3121
+18:02:29 INFO  : bpremove -all
+18:02:29 INFO  : Context for 'APU' is selected.
+18:02:30 INFO  : System reset is completed.
+18:02:33 INFO  : 'after 3000' command is executed.
+18:02:33 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zybo Z7 210351B803A7A" && level==0 && jtag_device_ctx=="jsn-Zybo Z7-210351B803A7A-13722093-0"}' command is executed.
+18:02:34 INFO  : Device configured successfully with "D:/TUCN/UTCN/Third_Year/SSC/Lab/L4/csaWcla/_ide/bitstream/design_3_wrapper.bit"
+18:02:34 INFO  : targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent Zybo Z7 210351B803A7A" && jtag_device_ctx=="jsn-Zybo Z7-210351B803A7A-4ba00477-0"}
+18:02:38 INFO  : loadhw -hw D:/TUCN/UTCN/Third_Year/SSC/Lab/L4/CSAWithCLA/export/CSAWithCLA/hw/design_3_wrapper.xsa -mem-ranges [list {0x40000000 0xbfffffff}]
+18:02:38 INFO  : configparams force-mem-access 1
+18:02:38 INFO  : targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent Zybo Z7 210351B803A7A" && jtag_device_ctx=="jsn-Zybo Z7-210351B803A7A-4ba00477-0"}
+18:02:38 INFO  : source D:/TUCN/UTCN/Third_Year/SSC/Lab/L4/csaWcla/_ide/psinit/ps7_init.tcl
+18:02:38 INFO  : ps7_init
+18:02:38 INFO  : ps7_post_config
+18:02:38 INFO  : targets -set -nocase -filter {name =~ "*A9*#0" && jtag_cable_name =~ "Digilent Zybo Z7 210351B803A7A" && jtag_device_ctx=="jsn-Zybo Z7-210351B803A7A-4ba00477-0"}
+18:02:38 INFO  : rst -processor
+18:02:39 INFO  : dow D:/TUCN/UTCN/Third_Year/SSC/Lab/L4/csaWcla/build/csaWcla.elf
+18:02:39 INFO  : con
+18:02:39 INFO  : configparams force-mem-access 0
+18:02:40 INFO  : Testing the connection for 127.0.0.1
+18:02:55 INFO  : connect -url tcp:127.0.0.1:3121
+18:02:55 INFO  : bpremove -all
+18:02:55 INFO  : Context for 'APU' is selected.
+18:02:55 INFO  : System reset is completed.
+18:02:58 INFO  : 'after 3000' command is executed.
+18:02:59 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zybo Z7 210351B803A7A" && level==0 && jtag_device_ctx=="jsn-Zybo Z7-210351B803A7A-13722093-0"}' command is executed.
+18:03:00 INFO  : Device configured successfully with "D:/TUCN/UTCN/Third_Year/SSC/Lab/L4/csaWcla/_ide/bitstream/design_3_wrapper.bit"
+18:03:00 INFO  : targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent Zybo Z7 210351B803A7A" && jtag_device_ctx=="jsn-Zybo Z7-210351B803A7A-4ba00477-0"}
+18:03:00 INFO  : loadhw -hw D:/TUCN/UTCN/Third_Year/SSC/Lab/L4/CSAWithCLA/export/CSAWithCLA/hw/design_3_wrapper.xsa -mem-ranges [list {0x40000000 0xbfffffff}]
+18:03:00 INFO  : configparams force-mem-access 1
+18:03:00 INFO  : targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent Zybo Z7 210351B803A7A" && jtag_device_ctx=="jsn-Zybo Z7-210351B803A7A-4ba00477-0"}
+18:03:00 INFO  : source D:/TUCN/UTCN/Third_Year/SSC/Lab/L4/csaWcla/_ide/psinit/ps7_init.tcl
+18:03:00 INFO  : ps7_init
+18:03:00 INFO  : ps7_post_config
+18:03:01 INFO  : targets -set -nocase -filter {name =~ "*A9*#0" && jtag_cable_name =~ "Digilent Zybo Z7 210351B803A7A" && jtag_device_ctx=="jsn-Zybo Z7-210351B803A7A-4ba00477-0"}
+18:03:01 INFO  : rst -processor
+18:03:01 INFO  : dow D:/TUCN/UTCN/Third_Year/SSC/Lab/L4/csaWcla/build/csaWcla.elf
+18:03:01 INFO  : con
+18:03:01 INFO  : configparams force-mem-access 0
+18:03:02 INFO  : Testing the connection for 127.0.0.1
+18:03:49 INFO  : disconnect
+18:03:59 INFO  : connect -url tcp:127.0.0.1:3121
+18:03:59 INFO  : bpremove -all
+18:04:00 INFO  : Context for 'APU' is selected.
+18:04:00 INFO  : System reset is completed.
+18:04:03 INFO  : 'after 3000' command is executed.
+18:04:03 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zybo Z7 210351B803A7A" && level==0 && jtag_device_ctx=="jsn-Zybo Z7-210351B803A7A-13722093-0"}' command is executed.
+18:04:05 INFO  : Device configured successfully with "D:/TUCN/UTCN/Third_Year/SSC/Lab/L4/carrySelectAdder/_ide/bitstream/design_2_wrapper.bit"
+18:04:05 INFO  : targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent Zybo Z7 210351B803A7A" && jtag_device_ctx=="jsn-Zybo Z7-210351B803A7A-4ba00477-0"}
+18:04:08 INFO  : loadhw -hw D:/TUCN/UTCN/Third_Year/SSC/Lab/L4/CSA/export/CSA/hw/design_2_wrapper.xsa -mem-ranges [list {0x40000000 0xbfffffff}]
+18:04:08 INFO  : configparams force-mem-access 1
+18:04:08 INFO  : targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent Zybo Z7 210351B803A7A" && jtag_device_ctx=="jsn-Zybo Z7-210351B803A7A-4ba00477-0"}
+18:04:08 INFO  : source D:/TUCN/UTCN/Third_Year/SSC/Lab/L4/carrySelectAdder/_ide/psinit/ps7_init.tcl
+18:04:08 INFO  : ps7_init
+18:04:08 INFO  : ps7_post_config
+18:04:09 INFO  : targets -set -nocase -filter {name =~ "*A9*#0" && jtag_cable_name =~ "Digilent Zybo Z7 210351B803A7A" && jtag_device_ctx=="jsn-Zybo Z7-210351B803A7A-4ba00477-0"}
+18:04:09 INFO  : rst -processor
+18:04:09 INFO  : dow D:/TUCN/UTCN/Third_Year/SSC/Lab/L4/carrySelectAdder/build/carrySelectAdder.elf
+18:04:09 INFO  : con
+18:04:09 INFO  : configparams force-mem-access 0
+18:04:10 INFO  : Testing the connection for 127.0.0.1
+18:04:32 INFO  : disconnect
+18:04:41 INFO  : connect -url tcp:127.0.0.1:3121
+18:04:41 INFO  : bpremove -all
+18:04:42 INFO  : Context for 'APU' is selected.
+18:04:42 INFO  : System reset is completed.
+18:04:45 INFO  : 'after 3000' command is executed.
+18:04:45 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zybo Z7 210351B803A7A" && level==0 && jtag_device_ctx=="jsn-Zybo Z7-210351B803A7A-13722093-0"}' command is executed.
+18:04:46 INFO  : Device configured successfully with "D:/TUCN/UTCN/Third_Year/SSC/Lab/L4/csaWcla/_ide/bitstream/design_3_wrapper.bit"
+18:04:46 INFO  : targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent Zybo Z7 210351B803A7A" && jtag_device_ctx=="jsn-Zybo Z7-210351B803A7A-4ba00477-0"}
+18:04:49 INFO  : loadhw -hw D:/TUCN/UTCN/Third_Year/SSC/Lab/L4/CSAWithCLA/export/CSAWithCLA/hw/design_3_wrapper.xsa -mem-ranges [list {0x40000000 0xbfffffff}]
+18:04:49 INFO  : configparams force-mem-access 1
+18:04:49 INFO  : targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent Zybo Z7 210351B803A7A" && jtag_device_ctx=="jsn-Zybo Z7-210351B803A7A-4ba00477-0"}
+18:04:49 INFO  : source D:/TUCN/UTCN/Third_Year/SSC/Lab/L4/csaWcla/_ide/psinit/ps7_init.tcl
+18:04:50 INFO  : ps7_init
+18:04:50 INFO  : ps7_post_config
+18:04:50 INFO  : targets -set -nocase -filter {name =~ "*A9*#0" && jtag_cable_name =~ "Digilent Zybo Z7 210351B803A7A" && jtag_device_ctx=="jsn-Zybo Z7-210351B803A7A-4ba00477-0"}
+18:04:50 INFO  : rst -processor
+18:04:50 INFO  : dow D:/TUCN/UTCN/Third_Year/SSC/Lab/L4/csaWcla/build/csaWcla.elf
+18:04:50 INFO  : con
+18:04:50 INFO  : configparams force-mem-access 0
+18:04:51 INFO  : Testing the connection for 127.0.0.1
+18:35:04 INFO  : disconnect
+18:35:12 INFO  : connect -url tcp:127.0.0.1:3121
+18:35:12 INFO  : bpremove -all
+18:35:13 INFO  : Context for 'APU' is selected.
+18:35:13 INFO  : System reset is completed.
+18:35:16 INFO  : 'after 3000' command is executed.
+18:35:16 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zybo Z7 210351B803A7A" && level==0 && jtag_device_ctx=="jsn-Zybo Z7-210351B803A7A-13722093-0"}' command is executed.
+18:35:17 INFO  : Device configured successfully with "D:/TUCN/UTCN/Third_Year/SSC/Lab/L4/carrySelectAdder/_ide/bitstream/design_2_wrapper.bit"
+18:35:17 INFO  : targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent Zybo Z7 210351B803A7A" && jtag_device_ctx=="jsn-Zybo Z7-210351B803A7A-4ba00477-0"}
+18:35:20 INFO  : loadhw -hw D:/TUCN/UTCN/Third_Year/SSC/Lab/L4/CSA/export/CSA/hw/design_2_wrapper.xsa -mem-ranges [list {0x40000000 0xbfffffff}]
+18:35:20 INFO  : configparams force-mem-access 1
+18:35:20 INFO  : targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent Zybo Z7 210351B803A7A" && jtag_device_ctx=="jsn-Zybo Z7-210351B803A7A-4ba00477-0"}
+18:35:20 INFO  : source D:/TUCN/UTCN/Third_Year/SSC/Lab/L4/carrySelectAdder/_ide/psinit/ps7_init.tcl
+18:35:21 INFO  : ps7_init
+18:35:21 INFO  : ps7_post_config
+18:35:21 INFO  : targets -set -nocase -filter {name =~ "*A9*#0" && jtag_cable_name =~ "Digilent Zybo Z7 210351B803A7A" && jtag_device_ctx=="jsn-Zybo Z7-210351B803A7A-4ba00477-0"}
+18:35:21 INFO  : rst -processor
+18:35:21 INFO  : dow D:/TUCN/UTCN/Third_Year/SSC/Lab/L4/carrySelectAdder/build/carrySelectAdder.elf
+18:35:21 INFO  : con
+18:35:21 INFO  : configparams force-mem-access 0
+18:35:22 INFO  : Testing the connection for 127.0.0.1
+19:27:27 INFO  : cmd.exe, /C, empyro.bat get_template_data -d C:\Users\totha\AppData\Local\Temp\rigel_lopper_totha8801687691196565805 -r D:\TUCN\UTCN\Third_Year\SSC\Lab\L4\_ide\.wsdata\.repo.yaml
+19:27:27 INFO  : created .gitignore file for the project D:\TUCN\UTCN\Third_Year\SSC\Lab\L5
+14:53:51 INFO  : updated workspace path: D:\TUCN\UTCN\Third_Year\SSC\Lab\L4
+14:53:52 INFO  : Embedded Template List generated successfully
+14:53:52 INFO  : cmd.exe, /C, empyro.bat get_template_data -d C:\Users\totha\AppData\Local\Temp\rigel_lopper_totha2870462846548082990 -r D:\TUCN\UTCN\Third_Year\SSC\Lab\L4\_ide\.wsdata\.repo.yaml
+14:53:53 INFO  : Embedded Template List generated successfully
+15:23:56 INFO  : connection terminated
+21:31:20 INFO  : cmd.exe, /C, empyro.bat get_template_data -d C:\Users\totha\AppData\Local\Temp\rigel_lopper_totha6847051908167315009 -r D:\TUCN\UTCN\Third_Year\SSC\Lab\L4\_ide\.wsdata\.repo.yaml
+21:31:20 INFO  : created .gitignore file for the project D:\TUCN\UTCN\Third_Year\SSC\Lab\L4
+21:31:22 INFO  : updated workspace path: D:\TUCN\UTCN\Third_Year\SSC\Lab\L4
+21:31:30 INFO  : Embedded Template List generated successfully
+21:31:30 INFO  : cmd.exe, /C, empyro.bat get_template_data -d C:\Users\totha\AppData\Local\Temp\rigel_lopper_totha11938099708576626398 -r D:\TUCN\UTCN\Third_Year\SSC\Lab\L4\_ide\.wsdata\.repo.yaml
+21:31:31 INFO  : Embedded Template List generated successfully
+09:14:02 INFO  : cmd.exe, /C, empyro.bat get_template_data -d C:\Users\totha\AppData\Local\Temp\rigel_lopper_totha13177063175283487800 -r D:\TUCN\UTCN\Third_Year\SSC\Lab\L4\_ide\.wsdata\.repo.yaml
+09:14:02 INFO  : created .gitignore file for the project D:\TUCN\UTCN\Third_Year\SSC\Lab\L3
+09:36:08 INFO  : updated workspace path: D:\TUCN\UTCN\Third_Year\SSC\Lab\L4
+09:36:09 INFO  : Embedded Template List generated successfully
+09:36:09 INFO  : cmd.exe, /C, empyro.bat get_template_data -d C:\Users\totha\AppData\Local\Temp\rigel_lopper_totha13133206835608883075 -r D:\TUCN\UTCN\Third_Year\SSC\Lab\L4\_ide\.wsdata\.repo.yaml
+09:36:09 INFO  : Embedded Template List generated successfully
+10:06:18 INFO  : connection terminated
+11:23:50 INFO  : cmd.exe, /C, empyro.bat get_template_data -d C:\Users\totha\AppData\Local\Temp\rigel_lopper_totha3194521496431187477 -r D:\TUCN\UTCN\Third_Year\SSC\Lab\L4\_ide\.wsdata\.repo.yaml
+11:23:50 INFO  : created .gitignore file for the project D:\TUCN\UTCN\Third_Year\SSC\Lab\L5
+18:00:58 INFO  : updated workspace path: D:\TUCN\UTCN\Third_Year\SSC\Lab\L4
+18:00:58 INFO  : Embedded Template List generated successfully
+18:00:58 INFO  : cmd.exe, /C, empyro.bat get_template_data -d C:\Users\totha\AppData\Local\Temp\rigel_lopper_totha17312611864855475558 -r D:\TUCN\UTCN\Third_Year\SSC\Lab\L4\_ide\.wsdata\.repo.yaml
+18:00:59 INFO  : Embedded Template List generated successfully
+18:31:06 INFO  : connection terminated
+18:37:30 INFO  : cmd.exe, /C, empyro.bat get_template_data -d C:\Users\totha\AppData\Local\Temp\rigel_lopper_totha6245911994556356113 -r D:\TUCN\UTCN\Third_Year\SSC\Lab\L4\_ide\.wsdata\.repo.yaml
+18:37:30 INFO  : created .gitignore file for the project D:\TUCN\UTCN\Third_Year\SSC\Lab\L5

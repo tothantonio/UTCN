@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="c27afb75-aac6-4f10-9dcf-b0e1fdc1c294" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/../../FP/PF-HELP/lab6/elm-stuff/0.19.1/d.dat" beforeDir="false" afterPath="$PROJECT_DIR$/../../FP/PF-HELP/lab6/elm-stuff/0.19.1/d.dat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../FP/PF-HELP/lab6/elm-stuff/generated-code/elm-community/elm-test/0.19.1-revision16/elm-stuff/0.19.1/d.dat" beforeDir="false" afterPath="$PROJECT_DIR$/../../FP/PF-HELP/lab6/elm-stuff/generated-code/elm-community/elm-test/0.19.1-revision16/elm-stuff/0.19.1/d.dat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../SSC/Lab/L3/GPIO_PS_ZYNQ/GPIO_PS_ZYNQ.cache/wt/project.wpc" beforeDir="false" afterPath="$PROJECT_DIR$/../../SSC/Lab/L3/GPIO_PS_ZYNQ/GPIO_PS_ZYNQ.cache/wt/project.wpc" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../SSC/Lab/L3/Lab3_Zynq_GPIO/src/.cache/clangd/index/helloworld.c.15A7BED5DCF8A903.idx" beforeDir="false" afterPath="$PROJECT_DIR$/../../SSC/Lab/L3/Lab3_Zynq_GPIO/src/.cache/clangd/index/helloworld.c.15A7BED5DCF8A903.idx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../SSC/Lab/L3/Lab3_Zynq_GPIO/src/helloworld.c" beforeDir="false" afterPath="$PROJECT_DIR$/../../SSC/Lab/L3/Lab3_Zynq_GPIO/src/helloworld.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../SSC/Lab/L3/ZYNQ_GPIO_PS_LAB/ps7_cortexa9_0/standalone_ps7_cortexa9_0/bsp/libsrc/build_configs/gen_bsp/.ninja_log" beforeDir="false" afterPath="$PROJECT_DIR$/../../SSC/Lab/L3/ZYNQ_GPIO_PS_LAB/ps7_cortexa9_0/standalone_ps7_cortexa9_0/bsp/libsrc/build_configs/gen_bsp/.ninja_log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../SSC/Lab/L3/ZYNQ_GPIO_PS_LAB/zynq_fsbl/build/.ninja_deps" beforeDir="false" afterPath="$PROJECT_DIR$/../../SSC/Lab/L3/ZYNQ_GPIO_PS_LAB/zynq_fsbl/build/.ninja_deps" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../SSC/Lab/L3/ZYNQ_GPIO_PS_LAB/zynq_fsbl/build/.ninja_log" beforeDir="false" afterPath="$PROJECT_DIR$/../../SSC/Lab/L3/ZYNQ_GPIO_PS_LAB/zynq_fsbl/build/.ninja_log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../SSC/Lab/L3/ZYNQ_GPIO_PS_LAB/zynq_fsbl/zynq_fsbl_bsp/libsrc/build_configs/gen_bsp/.ninja_log" beforeDir="false" afterPath="$PROJECT_DIR$/../../SSC/Lab/L3/ZYNQ_GPIO_PS_LAB/zynq_fsbl/zynq_fsbl_bsp/libsrc/build_configs/gen_bsp/.ninja_log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../SSC/Lab/L3/_ide/version.ini" beforeDir="false" afterPath="$PROJECT_DIR$/../../SSC/Lab/L3/_ide/version.ini" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../SSC/Lab/L3/_ide/workspace_journal.py" beforeDir="false" afterPath="$PROJECT_DIR$/../../SSC/Lab/L3/_ide/workspace_journal.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../SSC/Lab/Laboratorul 1/ZYBO_UART/ZYBO_UART.cache/wt/project.wpc" beforeDir="false" afterPath="$PROJECT_DIR$/../../SSC/Lab/Laboratorul 1/ZYBO_UART/ZYBO_UART.cache/wt/project.wpc" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../../.." />
+  </component>
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;tothantonio&quot;
+  }
+}</component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://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@github.com/tothantonio/UTCN&quot;,
+    &quot;accountId&quot;: &quot;4bd66340-a4c3-4599-a985-846e0f00e8ff&quot;
+  }
+}</component>
+  <component name="ProjectColorInfo">{
+  &quot;customColor&quot;: &quot;&quot;,
+  &quot;associatedIndex&quot;: 5
+}</component>
+  <component name="ProjectId" id="3565OwNuGNj3GSk6N5lV7liIR4A" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Application.ClientConsole.executor&quot;: &quot;Run&quot;,
+    &quot;Application.EchoServer.executor&quot;: &quot;Run&quot;,
+    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;onboarding.tips.debug.path&quot;: &quot;D:/TUCN/UTCN/Third_Year/IS/client_server/src/Main.java&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  }
+}</component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-jdk-9823dce3aa75-fbdcb00ec9e3-intellij.indexing.shared.core-IU-251.26094.121" />
+        <option value="bundled-js-predefined-d6986cc7102b-b26f3e71634d-JavaScript-IU-251.26094.121" />
+      </set>
+    </attachedChunks>
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="c27afb75-aac6-4f10-9dcf-b0e1fdc1c294" name="Changes" comment="" />
+      <created>1762417654390</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1762417654390</updated>
+      <workItem from="1762417656580" duration="794000" />
+      <workItem from="1762456927618" duration="20000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+</project>

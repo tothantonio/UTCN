@@ -1,0 +1,11 @@
+# ninja log v5
+51	221	7858811128188663	CMakeFiles/hello_world.elf.dir/platform.c.obj	4f0aa536f964626a
+30	303	7858811129121691	CMakeFiles/hello_world.elf.dir/zybo_z7_hdmi/dynclk.c.obj	695d06d00ba4fcf5
+19	342	7858811129530155	CMakeFiles/hello_world.elf.dir/zybo_z7_hdmi/display_ctrl.c.obj	b4ac9cf7d82d1d3c
+42	604	7858811132079348	CMakeFiles/hello_world.elf.dir/helloworld.c.obj	50b908c508d28150
+604	854	7858811134037637	hello_world.elf	c2ec49da0cbe5964
+50	218	7858812450181604	CMakeFiles/hello_world.elf.dir/platform.c.obj	4f0aa536f964626a
+30	286	7858812450900255	CMakeFiles/hello_world.elf.dir/zybo_z7_hdmi/dynclk.c.obj	695d06d00ba4fcf5
+21	325	7858812451281234	CMakeFiles/hello_world.elf.dir/zybo_z7_hdmi/display_ctrl.c.obj	b4ac9cf7d82d1d3c
+41	571	7858812453753629	CMakeFiles/hello_world.elf.dir/helloworld.c.obj	50b908c508d28150
+571	828	7858812455564201	hello_world.elf	c2ec49da0cbe5964
