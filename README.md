@@ -36,9 +36,20 @@
 
   ### 5️⃣Semester
   
-  * [Software Engineering](Third_Year/IS)
-  * [Artificial Intelligence](Third_Year/AI)
-  * [Structure of Computer Systems](Third_Year/SSC)
-  * [Functional Programming](Third_Year/FP)
-  * [Graphical Processing](Third_Year/PG)
-  * [Design with Microprocessors](Third_Year/PMP)
+  * [Software Engineering](Third_Year/I/IS)
+  * [Artificial Intelligence](Third_Year/I/AI)
+  * [Structure of Computer Systems](Third_Year/I/SSC)
+  * [Functional Programming](Third_Year/I/FP)
+  * [Graphical Processing](Third_Year/I/PG)
+  * [Design with Microprocessors](Third_Year/I/PMP)
+
+### 6️⃣Semester
+  
+  * [Software Design](Third_Year/II/PS)
+  * [Intelligent Systems](Third_Year/II/SI)
+  * [Image Processing](Third_Year/II/PI)
+  * [Computer Networks](Third_Year/II/CN)
+  * [Formal languages and translators](Third_Year/II/LFT)
+  * [Logic Programming](Third_Year/II/PL)
+
+
