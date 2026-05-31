@@ -1,0 +1,20 @@
+Nota=5p Quiz+5p App=10
+
+Quiz:
+10 minutes-quiz yacc -similar cu quiz lex
+8q(0.5x 8)+1p of=5p
+Nota se rotunjeste la intreg =ROUND(Grade,0)
+
+App:
+0.05*20=1p (upload 20 files ZIP: 1 Lex, 1 Yacc, 6 Input, 6 Output txt, 6 run img)
+0.5*2=1p: no compiler errors: lex (0.5) and yacc(0.5)
+3p = 0.5p x 6 [0.5p run correct (!) image (img1.png)]
+========
+Notele sunt trecute in [ Grades ] 
+Fiecare student are notele in Feedback.
+Sa verificati totdeauna sa fie notele corecte. Multumesc
+===== in GRADES la Feedback:
+Test lex (sapt 4): 20%        Grade=
+Test yacc + lex (sapt 9) 40%  Grade=
+Proiect (sapt 14) : 40%       Grade =
+MEDIE LAB Grade= 

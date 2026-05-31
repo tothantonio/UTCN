@@ -1,0 +1,10 @@
+1. Exersati REJECT: determinati aparitiile lui "she" si ale lui "he" pornind de la fisierul she.l 
+EXemplu:
+she reads, he cooks, she is happy, he is sad
+she: 2 aparitii, he: 4 aparitii
+
+2. Testati exemplul cu conditii de start.
+
+3. Mergeti in directorul db_config si urmati pasii din readme.
+
+

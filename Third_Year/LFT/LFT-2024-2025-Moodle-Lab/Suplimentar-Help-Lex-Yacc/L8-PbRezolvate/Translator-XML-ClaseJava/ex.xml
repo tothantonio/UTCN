@@ -1,0 +1,11 @@
+<class>+ Person</class>
+<attribute>+ age: Integer</attribute>
+<attribute># name: String</attribute>
+<attribute>  genre: String</attribute>
+<method># GetAge(): Integer</method>
+<end>end</end>
+<class>  Address</class>
+<attribute># number: Int</attribute>
+<attribute># streetName: String</attribute>
+<attribute>+ person: Person</attribute>
+<end>end</end>

@@ -1,0 +1,6 @@
+{
+    "struct": "IncompleteStruct",
+    "members": [
+        { "type": "int", "name": "only_one_member" }
+    ]
+}

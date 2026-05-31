@@ -1,0 +1,66 @@
+Create a Lex and Yacc program to validate C struct definitions. 
+
+Input1.in (Correct)
+Input2.in (Error: missing identifier)
+Input3.in (Error: illegal character)
+Input4.in (Error: misplaced operator)
+Input5.in (Error: unrecognized data type)
+Input6.in (Error: incomplete definition)
+
+Input Files
+1. Input1.in  
+{
+    "struct": "ExampleStruct",
+    "members": [
+        { "type": "int", "name": "integer_value" },
+        { "type": "float", "name": "float_value" }
+    ]
+}
+ 
+ 
+2. Input2.in 
+{
+    "struct": "",
+    "members": [
+        { "type": "int", "name": "integer_value" },
+        { "type": "float", "name": "float_value" }
+    ]
+}
+ 
+
+3. Input3.in  
+{
+    "struct": "AnotherStruct@",
+    "members": [
+        { "type": "int", "name": "integer_value" }
+    ]
+}
+ 
+
+4. Input4.in (Error: misplaced operator)
+{
+    "struct": "MisplacedStruct : ",
+    "members": []
+}
+ 
+
+5. Input5.in (Error: unrecognized data type)
+ 
+{
+    "struct": "DataTypeStruct",
+    "members": [
+        { "type": "strangeType", "name": "random_value" }
+    ]
+}
+
+ 
+
+6. Input6.in  
+{
+    "struct": "IncompleteStruct",
+    "members": [
+        { "type": "int", "name": "only_one_member" }
+    ]
+}
+
+=================================

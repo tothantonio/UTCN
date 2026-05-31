@@ -1,0 +1,6 @@
+{
+    "struct": "AnotherStruct@",
+    "members": [
+        { "type": "int", "name": "integer_value" }
+    ]
+}

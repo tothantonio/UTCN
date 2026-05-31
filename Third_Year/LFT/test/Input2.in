@@ -1,0 +1,7 @@
+{
+    "struct": "",
+    "members": [
+        { "type": "int", "name": "integer_value" },
+        { "type": "float", "name": "float_value" }
+    ]
+}

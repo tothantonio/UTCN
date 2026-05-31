@@ -1,0 +1,4 @@
+db_type : mysql
+db_name : 23 testdata2
+db_table_prefix : test_
+db_port : 1092          

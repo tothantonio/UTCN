@@ -1,0 +1,16 @@
+<project>
+    <name>
+        LFT
+    </name>
+    <description>
+        A project for learning about language and formal tools.
+    </description>
+    <members>
+        <member>
+            Antonio
+        </member>
+        <member>
+            George
+        </member>
+    </members>
+</project>

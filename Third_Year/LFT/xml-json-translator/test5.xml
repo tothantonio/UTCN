@@ -1,0 +1,7 @@
+<catalog>
+    <book>
+        <title>Example XML Book</title>
+        <author>John Doe</author>
+        <year>2026</year>
+    </book>
+</catalog>

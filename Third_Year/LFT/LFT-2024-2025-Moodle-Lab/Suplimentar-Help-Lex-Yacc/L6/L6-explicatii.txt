@@ -1,0 +1,253 @@
+saptamana 6- YACC-PB-SAPT-5-6-7.pdf
+pag 8->
+Similar cu IF-THEN-ELSE:
+- pag.9-Parser for FOR Loop Statements ­ YACC Program ­ Compiler Design
+--- i++ este definita la  E '+' '+' ; daca nu definiti++ doar i=i+1 se poate folosi la for
+
+for(i=1;i<5;i=i+1)
+i=i+2;
+Input accepted.
+
+for(i=1;i<5;i++)
+i=i+2;
+Input accepted.
+
+- pag.11-Parser for WHILE  
+- pag.13-Parser for DO WHILE  
+- pag 15-Parser for SWITCH 
+===
+Fiecare problema o rezolvati in FOLDER separat.
+Se genereaza f. multe fisiere auxiliare specifice problemei.
+===
+Comenzi in ordinea LEX & YACC:
+- compilare fisier lex:  lex *.l  ===> lex.yy.c
+- compilare fisier yacc:  yacc *.y  ===> y.tab.c
+- compilam fisierul C:	gcc y.tab.c ===> a.out	
+- comanda finala: ./a.out <input.in >output.txt
+
+--- Legatura Lex&Yacc=in fisierul yacc: #include "lex.yy.c"
+===========================
+Erori yyerror, includeti la sf. fisier yacc:
+int yyerror() {;}/*implicit syntax error*/
+===========================
+Alte erori cu yyerror, in fisierul yacc
+%{
+int yylex(); 
+int yyerror();
+%}
+#include "lex.yy.c"
+int yylex();
+int main().....
+int yyerror() {;}/*implicit syntax error*/
+===========================
+SUMAR pag-6-10: YACC-TEORIE.pdf
+2.5. Modul de lucru al analizorului sintactic
+->
+2.7. Precedenta
+===
+- In fisierele Yacc veti specifica in ce ORDINE veti folosi Tokens definiti in Lex.
+- ORDINEA tokens=Sintaxa
+- notiuni de teoretice de baza:
+- Compilatorul= transforma programul sursa in cod obiect dupã o analizasintactica si logica a tuturor instructiunilor care il compun semnaland, daca este cazul, erorile depistate
+- Interpretorul= "interpreteaza" practic instructiune de instructiune, in ordinea in care au fost introduse si semnaleaza erorile sintactice sau logice imediat ce acestea au putut fi depistate.
+
+- Parsarea= parcurgerea si analizarea unui text, cu identificarea atomilor care ii corespund, in raport cu o gramatica formala. 
+
+- Un parser= componenta a unui interpretor sau compilator, în cadrul carora identifica structura textului de intrare si o aduce intr-o forma potrivita pentru prelucrari ulterioare, cautând erori de sintaxa in text.
+
+- Parserele: pot fi programate manual sau pot fi generate semiautomat, cu ajutorul unor unelte cum ar fi Yacc, pe baza unei gramatici scrise în forma Backus-Naur.
+
+- De regula, rezultatul parsarii este o structura de sintaxa unei fraze, reprezentata fie ca un TREE (arbore) de dependenta, sau intr-o componenta TREE, sau ca o combinatie de metode.
+======
+Sa va recititi aceste definitii cand trebuie sa va clarificati conceptele.
+======
+Sectiunea de reguli:
+
+A: CORP;
+
+A=nume NON-TERMINAL
+
+CORP=secventa vida / multe nume si literale
+
+: ; punctuatii YACC
+===
+1. ACTIUNILE apar la Sfarsitul regulilor, in general. (ex. expr : '(' expr ')' { $$=$2;})
+unde  expr =NON-TERMINAL (Yacc); pseudo-variabile: $1 referire '(';  $2 referire expr; $3 referire ')'; $$ pseudo-variabila implicita
+
+2. ACTIUNI si in INTERIORUL unei REGULI -- Daca se doreste obtinerea Controlului INAINTE ca regula sa fie complet analizata.
+-- Actiunea: poate returna o Valoare, accesibila actiunilor de la dreapta sa
+-- Actiunea: poate accesa Valorile returnate de simbolurile de la stinga sa. 
+
+Ex.  A : B { $$=1;} C { x=$2; y=$3;} ; 
+
+Efect= setarea lui x la 1, y=valoarea returnata C ($1 referire la B; $2 referire la {$$=1;} ; $3 referire la C
+
+NON-TERMINALE==ACTIUNILE CE NU TERMINA O REGULA (ex. {$$=1;}) prin manipularea unui nou Nume simbol non-terminal + Regula ce asociaza acest nume sirului VID (/* empty */) 
+ 
+Actiunea interioara == Actiunea "comutata" la recunoasterea acestei reguli adaugate.
+
+3. Iesirea nu e realizata direct de Actiuni - constructia unei STRUCTURI DE DATE (ex. Arbore de Derivare) in memorie; se aplica transformari Structurii inainte de generarea iesirii. 
+ 
+ Arborii de derivare,usor de construit, daca sunt date rutinele necesare pt. a construi + mentine structura arborescenta dorita. 
+
+Pt. functia node()  a arborelui de derivare: (node (L,n1,n2) creeaza un nod cu eticheta L, descendentii n1 si n2, + returneaza indexul nodului nou creat = >atunci arborele de derivare poate fi construit cu actiuni:  expr : expr '+' expr  { $$= node('+', $1, $3); }
+
+Se pot defini alte variabile pentru a fi folosite de Actiuni.
+
+===
+Probleme
+IF-the-else
+
+LEX=====%token IF RELOP S NUMBER ID NL
+"if" {return IF;}
+[sS][0-9]* {return S;} //LITERA S
+"<"|">"|"=="|"<="|">="|"!=" {return RELOP;}
+[0-9]+ {return NUMBER;}
+[a-z][a-zA-Z0-9_]* {return ID;}
+\n {return NL;}
+. {return yytext[0];}
+
+=======YACC
+IF CONTROL STATEMENT AND DISPLAY THE LEVELS OF NESTING 
+
+stmt: if_stmt NL {printf("No. of nested if statements=%d\n",count);exit(0);}
+;
+
+stmt este de fapt IMPLICT tokenul de  start - ACTIUNEA=cerinta de Final pt. start!
+
+if_stmt : IF'('cond')''{'if_stmt'}' {count++;} //numara de cate ori apare CORECT str. IF
+| S  // Pt. orice alt stament de forma s /S /s1/s1/S2/s2...nu are actiune
+;
+cond: x RELOP x ; // CONDITIILE - operatori RELATIONAL RELOP
+
+x:ID | NUMBER  // X POATE FI IDENTIFICATOR SAU NR.
+;
+=======
+- Analizorul citeste+ memoreaza simbolul de intrare urmator, numit token "look-ahead", sau "priveste-inainte".--- Starea curenta e in vf.stivei; starilor automatului le sunt atribuite etichete (intregi mici sau "short int").---- Initial masina e in starea 0 (zero), stiva contine starea 0 si nici un token "look-ahead" nu a fost citit.
+- Automatul are 4 actiuni: DEPLASARE, REDUCERE, ACCEPTARE, EROARE 
+
+CUM LUCREAZA ANALIZORUL ?
+
+1. Pe baza starii curente DECIDE daca trebuie citit inainte ("look-ahead") un token pt. a hotari actiunea--Daca e nevoie de un nou token, e apelat yylex(). (YYLEX)
+
+2. Folosind starea curenta si token-ul "look-ahead", analizorul decide actiunea urmatoare si o efectueaza => pune pe stiva stari (push), preluare de pe stiva a unor stari (pop), / consumarea / examinarea inainte a tokenului urmator.
+
+
+Pagina 6-teorie---cateva DETALII despre cele 4 ACTIUNI: 
+ ---1---shift = DEPLASARE; ---2---reduce = REDUCERE; ---3---accept = ACCEPTARE; ---4---error = EROARE
+
+
+(===1=DEPLASARE=shift==) notata "s" in tabele-imagini
+
+Cand are loc o DEPLASARE, exista un token urmator. 
+
+Ex. IF shift 34, spune ca in starea 56, daca token-ul "look-ahead"
+e IF, starea curenta, 56, e pusa pe stiva si starea 34 devine stare curenta si e pusa pe virful stivei.
+
+Token-ul urmator este STERS din intrare.
+
+(=======2=REDUCERE=reduce==)notata "r" in tabele-imagini
+REDUCERILE=pastreaza stiva pt. a nu creste nelimitat.
+
+REDUCERILE=se realizeaza daca analizorul vede partea dreapta a unei reguli gramaticale + anunta ca a vazut o instantiere a acesteia + inlocuieste partea dreapta cu partea stinga. 
+
+REDUCERE=PUNCT=actiunea implicita (reprez.de PUNCT) e adesea o reducere. 
+
+REDUCERI=asociate cu reguli gramaticale individuale.
+
+ex.: . reduce 19, se refera la regula gramaticala 19, iar actiunea: IF shift 19, se refera la starea 19.
+==EX. REDUCERE== A : X Y Z ; .
+
+REDUCERE=elimina de pe stiva primele 3 stari (cate simboluri sunt in dreapta regulii). ---Starile se  pun pe stiva cand s-a recunoscut X, Y si Z. ---Dupa eliminarea starilor (pop)=> o noua stare e VF.STIVEI=in care era analizorul inainte de procesarea regulii. ---Cu starea din VF. + simbolul nonterminal A stanga=> DEPLASAREA lui A => o noua stare, pusa (push) pe stiva, si analiza continua.....
+
+se vede pe imaginile GIF 
+
+================================
+==DIFERENTE: procesarea simbolului nonterminal din stanga regulii / deplasarea unui token.
+
+GOTO actiune=DEPLASAREA unui simbol nonterminal, din stanga regulii. Token-ul urmator din intrare e STERS de DEPLASARE; nu e afectat de GOTO. Starea din VF.STIVEI dupa eliminarea (pop) starilor contine o descriere ca: A goto 20, starea 20 e pusa (push) pe stiva si devine stare curenta.
+
+===========
+BACKTRACKING.... REDUCERE !
+
+REDUCEREA="intoarce timpul inapoi" pt. analizor, preia starile de
+pe stiva pt. a se intoarce la starea in care a fost initial vazuta in partea dreapta a regulii.
+
+Daca dreapta regulii e VIDA, nu se reia nici o stare de pe stiva, dupa "eliminare de stari" (pop): Starea SF.STIVEI=starea curenta) 
+
+REDUCEREA=importanta si in tratarea actiunilor si valorilor furnizate de utilizator. Cand REGULA e REDUSA=codul furnizat cu regula e executat inainte de modificarea stivei. 
+
+In paralel cu stiva ce pastreaza starile, lucreaza o alta stiva ce pastreaza valorile returnate de analizorul lexical si
+de actiuni.  La deplasare, var externa YYLVAL (yylval) e incarcata (push) pe stiva de valori. Dupa revenirea din codul utilizator, e efectuata reducerea. 
+
+La GOTO: var. externa yyval e incarcata (push) pe stiva valorilor.
+
+Pseudo-variabilele $1, $2, ... refera STIVA de valori. 
+
+(==========3==accept = ACCEPTARE==========)notata "acc" in imagini si tabele
+ACCEPTAREA=intreaga intrare a fost vazuta si ca aceasta se potriveste
+cu specificatia; apare cand token-ul urmator din intrare este "end-marker"-ul si indica faptul ca analizorul a terminat procesarea cu succes.
+
+si ultima actiune a automatului
+
+pag.7--(======4=error = EROARE=======)
+
+EROARE="punct" din care nu se mai poate continua analiza conform
+specificatiei. Token-ii stersi din intrare cu token-ul urmator din intrare nu pot fi urmati de nimic ce ar fi o intrare corecta. Analizorul raporteaza o eroare si incearca sa refaca situatia si sa reia analiza. ex. pag 7.
+
+Am inclus si o imagine cu Tabela de parsare pe pagina, operatii +, * actiuni shift/reduce
+==========
+- WARNING/ CONFLICTS!
+Pag.8- AMBIGUITATI si CONFLICTE
+
+AMBIGUITATE=un set de reguli gramaticale e ambiguu, daca exista un sir de intrare ce poate fi structurat in doua sau mai multe feluri.
+
+EX. expr : expr '-' expr
+
+ASOCIATIVITATE: expr - expr - expr, regula pemite structurarea fie ca (expr - expr) - expr SAU expr - (expr - expr) ,asoc.stanga, / dreapta => AMBIGUITATE 
+
+NU defineste complet intrarile; NU SPECIFICA ASOCIATIVITATEA si PRECEDENTA operatorilor!
+
+YACC va alege intre doua reduceri.
+
+CONFLICT REDUCERE-REDUCERE
+
+NU EXISTA CONFLICT: DEPLASARE-DEPLASARE
+
+CE REZOLVA YACC ?.........Produce analizor sintactic si cand apar conflicte DEPLASARE-REDUCERE / REDUCERE-REDUCERE, alege una din actiunile posibile=> REGULA DE DEZAMBIGUIZARE
+
+Exista 2 REGULI Dezambiguizare implicite--------- DEPLASARE-REDUCERE ===> alege DEPLASAREA (reducerile se evita cand se poate face o deplasare)------------ REDUCERE-REDUCERE ===> alege regula gramaticala ce apare prima in secventa de intrare.
+
+YACC raporteaza nr. CONFLICTE:  yacc -v fisier.yacc=> y.output cu STARILE GENERATE de YACC+ CONFLICTE ! daca apar
+
+Exemple aveti la pag.9 si 
+http://www.cs.columbia.edu/~aho/cs4115/Lectures/15-02-23.html
+
+%token id
+%left '+'
+%left '*'
+%%
+E : E '+' E
+  | E '*' E
+  | id
+  ;
+  
+%left '+' Asociativate la stanga---------deci e specificata Asociativitatea sa inlature conflictul
+
+ by instructing yacc to resolve the shift/reduce conflict in action[5,+] in favor of "reduce by E → E+E".
+Similarly, the statement %left '*' makes the operator * left associative by instructing yacc to resolve the shift/reduce conflict in action[6,*] in favor of "reduce by E → E*E".
+
+ %left '+' INAINTEA  left '*' => PRECEDENTA
+
+PRECEDENTA + ASOCIATIVITATE => REZOLVA CONFLICT shift/reduce 
+
+deci + inaintea inmultirii, PRECEDENTA rezolva conflictul !
+
+comanda
+ yacc -v fisier.yacc=> y.output cu STARILE GENERATE de YACC+ CONFLICTE ! daca apar
+
+Alte ambiguitati:
+https://www.ibm.com/support/knowledgecenter/en/SSLTBW_2.1.0/com.ibm.zos.v2r1.bpxa600/amb.htm
+
+
+SLR=superset of all LR

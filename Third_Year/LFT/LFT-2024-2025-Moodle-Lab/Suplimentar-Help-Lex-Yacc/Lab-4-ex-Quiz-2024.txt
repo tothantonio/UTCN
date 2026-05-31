@@ -1,0 +1,34 @@
+15 minutes
+10=1p.oficiu + 9p (0.75p x 12 questions)
+Nota se rotunjeste la intreg =ROUND(Grade,0)
+
+Notele sunt trecute in [ Grades ] 
+Fiecare student are notele in Feedback.
+Sa verificati totdeauna sa fie notele corecte. Multumesc
+===== in GRADES la Feedback:
+Test lex (sapt 4): 20%        Grade=
+Test yacc + lex (sapt 9) 40%  Grade=
+Proiect (sapt 14) : 40%       Grade =
+MEDIE LAB Grade= 
+=====
+
+Ex. 
+Ce reprezintă perechea de operatori [ ] în contextul claselor de caractere?
+A) O secvență de caractere care trebuie să apară în ordine
+B) O listă de caractere care pot fi potrivite
+C) O structură de control pentru bucle
+D) Un operator aritmetic  
+Answer: B
+
+Ex 2. Pentru regula: 
+%%
+([f-r]* | [F-R]*) {printf("FOR");}
+%%
+input: FOR(int i=1;i<=5;i++) a:=a+1;
+Care este Output?
+A) FOR(FORt FOR=1;FOR<=5;FOR++) a:=a+1
+B) FOR(int i=1;i<=5;i++) a:=a+1;
+C) FORFORFOR(FOR=1;FOR<=5;FOR++) a:=a+1;
+D) error
+Answer: A
+

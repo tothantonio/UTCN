@@ -1,0 +1,14 @@
+Se considera limbajul format doar din liste, unde o lista incepe cu [, se termina cu ], si contine oricat de multe numere intregi separate cu virgula. 
+Exempl corecte:
+[1,2,3]
+[1,2
+3]
+[]
+Exemple gresite
+[1,2,3
+[,]
+1,2]
+
+1. Scrieti specificatiile lex si yacc penrtu a verifica sintaxa unui fisier de intrare care contine oricat de multe liste. In cazul in care nu exista erori, nu afiseaza nimic, iar in caz de eraore afiseaza "syntax error"
+2. Extindeti specificatiile de la punctul 1 in asa fel incat pentru fiecare lista identificata sa returnam suma elementelor liste.
+

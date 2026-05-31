@@ -1,0 +1,90 @@
+Idei generale pentru proiect
+Observatie: fiecare semigrupa/grupa poate avea cerinte specifice dincolo de cele prezentate mai jos,
+Proiectele pot fi:
+a) lex + yacc
+b) huggingface - limbaj natural - analiza setimebntului, NER (named entities recognition), sentence classification, next sentence prediction
+https://huggingface.co/
+
+c) Azure language understanding (CLU-LUIS) - limbaj natural
+https://azure.microsoft.com/en-us/services/cognitive-services/language-understanding-intelligent-service/
+Idei de proiecte:
+1. Translatoare dintr-un limbaj in altul (exemplu: XML 2JSON, haskell2ml
+2. Interpretor al unui subset de instructiuni dintr-un limbaj de programare existent sau propriu - vezi interpretorul de C din arhivele de
+laborator, sau din arhiva atasata
+3. Interpretor subset Esoteric programming languages
+4. Controlled natural language
+1. prospect al unui medicament: se ia dimineata si seara, .... - interpretarea recomandarilor de administrare
+2. smart home actions luis demo,
+https://aidemos.microsoft.com/luis/demo
+ https://docs.microsoft.com/en-us/azure/cognitive-services/luis/tutorial-intents-only
+3. interogarea in limbaj natural a unei baze de date dintr-un anumit domeniu sau knowledge graph (e.g. get all the students from the
+first year, output select * from student where year=1)
+4. GF grammatical framework demos, Controlled natural language for contract-oriented diagrams
+https://www.grammaticalframework.org/
+https://arxiv.org/pdf/1406.5691.pdf
+5. domain specific languages (DSL - see tomassetii)
+6. de la SQL(SPARQL/gremlin/XPATH) la limbaj natural: la intrare se da o interogare in sql, la iesire se genereaza "traducerea" in limbaj
+natural
+7. Invatare incrementala a unui limbaj
+https://tomassetti.me/teaching-programming-with-hedy/
+• Pentru proiectele Lex/Yacc, se primesc puncte suplimentare daca: arborii de parsare obtinuti sunt de adancime mare, ceea ce corespunde
+unui grad de composabilitate ridicata pe baza regulilor din gramatica. De asemenea, afisarea arborilor sintactici in mod asemanator
+exemplului if din laborator aduce puncte suplimentare. Pentru proiect de nota maxima, cel putin una dintre cele doua conditii trebuie sa fie
+indeplinita.
+FISIER: interpretor_C.zip
+===
+1.Lex+yacc: Interpretor, translator (ex. java-> c; inclusiv LOL, esoteric), operatii similar cu op. polinoame, etc. (ex. op. matrici); translator dintr-o limba in alta: EN->RO, etc.(propozitii enuntiative, interogative, etc);ex. subset al unui limbaj: doar structuri repetitive, doar anumite clase, etc
+2.Python-Huggingface
+3.CLU-LUIS-AZURE
+===
+Folder final proiect: Cod sursa ZIP +PDF (Text problema+Comentarii+Rulari Imagini) 
+
+Google Colab: RAM;DISK: Connect to a hosted runtime
+https://huggingface.co/docs/transformers/notebooks
+https://colab.research.google.com/github/huggingface/notebooks/blob/main/transformers_doc/en/quicktour.ipynb
+- error RED: click mouse [ ]  to reload
+===
+
+
++Autoevaluare Lex & Yacc
+//includeti comment in cod sursa sau separat in fisier text
+1. 1p.oficiu
+2. Text problema. Cerinte clare [1,2,3...]
+3. Complexitate: ce include partea de baza a aplicatiei (distanta fata de softuri existente (includeti: URL, exemplu laborator) 1 sau 2 itemi originali) 
+4. Complexitate avansata explicata Lex/Yacc: tipuri diferite de reguli etc. (ex. 3-5 itemi originali)
+5. Adancime arbore de parsare: includere arbore imagine
+6. Rezolvare ambiguitate: specificare 
+7. Avantajele utilizarii gramaticii alese-flexibilitate in compunerea simbolurilor descrise [comparare cu gramatica unui exemplu similar] 
+8. 1 Scenariu de test [in/out fisiere incluse + imagini rulare]
+9. Scenarii de test suplimentar-aspecte variate si complexitate diferita
+[inca 2 teste: in/out fisiere incluse + imagini rulare]
+10. Concluzii+Imbuntatiri propuse [3 propuneri]
+===
+– LUIS - complexitate ontologie, seturi de exemple relevante, aplicare model in aplicatie practica [ex. web page]
+
+Autoevaluare LUIS
+//includeti comment in fisier text separat
+1. 1p.oficiu
+2. Text problema. Cerinte clare [1,2,3...]
+3. Complexitate: ce include partea de baza a aplicatiei i (distanta fata de softuri existente (includeti: URL, ex.lab.) 1 sau 2 itemi originali) 
+4. Complexitate avansata explicata  (ex. 3-5 itemi originali)
+5. Functii utilizate
+6. Rezolvare erori
+7. 1 Scenariu de test [in/out + imagini rulare]
+8. Scenarii de test suplimentare (aspecte variate si complexitate diferita, inca 2 teste: in/out + imagini rulare)
+9. Avantaje/Dezavantaje utilizarii [comparare cu exemplu similar din CLU] 
+10. Concluzii+Imbuntatiri propuse [3 propuneri]
+===
+Autoevaluare Huggingface
+//includeti comment in fisier text separat
+1. 1p.oficiu
+2. Text problema. Cerinte clare [1,2,3...] identificare tasks 
+3. Complexitate: ce include partea de baza a aplicatiei  (distanta fata de softuri existente (includeti: URL, ex.lab.) 1 sau 2 itemi originali) 
+4. Complexitate avansata explicata (ex. 3-5 itemi originali)
+5. Set de date si Analiza set de date
+6. Analiza predictii model si Rezolvarea corecta
+7. 1 Scenariu de test [in/out + imagini rulare]
+8. Scenarii de test suplimentare ( aspecte variate si complexitate diferita, inca 2 teste: in/out + imagini rulare)
+9. Avantaje/dezavantaje utilizare date si aplicatie [comparare cu exemplu similar] 
+10. Concluzii+Imbuntatiri propuse [3 propuneri]
+

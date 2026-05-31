@@ -1,0 +1,6 @@
+{
+    "struct": "DataTypeStruct",
+    "members": [
+        { "type": "strangeType", "name": "random_value" }
+    ]
+}

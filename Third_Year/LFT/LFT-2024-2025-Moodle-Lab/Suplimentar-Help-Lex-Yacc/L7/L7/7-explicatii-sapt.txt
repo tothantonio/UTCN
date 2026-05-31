@@ -1,0 +1,111 @@
+Saptamana 8=
+- prima ora Tema 1 obligatorie-fara nota;
+- ora 2: intrebari la probleme ce nu ati inteles din laborator pana acum + o problema rezolvata de inteles
+===
+Saptamana 9=Test Lex & Yacc (cu nota): pentru un fisier de input veti realiza fisiere Lex si Yacc specifice.
+Ex.input: elevi.csv ; output: admisi.csv
+media=>7 Admisi la liceu (MEDIA token)
+===
+sapt.10-14: Lista de proiecte+Proiecte+Alte Tools
+Tema-2=interpretor-va vom specifica atunci limbajul de programare; fara nota.
+===
+7-saptamana: 4 probleme
+- Parser - Definire Functii
+- Parser - SQL Query Select
+- Calculator avansat (Compilare: Yacc & Lex)
+- Citire propozitii in Engleza (Compilare: Yacc & Lex)
+===
+In fisierele lex la inceput:
+%option noyywrap
+----
+Comenzi in ordinea YACC & LEX
+- compilare: yacc *.y		===> y.tab.c 
+- compilare: lex *.l		===> lex.yy.c
+- compilare: gcc lex.yy.c	===> a.out
+- comanda finala: ./a.out <input.in >output.txt
+--- Legatura Yacc & Lex=in fisierul LEX: #include "y.tab.c"
+-- STERGETI #include "lex.yy.c" din Yacc daca aveti !
+- calculator stergeti ; inainte de  |
+statement: NAME '=' expression { printf("pretending to assign %s the value %d\n", $1, $3); }        ;         $1); }        ; |
+- Propozitie testati propozitii terminate cu punct sau ! obligatoriu sa fie un VERB
+fox runs!
+fox runs quickly.
+
+Output: 
+Simple noun-verb sentence
+Sentence with modified verb
+===
+Teorie ACTIUNI: (YACC-TEORIE.pdf)
+-1-shift = DEPLASARE; 
+-2-reduce= REDUCERE; 
+-3-accept= ACCEPTARE;
+-4-error = EROARE
+
+-1-DEPLASARE=shift="s" 
+Cand are loc o DEPLASARE, exista un token urmator. 
+Token-ul urmator este STERS din intrare.
+
+=2=REDUCERE=reduce="r"
+Reducerile=pastreaza stiva pt. a nu creste nelimitat.
+- se realizeaza daca analizorul vede partea dreapta a unei reguli gramaticale + anunta ca a vazut o instantiere a acesteia + inlocuieste partea dreapta cu partea stinga. 
+- Reducere: actiunea implicita (reprez.de PUNCT) e adesea o reducere. 
+- Reduceri: asociate cu reguli gramaticale individuale.
+Ex. Reducere     A : X Y Z ; .
+---elimina de pe stiva primele 3 stari (cate simboluri sunt in dreapta regulii); starile se  pun pe stiva cand s-a recunoscut X, Y si Z. 
+---Dupa eliminarea starilor (pop)=> o noua stare e VF.STIVEI=in care era analizorul inainte de procesarea regulii. 
+---Cu starea din VF. + simbolul nonterminal A stanga=> DEPLASAREA lui A => o noua stare, pusa (push) pe stiva, si analiza continua...
+
+- parser-asc.gif
+
+Reducerea=importanta si in tratarea actiunilor si valorilor furnizate de utilizator. Cand REGULA e REDUSA=codul furnizat cu regula e executat inainte de modificarea stivei. 
+- In paralel cu stiva ce pastreaza starile, lucreaza o alta stiva ce pastreaza valorile returnate de analizorul lexical si de actiuni.  
+
+=3==accept=ACCEPTARE="acc"
+Acceptare: intreaga intrare a fost vazuta si ca aceasta se potriveste cu specificatia; apare cand token-ul urmator din intrare este "end-marker" si indica faptul ca analizorul a terminat procesarea cu succes.
+
+=4=error=EROARE=nu se mai poate continua analiza conform specificatiei. 
+Token-ii stersi din intrare cu token-ul urmator din intrare nu pot fi urmati de nimic ce ar fi o intrare corecta. Analizorul raporteaza o eroare si incearca sa refaca situatia si sa reia analiza. ex. pag 7.
+
+- parser.gif
+===
+Pag.8- AMBIGUITATI si CONFLICTE (YACC-TEORIE.pdf)
+
+Ambiguitate=daca exista un sir de intrare ce poate fi structurat in doua sau mai multe moduri.
+
+EX. expr : expr '-' expr
+expr-expr-expr
+permite 2 asocieri:: (expr - expr) - expr SAU expr-(expr-expr) asoc.stanga, / dreapta => AMBIGUITATE 
+
+- Nu defineste complet intrarile; NU SPECIFICA ASOCIATIVITATEA si PRECEDENTA operatorilor!
+-NU EXISTA CONFLICT: DEPLASARE-DEPLASARE
+
+CE REZOLVA YACC ?...Produce analizor sintactic si cand apar conflicte DEPLASARE-REDUCERE / REDUCERE-REDUCERE, alege una din actiunile posibile=> REGULA DE DEZAMBIGUIZARE
+
+Exista 2 REGULI Dezambiguizare implicite
+- DEPLASARE-REDUCERE => alege DEPLASAREA (reducerile se evita cand se poate face o deplasare)
+
+- REDUCERE-REDUCERE => alege regula gramaticala ce apare prima in secventa de intrare.
+
+%token id
+%left '+'
+%left '*'
+%%
+E : E '+' E
+  | E '*' E
+  | id
+  ;
+  
+%left '+' 
+specifica Asociativitatea sa inlature conflictul
+
+%left '+' INAINTEA  left '*' => PRECEDENTA
+
+PRECEDENTA + ASOCIATIVITATE => REZOLVA CONFLICT shift/reduce 
+deci + inaintea inmultirii, PRECEDENTA rezolva conflictul !
+===
+yacc -v fisier.yacc=> y.output cu STARILE GENERATE de YACC+ CONFLICTE ! daca apar
+
+Alte ambiguitati:
+https://www.ibm.com/support/knowledgecenter/en/SSLTBW_2.1.0/com.ibm.zos.v2r1.bpxa600/amb.htm
+
+SLR=superset of all LR

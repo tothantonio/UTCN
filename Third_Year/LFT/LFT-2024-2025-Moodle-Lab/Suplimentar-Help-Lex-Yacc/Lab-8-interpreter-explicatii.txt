@@ -1,0 +1,47 @@
+Implementare parser și interpretor  pt. limbaj de programare 
+
+--- Structuri de Date:
+- definește structura Arbore (Tree) pt. sintaxa limbajului cu 
+nodeType si variantele sale: conNodeType, idNodeType, oprNodeType. 
+- un nod corespunde diferitelor tipuri de expresii/instructiuni
+
+--- Tabel Simboluri:
+- array sym: stocheaza valorile variabilelor; are dimensiune fixa; indexul (0–25) pt. numele variabilelor corespunzatoare literelor A–Z
+
+--- Reguli Gramaticale:
+- def. atribute, instructiuni PRINT, if/else, while
+
+--- Operatii (opr()) 
+- def. efectuarea operatii aritmetice si logice. 
+- operatii sustinute de masina virtuala implementata in functia ex(): evalueaza expresii si executa instructiuni pe baza tipurilor de noduri din structura arborelui.
+
+--- Functii 
+- con(int value): creeaza NOD ce reprezinta  nr. intreg constant.
+- id(int i): creeaza nod pt. o variabilă identificata prin index in tabelul de simboluri.
+
+- opr(int oper, int nops, ...): creeaza nod pt. operator cu multi operanzi.
+
+- freeNode(nodeType *p): elibereaza recursiv nodurile alocate pt. prevenirea pierderilor de memorie.
+
+- ex(nodeType *p): evalueaza expresia/instrucțiunea reprezentata de nod si returneaza rezultatul.
+
+- yyerror(char *s):  mesaje de eroare 
+
+--- Constructii Gramaticale 
+- expresii (expr): def. intregi, variabile, operații algebrice, comparatii.
+
+- instructiuni (statement): def. instructiuni de expresie, printare, atribuiri, if, while, acolade pt. structuri complexe
+
+--- Gestionarea Memoriei: malloc: alocare dinamica a memoriei 
+
+--- Array sym:  fix 26 elemente,
+
+--- Precedenta operatii: este definită, dar pot aparea ambiguitati daca gramatica nu tine cont de toate nivelurile de precedentă.
+
+--- Lipsa specificatii erori pt. impartire la 0, zero in ex() 
+
+
+--- Input dat
+--- Output: rezultate PRINT din WHILE  pentru valorile de la 1 la 10.
+nr. pare (2, 4, 6, 8, 10) 
+0 pt. numerele impare (1, 3, 5, 7, 9). - distinge eficient între numere pare și impare folosind operații aritmetice.

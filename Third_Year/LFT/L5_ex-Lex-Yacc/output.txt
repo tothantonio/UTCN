@@ -1,0 +1,4 @@
+identifica nr.=45
+identifica nr.=111
+identifica nr.=22
+Nu este nr. intreg. Includeti-nr-intreg.

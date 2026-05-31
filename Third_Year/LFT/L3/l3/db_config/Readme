@@ -1,0 +1,49 @@
+1. Run hello world example. Use the default main from lex library by adding -ll to gcc compile instruction.
+
+>lex hello.l
+>gcc -o hello lex.yy.c -ll
+>echo "Hello from the other side" | ./hello 
+or 
+>./hello
+<introduce some text here>
+
+2. process a configuration file of the form test.in
+step 1: create the header file with all the symbols the tokenizer should recognize
+     myscanner.h
+
+step 2: create input for lex
+a) include myscanner.h in the first part of teh input with %{ %}
+b) write patterns and actions
+c) describe function yywrap() in order to include the tokenizer into another C code
+
+step 3:
+>  lex myscanner.l
+>  gcc myscanner.c  lex.yy.c  -ll -o myscanner
+>  echo "db_name:" | ./myscanner
+>  echo "db nam_e:" | ./myscanner
+>  echo "db_name : nosql" | ./myscanner
+> ./myscanner < test.in
+
+step 4:
+   check the correct order of the tokens in step.in
+  see myscanner2.c
+
+step 5:
+  gcc myscanner2.c  lex.yy.c  -ll -o myscanner 
+  ./myscanner < test.in 
+you should obtain:
+db_type is set to mysql 
+db_name is set to testdata 
+db_table_prefix is set to test_ 
+db_port is set to 1092
+
+  ./myscanner < test_unexpected.in 
+db_type is set to mysql 
+unexpected character
+db_name is set to testdata2 
+db_table_prefix is set to test_ 
+db_port is set to 1092 
+
+  ./myscanner < test_error.in 
+db_type is set to mysql 
+Syntax error in line 1, expected an IDENTIFIER, but found 23

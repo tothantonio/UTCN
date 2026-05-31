@@ -1,0 +1,118 @@
+Definire gramatica pt. un parser ce  interpreteaza comenzi simple de pizza. 
+Parserul calculeaza, contorizeaza, nr. total de ingrediente specificate in comenzi; reda rezumatul al comenzii.
+
+--- Functii
+- int yylex();  lexerul ce returnează token-uri parserului.
+- void yyerror(const char*); raportează mesaje de eroare.
+- declaratie variabila: int nr; pt. o eventuala contorizare/stocare numerelor
+
+- declara tokens ce vor fi utilizate de parser: 
+%token ORDER PREFER QUANT PIZZA WITH INGREDIENT AND SIZE
+
+ORDER: cuvinte ce indica o comanda.
+PREFER: declaratii de preferinta.
+QUANT: cantitati 
+PIZZA: cuvantul "pizza".
+WITH:  pt. ingrediente suplimentare
+INGREDIENT: ingrediente pt. pizza.
+AND: conector logic 
+SIZE: dimensiuni: "mare"/ "mic".
+
+--- Reguli Gramaticale
+- tot: intrarea pt. parser apelează prog; afișează nr. total de ingrediente.
+tot : prog {printf("numar total de ingrediente: %d", $1);}
+    ;
+
+- prog: desc_order / desc_pref  contorizeaza ingredientele in $$ = $1 + $2;
+
+- desc_order: recunoaste ORDER urmat de cantitate (QUANT) si descrierea pizzei (desc_pizza).
+Afisare rezumat Comanda; contorizeaza in $$ ingredientele din desc_pizza
+
+- desc_pref: retine preferinta (PREFER) si descrierea pizzei; Contorizeaza ingredientele din desc_pizza.
+
+- desc_pizza: gestioneaza pizza cu si fara ingrediente suplimentare. 
+WITH urmat de desc_ingred se numara altfel returneaza 0 pt. contor ingrediente.
+
+- desc_size: recunoaste optional o dimensiune a pizzei; o dimensiune poate/nu sa fie prezenta fara sa afecteze contorul ingredientelor.
+
+- desc_ingred: pt. unul/multe ingrediente; pt. cel putin un ingredient (succes INGREDIENT), le contorizeaza; contorizeaza si daca sunt ingrediente suplimentare
+
+- concat: virgula / "virgula AND" conectare ingrediente 
+
+--- Input
+I would like a pizza with bacon, cheese, and extra topping.
+I prefer small pizza with bacon, and cheese.
+I want two large pizzas.
+
+
+--- Output: Parsarea, analiza comenzi; returneaza numarul de ingrediente
+
+numar total de ingrediente: 5
+
+Comanda 1: 3
+Comanda 2: 2
+Comanda 3: 0
+ 
+
+
+
+--- Detalii ---
+Tokenizare:
+ORDER: I would like
+QUANT: a (1)
+PIZZA: pizza
+WITH: with
+INGREDIENT: bacon (1)
+AND: and 
+INGREDIENT: cheese (1)
+INGREDIENT: extra topping (1)
+Numărul Total de Ingrediente:
+3 ingrediente (bacon, cheese, extra topping)
+
+Al doilea Input:
+I prefer small pizza with bacon, and cheese.
+Tokenizare:
+PREFER: I prefer
+SIZE: small
+PIZZA: pizza
+WITH: with
+INGREDIENT: bacon (1)
+AND: and 
+INGREDIENT: cheese (1)
+Numărul Total de Ingrediente:
+2 ingrediente (bacon, cheese)
+
+
+Al treilea Input:
+I want two large pizzas.
+Tokenizare:
+ORDER: I want
+QUANT: two (2)
+SIZE: large
+PIZZA: pizzas (plural)
+Numărul Total de Ingrediente:
+0 ingrediente (nu sunt specificate ingrediente suplimentare)
+Rezumatul Execuției
+Primul Comandă:
+
+Total de ingrediente: 3
+_____COMANDA___
+Cantitate: 1
+Ingrediente: 3
+
+A Doua Comandă:
+Total de ingrediente: 2
+_____COMANDA___
+Cantitate: 1
+Ingrediente: 2
+
+A Treia Comandă:
+Total de ingrediente: 0
+_____COMANDA___
+Cantitate: 2
+Ingrediente: 0
+
+Calculul Total
+Comanda 1: 3
+Comanda 2: 2
+Comanda 3: 0

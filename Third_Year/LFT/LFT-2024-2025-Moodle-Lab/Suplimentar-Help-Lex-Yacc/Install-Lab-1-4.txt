@@ -1,0 +1,110 @@
+Lab 1: 
+L1Synopsis.pdf
+RegEx.ipynb
+
+Lab Notebook
+https://colab.research.google.com/drive/16Vgns93LBiY-dAMZonq_ChpEMsvysXRW?usp=sharing
+The utility of regular expressions
+https://levelup.gitconnected.com/why-should-you-learn-regex-66586ba259e0
+Regexes: The Bad, the Better, and the Best
+https://www.loggly.com/blog/regexes-the-bad-better-best/
+Regex 101 https://regex101.com/
+
+--- Lab 2 Install FLEX +YACC(Bison)
+Linux: daca este nevoie: sudo apt-get upgrade
+sudo apt-get update
+sudo apt-get install flex
+sudo apt-get update
+sudo apt-get install bison
+===
+IDE - Visual Studio Code VS Code-Linux/Mac/Windows
+Install VSCODE + Extensions (Ctrl+Shift+X) + Flex, Bison: Language Support, Highlight
+- VIEW-Editor Layout-2 Columns Bottom for Input & Output Files 
+- TERMINAL- New Terminal: cd PATH (PATH from Right Click on the file: Properties: Path folder: Double click-select Copy & Paste)
+flex filelex.l
+gcc lex.yy.c -o executabil.exe
+cmd /c --%  .\executabil.exe  <fileinput.txt  >fileout.txt
+---OR:
+GnuWin (SourceForge)
+https://sourceforge.net/projects/gnuwin32/files/flex/2.5.4a-1/flex-2.5.4a-1.exe/download
+https://sourceforge.net/projects/gnuwin32/files/bison/2.4.1/bison-2.4.1-setup.exe/download
+-add to Environamental Path:
+C:\Program Files (x86)\GnuWin32\bin
+-restart
+run with: flex, bison
+----- Instal: gcc 
+C compiler: MinGW: https://sourceforge.net/projects/mingw
+"mingw32-base" and "mingw-gcc-g++."
+Install->Apply Changes
+search: Environment Variables
+Path,New:  C:\MinGW\bin 
+https://www.wikihow.com/Run-C-Program-in-Command-Prompt
+
+---OR:
+flex yacc included in cygwin:
+https://cygwin.com/setup-x86_64.exe
+---OR:
+install Linux with wsl
+https://docs.microsoft.com/en-us/windows/wsl/install-win10
+-add to Environamental Path
+-restart
+---OR:
+choco install winflexbison
+---OR:
+--- WINDOWS-FleX+Yacc
+https://sourceforge.net/projects/winflexbison/files/
+instalati unul din fisierele zip
+sau 
+https://github.com/lexxmark/winflexbison/releases
+-------
+
+Alte variante
+
+http://programmerts.blogspot.com/2014/05/flex-bison-step-by-step-compile-on.html
+https://samskalicky.wordpress.com/2014/01/25/tutorial-setting-up-flex-bison-on-windows/
+ 
+
+Solving VM
+https://osdn.net/projects/sfnet_winflexbison/releases/
+https://sourceforge.net/projects/winflexbison/  
+http://gnuwin32.sourceforge.net/packages/flex.htm
+http://gnuwin32.sourceforge.net/packages/bison.htm
+https://techapple.net/2014/07/flex-windows-lex-and-yacc-flex-and-bison-installer-for-windows-xp788-1/
+https://github.com/lexxmark/winflexbison
+Build requirements-Visual Studio 2015 or newer
+==========
+GEDIT (Terminal Embeded+alte facilitati din Plugins):
+https://www.howtoforge.com/tutorial/three-useful-gedit-plugins-for-programmers/
+Install: 
+sudo apt-get update
+sudo apt-get install gedit-plugins
+sudo apt-get install gedit-developer-plugins
+sudo apt-get update
+In Gedit:  Edit-> Preferences -> Plugins -> Embedded Terminal
+Restart Gedit: press Ctrl+F9 and you will get a terminal embedded in gedit.
+
+- Ctrl+Alt + N  split windows - mai multe fisiere pe ecran
+- Drag & Drop mutati fisierele in orice fereastra aveti nevoie
+https://help.gnome.org/users/gedit/stable/gedit-shortcut-keys.html.en
+
+
+
+
+
+--- LAB 4 explicat
+%%
+username {printf("%s",getlogin());}
+%%
+----la rulare ./a.out
+Acesta este username
+----va afisa:
+Acesta este <user-ul pe care il folositi>
+---
+- pag.20 Conversie Upper<->Lowercase
+- pag 21: ex2.l: contor: numere de linie+caractere
+- pag.22: cifrul lui Cezar:caesar1.l+caesar2.l 
+- pag.22: lexlongword.l cel mai lung cuvant(fara fisiere C pag.23-24)
+- pag 25: ex3.l: Scanner Pascal: identificati: integers, floats, identificatori, operatori si comentarii 
+-pag 26:romans.l citeste si intrepreteaza numere Romane 
+-pag.24+25+27:ch102.l (verbe/non-verbe)+ ch103.l+words.l identificarea categorii cuvinte: substantive, verbe, adjective etc.
+

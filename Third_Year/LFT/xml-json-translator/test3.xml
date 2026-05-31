@@ -1,0 +1,8 @@
+<university>
+    <faculty>
+        ComputerScience
+    </faculty>
+    <Student>
+        <name>John Doe</name>
+    </Student>
+</university>
