@@ -1,0 +1,32 @@
+ex1. Home Security Siysem
+
+sensors for: - movement
+			 - temperature
+			 - video camera
+			 
+monitoring system checks on the sensor data
+
+if problem => send SMS to owner
+			  or react automatically
+			  
+			  
+ANSWER:
+	The choosen design pattern is DISTRIBUTED ARCHITECTURE because the environment is distributed and heterogeneous with independent, cooperating 
+	components(movenent sensor, temperature sensor...).
+	
+	The components in our system should be able to access services provided by our sensors
+	through location-transparent service invocations.
+	
+	The brief schema is attached as a picture.
+	
+	This requires orchestration making certain that all responses are properly processed by relevant processors.
+	These event processors receive event notification from the mediator and perform the appropriate business logic. 
+	This topology is preferred for more complex event processing.
+	
+	We need a mediator in order to decide wxactly the steps to be taken when a security violation is sensed.
+	
+	advantages: 
+	-Increased versatility: This enables components to function independently, allowing them to couple and decouple into networks, and be used and reused many times over.
+	
+	disadvantages;
+	-the resonse is not on the spot(processing the queue maight take a while)

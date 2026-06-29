@@ -1,0 +1,12 @@
+Teorie
+1. asemanari si diferente intre state si strategy design pattern
+2. UML class diagram la un text dat
+3. OCL la un text dat
+4. Liskov
+
+Problema: se da un text
+1. use case
+2. arhitectura conceptuala + 1 archiectural pattern
+3. UML + 2 design patterns
+4. sequence diagram
+5. Java code for the used design patterns

@@ -1,0 +1,18 @@
+ex3. Package
+
+the given schema violates Acyclic Dependencie principle (the structure should be a directed acyclic graph).
+Ours has a cycle(to recolve that we add another package) - schema attached
+In order to evaluate the architecture we compute in instabiliti for each packet:
+
+SPUI = 2/2 = 1 - instabil
+SP = 1/2= 0.5
+SD = 0/3 = 0 - stabil
+GUIL = 0/2 = 0-stabil
+PUI = 2/3
+PA = 3/4
+P = 1/2 
+SM = 1/2
+
+we observe that there are 2 stabil packages and one instabil package.
+Stabil pack must be abstract and at the base of the design while instabile onesc must be on top on the design.
+The given schema fulfills this condition = > Ok.

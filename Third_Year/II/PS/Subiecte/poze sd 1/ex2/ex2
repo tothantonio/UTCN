@@ -1,0 +1,24 @@
+Zgavirdici Malina Andreea
+year: 3
+lab assistant: Radu Tufisi
+
+ex2. Rental management system
+
+ We have 3 layers: 
+  1. Presentation : regards user interaction
+					contains page controller for each template view
+					
+  2. Domain Logic : structured as a web of interconnected classes: DOMAIN MODEL
+					contains Mappers
+					entity for each DV table
+					Servicers: actual domain logic
+					
+
+  3. Data access: done through table data gateway => a gateway for each DB table handling all rows(CRUD methods)
+  
+  Advantages: it is simple(easy to implement, intuitive), it is consistent(same structure always), and all the objects are kept togheder, easy to find and change things.
+  
+  Disadvantages: the project is hard to scale, uses cases are difficult to determine and there is no dependency inversion
+  
+  Factory pattern can be useful for this application in order to handle different types of users or different types of rental cases.
+  Also Decorator pattern maight be userd if we want to add special cases to the rentals (fuel included, large period of time.. add discounts based on this extra factors)
